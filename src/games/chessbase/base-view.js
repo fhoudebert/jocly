@@ -726,7 +726,8 @@
 				var S1=c-z1;
 				var S2=c-z2;
 				
-				if(z1!=(z0+z2)/2)
+				var hop = z1 - (z0+z2)/2;
+				if(hop > 0)
 					tacSound=true;
 
 				var A=-1;
@@ -741,9 +742,31 @@
 					a=a2;
 					b=-a-S2;
 				}
+				var x0=spec.x, y0=spec.y;
+				var x2=displaySpec[skin].x, y2=displaySpec[skin].y;
+				var xa=x0, xb=x2, ya=y0, yb=y2;
+				var h=1, l=1, dx = Math.abs(x2-x0), dy = Math.abs(y2-y0);
+				if(hop <= 0) { // use bent trajectory for oblique slides
+					if(dx<dy) {
+						h = dy - dx; l = dy;
+						if(2*h <= l + hop)
+							xa = (l*x0 - h*x2)/(l-h), xb = x0;
+						else if(dx)
+							xb = (l*x2 - h*x0)/(l-h), xa = x2, h = l - h;
+					} else {
+						h = dx - dy; l = dx;
+						if(2*h <= l + hop)
+							ya = (l*y0 - h*y2)/(l-h), yb = y0;
+						else if(dy)
+							yb = (l*y2 - h*y0)/(l-h), ya = y2, h = l - h;
+					}
+					h /= l;
+				}
 				displaySpec[skin].positionEasingUpdate = function(ratio) {
 					var y=(a*ratio*ratio+b*ratio+c)*this.SCALE3D;
 					this.object3d.position.y=y;
+					this.object3d.position.x=(ratio<=h ? ratio*xb + (1-ratio)*x0 : ratio*x2 + (1-ratio)*xa)*this.SCALE3D;
+					this.object3d.position.z=(ratio<=h ? ratio*yb + (1-ratio)*y0 : ratio*y2 + (1-ratio)*ya)*this.SCALE3D;
 				}
 			})(skin);
 		}
