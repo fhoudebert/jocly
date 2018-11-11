@@ -10,6 +10,8 @@
 	var FLAG_SCREEN_CAPTURE = 0x80000; // capture if occupied by and a piece has been jumped in the path (like cannon in xiangqi) 
 	var FLAG_CAPTURE_KING = 0x100000; // capture if occupied by enemy king
 	var FLAG_CAPTURE_NO_KING = 0x200000; // capture if not occupied by enemy king
+	var FLAG_SPECIAL = 0x400000; // non-captures to go on special move stack
+	var FLAG_CAPTURE_SELF = 0x800000; // special move to square occupied by any
 	Model.Game.cbConstants = {
 		MASK: MASK,
 		FLAG_MOVE: FLAG_MOVE,
@@ -18,6 +20,8 @@
 		FLAG_SCREEN_CAPTURE: FLAG_SCREEN_CAPTURE,
 		FLAG_CAPTURE_KING: FLAG_CAPTURE_KING,
 		FLAG_CAPTURE_NO_KING: FLAG_CAPTURE_NO_KING,
+		FLAG_SPECIAL: FLAG_SPECIAL,
+		FLAG_CAPTURE_SELF: FLAG_CAPTURE_SELF,
 	}
 	var USE_TYPED_ARRAYS = typeof Int32Array != "undefined";
 	
@@ -838,6 +842,13 @@
 								a: pType.abbrev,
 								ept: lastPos==null || !pType.epTarget?undefined:lastPos,
 							});
+						else if(tg1 & FLAG_SPECIAL)
+							this.specials.push({
+								f: piece.p,
+								t: pos1,
+								c: null,
+								a: pType.abbrev
+							});
 					} else if(tg1 & FLAG_SCREEN_CAPTURE) {
 						if(screen) {
 							var piece1=this.pieces[index1];
@@ -857,14 +868,21 @@
 							piece1=this.pieces[this.epTarget.i];
 						else
 							piece1=this.pieces[index1];
-						if(piece1.s!=piece.s && (tg1 & FLAG_CAPTURE) && (!(tg1 & FLAG_CAPTURE_KING) || aGame.g.pTypes[piece1.t].isKing) &&
-								(!(tg1 & FLAG_CAPTURE_NO_KING) || !aGame.g.pTypes[piece1.t].isKing))
-							PromotedMoves(piece,{
+						if(tg1 & FLAG_CAPTURE) {
+							if(piece1.s!=piece.s && !(tg1 & (aGame.g.pTypes[piece1.t].isKing ? FLAG_CAPTURE_NO_KING : FLAG_CAPTURE_KING)))
+								PromotedMoves(piece,{
+									f: piece.p,
+									t: pos1,
+									c: piece1.i,
+									a: pType.abbrev,
+									ep: index1<0,
+								});
+						} else if(tg1 & FLAG_CAPTURE_SELF)
+							this.specials.push({
 								f: piece.p,
 								t: pos1,
 								c: piece1.i,
-								a: pType.abbrev,
-								ep: index1<0,
+								a: pType.abbrev
 							});
 						break;
 					}
