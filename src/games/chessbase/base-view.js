@@ -698,10 +698,11 @@
 		});
 	}
 
-	View.Board.cbAnimate = function(xdv,aGame,aMove,callback) {
+	View.Board.cbAnimate = function(xdv,aGame,aMove,callback,speed) {
 		var $this=this;
 		var animCount=1;
 		var tacSound=false;
+		if(speed === undefined || speed == null) speed = 600;
 		
 		function EndAnim() {
 			if(--animCount==0){
@@ -774,7 +775,7 @@
 		if (!tacSound)
 			aGame.PlaySound("move"+(1+Math.floor(Math.random()*4)));
 		
-		xdv.updateGadget("piece#"+piece.i,displaySpec,600,function() {
+		xdv.updateGadget("piece#"+piece.i,displaySpec,speed,function() {
 			EndAnim();
 		});
 
@@ -797,7 +798,7 @@
 					opacity: 0,
 				},
 				"3d": anim3d,
-			},600,EndAnim);
+			},speed,EndAnim);
 		}
 		
 		if(aMove.cg!==undefined) {
@@ -806,7 +807,7 @@
 			var piece=this.pieces[this.board[aMove.cg]];
 			var displaySpec=aGame.cbMakeDisplaySpecForPiece(aGame,rookTo,piece);
 			animCount++;
-			xdv.updateGadget("piece#"+piece.i,displaySpec,600,function() {
+			xdv.updateGadget("piece#"+piece.i,displaySpec,speed,function() {
 				EndAnim();
 			});
 		}
