@@ -847,7 +847,8 @@
 								f: piece.p,
 								t: pos1,
 								c: null,
-								a: pType.abbrev
+								a: pType.abbrev,
+								x: tg1
 							});
 					} else if(tg1 & FLAG_SCREEN_CAPTURE) {
 						if(screen) {
@@ -882,7 +883,8 @@
 								f: piece.p,
 								t: pos1,
 								c: piece1.i,
-								a: pType.abbrev
+								a: pType.abbrev,
+								x: tg1
 							});
 						break;
 					}
