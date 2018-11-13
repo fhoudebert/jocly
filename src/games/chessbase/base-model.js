@@ -12,6 +12,7 @@
 	var FLAG_CAPTURE_NO_KING = 0x200000; // capture if not occupied by enemy king
 	var FLAG_SPECIAL = 0x400000; // non-captures to go on special move stack
 	var FLAG_CAPTURE_SELF = 0x800000; // special move to square occupied by any
+  var FLAG_THREAT = 0x1000000; // forces inclusion in threat graph
 	Model.Game.cbConstants = {
 		MASK: MASK,
 		FLAG_MOVE: FLAG_MOVE,
@@ -22,6 +23,7 @@
 		FLAG_CAPTURE_NO_KING: FLAG_CAPTURE_NO_KING,
 		FLAG_SPECIAL: FLAG_SPECIAL,
 		FLAG_CAPTURE_SELF: FLAG_CAPTURE_SELF,
+		FLAG_THREAT: FLAG_THREAT,
 	}
 	var USE_TYPED_ARRAYS = typeof Int32Array != "undefined";
 	
@@ -140,7 +142,7 @@
 						} else if(tg1 & FLAG_CAPTURE_NO_KING) {
 							$this.cbUseCaptureNoKing=true;
 							line.unshift({d:tg1 & MASK,a:pos,tnk:typeName});
-						} else if(tg1 & FLAG_CAPTURE)
+						} else if(tg1 & (FLAG_CAPTURE | FLAG_THREAT))
 							line.unshift({d:tg1 & MASK,a:pos,t:typeName});
 						else if(tg1 & FLAG_STOP)
 							line.unshift({d:tg1 & MASK,a:pos});
