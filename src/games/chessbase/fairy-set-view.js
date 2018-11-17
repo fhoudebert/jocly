@@ -47,16 +47,6 @@
 					clipx: 0,
 				},
 			},
-			"fr-ferz": {
-				"2d": {
-					clipx: 3900,
-				},
-			},
-			"fr-wazir": {
-				"2d": {
-					clipx: 3800,
-				},
-			},
 			"fr-knight": {
 				"2d": {
 					clipx: 100,
