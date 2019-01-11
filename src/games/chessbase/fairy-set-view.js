@@ -47,6 +47,16 @@
 					clipx: 0,
 				},
 			},
+			"fr-ferz": {
+				"2d": {
+					clipx: 3900,
+				},
+			},
+			"fr-wazir": {
+				"2d": {
+					clipx: 3800,
+				},
+			},
 			"fr-knight": {
 				"2d": {
 					clipx: 100,
@@ -456,16 +466,38 @@
 			},
 		},
 
-		"fr-hoplit": {
+		"fr-ferz": {
 			mesh: {
-				jsFile:"/res/fairy/pawn/hoplit.js"
+				jsFile:"/res/fairy/pawn/ferz.js"
 			},
 			materials: {
 				mat0: {
 					channels: {
 						diffuse: {
 							texturesImg: {
-								diffImg : "/res/fairy/pawn/hoplit-diffusemap.jpg",
+								diffImg : "/res/fairy/pawn/pawn-diffusemap.jpg",
+							}
+						},
+						normal: {
+							texturesImg: {
+								normalImg: "/res/fairy/pawn/pawn-normalmap.jpg",
+							}
+						}
+					}
+				}
+			},
+		},
+
+		"fr-wazir": {
+			mesh: {
+				jsFile:"/res/fairy/pawn/wazir.js"
+			},
+			materials: {
+				mat0: {
+					channels: {
+						diffuse: {
+							texturesImg: {
+								diffImg : "/res/fairy/pawn/pawn-diffusemap.jpg",
 							}
 						},
 						normal: {
