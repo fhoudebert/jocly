@@ -112,6 +112,11 @@
 					clipx: 500,
 				},
 			},
+			"fr-emperor": {
+				"2d": {
+					clipx: 500,
+				},
+			},
 			"fr-man": {
 				"2d": {
 					clipx: 3700,
@@ -843,6 +848,28 @@
 		"fr-king": {
 			mesh: {
 				jsFile:"/res/fairy/king/king.js"
+			},
+			materials: {
+				mat0: {
+					channels: {
+						diffuse: {
+							texturesImg: {
+								diffImg : "/res/fairy/king/king-diffusemap.jpg",
+							}
+						},
+						normal: {
+							texturesImg: {
+								normalImg: "/res/fairy/king/king-normalmap.jpg",
+							}
+						}
+					}
+				}
+			},
+		},
+
+		"fr-emperor": {
+			mesh: {
+				jsFile:"/res/fairy/king/emperor.js"
 			},
 			materials: {
 				mat0: {
