@@ -123,7 +123,7 @@
 								actions[target]['execute'] = (function(callback) {
 									var $this=this;
 									this.cbAnimate(xdv,aGame,move,function() {
-										var promoMoves=actions[move.t].moves;
+										var promoMoves=actions[target].moves;
 										if(promoMoves.length>1) {
 											xdv.updateGadget("promo-board",{
 												base: {
