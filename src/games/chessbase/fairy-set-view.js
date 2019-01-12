@@ -167,6 +167,11 @@
 					clipx: 1100,
 				},
 			},
+			"fr-birdie": {
+				"2d": {
+					clipx: 1100,
+				},
+			},
 			"fr-lion": {
 				"2d": {
 					clipx: 1200,
@@ -459,6 +464,28 @@
 						diffuse: {
 							texturesImg: {
 								diffImg : "/res/fairy/pawn/pawn-diffusemap.jpg",
+							}
+						},
+						normal: {
+							texturesImg: {
+								normalImg: "/res/fairy/pawn/pawn-normalmap.jpg",
+							}
+						}
+					}
+				}
+			},
+		},
+
+		"fr-hoplit": {
+			mesh: {
+				jsFile:"/res/fairy/pawn/hoplit.js"
+			},
+			materials: {
+				mat0: {
+					channels: {
+						diffuse: {
+							texturesImg: {
+								diffImg : "/res/fairy/pawn/hoplit-diffusemap.jpg",
 							}
 						},
 						normal: {
@@ -1046,6 +1073,28 @@
 		"fr-eagle": {
 			mesh: {
 				jsFile:"/res/fairy/eagle/eagle.js"
+			},
+			materials: {
+				mat0: {
+					channels: {
+						diffuse: {
+							texturesImg: {
+								diffImg : "/res/fairy/eagle/eagle-diffusemap.jpg",
+							}
+						},
+						normal: {
+							texturesImg: {
+								normalImg: "/res/fairy/eagle/eagle-normalmap.jpg",
+							}
+						}
+					}
+				}
+			},
+		},
+
+		"fr-birdie": {
+			mesh: {
+				jsFile:"/res/fairy/eagle/birdie.js"
 			},
 			materials: {
 				mat0: {
