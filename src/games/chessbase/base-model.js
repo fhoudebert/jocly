@@ -245,6 +245,7 @@
 		this.g.distGraph = this.cbVar.geometry.GetDistances();
 		
 		this.cbPiecesCount = 0;
+    if(this.cbMaxRepeats === undefined) this.cbMaxRepeats = 3;
 		
 		this.g.castleablePiecesCount = { '1': 0, '-1': 0 };
 		for(var i in cbVar.pieceTypes) {
@@ -669,7 +670,8 @@
 				material["1"].count[i]=material["-1"].count[i]=0;
 		}
 		
-		if(aGame.mOptions.preventRepeat && aGame.GetRepeatOccurence(this)>2) {
+		if(aGame.mOptions.preventRepeat &&
+			 aGame.GetRepeatOccurence(this)>=aGame.cbMaxRepeats) {
 			this.mFinished=true;
 			this.mWinner=aGame.cbOnPerpetual?who*aGame.cbOnPerpetual:JocGame.DRAW;
 			return;
