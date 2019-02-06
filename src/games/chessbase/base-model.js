@@ -341,7 +341,7 @@
 			}
 		this.zSign=aGame.zobrist.update(0,"who",-1);
 
-		this.noCaptCount = 0;
+		this.noCaptCount = this.check = this.oppoCheck = 0;
 		this.mWho = 1;
 
 		if(aGame.mInitial) {
@@ -456,6 +456,7 @@
 		for(var i in aBoard.kings)
 			this.kings[i] = aBoard.kings[i];
 		this.check=aBoard.check;
+		this.oppoCheck=aBoard.oppoCheck;
 		if(aBoard.lastMove)
 			this.lastMove={
 				f: aBoard.lastMove.f,
@@ -626,7 +627,9 @@
 			if(royal)
 				this.kings[piece.s*royal]=move.t;
 		}
-		this.check=!!move.ck;
+		var h=this.oppoCheck;
+		this.oppoCheck=this.check;
+		this.check=(move.ck ? h+1 : 0);
 		this.lastMove={
 			f: move.f,
 			t: move.t,
@@ -1055,7 +1058,7 @@
 			this.mFinished=true;
 			this.mWinner=aGame.cbOnStaleMate?aGame.cbOnStaleMate*this.mWho:JocGame.DRAW;
 			if(this.check)
-				this.mWinner=-this.mWho*this.check;
+				this.mWinner=-this.mWho;
 		} else if(this.ending[this.mWho]) {
 			if(!kingOnly) {
 				for(var i=0;i<this.mMoves.length;i++)
