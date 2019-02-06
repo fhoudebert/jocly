@@ -1061,7 +1061,7 @@
 			this.mFinished=true;
 			this.mWinner=aGame.cbOnStaleMate?aGame.cbOnStaleMate*this.mWho:JocGame.DRAW;
 			if(this.check)
-				this.mWinner=-this.mWho;
+				this.mWinner=(aGame.cbMateEval ? aGame.cbMateEval(this) : -this.mWho);
 		} else if(this.ending[this.mWho]) {
 			if(!kingOnly) {
 				for(var i=0;i<this.mMoves.length;i++)
