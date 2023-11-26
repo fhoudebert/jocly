@@ -247,21 +247,6 @@
 		}
 	}
 
-	function MyUpdate(key, kind, index, sqr) { // support for old cb API
-		switch(kind) {
-			case 'who': return key ^ index+1; // effectively uses 2 as turn seed
-			case 'type': return key;          // not needed anymore, no-op
-			case 'board':
-				var piece = gameState.pieces[index];
-				return key ^ boardKeys[sqr]*typeKeys[3*piece.t+piece.s];
-		}
-	}
-
-	Model.Game.cbBoardKeyChange = function(type, color, sqr) { // faster cb API
-		// the following expression is hard-coded in the rest of this file!
-		return typeKeys[3*type+color]*boardKeys[sqr];
-	}
-
 	Model.Game.InitGame = function() {
 		var $this=this;
 		this.cbVar = cbVar = this.cbDefine();
@@ -297,8 +282,58 @@
 		}
 
 		var typeValues = Object.keys(cbVar.pieceTypes);
+
+	    if(cbVar.zobrist == "old") {
+		// Deprecated Zobrist initialization, kept for book probing
+		var boardValues=[];
+		for(var i=0;i<this.cbPiecesCount;i++) 
+			boardValues.push(i);
+		this.zobrist=new JocGame.Zobrist({
+			board: {
+				type: "array",
+				size: this.cbVar.geometry.boardSize,
+				values: boardValues,
+			},
+			who: {
+				values: ["1","-1"],			
+			},
+			type: {
+				type: "array",
+				size: this.cbPiecesCount,
+				values: typeValues
+			}
+		});
+
+		// the following three can replace the active functions for backward compatibility
+		this.bKey = function(piece) {
+			return $this.zobrist.update(0,"board",piece.i,piece.p);
+		}
+
+		this.tKey = function(piece) {
+			return $this.zobrist.update(0,"type",piece.t,piece.i);
+		}
+
+		this.wKey = function(h) {
+			var w = $this.zobrist.update(0,"who",-1)
+			if(h) w ^= $this.zobrist.update(0,"who",1);
+			return w;
+		}
+	    } else {
+		// three active update functions called by ApplyMove()
+		this.bKey = function(piece) { // takes care of type and location dependence
+			return typeKeys[3*piece.t+piece.s]*boardKeys[piece.p];
+		}
+
+		this.tKey= function(piece) { // dummy in new scheme
+			return 0;
+		}
+
+		this.wKey= function() { // side-to-move key
+			return 2;
+		}
+
 		ZobristInit(this, typeValues, this.cbVar.geometry.boardSize);
-		this.zobrist = { update: MyUpdate }; // for backward compatibility
+	    }
 	}
 	
 	Model.Game.cbGetPieceTypes = function() {
@@ -350,7 +385,7 @@
 				'1': false,
 				'-1': false,
 			}
-		this.zSign=0;
+		this.zSign=aGame.wKey(0);
 
 		this.noCaptCount = this.check = this.oppoCheck = 0;
 		this.mWho = 1;
@@ -415,7 +450,7 @@
 			var pType=aGame.g.pTypes[piece.t];
 			if(pType.isKing)
 				$this.kings[piece.s*pType.isKing]=piece.p;
-			$this.zSign^=typeKeys[3*piece.t+piece.s]*boardKeys[piece.p];
+			$this.zSign^=aGame.bKey(piece) ^ aGame.tKey(piece);
 		});
 		
 		//console.log("sign",this.zSign);
@@ -504,10 +539,8 @@
 		var kingTo=spec.k[spec.k.length-1];
 		var kPiece=this.pieces[this.board[move.f]];
 		if(updateSign) {
-			this.zSign^=typeKeys[3*rPiece.t+rPiece.s]*boardKeys[move.cg];
-			this.zSign^=typeKeys[3*rPiece.t+rPiece.s]*boardKeys[rookTo];
-			this.zSign^=typeKeys[3*kPiece.t+kPiece.s]*boardKeys[move.f];
-			this.zSign^=typeKeys[3*kPiece.t+kPiece.s]*boardKeys[kingTo];
+			this.zSign^=aGame.bKey(rPiece);
+			this.zSign^=aGame.bKey(kPiece);
 		}
 		
 		rPiece.p=rookTo;
@@ -517,6 +550,11 @@
 		kPiece.p=kingTo;
 		kPiece.m=true;
 		this.board[move.f]=-1;
+		
+		if(updateSign) {
+			this.zSign^=aGame.bKey(rPiece);
+			this.zSign^=aGame.bKey(kPiece);
+		}
 		
 		this.board[rookTo]=rPiece.i;
 		this.board[kingTo]=kPiece.i;
@@ -611,14 +649,16 @@
 		if(move.cg!==undefined)
 			this.cbApplyCastle(aGame,move,true);
 		else {
-			this.zSign^=typeKeys[3*piece.t+piece.s]*boardKeys[move.f];
+			this.zSign^=aGame.bKey(piece);
 			this.board[piece.p]=-1;
 			if(move.pr!==undefined) {
+				this.zSign^=aGame.tKey(piece);
 				piece.t=move.pr;
+				this.zSign^=aGame.tKey(piece);
 			}
 			if(move.c!=null) {
 				var piece1=this.pieces[move.c];
-				this.zSign^=typeKeys[3*piece1.t+piece1.s]*boardKeys[piece1.p];
+				this.zSign^=aGame.bKey(piece1);
 				this.board[piece1.p]=-1;
 				piece1.p=-1;
 				piece1.m=true;
@@ -630,7 +670,7 @@
 			piece.p=move.t;
 			piece.m=true;
 			this.board[move.t]=piece.i;
-			this.zSign^=typeKeys[3*piece.t+piece.s]*boardKeys[move.t];
+			this.zSign^=aGame.bKey(piece);
 			var royal = aGame.g.pTypes[piece.t].isKing;
 			if(royal)
 				this.kings[piece.s*royal]=move.t;
@@ -652,7 +692,7 @@
 			}
 		else
 			this.epTarget=null;
-		this.zSign^=2; // side-to-move key
+		this.zSign^=aGame.wKey(1); // side-to-move key
 		//this.cbIntegrity(aGame);
 	}
 
