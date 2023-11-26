@@ -1048,6 +1048,28 @@
 			},
 		},
 
+		"fr-proper-elephant": {
+			mesh: {
+				jsFile:"/res/fairy/elephant/proper-elephant.js"
+			},
+			materials: {
+				mat0: {
+					channels: {
+						diffuse: {
+							texturesImg: {
+								diffImg : "/res/fairy/elephant/elephant-diffusemap.jpg",
+							}
+						},
+						normal: {
+							texturesImg: {
+								normalImg: "/res/fairy/elephant/elephant-normalmap.jpg",
+							}
+						}
+					}
+				}
+			},
+		},
+
 		"fr-admiral": {
 			mesh: {
 				jsFile:"/res/fairy/admiral/admiral.js"
