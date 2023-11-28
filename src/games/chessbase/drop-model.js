@@ -144,7 +144,7 @@
 			var hand = Model.Game.hand[this.mWho][victim.t];
 			if(hand !== undefined) { // not all types have to go in hand!
 				victim.s *= -1;
-				this.zSign = aGame.zobrist.update(this.zSign,"board",victim.i,hand);
+				victim.p = hand; this.zSign ^= aGame.bKey(victim);
 				if(this.board[hand] >= 0) {
 					hand += this.mWho; ctr = counters[hand];
 					if(this.board[hand] >= 0) this.pieces[ctr].t++;
