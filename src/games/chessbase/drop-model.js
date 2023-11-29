@@ -62,7 +62,7 @@
 		for(var i in definition.pieceTypes) {
 			var pType = definition.pieceTypes[i];
 			demotedType = (pType.demoted===undefined ? i : pType.demoted); // can be 0!
-			Model.Game.demoted[i] = demotedType; // by default remains the same
+			Model.Game.demoted[i] = parseInt(demotedType); // by default remains the same
 			if(pType.hand !== undefined) { // assign a hand square to piece type
 				Model.Game.hand[ 1][i] = Model.Game.handLayout[ 1][pType.hand];
 				Model.Game.hand[-1][i] = Model.Game.handLayout[-1][pType.hand];
