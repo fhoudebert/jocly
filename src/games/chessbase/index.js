@@ -429,7 +429,7 @@ exports.games = (function () {
 	var modelScripts_13 = [
 		"base-model.js",
 		"grid-geo-model.js",
-		"shako-model.js"
+		"cazaux/shako-model.js"
 	]
 	var modelScripts_100 = [
 		"base-model.js",
@@ -531,7 +531,7 @@ exports.games = (function () {
 		"base-view.js",
 		"grid-board-view.js",
 		"fairy-set-view.js",
-		"shako-view.js"
+		"cazaux/shako-view.js"
 	]
 	var config_view_js_100 = [
 		"base-view.js",
@@ -884,13 +884,13 @@ exports.games = (function () {
 	var modelScripts_27 = [
 		"base-model.js",
 		"grid-geo-model.js",
-		"rollerball-model.js"
+		"cazaux/rollerball-model.js"
 	]
 	var config_view_js_27 = [
 		"base-view.js",
 		"grid-board-view.js",
 		"staunton-set-view.js",
-		"rollerball-view.js"
+		"cazaux/rollerball-view.js"
 	]
 	var modelScripts_28 = [
 		"base-model.js",
@@ -906,7 +906,7 @@ exports.games = (function () {
 	var modelScripts_29 = [
 		"base-model.js",
 		"grid-geo-model.js",
-		"metamachy-model.js"
+		"cazaux/metamachy-model.js"
 	]
 	var config_view_skins_preload_9 = [
 		"image|/res/images/cancel.png",
@@ -923,7 +923,7 @@ exports.games = (function () {
 		"base-view.js",
 		"grid-board-view.js",
 		"fairy-set-view.js",
-		"metamachy-view.js"
+		"cazaux/metamachy-view.js"
 	]
 	var modelScripts_30 = [
 		"base-model.js",
@@ -1197,24 +1197,24 @@ exports.games = (function () {
 	var modelScripts_tera = [
 		"base-model.js",
 		"grid-geo-model.js",
-		"terachess-model.js"
+		"cazaux/terachess-model.js"
 	]
 	var config_view_js_tera = [
 		"base-view.js",
 		"grid-board-view.js",
 		"fairy-set-view.js",
-		"terachess-view.js"
+		"cazaux/terachess-view.js"
 	]
 	var modelScripts_giga = [
 		"base-model.js",
 		"grid-geo-model.js",
-		"gigachess-model.js"
+		"cazaux/gigachess-model.js"
 	]
 	var config_view_js_giga = [
 		"base-view.js",
 		"grid-board-view.js",
 		"fairy-set-view.js",
-		"gigachess-view.js"
+		"cazaux/gigachess-view.js"
 	]
 	var modelScripts_lca = [
  		"base-model.js",
@@ -2313,22 +2313,22 @@ exports.games = (function () {
 					"title-en": "Shako",
 					"summary": "10x10 Chess",
 					"rules": {
-						"en": "shako-rules.html",
-						"fr": "shako-rules-fr.html"
+						"en": "cazaux/shako-rules.html",
+						"fr": "cazaux/shako-rules-fr.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
-					"thumbnail": "shako-thumb.png",
+					"thumbnail": "res/rules/shako/shako-thumb.png",
 					"released": 1396536978,
 					"credits": {
-						"en": "shako-credits.html",
-						"fr": "shako-credits-fr.html"
+						"en": "cazaux/shako-credits.html",
+						"fr": "cazaux/shako-credits-fr.html"
 					},
 					"gameOptions": config_model_gameOptions_2,
 					"js": modelScripts_13,
 					"description": {
-						"en": "shako-description.html",
-						"fr": "shako-description-fr.html"
+						"en": "cazaux/shako-description.html",
+						"fr": "cazaux/shako-description-fr.html"
 					},
 					"levels": config_model_levels_15
 				},
@@ -3325,14 +3325,14 @@ exports.games = (function () {
 					"title-en": "Rollerball Chess",
 					"summary": "Chess variant on an unusual board",
 					"rules": {
-						"en": "rollerball-rules.html"
+						"en": "cazaux/rollerball-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
-					"thumbnail": "rollerball-thumb.png",
+					"thumbnail": "res/rules/rollerball/rollerball-thumb.png",
 					"released": 1397141778,
 					"credits": {
-						"en": "rollerball-credits.html"
+						"en": "cazaux/rollerball-credits.html"
 					},
 					"gameOptions": {
 						"preventRepeat": true,
@@ -3356,7 +3356,7 @@ exports.games = (function () {
 					"obsolete": false,
 					"js": modelScripts_27,
 					"description": {
-						"en": "rollerball-description.html"
+						"en": "cazaux/rollerball-description.html"
 					},
 					"levels": config_model_levels_5
 				},
@@ -3478,20 +3478,20 @@ exports.games = (function () {
 					"title-en": "Metamachy",
 					"summary": "Chess on 12x12 with fairy pieces",
 					"rules": {
-						"en": "metamachy-rules.html"
+						"en": "cazaux/metamachy-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
-					"thumbnail": "metamachy-thumb.png",
+					"thumbnail": "res/rules/metamachy/metamachy-thumb.png",
 					"released": 1402412178,
 					"credits": {
-						"en": "metamachy-credits.html"
+						"en": "cazaux/metamachy-credits.html"
 					},
 					"gameOptions": config_model_gameOptions,
 					"obsolete": false,
 					"js": modelScripts_29,
 					"description": {
-						"en": "metamachy-description.html"
+						"en": "cazaux/metamachy-description.html"
 					},
 					"levels": config_model_levels_15
 				},
@@ -5040,20 +5040,20 @@ exports.games = (function () {
 					"title-en": "Terachess",
 					"summary": "Chess on 16x16 with fairy pieces",
 					"rules": {
-						"en": "terachess-rules.html"
+						"en": "cazaux/terachess-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
-					"thumbnail": "terachess-thumb.png",
+					"thumbnail": "res/rules/terachess/terachess-thumb.png",
 					"released": 1497442763,
 					"credits": {
-						"en": "terachess-credits.html"
+						"en": "cazaux/terachess-credits.html"
 					},
 					"gameOptions": config_model_gameOptions,
 					"obsolete": false,
 					"js": modelScripts_tera,
 					"description": {
-						"en": "terachess-description.html"
+						"en": "cazaux/terachess-description.html"
 					},
 					"levels": config_model_levels_15
 				},
@@ -5177,20 +5177,20 @@ exports.games = (function () {
 					"title-en": "Gigachess",
 					"summary": "Chess on 14x14 with fairy pieces",
 					"rules": {
-						"en": "gigachess-rules.html"
+						"en": "cazaux/gigachess-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
-					"thumbnail": "gigachess-thumb.png",
+					"thumbnail": "res/rules/gigachess/gigachess-thumb.png",
 					"released": 1497771910,
 					"credits": {
-						"en": "gigachess-credits.html"
+						"en": "cazaux/gigachess-credits.html"
 					},
 					"gameOptions": config_model_gameOptions,
 					"obsolete": false,
 					"js": modelScripts_giga,
 					"description": {
-						"en": "gigachess-description.html"
+						"en": "cazaux/gigachess-description.html"
 					},
 					"levels": config_model_levels_15
 				},
@@ -5302,11 +5302,11 @@ exports.games = (function () {
 					"title-en": "LeyChessAlpha",
 					"summary": "Chess on 12x12 with fairy pieces",
 					"rules": {
-						"en": "metamachy-rules.html"
+						"en": "cazaux/metamachy-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
-					"thumbnail": "metamachy-thumb.png",
+					"thumbnail": "res/rules/metamachy/metamachy-thumb.png",
 					"released": 1402412178,
 					"credits": {
 						"en": "leychessalpha-credits.html"
