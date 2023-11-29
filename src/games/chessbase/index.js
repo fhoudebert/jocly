@@ -928,7 +928,7 @@ exports.games = (function () {
 	var modelScripts_30 = [
 		"base-model.js",
 		"grid-geo-model.js",
-		"capablanca-model.js"
+		"capa10x8/capablanca-model.js"
 	]
 	var config_view_skins_preload_10 = [
 		"smoothedfilegeo|0|/res/ring-target.js",
@@ -975,17 +975,17 @@ exports.games = (function () {
 		"base-view.js",
 		"grid-board-view.js",
 		"fairy-set-view.js",
-		"capablanca-view.js"
+		"capa10x8/capablanca-view.js"
 	]
 	var modelScripts_31 = [
 		"base-model.js",
 		"grid-geo-model.js",
-		"carrera-model.js"
+		"capa10x8/carrera-model.js"
 	]
 	var modelScripts_32 = [
 		"base-model.js",
 		"grid-geo-model.js",
-		"gothic-model.js"
+		"capa10x8/gothic-model.js"
 	]
 	var modelScripts_33 = [
 		"base-model.js",
@@ -1148,18 +1148,18 @@ exports.games = (function () {
 	var modelScripts_45 = [
 		"base-model.js",
 		"grid-geo-model.js",
-		"kaisergame-model.js"
+		"tressau/kaisergame-model.js"
 	]
 	var modelScripts_46 = [
 		"base-model.js",
 		"grid-geo-model.js",
-		"sultangame-model.js"
+		"tressau/sultangame-model.js"
 	]
 	var config_view_js_41 = [
 		"base-view.js",
 		"grid-board-view.js",
 		"fairy-set-view.js",
-		"sultangame-view.js"
+		"tressau/sultangame-view.js"
 	]
 	var modelScripts_47 = [
 		"base-model.js",
@@ -3579,20 +3579,20 @@ exports.games = (function () {
 					"title-en": "Capablanca Chess",
 					"summary": "Chess on 10x8 (1920)",
 					"rules": {
-						"en": "capablanca-rules.html"
+						"en": "capa10x8/capablanca-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
-					"thumbnail": "capablanca-thumb.png",
+					"thumbnail": "res/rules/capablanca/capablanca-thumb.png",
 					"released": 1404893076,
 					"credits": {
-						"en": "capablanca-credits.html"
+						"en": "capa10x8/capablanca-credits.html"
 					},
 					"gameOptions": config_model_gameOptions,
 					"obsolete": false,
 					"js": modelScripts_30,
 					"description": {
-						"en": "capablanca-description.html"
+						"en": "capa10x8/capablanca-description.html"
 					},
 					"levels": config_model_levels_5
 				},
@@ -3630,20 +3630,20 @@ exports.games = (function () {
 					"title-en": "Carerra Chess",
 					"summary": "Chess on 10x8 (1617)",
 					"rules": {
-						"en": "carrera-rules.html"
+						"en": "capa10x8/carrera-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
-					"thumbnail": "carrera-thumb.png",
+					"thumbnail": "res/rules/carrera/carrera-thumb.png",
 					"released": 1404916434,
 					"credits": {
-						"en": "carrera-credits.html"
+						"en": "capa10x8/carrera-credits.html"
 					},
 					"gameOptions": config_model_gameOptions,
 					"obsolete": false,
 					"js": modelScripts_31,
 					"description": {
-						"en": "carrera-description.html"
+						"en": "capa10x8/carrera-description.html"
 					},
 					"levels": config_model_levels_5
 				},
@@ -3681,20 +3681,20 @@ exports.games = (function () {
 					"title-en": "Gothic Chess",
 					"summary": "Chess on 10x8 (2000)",
 					"rules": {
-						"en": "gothic-rules.html"
+						"en": "capa10x8/gothic-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
-					"thumbnail": "gothic-thumb.png",
+					"thumbnail": "res/rules/gothic/gothic-thumb.png",
 					"released": 1404982805,
 					"credits": {
-						"en": "gothic-credits.html"
+						"en": "capa10x8/gothic-credits.html"
 					},
 					"gameOptions": config_model_gameOptions,
 					"obsolete": false,
 					"js": modelScripts_32,
 					"description": {
-						"en": "gothic-description.html"
+						"en": "capa10x8/gothic-description.html"
 					},
 					"levels": config_model_levels_5
 				},
@@ -4619,20 +4619,20 @@ exports.games = (function () {
 					"title-en": "Kaiserspiel",
 					"summary": "Tressau, 1840",
 					"rules": {
-						"en": "kaisergame-rules.html"
+						"en": "tressau/kaisergame-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
-					"thumbnail": "kaisergame-thumb.png",
+					"thumbnail": "res/rules/tressau/kaisergame-thumb.png",
 					"released": 1405068611,
 					"credits": {
-						"en": "kaisergame-credits.html"
+						"en": "tressau/kaisergame-credits.html"
 					},
 					"gameOptions": config_model_gameOptions,
 					"obsolete": false,
 					"js": modelScripts_45,
 					"description": {
-						"en": "kaisergame-description.html"
+						"en": "tressau/kaisergame-description.html"
 					},
 					"levels": config_model_levels_5
 				},
@@ -4708,20 +4708,20 @@ exports.games = (function () {
 					"title-en": "Sultanspiel",
 					"summary": "Tressau, 1840",
 					"rules": {
-						"en": "sultangame-rules.html"
+						"en": "tressau/sultangame-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
-					"thumbnail": "sultangame-thumb.png",
+					"thumbnail": "res/rules/tressau/sultangame-thumb.png",
 					"released": 1405068612,
 					"credits": {
-						"en": "sultangame-credits.html"
+						"en": "tressau/sultangame-credits.html"
 					},
 					"gameOptions": config_model_gameOptions,
 					"obsolete": false,
 					"js": modelScripts_46,
 					"description": {
-						"en": "sultangame-description.html"
+						"en": "tressau/sultangame-description.html"
 					},
 					"levels": config_model_levels_5
 				},
