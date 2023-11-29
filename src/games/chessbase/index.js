@@ -755,13 +755,13 @@ exports.games = (function () {
 	var modelScripts_19 = [
 		"base-model.js",
 		"hex-geo-model.js",
-		"devasa-model.js"
+		"hex/devasa-model.js"
 	]
 	var config_view_js_19 = [
 		"base-view.js",
 		"hex-board-view.js",
 		"staunton-set-view.js",
-		"devasa-view.js"
+		"hex/devasa-view.js"
 	]
 	var modelScripts_20 = [
 		"base-model.js",
@@ -2744,20 +2744,20 @@ exports.games = (function () {
 					"title-en": "De Vasa Chess",
 					"summary": "Hexagonal Chess",
 					"rules": {
-						"en": "devasa-rules.html"
+						"en": "hex/devasa-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
-					"thumbnail": "devasa-thumb.png",
+					"thumbnail": "res/rules/devasa/devasa-thumb.png",
 					"released": 1403189777,
 					"credits": {
-						"en": "devasa-credits.html"
+						"en": "hex/devasa-credits.html"
 					},
 					"gameOptions": config_model_gameOptions,
 					"obsolete": false,
 					"js": modelScripts_19,
 					"description": {
-						"en": "devasa-description.html"
+						"en": "hex/devasa-description.html"
 					},
 					"levels": config_model_levels_15
 				},
