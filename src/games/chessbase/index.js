@@ -777,7 +777,7 @@ exports.games = (function () {
 	var modelScripts_21 = [
 		"base-model.js",
 		"hex-geo-model.js",
-		"shafran-model.js"
+		"hex/shafran-model.js"
 	]
 	var config_view_skins_preload_8 = [
 		"smoothedfilegeo|0|/res/ring-target-cylinder-v3.js",
@@ -806,7 +806,7 @@ exports.games = (function () {
 		"base-view.js",
 		"hex-board-view.js",
 		"staunton-set-view.js",
-		"shafran-view.js"
+		"hex/shafran-view.js"
 	]
 	var modelScripts_22 = [
 		"base-model.js",
@@ -2864,20 +2864,20 @@ exports.games = (function () {
 					"title-en": "Shafran Chess",
 					"summary": "Hexagonal Chess",
 					"rules": {
-						"en": "shafran-rules.html"
+						"en": "hex/shafran-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
-					"thumbnail": "shafran-thumb.png",
+					"thumbnail": "res/rules/shafran/shafran-thumb.png",
 					"released": 1403535378,
 					"credits": {
-						"en": "shafran-credits.html"
+						"en": "hex/shafran-credits.html"
 					},
 					"gameOptions": config_model_gameOptions,
 					"obsolete": false,
 					"js": modelScripts_21,
 					"description": {
-						"en": "shafran-description.html"
+						"en": "hex/shafran-description.html"
 					},
 					"levels": config_model_levels_15
 				},
