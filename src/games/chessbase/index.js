@@ -238,7 +238,7 @@ exports.games = (function () {
 	var modelScripts_3 = [
 		"base-model.js",
 		"grid-geo-model.js",
-		"gardner-model.js"
+		"mini/gardner-model.js"
 	]
 	var config_view_skins_2 = {
 		"name": "skin2d",
@@ -254,62 +254,62 @@ exports.games = (function () {
 		"base-view.js",
 		"grid-board-view.js",
 		"staunton-set-view.js",
-		"gardner-view.js"
+		"mini/gardner-view.js"
 	]
 	var modelScripts_4 = [
 		"base-model.js",
 		"grid-geo-model.js",
-		"mini4x4-model.js"
+		"mini/mini4x4-model.js"
 	]
 	var config_view_js_4 = [
 		"base-view.js",
 		"grid-board-view.js",
 		"staunton-set-view.js",
-		"mini4x4-view.js"
+		"mini/mini4x4-view.js"
 	]
 	var modelScripts_5 = [
 		"base-model.js",
 		"grid-geo-model.js",
-		"mini4x5-model.js"
+		"mini/mini4x5-model.js"
 	]
 	var config_view_js_5 = [
 		"base-view.js",
 		"grid-board-view.js",
 		"staunton-set-view.js",
-		"mini4x5-view.js"
+		"mini/mini4x5-view.js"
 	]
 	var modelScripts_6 = [
 		"base-model.js",
 		"grid-geo-model.js",
-		"micro4x5-model.js"
+		"mini/micro4x5-model.js"
 	]
 	var config_view_js_6 = [
 		"base-view.js",
 		"grid-board-view.js",
 		"staunton-set-view.js",
-		"micro4x5-view.js"
+		"mini/micro4x5-view.js"
 	]
 	var modelScripts_7 = [
 		"base-model.js",
 		"grid-geo-model.js",
-		"baby-model.js"
+		"mini/baby-model.js"
 	]
 	var config_view_js_7 = [
 		"base-view.js",
 		"grid-board-view.js",
 		"staunton-set-view.js",
-		"baby-view.js"
+		"mini/baby-view.js"
 	]
 	var modelScripts_8 = [
 		"base-model.js",
 		"grid-geo-model.js",
-		"malett-model.js"
+		"mini/malett-model.js"
 	]
 	var config_view_js_8 = [
 		"base-view.js",
 		"grid-board-view.js",
 		"staunton-set-view.js",
-		"malett-view.js"
+		"mini/malett-view.js"
 	]
 	var modelScripts_9 = [
 		"base-model.js",
@@ -325,13 +325,13 @@ exports.games = (function () {
 	var modelScripts_10 = [
 		"base-model.js",
 		"grid-geo-model.js",
-		"attack-model.js"
+		"mini/attack-model.js"
 	]
 	var config_view_js_10 = [
 		"base-view.js",
 		"grid-board-view.js",
 		"staunton-set-view.js",
-		"attack-view.js"
+		"mini/attack-view.js"
 	]
 	var modelScripts_11 = [
 		"base-model.js",
@@ -1707,21 +1707,21 @@ exports.games = (function () {
 					"title-en": "Gardner MiniChess",
 					"summary": "Gardner 5x5 minichess (1969)",
 					"rules": {
-						"en": "gardner-rules.html"
+						"en": "mini/gardner-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
-					"thumbnail": "gardner-thumb.png",
+					"thumbnail": "res/rules/mini/gardner-thumb.png",
 					"released": 1398178578,
 					"credits": {
-						"en": "gardner-credits.html"
+						"en": "mini/gardner-credits.html"
 					},
 					"gameOptions": config_model_gameOptions_2,
 					"obsolete": false,
 					"js": modelScripts_3,
 					"levels": config_model_levels_5,
 					"description": {
-						"en": "gardner-description.html"
+						"en": "mini/gardner-description.html"
 					}
 				},
 				"view": {
@@ -1758,21 +1758,21 @@ exports.games = (function () {
 					"title-en": "Mini Chess 4x4",
 					"summary": "4x4 mini chess variant",
 					"rules": {
-						"en": "mini4x4-rules.html"
+						"en": "mini/mini4x4-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
-					"thumbnail": "mini4x4-thumb.png",
+					"thumbnail": "res/rules/mini/mini4x4-thumb.png",
 					"released": 1398178577,
 					"credits": {
-						"en": "mini4x4-credits.html"
+						"en": "mini/mini4x4-credits.html"
 					},
 					"gameOptions": config_model_gameOptions_2,
 					"obsolete": false,
 					"js": modelScripts_4,
 					"levels": config_model_levels_5,
 					"description": {
-						"en": "mini4x4-description.html"
+						"en": "mini/mini4x4-description.html"
 					}
 				},
 				"view": {
@@ -1809,21 +1809,21 @@ exports.games = (function () {
 					"title-en": "Mini Chess 4x5",
 					"summary": "4x5 mini chess variant",
 					"rules": {
-						"en": "mini4x5-rules.html"
+						"en": "mini/mini4x5-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
-					"thumbnail": "mini4x5-thumb.png",
+					"thumbnail": "res/rules/mini/mini4x5-thumb.png",
 					"released": 1398178576,
 					"credits": {
-						"en": "mini4x5-credits.html"
+						"en": "mini/mini4x5-credits.html"
 					},
 					"gameOptions": config_model_gameOptions_2,
 					"obsolete": false,
 					"js": modelScripts_5,
 					"levels": config_model_levels_5,
 					"description": {
-						"en": "mini4x5-description.html"
+						"en": "mini/mini4x5-description.html"
 					}
 				},
 				"view": {
@@ -1860,21 +1860,21 @@ exports.games = (function () {
 					"title-en": "Micro Chess",
 					"summary": "4x5 chess variant by Glimne (1997)",
 					"rules": {
-						"en": "micro4x5-rules.html"
+						"en": "mini/micro4x5-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
-					"thumbnail": "micro4x5-thumb.png",
+					"thumbnail": "res/rules/mini/micro4x5-thumb.png",
 					"released": 1398178575,
 					"credits": {
-						"en": "micro4x5-credits.html"
+						"en": "mini/micro4x5-credits.html"
 					},
 					"gameOptions": config_model_gameOptions_2,
 					"obsolete": false,
 					"js": modelScripts_6,
 					"levels": config_model_levels_5,
 					"description": {
-						"en": "micro4x5-description.html"
+						"en": "mini/micro4x5-description.html"
 					}
 				},
 				"view": {
@@ -1911,21 +1911,21 @@ exports.games = (function () {
 					"title-en": "Baby Chess",
 					"summary": "5x5 Baby chess",
 					"rules": {
-						"en": "baby-rules.html"
+						"en": "mini/baby-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
-					"thumbnail": "baby-thumb.png",
+					"thumbnail": "res/rules/mini/baby-thumb.png",
 					"released": 1398178574,
 					"credits": {
-						"en": "baby-credits.html"
+						"en": "mini/baby-credits.html"
 					},
 					"gameOptions": config_model_gameOptions_2,
 					"obsolete": false,
 					"js": modelScripts_7,
 					"levels": config_model_levels_5,
 					"description": {
-						"en": "baby-description.html"
+						"en": "mini/baby-description.html"
 					}
 				},
 				"view": {
@@ -1962,21 +1962,21 @@ exports.games = (function () {
 					"title-en": "Malett Chess",
 					"summary": "5x5 chess variant by Jeff Malett",
 					"rules": {
-						"en": "malett-rules.html"
+						"en": "mini/malett-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
-					"thumbnail": "malett-thumb.png",
+					"thumbnail": "res/rules/mini/malett-thumb.png",
 					"released": 1398178573,
 					"credits": {
-						"en": "malett-credits.html"
+						"en": "mini/malett-credits.html"
 					},
 					"gameOptions": config_model_gameOptions_2,
 					"obsolete": false,
 					"js": modelScripts_8,
 					"levels": config_model_levels_5,
 					"description": {
-						"en": "malett-description.html"
+						"en": "mini/malett-description.html"
 					}
 				},
 				"view": {
@@ -2064,21 +2064,21 @@ exports.games = (function () {
 					"title-en": "Chess Attack",
 					"summary": "5x6 chess variant",
 					"rules": {
-						"en": "attack-rules.html"
+						"en": "mini/attack-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
-					"thumbnail": "attack-thumb.png",
+					"thumbnail": "res/rules/mini/attack-thumb.png",
 					"released": 1398178572,
 					"credits": {
-						"en": "attack-credits.html"
+						"en": "mini/attack-credits.html"
 					},
 					"gameOptions": config_model_gameOptions_2,
 					"obsolete": false,
 					"js": modelScripts_10,
 					"levels": config_model_levels_5,
 					"description": {
-						"en": "attack-description.html"
+						"en": "mini/attack-description.html"
 					}
 				},
 				"view": {
