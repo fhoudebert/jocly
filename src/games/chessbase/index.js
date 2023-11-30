@@ -623,19 +623,19 @@ exports.games = (function () {
 	var modelScripts_15 = [
 		"base-model.js",
 		"grid-geo-model.js",
-		"basic-model.js"
+		"famous/basic-model.js"
 	]
 	var config_model_rules = {
-		"en": "rules.html"
+		"en": "famous/rules.html"
 	}
 	var config_model_credits = {
-		"en": "credits.html"
+		"en": "famous/credits.html"
 	}
 	var config_view_js_15 = [
 		"base-view.js",
 		"grid-board-view.js",
 		"staunton-set-view.js",
-		"basic-view.js"
+		"famous/basic-view.js"
 	]
 	var config_view_skins_preload_4 = [
 	]
@@ -2477,7 +2477,7 @@ exports.games = (function () {
 					"rules": config_model_rules,
 					"module": "chessbase",
 					"plazza": "true",
-					"thumbnail": "knight-thumbnail.png",
+					"thumbnail": "res/rules/famous/knight-thumbnail.png",
 					"released": 1389887778,
 					"credits": config_model_credits,
 					"gameOptions": config_model_gameOptions,
