@@ -444,7 +444,7 @@ exports.games = (function () {
 	var modelScripts_102 = [
 		"base-model.js",
 		"grid-geo-model.js",
-		"elven-model.js"
+		"decimal/elven-model.js"
 	]
 	var modelScripts_103 = [
 		"base-model.js",
@@ -454,7 +454,7 @@ exports.games = (function () {
 	var modelScripts_104 = [
 		"base-model.js",
 		"grid-geo-model.js",
-		"scirocco-model.js"
+		"decimal/scirocco-model.js"
 	]
 	var modelScripts_105 = [
 		"base-model.js",
@@ -551,7 +551,7 @@ exports.games = (function () {
 		"grid-board-view.js",
 		"fairy-set-view.js",
 		"multi-leg-view.js",
-		"elven-view.js"
+		"decimal/elven-view.js"
 	]
 	var config_view_js_103 = [
 		"base-view.js",
@@ -564,7 +564,7 @@ exports.games = (function () {
 		"grid-board-view.js",
 		"fairy-set-view.js",
 		"multi-leg-view.js",
-		"scirocco-view.js"
+		"decimal/scirocco-view.js"
 	]
 	var config_view_js_105 = [
 		"base-view.js",
@@ -1033,13 +1033,13 @@ exports.games = (function () {
 	var modelScripts_34 = [
 		"base-model.js",
 		"grid-geo-model.js",
-		"grand-model.js"
+		"decimal/grand-model.js"
 	]
 	var config_view_js_31 = [
 		"base-view.js",
 		"grid-board-view.js",
 		"fairy-set-view.js",
-		"grand-view.js"
+		"decimal/grand-view.js"
 	]
 	var modelScripts_35 = [
 		"base-model.js",
@@ -1137,13 +1137,13 @@ exports.games = (function () {
 	var modelScripts_44 = [
 		"base-model.js",
 		"grid-geo-model.js",
-		"hyderabad-model.js"
+		"decimal/hyderabad-model.js"
 	]
 	var config_view_js_40 = [
 		"base-view.js",
 		"grid-board-view.js",
 		"fairy-set-view.js",
-		"hyderabad-view.js"
+		"decimal/hyderabad-view.js"
 	]
 	var modelScripts_45 = [
 		"base-model.js",
@@ -3783,20 +3783,20 @@ exports.games = (function () {
 					"title-en": "Grand Chess",
 					"summary": "Chess on 10x10 (1984)",
 					"rules": {
-						"en": "grand-rules.html"
+						"en": "decimal/grand-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
-					"thumbnail": "grand-thumb.png",
+					"thumbnail": "res/rules/decimal/grand-thumb.png",
 					"released": 1404985842,
 					"credits": {
-						"en": "grand-credits.html"
+						"en": "decimal/grand-credits.html"
 					},
 					"gameOptions": config_model_gameOptions,
 					"obsolete": false,
 					"js": modelScripts_34,
 					"description": {
-						"en": "grand-description.html"
+						"en": "decimal/grand-description.html"
 					},
 					"levels": config_model_levels_5
 				},
@@ -4527,20 +4527,20 @@ exports.games = (function () {
 					"title-en": "Hyderabad Decimal Chess",
 					"summary": "Shir Muhammad Khan Iman, 1797-1798",
 					"rules": {
-						"en": "hyderabad-rules.html"
+						"en": "decimal/hyderabad-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
-					"thumbnail": "hyderabad-thumb.png",
+					"thumbnail": "res/rules/decimal/hyderabad-thumb.png",
 					"released": 1405068610,
 					"credits": {
-						"en": "hyderabad-credits.html"
+						"en": "decimal/hyderabad-credits.html"
 					},
 					"gameOptions": config_model_gameOptions,
 					"obsolete": false,
 					"js": modelScripts_44,
 					"description": {
-						"en": "hyderabad-description.html"
+						"en": "decimal/hyderabad-description.html"
 					},
 					"levels": config_model_levels_5
 				},
@@ -6748,19 +6748,19 @@ exports.games = (function () {
 					"title-en": "Elven Chess",
 					"summary": "10x10 variant with double-capturing super-piece",
 					"rules": {
-						"en": "elven-rules.html"
+						"en": "decimal/elven-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
-					"thumbnail": "elven-thumb.png",
+					"thumbnail": "res/rules/elven/elven-thumb.png",
 					"released": 1396536978,
 					"credits": {
-						"en": "elven-credits.html"
+						"en": "decimal/elven-credits.html"
 					},
 					"gameOptions": config_model_gameOptions_2,
 					"js": modelScripts_102,
 					"description": {
-						"en": "elven-description.html"
+						"en": "decimal/elven-description.html"
 					},
 					"levels": config_model_levels_15
 				},
@@ -6876,19 +6876,19 @@ exports.games = (function () {
 					"title-en": "Scirocco",
 					"summary": "10x10 variant with weak but promoting pieces",
 					"rules": {
-						"en": "scirocco-rules.html"
+						"en": "decimal/scirocco-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
 					"thumbnail": "res/rules/scirocco/scirocco-thumb.png",
 					"released": 1396536978,
 					"credits": {
-						"en": "scirocco-credits.html"
+						"en": "decimal/scirocco-credits.html"
 					},
 					"gameOptions": config_model_gameOptions_2,
 					"js": modelScripts_104,
 					"description": {
-						"en": "scirocco-description.html"
+						"en": "decimal/scirocco-description.html"
 					},
 					"levels": config_model_levels_15
 				},
