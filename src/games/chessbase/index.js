@@ -2224,7 +2224,7 @@ exports.games = (function () {
 					},
 					"module": "chessbase",
 					"plazza": "true",
-					"thumbnail": "mk-thumb.png",
+					"thumbnail": "res/rules/makruk/mk-thumb.png",
 					"released": 1393948578,
 					"credits": {
 						"en": "famous/mk-credits.html"
