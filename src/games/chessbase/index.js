@@ -990,7 +990,7 @@ exports.games = (function () {
 	var modelScripts_33 = [
 		"base-model.js",
 		"grid-geo-model.js",
-		"janus-model.js"
+		"capa10x8/janus-model.js"
 	]
 	var config_view_skins_preload_11 = [
 		"smoothedfilegeo|0|/res/ring-target.js",
@@ -3732,20 +3732,20 @@ exports.games = (function () {
 					"title-en": "Janus Chess",
 					"summary": "Chess on 10x8 (1978)",
 					"rules": {
-						"en": "janus-rules.html"
+						"en": "capa10x8/janus-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
-					"thumbnail": "janus-thumb.png",
+					"thumbnail": "res/rules/janus/janus-thumb.png",
 					"released": 1404997707,
 					"credits": {
-						"en": "janus-credits.html"
+						"en": "capa10x8/janus-credits.html"
 					},
 					"gameOptions": config_model_gameOptions,
 					"obsolete": false,
 					"js": modelScripts_33,
 					"description": {
-						"en": "janus-description.html"
+						"en": "capa10x8/janus-description.html"
 					},
 					"levels": config_model_levels_5
 				},
