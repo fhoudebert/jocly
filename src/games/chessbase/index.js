@@ -1231,13 +1231,13 @@ exports.games = (function () {
 	var modelScripts_wtamerlane = [
  		"base-model.js",
  		"grid-geo-model.js",
- 		"wild-tamerlane-model.js"
+ 		"cazaux/wild-tamerlane-model.js"
  	]
  	var config_view_js_wtamerlane = [
  		"base-view.js",
  		"grid-board-view.js",
  		"fairy-set-view.js",
- 		"wild-tamerlane-view.js"
+ 		"cazaux/wild-tamerlane-view.js"
  	]
 	var modelScripts_fantasticXIII = [
  		"base-model.js",
@@ -6291,7 +6291,6 @@ exports.games = (function () {
  			},
  			"viewScripts": config_view_js_babur
   		},
-,
 		{
  			"name": "wild-mirza-chess",
  			"modelScripts": modelScripts_wmirza,
@@ -6396,7 +6395,7 @@ exports.games = (function () {
  			},
  			"viewScripts": config_view_js_wmirza
   		},
-	{
+		{
  			"name": "babur-chess",
  			"modelScripts": modelScripts_babur,
  			"config": {
@@ -6496,7 +6495,6 @@ exports.games = (function () {
  			},
  			"viewScripts": config_view_js_babur
   		},
-	
 		{
 			"name": "zanzibar-s-chess",
 			"modelScripts": modelScripts_zanzibars,
