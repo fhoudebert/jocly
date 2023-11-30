@@ -78,6 +78,8 @@
 		return {
 			
 			geometry: geometry,
+
+			zobrist: "old",
 			
 			pieceTypes: {
 
