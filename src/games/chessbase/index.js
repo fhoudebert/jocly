@@ -314,13 +314,13 @@ exports.games = (function () {
 	var modelScripts_9 = [
 		"base-model.js",
 		"grid-geo-model.js",
-		"los-alamos-model.js"
+		"mini/los-alamos-model.js"
 	]
 	var config_view_js_9 = [
 		"base-view.js",
 		"grid-board-view.js",
 		"staunton-set-view.js",
-		"los-alamos-view.js"
+		"mini/los-alamos-view.js"
 	]
 	var modelScripts_10 = [
 		"base-model.js",
@@ -2013,21 +2013,21 @@ exports.games = (function () {
 					"title-en": "Los Alamos Chess",
 					"summary": "6x6 chess variant",
 					"rules": {
-						"en": "los-alamos-rules.html"
+						"en": "mini/los-alamos-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
-					"thumbnail": "los-alamos-thumb.png",
+					"thumbnail": "res/rules/mini/los-alamos-thumb.png",
 					"released": 1398178573,
 					"credits": {
-						"en": "los-alamos-credits.html"
+						"en": "mini/los-alamos-credits.html"
 					},
 					"gameOptions": config_model_gameOptions_2,
 					"obsolete": false,
 					"js": modelScripts_9,
 					"levels": config_model_levels_5,
 					"description": {
-						"en": "los-alamos-description.html"
+						"en": "mini/los-alamos-description.html"
 					}
 				},
 				"view": {
