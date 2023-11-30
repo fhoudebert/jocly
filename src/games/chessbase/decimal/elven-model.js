@@ -245,7 +245,7 @@
 	Model.Board.ApplyMove = function(aGame,move) {
 		if(move.via !== undefined) { // locust capture, remove victim
 			var piece1=this.pieces[move.kill];
-			this.zSign=aGame.zobrist.update(this.zSign,"board",piece1.i,piece1.p);
+			this.zSign^=aGame.bKey(piece1);
 			this.board[piece1.p]=-1;
 			piece1.p=-1;
 			piece1.m=true;
