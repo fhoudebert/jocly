@@ -9,7 +9,8 @@
 	var s = this.cbConstants.FLAG_STOP;
 	var m = this.cbConstants.FLAG_MOVE;
 	var c = this.cbConstants.FLAG_CAPTURE;
-	var sc = this.cbConstants.FLAG_CAPTURE_SELF;
+	var sc = this.cbConstants.FLAG_SPECIAL_CAPTURE;
+	var sd = this.cbConstants.FLAG_CAPTURE_SELF;
 	var se = this.cbConstants.FLAG_SPECIAL;
 
 	function Rotate(vec, n) { // calculate queen step 'rotated' over n*45 degrees
@@ -27,7 +28,7 @@
 			for(var j=0; j<4; j++) result.push(Rotate(dirSet[i],2*j));
 		}
 		return result;
-  }
+	}
 
 	var king = All4([[1,0],[1,1]]);
 	var alibaba = All4([[2,0],[2,2]]);
@@ -246,7 +247,7 @@
 					aspect: 'fr-star',
 					graph: this.cbMergeGraphs(geometry,
 						this.cbShortRangeGraph(geometry, alibaba),
-						this.cbShortRangeGraph(geometry, [[0,0]], null, sc | 0x4000000)
+						this.cbShortRangeGraph(geometry, [[0,0]], null, sd | 0x4000000)
 					),
 					value: 3,
 					abbrev: 'Dv',
@@ -424,7 +425,7 @@
 				35: {
 					name: 'harpy',
 					aspect: 'fr-amazon',
-					graph: this.cbLongRangeGraph(geometry, king, null, m|sc|0x8000000, 3),
+					graph: this.cbLongRangeGraph(geometry, king, null, m|sd|0x8000000, 3),
 					value: 5,
 					abbrev: 'H',
 				},
@@ -554,7 +555,7 @@
 			this.noCaptCount=0;
 			this.kings[2*piece1.s]--;
 		}
-    if(move.c) this.kings[-2*this.mWho]--;
+		if(move.c) this.kings[-2*this.mWho]--;
 		OriginalApplyMove.apply(this, arguments);
 	}
 
@@ -563,7 +564,7 @@
 	var OriginalQuickApply = Model.Board.cbQuickApply;
 	Model.Board.cbQuickApply = function(aGame,move) {
 		var tmp = OriginalQuickApply.apply(this, arguments);
-    victim = move.c;
+		victim = move.c;
 		if(move.via !== undefined) { // remove locust victim
 			this.board[move.via] = -1;
 			this.pieces[move.kill].p = -1;
