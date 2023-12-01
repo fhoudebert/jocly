@@ -11,8 +11,9 @@
 	var FLAG_CAPTURE_KING = 0x100000; // capture if occupied by enemy king
 	var FLAG_CAPTURE_NO_KING = 0x200000; // capture if not occupied by enemy king
 	var FLAG_SPECIAL = 0x400000; // non-captures to go on special move stack
-	var FLAG_CAPTURE_SELF = 0x800000; // special move to square occupied by any
-  var FLAG_THREAT = 0x1000000; // forces inclusion in threat graph
+	var FLAG_CAPTURE_SELF = 0x800000; // special move to square occupied by friend
+	var FLAG_SPECIAL_CAPTURE = 0x2000000; // special move to square occupied by foe
+	var FLAG_THREAT = 0x1000000; // forces inclusion in threat graph
 	Model.Game.cbConstants = {
 		MASK: MASK,
 		FLAG_MOVE: FLAG_MOVE,
@@ -23,6 +24,7 @@
 		FLAG_CAPTURE_NO_KING: FLAG_CAPTURE_NO_KING,
 		FLAG_SPECIAL: FLAG_SPECIAL,
 		FLAG_CAPTURE_SELF: FLAG_CAPTURE_SELF,
+		FLAG_SPECIAL_CAPTURE: FLAG_SPECIAL_CAPTURE,
 		FLAG_THREAT: FLAG_THREAT,
 	}
 	var USE_TYPED_ARRAYS = typeof Int32Array != "undefined";
@@ -947,7 +949,8 @@
 									a: pType.abbrev,
 									ep: index1<0,
 								});
-						} else if(tg1 & FLAG_CAPTURE_SELF)
+						} else if(tg1 & (FLAG_CAPTURE_SELF | FLAG_SPECIAL_CAPTURE)) {
+							if(tg1 & (piece1.s==piece.s ? FLAG_CAPTURE_SELF : FLAG_SPECIAL_CAPTURE))
 							this.specials.push({
 								f: piece.p,
 								t: pos1,
@@ -955,6 +958,7 @@
 								a: pType.abbrev,
 								x: tg1
 							});
+						}
 						break;
 					}
 					lastPos=pos1;
