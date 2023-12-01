@@ -5,7 +5,7 @@
 	
 	Model.Game.cbDefine = function() {
 		
-		var wolf = this.cbConstants.FLAG_SPECIAL | this.cbConstants.FLAG_CAPTURE_SELF | this.cbConstants.FLAG_THREAT; // wolf-mode flags
+		var wolf = this.cbConstants.FLAG_SPECIAL | this.cbConstants.FLAG_SPECIAL_CAPTURE | this.cbConstants.FLAG_THREAT; // wolf-mode flags
 
 		return {
 			
@@ -86,7 +86,6 @@
 				7: {
 					name: 'werewolf',
 					aspect: 'fr-eagle',
-					graph: this.cbQueenGraph(geometry),
 					graph: this.cbMergeGraphs(geometry,
 						this.cbLongRangeGraph(geometry,
 							[[1,0],[0,1],[-1,0],[0,-1],[1,1],[1,-1],[-1,1],[-1,-1]],null,null,3),
@@ -238,9 +237,7 @@
 		this.specials.forEach(function(move){ // vet candidate (Wolf) moves
 			var mid = move.f + move.t >> 1;
 			var victim = $this.board[mid];
-			if(victim < 0   // slide did already reach move.t
-			   || move.c && $this.pieces[move.c].s == $this.mWho) // hits friend
-				return; // so ignore
+			if(victim < 0) return;        // slide did already reach move.t
 			moves.push({ // reach target through jump
 				f: move.f,
 				t: move.t,
