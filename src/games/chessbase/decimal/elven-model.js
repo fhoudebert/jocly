@@ -1,15 +1,16 @@
 
 (function(){
 
-  var geometry=Model.Game.cbBoardGeometryGrid(10,10);
+	var geometry=Model.Game.cbBoardGeometryGrid(10,10);
 
-  Model.Game.cbDefine=function(){
+	Model.Game.cbDefine=function(){
 
-		var f = this.cbConstants.FLAG_CAPTURE_SELF;
-    return{
-		geometry:geometry,
+		var f = this.cbConstants.FLAG_SPECIAL_CAPTURE;
 
-		pieceTypes:{
+		return{
+			geometry:geometry,
+
+			pieceTypes:{
 				0: {
 					name: 'pawn-w',
 					aspect: 'fr-pawn',
@@ -146,7 +147,7 @@
 					abbrev: 'W',
 					initial: [{s:1,p:14},{s:-1,p:85}],
 				},
-},
+			},
 
 			promote: function(aGame,piece,move) {
 				if(piece.t==1)
@@ -285,24 +286,21 @@
 
 		var moves = OriginalMoveGen.apply(this, arguments);
 
-    this.specials.forEach(function(move){ // candidate moves: Lion to occupied adjacent squares
-			var victim = $this.board[move.t];
-			if($this.pieces[victim].s != $this.mWho) { // reject if neighbor is own piece
-				var graph = aGame.g.pTypes[8].graph[move.t]; // King graph at locust square
-				var n = graph.length;
-				for(var j=0; j<n; j++) { // all directions for second leg
-					var to2 = graph[j][0] & 0xffff; // & MASK;
-					var victim2 = (to2 == move.f ? -1 : $this.board[to2]); // no self-capt on igui!
-					if(victim2 < 0 || $this.pieces[victim2].s != $this.mWho) // valid 2nd leg
-						moves.push({
-							f: move.f,
-							t: to2,
-							c: victim2 < 0 ? null : victim2,
-							a: 'W',
-							via: move.t,
-							kill: victim
-						});
-				}
+		this.specials.forEach(function(move){ // candidate moves: Lion to occupied adjacent squares
+			var graph = aGame.g.pTypes[8].graph[move.t]; // King graph at locust square
+			var n = graph.length;
+			for(var j=0; j<n; j++) { // all directions for second leg
+				var to2 = graph[j][0] & 0xffff; // & MASK;
+				var victim2 = (to2 == move.f ? -1 : $this.board[to2]); // no self-capt on igui!
+				if(victim2 < 0 || $this.pieces[victim2].s != $this.mWho) // valid 2nd leg
+					moves.push({
+						f: move.f,
+						t: to2,
+						c: victim2 < 0 ? null : victim2,
+						a: 'W',
+						via: move.t,
+						kill: move.c
+					});
 			}
 		});
 
