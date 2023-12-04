@@ -283,6 +283,8 @@
 				this.cbPiecesCount += pType.initial.length; 
 		}
 
+		if(typeof(this.extraInit) == 'function') this.extraInit(this.cbVar.geometry);
+
 		var typeValues = Object.keys(cbVar.pieceTypes);
 
 	    if(cbVar.zobrist == "old") {
@@ -336,6 +338,7 @@
 
 		ZobristInit(this, typeValues, this.cbVar.geometry.boardSize);
 	    }
+
 	}
 	
 	Model.Game.cbGetPieceTypes = function() {
@@ -357,6 +360,7 @@
 				castle: !!pType.castle,
 				epTarget: !!pType.epTarget,
 				epCatch: !!pType.epCatch,
+				antiTrade: pType.antiTrade || 0,
 			}
 		}
 		
@@ -587,7 +591,6 @@
 	Model.Board.cbQuickApply = function(aGame,move) {
 		if(move.cg!==undefined)
 			return this.cbApplyCastle(aGame,move,false);
-
 		var undo=[];
 		var index=this.board[move.f];
 		var piece=this.pieces[index];
@@ -899,7 +902,7 @@
 				var line=graph[j];
 				var screen=false;
 				var lineLength=line.length;
-				var lastPos=null;
+				var lastPos=piece.p;
 				for(var k=0;k<lineLength;k++) {
 					var tg1=line[k];
 					var pos1=tg1 & MASK;
@@ -911,7 +914,7 @@
 								t: pos1,
 								c: null,
 								a: pType.abbrev,
-								ept: lastPos==null || !pType.epTarget?undefined:lastPos,
+								ept: lastPos==piece.p || !pType.epTarget?undefined:lastPos,
 							});
 						else if(tg1 & FLAG_SPECIAL)
 							this.specials.push({
@@ -919,7 +922,7 @@
 								t: pos1,
 								c: null,
 								a: pType.abbrev,
-								x: tg1
+								x: tg1 ^ lastPos
 							});
 					} else if(tg1 & FLAG_SCREEN_CAPTURE) {
 						if(screen) {
@@ -956,7 +959,7 @@
 								t: pos1,
 								c: piece1.i,
 								a: pType.abbrev,
-								x: tg1
+								x: tg1 ^ lastPos
 							});
 						}
 						break;
