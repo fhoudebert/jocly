@@ -21,35 +21,31 @@
 	// some new flags for various common forms of locust capture
 	// they can be used for other purposes if FLAG_FAIRY is not set
 	var c = Model.Game.cbConstants;
-	var t = c.FLAG_THREAT;
-	var FLAG_FAIRY = 1<<26;
-	var FLAG_RIFLE = 2<<26;   // capture without moving
-	var FLAG_HITRUN = 4<<26;  // do K step after capture
-	var FLAG_CHECKER = 8<<26; // remove jumped-over foe
-	var FLAG_BURN = 16<<26;
-	var FLAG_STOP = c.FLAG_STOP;
-	var FLAG_MOVE = c.FLAG_MOVE;
-	c.FLAG_RIFLE = FLAG_RIFLE | FLAG_FAIRY | c.FLAG_SPECIAL_CAPTURE | t;
-	c.FLAG_HITRUN = FLAG_HITRUN | FLAG_FAIRY | c.FLAG_SPECIAL_CAPTURE | t;
-	c.FLAG_CHECKER = FLAG_CHECKER | FLAG_FAIRY | c.FLAG_SPECIAL;
-	c.FLAG_BURN = FLAG_BURN | FLAG_HITRUN | FLAG_FAIRY;
+	var FAIRY_BIT = 1<<26;
+	var RIFLE_BIT = 2<<26;   // capture without moving
+	var HITRUN_BIT = 4<<26;  // do K step after capture
+	var CHECKER_BIT = 8<<26; // remove jumped-over foe
+	var BURN_BIT = 2<<26;
+	c.FLAG_RIFLE = RIFLE_BIT | FAIRY_BIT | c.FLAG_SPECIAL_CAPTURE | c.FLAG_THREAT;
+	c.FLAG_HITRUN = HITRUN_BIT | FAIRY_BIT | c.FLAG_SPECIAL_CAPTURE | c.FLAG_THREAT;
+	c.FLAG_CHECKER = CHECKER_BIT | FAIRY_BIT | c.FLAG_SPECIAL;
+	c.FLAG_BURN = BURN_BIT | HITRUN_BIT | FAIRY_BIT;
 
 	Model.Game.minimumBridge = 0; // for anti-trading rule of double capturing piece
 
 	Model.Game.cbSkiGraph = function(geometry, stepSet, bend, flags1, flags2) { // two-stage slider move, possibly bent
 
 		var graph = {};
-		var s = this.cbConstants
 
 		function SkiSlide(start, vec, flags, bend, iflags, range) { // trace out bent trajectory
 			var path = [], corner = geometry.Graph(start, vec);
 			if(corner != null) {
 				var vec2 = Rotate(vec, bend);
-				if(iflags >= 0 && iflags != FLAG_STOP) path.push(corner | iflags); // for s do this later
+				if(iflags >= 0 && iflags != c.FLAG_STOP) path.push(corner | iflags); // for s do this later
 				for(var n=1; n<range; n++) {
 					var delta = [n*vec2[0], n*vec2[1]], pos = geometry.Graph(corner, delta);
 					if(pos != null) {
-						if(n == 1 && iflags == FLAG_STOP) path.push(corner | FLAG_STOP);
+						if(n == 1 && iflags == c.FLAG_STOP) path.push(corner | c.FLAG_STOP);
 						path.push(pos | flags);
 			}	}	}
 			if(path.length > 0) graph[start].push($this.cbTypedArray(path));
@@ -59,7 +55,7 @@
 			graph[pos] = [];
 			stepSet.forEach(function(vec){
 				SkiSlide(pos, vec, flags2, bend, flags1, 9);
-				if(bend & 3) SkiSlide(pos, vec, flags2, -bend, FLAG_STOP, 9); // for bent: both forks
+				if(bend & 3) SkiSlide(pos, vec, flags2, -bend, c.FLAG_STOP, 9); // for bent: both forks
 			});
 		}
 		return graph;
@@ -71,30 +67,31 @@
 		for(var s=0; s<geometry.boardSize; s++) { // start squares
 			for(var i=0; i<graph[s].length; i++) { // directions
 				var n=graph[s][i].length;
-				var flag = this.cbConstants.FLAG_RIFLE | this.cbConstants.FLAG_CHECKER | this.cbConstants.FLAG_CAPTURE_SELF;
-				if(n == 1) graph[s][i][0] |= FLAG_MOVE; // one step from edge
+				var flag = c.FLAG_RIFLE | c.FLAG_CHECKER | c.FLAG_CAPTURE_SELF;
+				if(n == 1) graph[s][i][0] |= c.FLAG_MOVE; // one step from edge
 				else {
-					graph[s][i][0] |= FLAG_STOP; // first square must be empty
+					graph[s][i][0] |= c.FLAG_STOP; // first square must be empty
 					if(n <= maxDist) { // cut by edge
 						var line = [];
 						for(var j=0; j<n; j++) line.push(graph[s][i][j]);
-						line.push(graph[s][i][n-1] | FLAG_MOVE);
+						line.push(graph[s][i][n-1] | c.FLAG_MOVE);
 						graph[s][i] = this.cbTypedArray(line);
 					}
 					for(var j=1; j<n; j++) graph[s][i][j] |= flag;
 				}
 			}
 		}
+		return graph;
 	}
 
 	Model.Game.cbWithdrawerGraph = function(geometry,deltas,maxDist) {
 		var graph = this.cbLongRangeGraph(geometry,deltas,null,0,maxDist);
 		for(var s=0; s<geometry.boardSize; s++) { // start squares
 			for(var i=0; i<graph[s].length; i++) { // directions
-				var flag = this.cbConstants.FLAG_MOVE;
+				var flag = c.FLAG_MOVE;
 				var n=graph[s][i].length;
 				for(var j=0; j<n; j++) if(graph[s][i][0] + graph[s][j][0] == 2*s) {
-					flag = this.cbConstants.FLAG_SPECIAL;
+					flag = c.FLAG_SPECIAL;
 					break;
 				}
 				for(var j=0; j<n; j++) graph[s][i][j] |= flag;
@@ -124,7 +121,7 @@
 	}
 
 	Model.Game.cbVaoGraph = function(geometry) {
-		return this.cbLongRangeGraph(geometry,All4([[1,-1]]),null,this.cbConstants.FLAG_MOVE | this.cbConstants.FLAG_SCREEN_CAPTURE);
+		return this.cbLongRangeGraph(geometry,All4([[1,-1]]),null,c.FLAG_MOVE | c.FLAG_SCREEN_CAPTURE);
 	}
 	
 	Model.Game.cbGriffonGraph = function(geometry,confine) {
@@ -136,23 +133,20 @@
 	}
 
 	Model.Game.extraInit = function(geometry) { // called from InitGame
-		if(!this.neighbors) this.neighbors = this.cbShortRangeGraph(geometry,All4([[1,0],[1,1]]), null, FLAG_RIFLE | c.FLAG_MOVE | c.FLAG_CAPTURE);
+		if(!this.neighbors) this.neighbors = this.cbShortRangeGraph(geometry,All4([[1,0],[1,1]]), null, RIFLE_BIT | c.FLAG_MOVE | c.FLAG_CAPTURE);
 		if(!this.burnZone)  this.burnZone  = this.cbShortRangeGraph(geometry,All4([[1,0],[1,1]]));
 	}
 
 	var OriginalApplyMove = Model.Board.ApplyMove;
 	Model.Board.ApplyMove = function(aGame,move) {
 		if(move.kill !== undefined) { // locust capture, remove victim
-console.log(move);
 			if(move.kill == -1) {
 				var bz = aGame.burnZone[move.t];
 				for(var i=0; i<bz.length; i++) {
 					var sqr=bz[i][0] & 0xffff;
 					var index = this.board[sqr];
-console.log(sqr);
 					if(index >= 0) {
 						var burned=this.pieces[index];
-console.log(burned);
 						if(burned.s != this.mWho ||
 						    bz[i][0] & aGame.cbConstants.FLAG_CAPTURE_SELF) {
 							this.zSign^=aGame.bKey(burned);
@@ -230,10 +224,10 @@ console.log(burned);
 		var moves = OriginalMoveGen.apply(this, arguments);
 
 		this.specials.forEach(function(move){ // candidate moves: locust capture
-			if(move.x & FLAG_FAIRY) {
+			if(move.x & FAIRY_BIT) {
 				var via, index, to, victim, victim2;
-				if(move.x & FLAG_HITRUN) {
-					if(move.x & FLAG_BURN) {
+				if(move.x & HITRUN_BIT) {
+					if(move.x & BURN_BIT) {
 						moves.push({
 							f: move.f,
 							t: move.t,
@@ -248,7 +242,7 @@ console.log(burned);
 					for(var j=0; j<n; j++) { // all directions for second leg
 						var to2 = nb[j][0] & 0xffff;
 						var flags = aGame.cbConstants;
-						victim2 = (to2 == move.f && nb[j][0] & FLAG_RIFLE ? -1 : $this.board[to2]); // no self-capt on igui!
+						victim2 = (to2 == move.f && nb[j][0] & RIFLE_BIT ? -1 : $this.board[to2]); // no self-capt on igui!
 						if(victim2 < 0 ? nb[j][0] & flags.FLAG_MOVE
 							: nb[j][0] & flags.FLAG_CAPTURE && $this.pieces[victim2].s != $this.mWho) // valid 2nd leg
 							moves.push({
@@ -261,10 +255,10 @@ console.log(burned);
 							});
 					}
 				} else {
-					if(move.x & FLAG_CHECKER) {
-						if(move.x & FLAG_RIFLE) { // Advancer
+					if(move.x & CHECKER_BIT) {
+						if(move.x & RIFLE_BIT) { // Advancer
 							index = move.c;
-							if(index && $this.pieces[index].s == $this.mWho) index = null; // no friendly capture
+							if(index !== null && $this.pieces[index].s == $this.mWho) index = null; // no friendly capture
 							moves.push({
 								f: move.f,
 								t: (move.t ^ move.x) & 0xffff,
