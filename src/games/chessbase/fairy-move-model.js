@@ -20,16 +20,19 @@
 
 	// some new flags for various common forms of locust capture
 	// they can be used for other purposes if FLAG_FAIRY is not set
-	var t = Model.Game.cbConstants.FLAG_THREAT;
+	var c = Model.Game.cbConstants;
+	var t = c.FLAG_THREAT;
 	var FLAG_FAIRY = 1<<26;
 	var FLAG_RIFLE = 2<<26;   // capture without moving
 	var FLAG_HITRUN = 4<<26;  // do K step after capture
 	var FLAG_CHECKER = 8<<26; // remove jumped-over foe
-	var FLAG_STOP = Model.Game.cbConstants.FLAG_STOP;
-	var FLAG_MOVE = Model.Game.cbConstants.FLAG_MOVE;
-	Model.Game.cbConstants.FLAG_RIFLE = FLAG_RIFLE | FLAG_FAIRY | Model.Game.cbConstants.FLAG_SPECIAL_CAPTURE | t;
-	Model.Game.cbConstants.FLAG_HITRUN = FLAG_HITRUN | FLAG_FAIRY | Model.Game.cbConstants.FLAG_SPECIAL_CAPTURE | t;
-	Model.Game.cbConstants.FLAG_CHECKER = FLAG_CHECKER | FLAG_FAIRY | Model.Game.cbConstants.FLAG_SPECIAL;
+	var FLAG_BURN = 16<<26;
+	var FLAG_STOP = c.FLAG_STOP;
+	var FLAG_MOVE = c.FLAG_MOVE;
+	c.FLAG_RIFLE = FLAG_RIFLE | FLAG_FAIRY | c.FLAG_SPECIAL_CAPTURE | t;
+	c.FLAG_HITRUN = FLAG_HITRUN | FLAG_FAIRY | c.FLAG_SPECIAL_CAPTURE | t;
+	c.FLAG_CHECKER = FLAG_CHECKER | FLAG_FAIRY | c.FLAG_SPECIAL;
+	c.FLAG_BURN = FLAG_BURN | FLAG_HITRUN | FLAG_FAIRY;
 
 	Model.Game.minimumBridge = 0; // for anti-trading rule of double capturing piece
 
@@ -133,18 +136,39 @@
 	}
 
 	Model.Game.extraInit = function(geometry) { // called from InitGame
-		if(!this.neighbors) this.neighbors = this.cbShortRangeGraph(geometry,All4([[1,0],[1,1]]),null,0);
+		if(!this.neighbors) this.neighbors = this.cbShortRangeGraph(geometry,All4([[1,0],[1,1]]), null, FLAG_RIFLE | c.FLAG_MOVE | c.FLAG_CAPTURE);
+		if(!this.burnZone)  this.burnZone  = this.cbShortRangeGraph(geometry,All4([[1,0],[1,1]]));
 	}
 
 	var OriginalApplyMove = Model.Board.ApplyMove;
 	Model.Board.ApplyMove = function(aGame,move) {
-		if(move.via !== undefined) { // locust capture, remove victim
-			var piece1=this.pieces[move.kill];
-			this.zSign^=aGame.bKey(piece1);
-			this.board[piece1.p]=-1;
-			piece1.p=-1;
-			piece1.m=true;
-			this.noCaptCount=0;
+		if(move.kill !== undefined) { // locust capture, remove victim
+console.log(move);
+			if(move.kill == -1) {
+				var bz = aGame.burnZone[move.t];
+				for(var i=0; i<bz.length; i++) {
+					var sqr=bz[i][0] & 0xffff;
+					var index = this.board[sqr];
+console.log(sqr);
+					if(index >= 0) {
+						var burned=this.pieces[index];
+console.log(burned);
+						if(burned.s != this.mWho ||
+						    bz[i][0] & aGame.cbConstants.FLAG_CAPTURE_SELF) {
+							this.zSign^=aGame.bKey(burned);
+							this.board[sqr]=-1;
+							burned.p=-1;
+							this.noCaptCount=0;
+						};
+					}
+				}
+			} else {
+				var piece1=this.pieces[move.kill];
+				this.zSign^=aGame.bKey(piece1);
+				this.board[piece1.p]=-1;
+				piece1.p=-1;
+				this.noCaptCount=0;
+			}
 		}
 		OriginalApplyMove.apply(this, arguments);
 	}
@@ -167,7 +191,22 @@
 				}
 			}
 		}
-		if(move.via !== undefined) { // remove locust victim
+		if(move.kill !== undefined) { // remove locust victim
+			if(move.kill == -1) {
+				var bz = aGame.burnZone[move.t];
+				for(var i=0; i<bz.length; i++) {
+					var index = this.board[bz[i][0] & 0xffff];
+					if(index >= 0) {
+						if(this.pieces[index].s != this.mWho ||
+						    bz[i][0] & aGame.cbConstants.FLAG_CAPTURE_SELF) tmp.unshift({
+							i: index,
+							f: -1,
+							t: bz[i][0] & 0xffff,
+						});
+					}
+				}
+				return tmp;
+			}
 			this.board[move.via] = -1;
 			this.pieces[move.kill].p = -1;
 			tmp.unshift({
@@ -194,12 +233,24 @@
 			if(move.x & FLAG_FAIRY) {
 				var via, index, to, victim, victim2;
 				if(move.x & FLAG_HITRUN) {
+					if(move.x & FLAG_BURN) {
+						moves.push({
+							f: move.f,
+							t: move.t,
+							c: move.c,
+							a: move.a,
+							kill: -1, // requests burn in move apply
+						});
+						return;
+					}
 					var nb = aGame.neighbors[move.t];
 					var n = nb.length;
 					for(var j=0; j<n; j++) { // all directions for second leg
-						var to2 = nb[j][0];
-						victim2 = (to2 == move.f ? -1 : $this.board[to2]); // no self-capt on igui!
-						if(victim2 < 0 || $this.pieces[victim2].s != $this.mWho) // valid 2nd leg
+						var to2 = nb[j][0] & 0xffff;
+						var flags = aGame.cbConstants;
+						victim2 = (to2 == move.f && nb[j][0] & FLAG_RIFLE ? -1 : $this.board[to2]); // no self-capt on igui!
+						if(victim2 < 0 ? nb[j][0] & flags.FLAG_MOVE
+							: nb[j][0] & flags.FLAG_CAPTURE && $this.pieces[victim2].s != $this.mWho) // valid 2nd leg
 							moves.push({
 								f: move.f,
 								t: to2,
