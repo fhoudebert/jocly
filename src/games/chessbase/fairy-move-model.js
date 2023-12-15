@@ -36,6 +36,7 @@
 	Model.Game.cbSkiGraph = function(geometry, stepSet, bend, flags1, flags2) { // two-stage slider move, possibly bent
 
 		var graph = {};
+		var $this=this;
 
 		function SkiSlide(start, vec, flags, bend, iflags, range) { // trace out bent trajectory
 			var path = [], corner = geometry.Graph(start, vec);
@@ -51,6 +52,8 @@
 			if(path.length > 0) graph[start].push($this.cbTypedArray(path));
 		}
 
+		if(flags1 === undefined) flags1 = c.FLAG_MOVE | c.FLAG_CAPTURE;
+		if(flags2 === undefined) flags2 = c.FLAG_MOVE | c.FLAG_CAPTURE;
 		for(pos=0; pos<geometry.boardSize; pos++) {
 			graph[pos] = [];
 			stepSet.forEach(function(vec){
@@ -100,12 +103,27 @@
 		return graph;
 	}
 
+	Model.Game.cbInitialPawnGraph = function(geometry,direction,initialPush) {
+		if(initialPush===undefined) initialPush=2;
+      		return this.cbMergeGraphs(geometry,
+			this.cbShortRangeGraph(geometry,[[1,direction],[-1,direction]],null,c.FLAG_CAPTURE),
+			this.cbLongRangeGraph(geometry,[[0,direction]],null,c.FLAG_MOVE,initialPush));
+	}
+
 	Model.Game.cbCamelGraph = function(geometry,confine) {
-		return this.cbShortRangeGraph(geometry,All4([[1,3],[-1,3]]),confine);
+		return this.cbShortRangeGraph(geometry,[[1,3],[-1,3],[1,-3],[-1,-3],[3,1],[-3,1],[3,-1],[-3,-1]],confine);
 	}
 
 	Model.Game.cbZebraGraph = function(geometry,confine) {
-		return this.cbShortRangeGraph(geometry,All4([[2,3],[-2,3]]),confine);
+		return this.cbShortRangeGraph(geometry,[[2,3],[-2,3],[2,-3],[-2,-3],[3,2],[-3,2],[3,-2],[-3,-2]],confine);
+	}
+
+	Model.Game.cbElephantGraph = function(geometry,confine) {
+		return this.cbShortRangeGraph(geometry,All4([[1,1],[2,2]]),confine);
+	}
+
+	Model.Game.cbWarMachineGraph = function(geometry,confine) {
+		return this.cbShortRangeGraph(geometry,All4([[1,0],[2,0]]),confine);
 	}
 
 	Model.Game.cbAlibabaGraph = function(geometry,confine) {
@@ -113,11 +131,23 @@
 	}
 
 	Model.Game.cbWizardGraph = function(geometry,confine) {
-		return this.cbShortRangeGraph(geometry,All4([[1,1],[1,3],[-1,3]]),confine);
+		return this.cbMergeGraphs(geometry, this.cbFersGraph(geometry), this.cbCamelGraph(geometry));
 	}
 
 	Model.Game.cbChampionGraph = function(geometry,confine) {
 		return this.cbShortRangeGraph(geometry,All4([[1,0],[2,0],[2,2]]),confine);
+	}
+
+	Model.Game.cbCardinalGraph = function(geometry,confine) {
+		return this.cbMergeGraphs(geometry, this.cbKnightGraph(geometry), this.cbBishopGraph(geometry));
+	}
+
+	Model.Game.cbMarshallGraph = function(geometry,confine) {
+		return this.cbMergeGraphs(geometry, this.cbKnightGraph(geometry), this.cbRookGraph(geometry));
+	}
+
+	Model.Game.cbAmazonGraph = function(geometry,confine) {
+		return this.cbMergeGraphs(geometry, this.cbKnightGraph(geometry), this.cbQueenGraph(geometry));
 	}
 
 	Model.Game.cbVaoGraph = function(geometry) {
@@ -125,11 +155,11 @@
 	}
 	
 	Model.Game.cbGriffonGraph = function(geometry,confine) {
-		return this.cbSkiGraph(geometry,All4([[1,0]]),1);
+		return this.cbSkiGraph(geometry,All4([[1,1]]),1);
 	}
 
 	Model.Game.cbRhinoGraph = function(geometry,confine) {
-		return this.cbSkiGraph(geometry,All4([[1,1]]),1);
+		return this.cbSkiGraph(geometry,All4([[1,0]]),1);
 	}
 
 	Model.Game.extraInit = function(geometry) { // called from InitGame
@@ -175,8 +205,9 @@
 		lionxlion = -2;
 		if(move.c !== null && aGame.minimumBridge) {
 			var at = aGame.g.pTypes[this.pieces[move.c].t].antiTrade;
-			if(at) { // move captures Lion
-				if(at == aGame.g.pTypes[tmp[0].ty].antiTrade) lionxlion = (at*at > 10000 ? -3 : move.t); // remember location of LxL capture
+			if(at & 1) { // move captures Lion
+				var dat = at ^ aGame.g.pTypes[tmp[0].ty].antiTrade;
+				if(dat < 2) lionxlion = (at*at > 10000 ? -3 : move.t); // remember location of LxL capture
 				else if(at < 0) {
 					if(this.lastMove && this.lastMove.c && this.lastMove.t != move.t // also test for counterstrike
 						&& aGame.g.pTypes[this.pieces[this.lastMove.c].t].antiTrade == at) { // same anti-trade group
@@ -214,7 +245,7 @@
 		return tmp;
 	}
 
-	Model.Board.customGen = function(move) {} // dummy
+	Model.Board.customGen = function() {} // dummy
 
 	var OriginalMoveGen = Model.Board.cbGeneratePseudoLegalMoves;
 	Model.Board.cbGeneratePseudoLegalMoves = function(aGame) {
@@ -286,7 +317,7 @@
 							kill:index
 						});
 				}
-			} else Model.Board.customGen($this, moves);
+			} else Model.Board.customGen(moves, move, $this, aGame);
 		});
 
 		return moves;
