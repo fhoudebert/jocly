@@ -746,11 +746,11 @@
 		
 		if(aGame.mOptions.preventRepeat &&
 			 aGame.GetRepeatOccurence(this)>=aGame.cbMaxRepeats) {
-			this.mFinished=true;
 			if(typeof aGame.cbPerpEval == 'function')
 				this.mWinner=aGame.cbPerpEval(this, aGame);
 			else
 				this.mWinner=aGame.cbOnPerpetual?who*aGame.cbOnPerpetual:JocGame.DRAW;
+			this.mFinished=(this.mWinner !== undefined);
 			return;
 		}
 		
