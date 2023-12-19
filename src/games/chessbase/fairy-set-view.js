@@ -172,6 +172,11 @@
 					clipx: 1100,
 				},
 			},
+			"fr-stork": {
+				"2d": {
+					clipx: 1100,
+				},
+			},
 			"fr-lion": {
 				"2d": {
 					clipx: 1200,
@@ -1129,6 +1134,28 @@
 						normal: {
 							texturesImg: {
 								normalImg: "/res/fairy/eagle/eagle-normalmap.jpg",
+							}
+						}
+					}
+				}
+			},
+		},
+
+		"fr-stork": {
+			mesh: {
+				jsFile:"/res/fairy/stork/stork.js"
+			},
+			materials: {
+				mat0: {
+					channels: {
+						diffuse: {
+							texturesImg: {
+								diffImg : "/res/fairy/stork/stork-diffusemap.jpg",
+							}
+						},
+						normal: {
+							texturesImg: {
+								normalImg: "/res/fairy/stork/stork-normalmap.jpg",
 							}
 						}
 					}
