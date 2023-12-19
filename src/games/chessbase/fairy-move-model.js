@@ -169,6 +169,96 @@
 		if(!this.burnZone)  this.burnZone  = this.cbShortRangeGraph(geometry,All4([[1,0],[1,1]]));
 	}
 
+	function MakePiece(name, aspect, graph, value, pos, extra, extraVal) {
+		var abbrev=name[0].toUpperCase();
+		if(name=='rhino') abbrev='U'; else if(name=='champion') abbrev='H';
+		var piece = {
+			name: name,
+			abbrev: abbrev,
+			aspect: aspect,
+			graph: graph,
+		};
+		if(aspect=='fr-pawn') piece.abbrev='', piece.fenAbbrev='P';
+		if(extra) piece[extra] = extraVal;
+		if(pos) {
+			var ini = [];
+			for(var i=0; i<pos[0].length; i++)
+				ini.push({s: 1, p: pos[0][i]});
+			for(var i=0; i<pos[1].length; i++)
+				ini.push({s: -1, p: pos[1][i]});
+			if(ini.length) piece.initial = ini;
+		}
+	}
+
+	Model.Game.cbPiecesFromFEN = function(geometry, fen, step) {
+		var pieces={};
+		var locations=[];
+		var sqr=0;
+
+		for(var i=0; i<fen.length; i++) {
+			var c = fen[i];
+			if(c == '/') {
+				sqr = (sqr - sqr%geometry.width) + geometry.width; // start next rank
+				continue;
+			}
+			var n=parseInt(fen.substring(i));
+			if(n) { // skip number of squares
+				sqr+=n; i+=(n>99?2:n>9?1:0);
+				continue;
+			}
+			var cc=c.toUpperCase();
+			if(!locations[cc]) locations[cc]==[[],[]];
+			if(sqr<geometry.boardSize) locations[c][c==cc?0:1].push(sqr);
+		}
+
+		if('P' in locations) {
+			if(step===undefined) step=2;
+			pieces.push(MakePiece('ipawnw', 'fr-pawn', this.cbInitialPawnGraph(geometry,1,step), 1, [locations['P'][0],[]], 'epTarget', true));
+			pieces.push(MakePiece('ipawnb', 'fr-pawn', this.cbInitialPawnGraph(geometry,-1,step), 1, [[],locations['P'][1]], 'epTarget', true));
+			pieces.push(MakePiece('pawnw', 'fr-pawn', this.cbInitialPawnGraph(geometry,1,1), 1, null, 'epCatch', true));
+			pieces.push(MakePiece('pawnb', 'fr-pawn', this.cbInitialPawnGraph(geometry,-1,1), 1, null, 'epCatch', true));
+		}
+		if('S' in locations) { // Shogi Pawn
+			pieces.push(MakePiece('pawnw', 'fr-pawn', this.cbShortRangeGraph(geometry,[[0,1]]), 1, [locations['P'][0],[]]));
+			pieces.push(MakePiece('pawnb', 'fr-pawn', this.cbShortRangeGraph(geometry,[[0,-1]]), 1, [[],locations['P'][1]]));
+		}
+
+		if('N' in locations)
+			pieces.push(MakePiece('knight', 'fr-knight', this.cbKnightGraph(geometry), 3.25, locations['N']));
+		if('B' in locations)
+			pieces.push(MakePiece('bishop', 'fr-bishop', this.cbBishopGraph(geometry), 3.50, locations['B']));
+		if('R' in locations)
+			pieces.push(MakePiece('rook', 'fr-rook', this.cbRookGraph(geometry), 5.0, locations['R'], 'castle', true));
+		if('Q' in locations)
+			pieces.push(MakePiece('queen', 'fr-proper-queen', this.cbQueenGraph(geometry), 9.5, locations['Q']));
+		if('A' in locations)
+			pieces.push(MakePiece('archbishop', 'fr-proper-cardinal', this.cbCardinalGraph(geometry), 8.75, locations['A']));
+		if('M' in locations)
+			pieces.push(MakePiece('marshall', 'fr-proper-marshall', this.cbMarshallGraph(geometry), 9.0, locations['M']));
+		if('G' in locations)
+			pieces.push(MakePiece('griffon', 'fr-eagle', this.cbGriffonGraph(geometry), 8.3, locations['G']));
+		if('U' in locations)
+			pieces.push(MakePiece('rhino', 'fr-rhino', this.cbRhinoGraph(geometry), 7.8, locations['U']));
+		if('E' in locations)
+			pieces.push(MakePiece('elephant', 'fr-proper-elephant', this.cbElephantGraph(geometry), 3.35, locations['E']));
+		if('C' in locations)
+			pieces.push(MakePiece('camel', 'fr-camel', this.cbCamelGraph(geometry), 2.5, locations['C']));
+		if('Z' in locations)
+			pieces.push(MakePiece('zebra', 'fr-zebra', this.cbZebraGraph(geometry), 2.5, locations['Z']));
+		if('H' in locations)
+			pieces.push(MakePiece('champion', 'fr-admiral', this.cbChampionGraph(geometry), 4.5, locations['H']));
+		if('W' in locations)
+			pieces.push(MakePiece('wizard', 'fr-star', this.cbWizardGraph(geometry), 4, locations['W']));
+		if('X' in locations)
+			pieces.push(MakePiece('cannon', 'fr-cannon', this.cbXQCannonGraph(geometry), 3, locations['X']));
+		if('V' in locations)
+			pieces.push(MakePiece('vao', 'fr-cannon2', this.cbVaoGraph(geometry), 2, locations['V']));
+		if('K' in locations)
+			pieces.push(MakePiece('king', 'fr-king', this.cbKingGraph(geometry), 100, locations['K'],'isKing', true));
+
+		return pieces;
+	}
+
 	var OriginalApplyMove = Model.Board.ApplyMove;
 	Model.Board.ApplyMove = function(aGame,move) {
 		if(move.kill !== undefined) { // locust capture, remove victim
