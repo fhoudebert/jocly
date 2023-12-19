@@ -480,6 +480,18 @@ exports.games = (function () {
 		"fairy-move-model.js",
 		"shogi/chu-shogi-model.js"
 	]
+	var modelScripts_109 = [
+		"base-model.js",
+		"grid-geo-model.js",
+		"fairy-move-model.js",
+		"makromachy-model.js"
+	]
+	var modelScripts_110 = [
+		"base-model.js",
+		"grid-geo-model.js",
+		"fairy-move-model.js",
+		"minjiku-model.js"
+	]
 	var config_model_levels_11 = {
 		"name": "easy",
 		"label": "Easy",
@@ -599,6 +611,20 @@ exports.games = (function () {
 		"shogi/tenjiku-set-view.js",
 		"multi-leg-view.js",
 		"shogi/chu-shogi-view.js"
+	]
+	var config_view_js_109 = [
+		"base-view.js",
+		"grid-board-view.js",
+		"fairy-set-view.js",
+		"multi-leg-view.js",
+		"makromachy-view.js"
+	]
+	var config_view_js_110 = [
+		"base-view.js",
+		"grid-board-view.js",
+		"fairy-set-view.js",
+		"multi-leg-view.js",
+		"minjiku-view.js"
 	]
 	var modelScripts_14 = [
 		"base-model.js",
@@ -7199,6 +7225,70 @@ exports.games = (function () {
 				}
 			},
 			"viewScripts": config_view_js_108
+		},
+		{
+			"name": "makromachy",
+			"modelScripts": modelScripts_109,
+			"config": {
+				"status": true,
+				"model": {
+					"title-en": "Makromachy",
+					"summary": "14x14 variant with flying pieces",
+					"rules": {
+						"en": "makromachy-rules.html"
+					},
+					"module": "chessbase",
+					"plazza": "true",
+					"thumbnail": "res/rules/makromachy-thumb.png",
+					"released": 1396536978,
+					"credits": {
+						"en": "makromachy-credits.html"
+					},
+					"gameOptions": config_model_gameOptions_2,
+					"js": modelScripts_109,
+					"description": {
+						"en": "makromachy-description.html"
+					},
+					"levels": config_model_levels_15
+				},
+				"view": {
+					"title-en": "Chessbase view",
+					"visuals": {
+						"600x600": [
+							"res/visuals/makromachy-600x600-3d.jpg",
+							"res/visuals/makromachy-600x600-2d.jpg"
+						]
+					},
+					"xdView": true,
+					"css": config_view_css,
+					"preferredRatio": 1,
+					"useShowMoves": true,
+					"useNotation": true,
+					"module": "chessbase",
+					"defaultOptions": config_view_defaultOptions,
+					"skins": [
+						{
+							"name": "skin3d",
+							"title": "3D Classic",
+							"3d": true,
+							"preload": [
+								"smoothedfilegeo|0|/res/ring-target.js",
+								"image|/res/images/cancel.png",
+								"image|/res/images/wikipedia.png"
+							],
+							"world": config_view_skins_world,
+							"camera": config_view_skins_camera
+						},
+						config_view_skins_2
+					],
+					"animateSelfMoves": false,
+					"switchable": true,
+					"sounds": config_view_sounds,
+					"js": config_view_js_109,
+					"useAutoComplete": true
+				}
+			},
+			"viewScripts": config_view_js_109
 		}
 	  		
 
