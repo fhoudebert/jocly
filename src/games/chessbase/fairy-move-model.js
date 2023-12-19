@@ -39,13 +39,15 @@
 		var $this=this;
 
 		function SkiSlide(start, vec, flags, bend, iflags, range) { // trace out bent trajectory
-			var path = [], corner = geometry.Graph(start, vec);
+			var path = [], f = iflags, corner = geometry.Graph(start, vec);
+			while(f < -1 && corner) corner = geometry.Graph(corner, vec), f++; // negative iflags jump to corner
 			if(corner != null) {
 				var vec2 = Rotate(vec, bend);
-				if(iflags >= 0 && iflags != c.FLAG_STOP) path.push(corner | iflags); // for s do this later
+				if(iflags != -1 && iflags != c.FLAG_STOP) // defer adding stop until something follows it
+					path.push(corner | (iflags<0 ? flags : iflags)); // use iflags on 1st square if it did not indikate skipping
 				for(var n=1; n<range; n++) {
 					var delta = [n*vec2[0], n*vec2[1]], pos = geometry.Graph(corner, delta);
-					if(pos != null) {
+					if(pos != null) { // path continues after corner
 						if(n == 1 && iflags == c.FLAG_STOP) path.push(corner | c.FLAG_STOP);
 						path.push(pos | flags);
 			}	}	}
@@ -57,8 +59,8 @@
 		for(pos=0; pos<geometry.boardSize; pos++) {
 			graph[pos] = [];
 			stepSet.forEach(function(vec){
-				SkiSlide(pos, vec, flags2, bend, flags1, 9);
-				if(bend & 3) SkiSlide(pos, vec, flags2, -bend, c.FLAG_STOP, 9); // for bent: both forks
+				SkiSlide(pos, vec, flags2, bend, flags1, 1000);
+				if(bend & 3) SkiSlide(pos, vec, flags2, -bend, (flags1<0 ? flags1 : c.FLAG_STOP), 1000); // for bent: both forks
 			});
 		}
 		return graph;
