@@ -327,7 +327,7 @@
 		    24: {
 			name : 'dragon horse',
 			abbrev : 'H',
-			aspect : 'fr-crowned-bishop',
+			aspect : 'fr-saint',
 			graph : this.cbMergeGraphs(geometry,
 			            this.cbSchleichGraph(geometry),
 			            this.cbBishopGraph(geometry)),
