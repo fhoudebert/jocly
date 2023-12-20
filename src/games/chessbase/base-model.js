@@ -764,7 +764,7 @@
 		var posValue={ '1': 0, '-1': 0 };
 		
 		var castlePiecesCount={ '1': 0, '-1': 0 };
-		var kingMoved={ '1': false, '-1': false };
+		var kingMoved={ '1': 0, '-1': 0 }; // kludge: should become false or true
 		
 		var pieces=this.pieces;
 		var piecesLength=pieces.length;
@@ -790,6 +790,11 @@
 				else
 					byType[piece.t].push(piece);					
 			}
+		}
+
+		if(kingMoved[who]===0 && this.kings[who]!==undefined) { // no King found, but had one before
+			this.mWinner=-who; this.mFinished=true; // opponent wins
+			return;
 		}
 		
 		if(this.lastMove && this.lastMove.c!=null) {
