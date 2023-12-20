@@ -85,7 +85,7 @@
 
 				7: {
 					name: 'werewolf',
-					aspect: 'fr-eagle',
+					aspect: 'fr-wolf',
 					graph: this.cbMergeGraphs(geometry,
 						this.cbLongRangeGraph(geometry,
 							[[1,0],[0,1],[-1,0],[0,-1],[1,1],[1,-1],[-1,1],[-1,-1]],null,null,3),
