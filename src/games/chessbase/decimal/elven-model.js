@@ -110,7 +110,7 @@
 				
 				10: {
 					name: 'elf',
-					aspect: 'fr-crowned-bishop',
+					aspect: 'fr-saint',
 					graph: this.cbMergeGraphs(geometry,
 						this.cbBishopGraph(geometry),
 						this.cbShortRangeGraph(geometry, [[1,0],[0,1],[0,-1],[-1,0]])
