@@ -72,9 +72,9 @@
 					clipx: 3400,
 				},
 			},
-			"fr-crowned-bishop": {
+			"fr-saint": {
 				"2d": {
-					clipx: 3300,
+					clipx: 3200,
 				},
 			},
 			"fr-rook": {
@@ -103,11 +103,6 @@
 				},
 			},
 			"fr-king": {
-				"2d": {
-					clipx: 500,
-				},
-			},
-			"fr-emperor": {
 				"2d": {
 					clipx: 500,
 				},
@@ -190,11 +185,6 @@
 			"fr-amazon": {
 				"2d": {
 					clipx: 1400,
-				},
-			},
-			"fr-crowned-rook": {
-				"2d": {
-					clipx: 1500,
 				},
 			},
 			"fr-proper-crowned-rook": {
@@ -1275,7 +1265,7 @@
 
 		"fr-proper-crowned-rook": {
 			mesh: {
-				jsFile:"/res/fairy/crowned-rook/proper-crowned-rook2.js"
+				jsFile:"/res/fairy/crowned-rook/proper-crowned-rook.js"
 			},
 			materials: {
 				mat0: {
