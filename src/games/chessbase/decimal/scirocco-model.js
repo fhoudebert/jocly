@@ -256,7 +256,7 @@
 
 				18: {
 					name: 'scirocco',
-					aspect: 'fr-crowned-bishop',
+					aspect: 'fr-saint',
 					graph: this.cbMergeGraphs(geometry,
 						this.cbBishopGraph(geometry),
 						this.cbShortRangeGraph(geometry, All4([[0,1]]))
