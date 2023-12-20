@@ -204,7 +204,7 @@
 		    13: { // has rifle capture to W squares
 			name : 'viper',
 			abbrev : 'V',
-			aspect : 'fr-crowned-bishop',
+			aspect : 'fr-saint',
 			graph : this.cbMergeGraphs(geometry,
 			            this.cbShortRangeGraph(geometry,[[1,0],[0,-1],[-1,0],[0,1]],area,rifle),
 			            this.cbBishopGraph(geometry,area)),
@@ -315,7 +315,7 @@
 		    25: {
 			name : 'pcobra',
 			abbrev : '+R',
-			aspect : 'fr-proper-crowned-rook',
+			aspect : 'fr-crowned-rook',
 			graph : this.cbMergeGraphs(geometry,
 			            this.cbShortRangeGraph(geometry,[[1,1],[1,-1],[-1,1],[-1,-1]],area,rifle),
 			            this.cbRookGraph(geometry,area)),
