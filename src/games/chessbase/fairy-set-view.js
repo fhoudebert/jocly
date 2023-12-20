@@ -1272,12 +1272,12 @@
 					channels: {
 						diffuse: {
 							texturesImg: {
-								diffImg : "/res/fairy/crowned-rook/crowned-rook-diffusemap.jpg",
+								diffImg : "/res/fairy/crowned-rook/crowned-rook-diffuse-map.jpg",
 							}
 						},
 						normal: {
 							texturesImg: {
-								normalImg: "/res/fairy/crowned-rook/crowned-rook-normalmap.jpg",
+								normalImg: "/res/fairy/crowned-rook/crowned-rook-normal-map.jpg",
 							}
 						}
 					}
