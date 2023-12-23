@@ -361,6 +361,7 @@
 					clipx: 5100,
 					},
 			},
+<<<<<<< HEAD
 			"fr-flying-queen": {
 				"2d": {
 					clipx: 6300,
@@ -446,6 +447,11 @@
 			"fr-samurai": {
 				"2d": {
 					clipx: 6700,
+=======
+			"fr-terror": {
+				"2d": {
+					clipx: 5200,
+>>>>>>> d427617 (add nex Fairy piece : terror, a dragon used in makromachy)
 					},
 			},
 >>>>>>> 2cd6c90 (New fairy piece: Samurai)
@@ -2252,9 +2258,15 @@
 			},
 		},
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> 91249b6 (New fairy piece: Terror)
+=======
+=======
+
+>>>>>>> d427617 (add nex Fairy piece : terror, a dragon used in makromachy)
+>>>>>>> 82e61e8 (add nex Fairy piece : terror, a dragon used in makromachy)
 	});
 })();
 

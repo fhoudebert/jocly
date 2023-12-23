@@ -12,7 +12,11 @@
         return $this.cbSkiGraph(geometry,[[0,1],[0,-1]],1);
 	}
 
+<<<<<<< HEAD
     /** Move graph for the Ship */
+=======
+    /** Move graph for the Snake */
+>>>>>>> 82e61e8 (add nex Fairy piece : terror, a dragon used in makromachy)
 	Model.Game.cbShipGraph = function(geometry){
 		var $this=this;
 

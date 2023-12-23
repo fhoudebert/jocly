@@ -1390,7 +1390,10 @@ exports.games = (function () {
 	var modelScripts_zanzibars = [
 		"base-model.js",
 		"grid-geo-model.js",
+<<<<<<< HEAD
         "fairy-move-model.js",
+=======
+>>>>>>> 82e61e8 (add nex Fairy piece : terror, a dragon used in makromachy)
 		"cazaux/zanzibar-s-model.js"
 	]
 	var config_view_js_zanzibars = [
@@ -1398,6 +1401,7 @@ exports.games = (function () {
 		"grid-board-view.js",
 		"fairy-set-view.js",
 		"cazaux/zanzibar-view.js"
+<<<<<<< HEAD
 	]
 	var modelScripts_acedrex = [
 		"base-model.js",
@@ -1420,6 +1424,8 @@ exports.games = (function () {
 		"grid-board-view.js",
 		"fairy-set-view.js",
 		"historical/grant-acedrex-view.js"
+=======
+>>>>>>> 82e61e8 (add nex Fairy piece : terror, a dragon used in makromachy)
 	]
 	return [
 		{
@@ -6047,8 +6053,12 @@ exports.games = (function () {
  					"thumbnail": "res/rules/duodecimal/wild-timurid-thumb.png",
  					"released": 1497874349,
  					"credits": {
+<<<<<<< HEAD
 
  						"en": "res/rules/duodecimal/timurid-credits.html"
+=======
+ 						"en": "timurid-credits.html"
+>>>>>>> 82e61e8 (add nex Fairy piece : terror, a dragon used in makromachy)
  					},
  					"gameOptions": config_model_gameOptions,
  					"obsolete": false,
@@ -6250,7 +6260,11 @@ exports.games = (function () {
  					"released": 1497874349,
 
  					"credits": {
+<<<<<<< HEAD
  						"en": "res/rules/duodecimal/timurid-credits.html"
+=======
+ 						"en": "timurid-credits.html"
+>>>>>>> 82e61e8 (add nex Fairy piece : terror, a dragon used in makromachy)
  					},
  					"gameOptions": config_model_gameOptions,
  					"obsolete": false,
@@ -6354,7 +6368,11 @@ exports.games = (function () {
  					"released": 1497874349,
 
  					"credits": {
+<<<<<<< HEAD
  						"en": "res/rules/duodecimal/timurid-credits.html"
+=======
+ 						"en": "timurid-credits.html"
+>>>>>>> 82e61e8 (add nex Fairy piece : terror, a dragon used in makromachy)
  					},
  					"gameOptions": config_model_gameOptions,
  					"obsolete": false,
@@ -6457,13 +6475,21 @@ exports.games = (function () {
  					"released": 1497874349,
 
  					"credits": {
+<<<<<<< HEAD
  						"en": "res/rules/duodecimal/timurid-credits.html"
+=======
+ 						"en": "timurid-credits.html"
+>>>>>>> 82e61e8 (add nex Fairy piece : terror, a dragon used in makromachy)
  					},
  					"gameOptions": config_model_gameOptions,
  					"obsolete": false,
  					"js": modelScripts_babur,
  					"description": {
+<<<<<<< HEAD
  						"en": "res/rules/duodecimal/wild-babur-description.html"
+=======
+ 						"en": "wild-babur-description"
+>>>>>>> 82e61e8 (add nex Fairy piece : terror, a dragon used in makromachy)
  					},
  					"levels": config_model_levels_15
  				},
