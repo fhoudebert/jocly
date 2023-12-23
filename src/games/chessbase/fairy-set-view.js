@@ -418,16 +418,51 @@
 					clipx: 6100,
 					},
 			},
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 21cf4c8 (add nex Fairy piece : terror, a dragon used in makromachy)
+>>>>>>> a29bd7f (add nex Fairy piece : terror, a dragon used in makromachy)
 			"fr-terror": {
 				"2d": {
 					clipx: 6200,
 					},
 			},
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> a29bd7f (add nex Fairy piece : terror, a dragon used in makromachy)
 			"fr-samurai": {
 				"2d": {
 					clipx: 6700,
 					},
 			},
+<<<<<<< HEAD
+=======
+			"fr-flamingo": {
+				"2d": {
+					clipx: 6100,
+					},
+			},
+			"fr-terror": {
+				"2d": {
+					clipx: 6200,
+					},
+			},
+=======
+=======
+>>>>>>> c4abace (New fairy piece: Flamingo)
+>>>>>>> 2b15a98 (New fairy piece: Flamingo)
+=======
+=======
+>>>>>>> c4abace (New fairy piece: Flamingo)
+=======
+>>>>>>> 21cf4c8 (add nex Fairy piece : terror, a dragon used in makromachy)
+>>>>>>> f7f71e3 (add nex Fairy piece : terror, a dragon used in makromachy)
+>>>>>>> a29bd7f (add nex Fairy piece : terror, a dragon used in makromachy)
 		},modifier);
 	}
 
