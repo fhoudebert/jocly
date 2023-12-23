@@ -383,6 +383,11 @@
 					clipx: 5100,
 					},
 			},
+			"fr-terror": {
+				"2d": {
+					clipx: 5200,
+					},
+			},
 		},modifier);
 	}
 
@@ -1845,5 +1850,27 @@
 				}
 			},
 		},
+		"fr-terror": {
+			mesh: {
+				jsFile:"/res/fairy/terror/terror.js"
+			},
+			materials: {
+				mat0: {
+					channels: {
+						diffuse: {
+							texturesImg: {
+								diffImg : "/res/fairy/terror/terror-diffusemap.jpg",
+							}
+						},
+						normal: {
+							texturesImg: {
+								normalImg: "/res/fairy/terror/terror-normalmap.jpg",
+							}
+						}
+					}
+				}
+			},
+		},
+
 	});
 })();
