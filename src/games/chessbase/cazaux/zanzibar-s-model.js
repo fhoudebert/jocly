@@ -159,7 +159,7 @@
 		return {
 			
 			geometry: geometry,
-			
+			zobrist: "old",
 			pieceTypes: {
 
 				0: {
@@ -460,6 +460,7 @@
 	Model.Board.CopyFrom = function(aBoard) {
 		SuperModelBoardCopyFrom.apply(this,arguments);
 		this.setupState = aBoard.setupState;
+
 	}
 	
 	/*
@@ -496,10 +497,14 @@
 				var pIndex=$this.board[pos];
 				$this.board[pos]=-1;
 				$this.pieces[pIndex].p=-1;
+
+
+
 				$this.zSign=aGame.zobrist.update($this.zSign,"board",pIndex,pos);
 			});
 			// setup KQLEFU positions according to the setup
 			var setup=move.setup;
+
 			var remaining={};
 			if(setup/6<1) {
 				this.board[17]=indexes[1].K;
