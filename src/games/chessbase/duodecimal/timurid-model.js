@@ -78,7 +78,7 @@
 		);
 	}
 
-	/*Model.Game.cbShipGraph = function(geometry){
+	Model.Game.cbShipGraph = function(geometry){
 		var $this=this;
 
 		var flags = $this.cbConstants.FLAG_MOVE | $this.cbConstants.FLAG_CAPTURE;
@@ -112,7 +112,7 @@
 		   $this.cbShortRangeGraph(geometry,[[-1,-1],[-1,1],[1,-1],[1,1]]),
 		   graph
 		);
-	}*/
+	}
 
 	var confine = {};
 
@@ -133,8 +133,8 @@
       abbrev : '',
       fenAbbrev: 'P',
       aspect : 'fr-pawn',
-      graph : this.cbInitialPawnGraph(geometry,1,confine),
-      value : 0.9,
+      graph : this.cbInitialPawnGraph(geometry,1),
+      value : 0.94,
       initial: [{s:1,p:24},{s:1,p:25},{s:1,p:26},{s:1,p:27},{s:1,p:28},{s:1,p:29},{s:1,p:30},{s:1,p:31},{s:1,p:32},{s:1,p:33},{s:1,p:34},{s:1,p:35}],
       epCatch : true,
       epTarget : true,
@@ -145,8 +145,8 @@
       abbrev : '',
       fenAbbrev: 'P',
       aspect : 'fr-pawn',
-      graph : this.cbInitialPawnGraph(geometry,-1,confine),
-      value : 0.9,
+      graph : this.cbInitialPawnGraph(geometry,-1),
+      value : 0.94,
       initial: [{s:-1,p:108},{s:-1,p:109},{s:-1,p:110},{s:-1,p:111},{s:-1,p:112},{s:-1,p:113},{s:-1,p:114},{s:-1,p:115},{s:-1,p:116},{s:-1,p:117},{s:-1,p:118},{s:-1,p:119}],
       epCatch : true,
       epTarget : true,
@@ -174,7 +174,7 @@
       abbrev : 'R',
       aspect : 'fr-rook',
       graph : this.cbRookGraph(geometry,confine),
-      value : 5,
+      value : 5.2,
       initial: [{s:1,p:12},{s:1,p:23},{s:-1,p:120},{s:-1,p:131}],
       },
       5: {
@@ -190,7 +190,7 @@
       abbrev : 'N',
       aspect : 'fr-knight',
       graph : this.cbKnightGraph(geometry,confine),
-      value : 3,
+      value : 2.9,
       initial: [{s:1,p:13},{s:1,p:22},{s:-1,p:121},{s:-1,p:130}],
       },
       7: {
@@ -228,10 +228,10 @@
       11: {
       name : 'eagle',
       abbrev : 'H',
-      aspect : 'fr-eagle',
-      graph : this.cbEagleGraph(geometry),
-      value : 8.1,
-      initial: [{s:1,p:15},{s:1,p:20},{s:-1,p:123},{s:-1,p:128}],
+      aspect : 'fr-griffin',
+      graph : this.cbGriffonGraph(geometry),
+      value : 8.7,
+      initial: [],
       },
       12: {
       name : 'camel',
@@ -240,8 +240,15 @@
       graph : this.cbShortRangeGraph(geometry,[[-3,-1],[-3,1],[3,-1],[3,1],[1,3],[1,-3],[-1,3],[-1,-3]]),
       value : 2.7,
       initial: [{s:1,p:2},{s:1,p:9},{s:-1,p:134},{s:-1,p:141}],
-      }
-
+      },
+       13: {
+      name : 'ship',
+      abbrev : 'X',
+      aspect : 'fr-ship',
+      graph : this.cbShipGraph(geometry),
+      value : 4.8,
+      initial: [{s:1,p:15},{s:1,p:20},{s:-1,p:123},{s:-1,p:128}],
+      },
 		}
 
 		// defining types for readable promo cases

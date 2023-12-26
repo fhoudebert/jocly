@@ -42,43 +42,7 @@
 		);
 	}
 
-	Model.Game.cbEagleGraph = function(geometry){
-		var $this=this;
-
-		var flags = $this.cbConstants.FLAG_MOVE | $this.cbConstants.FLAG_CAPTURE;
-		var graph={};
-		for(var pos=0;pos<geometry.boardSize;pos++) {
-			graph[pos]=[];
-			[[-1,-1],[-1,1],[1,-1],[1,1]].forEach(function(delta) { // loop on all 4 diagonals
-				var pos1=geometry.Graph(pos,delta);
-				if(pos1!=null) {
-					for(var dir=0;dir<2;dir++) { // dir=0 for row, dir=1 for column
-						var nbMax = (dir==0) ? lastRow : lastCol;
-						var away=[] // hold the sliding line
-						for(var n=1;n<nbMax;n++) {
-							var delta2=[];
-							delta2[dir]=delta[dir]*n;
-							delta2[1-dir]=0; // delta2 is now only about moving orthogonally, away from the piece
-							var pos2=geometry.Graph(pos1,delta2);
-							if(pos2!=null) {
-								if(n==1) // possible to slide at least 1 cell, make sure the diagonal cell is not occupied, but cannot move to this cell
-									away.push(pos1 | $this.cbConstants.FLAG_STOP);
-								away.push(pos2 | flags);
-							}
-						}
-						if(away.length>0)
-							graph[pos].push($this.cbTypedArray(away));
-					}
-				}
-			});
-		}
-		return $this.cbMergeGraphs(geometry,
-		   $this.cbShortRangeGraph(geometry,[[-1,-1],[-1,1],[1,-1],[1,1]]),
-		   graph
-		);
-	}
-
-	Model.Game.cbShipGraph = function(geometry){
+	/*Model.Game.cbShipGraph = function(geometry){
 		var $this=this;
 
 		var flags = $this.cbConstants.FLAG_MOVE | $this.cbConstants.FLAG_CAPTURE;
@@ -112,7 +76,7 @@
 		   $this.cbShortRangeGraph(geometry,[[-1,-1],[-1,1],[1,-1],[1,1]]),
 		   graph
 		);
-	}
+	}*/
 
 	var confine = {};
 
@@ -133,7 +97,7 @@
       abbrev : '',
       fenAbbrev: 'P',
       aspect : 'fr-pawn',
-      graph : this.cbInitialPawnGraph(geometry,1,confine),
+      graph : this.cbInitialPawnGraph(geometry,1),
       value : 0.9,
       initial: [{s:1,p:24},{s:1,p:25},{s:1,p:26},{s:1,p:27},{s:1,p:28},{s:1,p:29},{s:1,p:30},{s:1,p:31},{s:1,p:32},{s:1,p:33},{s:1,p:34},{s:1,p:35}],
       epCatch : true,
@@ -145,7 +109,7 @@
       abbrev : '',
       fenAbbrev: 'P',
       aspect : 'fr-pawn',
-      graph : this.cbInitialPawnGraph(geometry,-1,confine),
+      graph : this.cbInitialPawnGraph(geometry,-1),
       value : 0.9,
       initial: [{s:-1,p:108},{s:-1,p:109},{s:-1,p:110},{s:-1,p:111},{s:-1,p:112},{s:-1,p:113},{s:-1,p:114},{s:-1,p:115},{s:-1,p:116},{s:-1,p:117},{s:-1,p:118},{s:-1,p:119}],
       epCatch : true,
@@ -199,7 +163,7 @@
       aspect : 'fr-queen',
       graph : this.cbQueenGraph(geometry,confine),
       value : 10,
-      initial: [],
+      initial: [{s:1,p:18},{s:-1,p:126}],
       },
       8: {
       name : 'king',
@@ -228,10 +192,10 @@
       11: {
       name : 'eagle',
       abbrev : 'H',
-      aspect : 'fr-eagle',
-      graph : this.cbEagleGraph(geometry),
+      aspect : 'fr-griffin',
+      graph : this.cbGriffonGraph(geometry),
       value : 8.1,
-      initial: [],
+      initial: [{s:1,p:15},{s:1,p:20},{s:-1,p:123},{s:-1,p:128}],
       },
       12: {
       name : 'camel',
@@ -240,28 +204,8 @@
       graph : this.cbShortRangeGraph(geometry,[[-3,-1],[-3,1],[3,-1],[3,1],[1,3],[1,-3],[-1,3],[-1,-3]]),
       value : 2.7,
       initial: [{s:1,p:2},{s:1,p:9},{s:-1,p:134},{s:-1,p:141}],
-      },
-       13: {
-      name : 'ship',
-      abbrev : 'X',
-      aspect : 'fr-ship',
-      graph : this.cbShipGraph(geometry),
-      value : 4.8,
-      initial: [{s:1,p:15},{s:1,p:20},{s:-1,p:123},{s:-1,p:128}],
-      },
-      14: {
-      name : 'lion',
-      abbrev : 'L',
-      aspect : 'fr-lion',
-      graph : this.cbShortRangeGraph(geometry,[
-                  [-1,-1],[-1,1],[1,-1],[1,1],[1,0],[0,1],[-1,0],[0,-1],
-                  [-2,0],[-2,-1],[-2,-2],[-1,-2],[0,-2],
-                  [1,-2],[2,-2],[2,-1],[2,0],[2,1],
-                  [2,2],[1,2],[0,2],[-1,2],[-2,2],[-2,1]
-                  ], confine),
-      value : 6.7,
-      initial: [{s:1,p:18},{s:-1,p:126}],
-      },
+      }
+
 		}
 
 		// defining types for readable promo cases
