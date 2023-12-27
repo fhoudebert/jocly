@@ -1427,6 +1427,17 @@ exports.games = (function () {
 =======
 >>>>>>> 82e61e8 (add nex Fairy piece : terror, a dragon used in makromachy)
 	]
+	var modelScripts_acedrex = [
+		"base-model.js",
+		"grid-geo-model.js",
+		"historical/grant-acedrex-model.js"
+	]
+	var config_view_js_acedrex = [
+		"base-view.js",
+		"grid-board-view.js",
+		"fairy-set-view.js",
+		"historical/grant-acedrex-view.js"
+	]
 	return [
 		{
 			"name": "classic-chess",
