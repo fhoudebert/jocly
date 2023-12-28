@@ -393,6 +393,16 @@
 					clipx: 5400,
 					},
 			},
+			"fr-champion": {
+				"2d": {
+					clipx: 5500,
+					},
+			},
+			"fr-wizard": {
+				"2d": {
+					clipx: 5600,
+					},
+			},
 		},modifier);
 	}
 
@@ -1850,6 +1860,48 @@
 						normal: {
 							texturesImg: {
 								normalImg: "/res/fairy/lighthouse/lighthouse-normalmap.jpg",
+							}
+						}
+					}
+				}
+			},
+		},
+		"fr-champion": {
+			mesh: {
+				jsFile:"/res/fairy/champion/champion.js"
+			},
+			materials: {
+				mat0: {
+					channels: {
+						diffuse: {
+							texturesImg: {
+								diffImg : "/res/fairy/champion/champion-diffusemap.jpg",
+							}
+						},
+						normal: {
+							texturesImg: {
+								normalImg: "/res/fairy/champion/champion-normalmap.jpg",
+							}
+						}
+					}
+				}
+			},
+		},
+		"fr-wizard": {
+			mesh: {
+				jsFile:"/res/fairy/wizard/wizard.js"
+			},
+			materials: {
+				mat0: {
+					channels: {
+						diffuse: {
+							texturesImg: {
+								diffImg : "/res/fairy/wizard/wizard-diffusemap.jpg",
+							}
+						},
+						normal: {
+							texturesImg: {
+								normalImg: "/res/fairy/wizard/wizard-normalmap.jpg",
 							}
 						}
 					}
