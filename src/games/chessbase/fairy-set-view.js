@@ -169,7 +169,7 @@
 			},
 			"fr-stork": {
 				"2d": {
-					clipx: 1100,
+					clipx: 5300,
 				},
 			},
 			"fr-lion": {
@@ -379,6 +379,11 @@
 					},
 			},
 			"fr-hawk": {
+				"2d": {
+					clipx: 5100,
+					},
+			},
+			"fr-flying-queen": {
 				"2d": {
 					clipx: 5100,
 					},
@@ -848,6 +853,28 @@
 		"fr-proper-queen": {
 			mesh: {
 				jsFile:"/res/fairy/queen/proper-queen.js"
+			},
+			materials: {
+				mat0: {
+					channels: {
+						diffuse: {
+							texturesImg: {
+								diffImg : "/res/fairy/queen/queen-diffusemap.jpg",
+							}
+						},
+						normal: {
+							texturesImg: {
+								normalImg: "/res/fairy/queen/queen-normalmap.jpg",
+							}
+						}
+					}
+				}
+			},
+		},
+
+		"fr-flying-queen": {
+			mesh: {
+				jsFile:"/res/fairy/queen/flying-queen.js"
 			},
 			materials: {
 				mat0: {
