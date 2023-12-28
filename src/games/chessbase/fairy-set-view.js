@@ -388,6 +388,11 @@
 					clipx: 5100,
 					},
 			},
+			"fr-phoenix": {
+				"2d": {
+					clipx: 5400,
+					},
+			},
 		},modifier);
 	}
 
@@ -1845,6 +1850,27 @@
 						normal: {
 							texturesImg: {
 								normalImg: "/res/fairy/lighthouse/lighthouse-normalmap.jpg",
+							}
+						}
+					}
+				}
+			},
+		},
+		"fr-phoenix": {
+			mesh: {
+				jsFile:"/res/fairy/phoenix/phoenix.js"
+			},
+			materials: {
+				mat0: {
+					channels: {
+						diffuse: {
+							texturesImg: {
+								diffImg : "/res/fairy/phoenix/phoenix-diffusemap.jpg",
+							}
+						},
+						normal: {
+							texturesImg: {
+								normalImg: "/res/fairy/phoenix/phoenix-normalmap.jpg",
 							}
 						}
 					}
