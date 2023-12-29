@@ -428,9 +428,19 @@
 					clipx: 5900,
 					},
 			},
-			"fr-terror": {
+			"fr-cobra": {
 				"2d": {
 					clipx: 6000,
+					},
+			},
+			"fr-flamingo": {
+				"2d": {
+					clipx: 6100,
+					},
+			},
+			"fr-terror": {
+				"2d": {
+					clipx: 6200,
 					},
 			},
 		},modifier);
@@ -2022,6 +2032,27 @@
 				}
 			},
 		},
+		"fr-flamingo": {
+			mesh: {
+				jsFile:"/res/fairy/birds/flamingo.js"
+			},
+			materials: {
+				mat0: {
+					channels: {
+						diffuse: {
+							texturesImg: {
+								diffImg : "/res/fairy/birds/flamingo-diffusemap.jpg",
+							}
+						},
+						normal: {
+							texturesImg: {
+								normalImg: "/res/fairy/birds/flamingo-normalmap.jpg",
+							}
+						}
+					}
+				}
+			},
+		},
 		"fr-phoenix": {
 			mesh: {
 				jsFile:"/res/fairy/birds/phoenix.js"
@@ -2058,6 +2089,27 @@
 						normal: {
 							texturesImg: {
 								normalImg: "/res/fairy/rhino/rhino2-normalmap.jpg",
+							}
+						}
+					}
+				}
+			},
+		},
+		"fr-cobra": {
+			mesh: {
+				jsFile:"/res/fairy/cobra/cobra.js"
+			},
+			materials: {
+				mat0: {
+					channels: {
+						diffuse: {
+							texturesImg: {
+								diffImg : "/res/fairy/cobra/cobra-diffusemap.jpg",
+							}
+						},
+						normal: {
+							texturesImg: {
+								normalImg: "/res/fairy/cobra/cobra-normalmap.jpg",
 							}
 						}
 					}
@@ -2106,5 +2158,7 @@
 				}
 			},
 		},
+
 	});
 })();
+
