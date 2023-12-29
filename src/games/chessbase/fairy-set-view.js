@@ -428,6 +428,11 @@
 					clipx: 5900,
 					},
 			},
+			"fr-cobra": {
+				"2d": {
+					clipx: 6000,
+					},
+			},
 		},modifier);
 	}
 
@@ -2053,6 +2058,27 @@
 						normal: {
 							texturesImg: {
 								normalImg: "/res/fairy/rhino/rhino2-normalmap.jpg",
+							}
+						}
+					}
+				}
+			},
+		},
+		"fr-cobra": {
+			mesh: {
+				jsFile:"/res/fairy/cobra/cobra.js"
+			},
+			materials: {
+				mat0: {
+					channels: {
+						diffuse: {
+							texturesImg: {
+								diffImg : "/res/fairy/cobra/cobra-diffusemap.jpg",
+							}
+						},
+						normal: {
+							texturesImg: {
+								normalImg: "/res/fairy/cobra/cobra-normalmap.jpg",
 							}
 						}
 					}
