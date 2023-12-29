@@ -16,6 +16,7 @@
 		
 		var $this = this;
 		
+
 		/*
 		 * Movement/capture graph for the prince
 		 */
@@ -39,48 +40,11 @@
 			);
 		}
 		
-		/*
-		 * Movement/capture graph for the eagle
-		 */
-		function EagleGraph() {
-			var flags = $this.cbConstants.FLAG_MOVE | $this.cbConstants.FLAG_CAPTURE;
-			var graph={};
-			for(var pos=0;pos<geometry.boardSize;pos++) {
-				graph[pos]=[];
-				[[-1,-1],[-1,1],[1,-1],[1,1]].forEach(function(delta) { // loop on all 4 diagonals
-					var pos1=geometry.Graph(pos,delta);
-					if(pos1!=null) {
-						for(var dir=0;dir<2;dir++) { // dir=0 for row, dir=1 for column
-							var away=[] // hold the sliding line
-							for(var n=1;n<11;n++) { // board is 12 cells long, so only consider max 11 cell displacements
-								var delta2=[];
-								delta2[dir]=delta[dir]*n;
-								delta2[1-dir]=0; // delta2 is now only about moving orthogonally, away from the piece
-								var pos2=geometry.Graph(pos1,delta2);
-								if(pos2!=null) {
-									if(n==1) // possible to slide at least 1 cell, make sure the diagonal cell is not occupied, but cannot move to this cell
-										away.push(pos1 | $this.cbConstants.FLAG_STOP);
-									away.push(pos2 | flags);
-								}
-							}
-							if(away.length>0)
-								graph[pos].push($this.cbTypedArray(away));
-						}
-					}					
-				});
-			}
-			return $this.cbMergeGraphs(geometry,
-			   $this.cbShortRangeGraph(geometry,[[-1,-1],[-1,1],[1,-1],[1,1]]),
-			   graph
-			);
-		}
 		
 		return {
 			
 			geometry: geometry,
-
 			zobrist: "old",
-			
 			pieceTypes: {
 
 				0: {
@@ -100,7 +64,7 @@
 					value: 1,
 					abbrev: '',
 					fenAbbrev: 'P',
-					initial: [{s:1,p:24},{s:1,p:25},{s:1,p:26},{s:1,p:27},{s:1,p:28},{s:1,p:29},{s:1,p:30},{s:1,p:31},{s:1,p:32},{s:1,p:33},{s:1,p:34},{s:1,p:35}],
+					initial: [{s:1,p:24},{s:1,p:25},{s:1,p:26},{s:1,p:27},{s:1,p:29},{s:1,p:30},{s:1,p:32},{s:1,p:33},{s:1,p:34},{s:1,p:35}],
 					epTarget: true,
 					epCatch: true,
 				},
@@ -123,7 +87,7 @@
 					value: 1,
 					abbrev: '',
 					fenAbbrev: 'P',
-					initial: [{s:-1,p:108},{s:-1,p:109},{s:-1,p:110},{s:-1,p:111},{s:-1,p:112},{s:-1,p:113},{s:-1,p:114},{s:-1,p:115},{s:-1,p:116},{s:-1,p:117},{s:-1,p:118},{s:-1,p:119}],
+					initial: [{s:-1,p:108},{s:-1,p:109},{s:-1,p:110},{s:-1,p:111},{s:-1,p:113},{s:-1,p:114},{s:-1,p:116},{s:-1,p:117},{s:-1,p:118},{s:-1,p:119}],
 					epTarget: true,
 					epCatch: true,
 				},
@@ -178,7 +142,7 @@
 					name: 'cannon',
 					aspect: 'fr-cannon2',
 					graph: this.cbXQCannonGraph(geometry),
-					value: 3.5,
+					value: 4,
 					abbrev: 'C',
 					initial: [{s:1,p:0},{s:1,p:11},{s:-1,p:132},{s:-1,p:143}],
 				},
@@ -196,10 +160,10 @@
 	            	name: 'prince-w',
 	            	aspect: 'fr-admiral',
 	            	graph: PrinceGraph(1),
-	            	value: 3,
+	            	value: 3.5,
 	            	epTarget: true,
 	            	abbrev: 'I',
-                    initial: [{s:1,p:16},{s:1,p:19}],
+                    initial: [{s:1,p:28},{s:1,p:31}],
 	            },
 
 			12: {
@@ -207,9 +171,9 @@
 	            	aspect: 'fr-admiral',
 	            	graph: PrinceGraph(-1),
 					epTarget: true,
-	            	value: 3,
+	            	value: 3.5,
 	            	abbrev: 'I',
-	            	initial: [{s:-1,p:124},{s:-1,p:127}],
+	            	initial: [{s:-1,p:112},{s:-1,p:115}],
 	            },
 
 
@@ -237,26 +201,67 @@
 			15: {
 	            	name: 'eagle',
 	            	aspect: 'fr-griffin',
-	            	graph: EagleGraph(),
+	            	graph : this.cbGriffonGraph(geometry),
 	            	value: 8,
 	            	abbrev: 'A',
 	            	initial: [{s:1,p:6},{s:-1,p:138}],
 	            },	
-
-
-
-				
+			16: {
+	            	name: 'Buffalo',
+	            	aspect: 'fr-buffalo',
+	            	graph : this.cbShortRangeGraph(geometry,[
+                  [1,2],[1,3],[2,1],[2,3],[3,1],[3,2],
+                  [1,-2],[1,-3],[2,-1],[2,-3],[3,-1],[3,-2],
+                  [-1,-2],[-1,-3],[-2,-1],[-2,-3],[-3,-1],[-3,-2],
+                  [-1,2],[-1,3],[-2,1],[-2,3],[-3,1],[-3,2]
+                  ]),
+	            	value: 7,
+	            	abbrev: 'F',
+	            	initial: [{s:1,p:4},{s:-1,p:136}],
+	            },	
+			17: {
+	            	name: 'Rhino',
+	            	aspect: 'fr-rhino',
+	            	graph: RhinoGraph(),
+	            	value: 6,
+	            	abbrev: 'U',
+	            	initial: [{s:1,p:7},{s:-1,p:139}],
+	            },	
+			18: {
+	            	name : 'giraffe',
+	            	abbrev : 'Z',
+	            	aspect : 'fr-giraffe',
+	            	graph : this.cbShortRangeGraph(geometry,[[-3,-2],[-3,2],[3,-2],[3,2],[2,3],[2,-3],[-2,3],[-2,-3]]),
+	            	value : 2,
+	            	initial: [{s:1,p:2},{s:1,p:9},{s:-1,p:134},{s:-1,p:141}],
+	            },
+			19: {
+	            	name : 'bow',
+	            	abbrev : 'V',
+	            	aspect : 'fr-bow',
+	            	graph : this.cbLongRangeGraph(geometry,[[-1,-1],[1,1],[-1,1],[1,-1]],null,this.cbConstants.FLAG_MOVE | this.cbConstants.FLAG_SCREEN_CAPTURE),
+	            	value : 3,
+	            	initial: [{s:1,p:3},{s:1,p:8},{s:-1,p:135},{s:-1,p:140}],
+	            },
+			20: {
+	            	name : 'machine',
+	            	abbrev : 'W',
+	            	aspect : 'fr-machine',
+	            	graph : this.cbShortRangeGraph(geometry,[[-1,0],[-2,0],[1,0],[2,0],[0,1],[0,2],[0,-1],[0,-2]]),
+	            	value : 3,
+	            	initial: [{s:1,p:16},{s:1,p:19},{s:-1,p:124},{s:-1,p:127}],
+	            },
 			},
 
 			promote: function(aGame,piece,move) {
 				if(piece.t==1 && geometry.R(move.t)==11)
-					return [7,14,15];
+					return [7,14,15,16,17];
 				else if(piece.t==3 && geometry.R(move.t)==0)
-					return [7,14,15];
+					return [7,14,15,16,17];
 			else if(piece.t==11 && geometry.R(move.t)==11)
-					return [7,14,15];
+					return [7,14,15,16,17];
 			else if(piece.t==12 && geometry.R(move.t)==0)
-					return [7,14,15];
+					return [7,14,15,16,17];
 				return [];
 			},
 
@@ -280,7 +285,7 @@
 	}
 	var SuperModelBoardGenerateMoves=Model.Board.GenerateMoves;
 	Model.Board.GenerateMoves = function(aGame) {
-		// first moves (white and black) are managed specifically to setup K,Q,E,L initial position 
+		// first moves (white and black) are managed specifically to setup K,Q,E,L,F,U initial position 
 		if(this.setupState===undefined)  {
 			this.mMoves=[{}];
 			return;
@@ -340,6 +345,7 @@
 	Model.Board.CopyFrom = function(aBoard) {
 		SuperModelBoardCopyFrom.apply(this,arguments);
 		this.setupState = aBoard.setupState;
+
 	}
 	
 	/*
@@ -363,23 +369,27 @@
 			var $this=this;
 			// at this point, KQLE have arbitrary positions. remember those piece indexes so we can move them
 			var starting={
-				"1": { K: 17, Q: 18, L: 5, E: 6 },
-				"-1": { K: 125, Q: 126, L: 137, E: 138 },
+				"1": { K: 17, Q: 18, E: 6,L: 5, F: 4, U: 7 },
+				"-1": { K: 125, Q: 126,  E: 138 , L: 137,F: 136, U: 139},
 			}
 			var indexes={ "1": {}, "-1": {}	};
 			["1","-1"].forEach(function(side) {
 				for(var p in starting[side])
 					indexes[side][p]=$this.board[starting[side][p]];
 			});
-			// remove KQLE from the board
-			[5,6,17,18,125,126,137,138].forEach(function(pos) {
+			// remove KQLEFU from the board
+			[4,5,6,7,17,18,125,126,136,137,138,139].forEach(function(pos) {
 				var pIndex=$this.board[pos];
 				$this.board[pos]=-1;
 				$this.pieces[pIndex].p=-1;
+
+
+
 				$this.zSign=aGame.zobrist.update($this.zSign,"board",pIndex,pos);
 			});
-			// setup KQLE positions according to the setup
+			// setup KQLEFU positions according to the setup
 			var setup=move.setup;
+
 			var remaining={};
 			if(setup/6<1) {
 				this.board[17]=indexes[1].K;
@@ -415,6 +425,8 @@
 			$this.zSign=aGame.zobrist.update($this.zSign,"board",indexes[-1].Q,remaining[-1][queen]);				
 			remaining[-1].splice(queen,1);
 			var eagle,lion;
+
+
 			setup%=2;
 			if(setup==0) {
 				eagle=0;
@@ -423,6 +435,7 @@
 				eagle=1;
 				lion=0;				
 			}
+
 			this.board[remaining[1][eagle]]=indexes[1].E;
 			this.pieces[indexes[1].E].p=remaining[1][eagle];
 			$this.zSign=aGame.zobrist.update($this.zSign,"board",indexes[1].E,remaining[1][eagle]);
@@ -437,6 +450,36 @@
 			this.pieces[indexes[-1].L].p=remaining[-1][lion];
 			$this.zSign=aGame.zobrist.update($this.zSign,"board",indexes[-1].L,remaining[1][lion]);		
 			
+            remaining[1]=[4,7]
+            remaining[-1]=[136,139]
+            var rhino,buffalo;
+            setup%=2;
+			if(setup==0) {
+				rhino=0;
+				buffalo=1;
+			} else {
+				rhino=1;
+				buffalo=0;				
+			}
+
+			this.board[remaining[1][buffalo]]=indexes[1].F;
+			this.pieces[indexes[1].F].p=remaining[1][buffalo];
+			$this.zSign=aGame.zobrist.update($this.zSign,"board",indexes[1].F,remaining[1][buffalo]);
+
+
+			this.board[remaining[1][rhino]]=indexes[1].U;
+			this.pieces[indexes[1].U].p=remaining[1][rhino];
+			$this.zSign=aGame.zobrist.update($this.zSign,"board",indexes[1].U,remaining[1][rhino]);
+
+			this.board[remaining[-1][buffalo]]=indexes[-1].F;
+			this.pieces[indexes[-1].F].p=remaining[-1][buffalo];
+			$this.zSign=aGame.zobrist.update($this.zSign,"board",indexes[-1].F,remaining[-1][buffalo]);
+
+			this.board[remaining[-1][rhino]]=indexes[-1].U;
+			this.pieces[indexes[-1].U].p=remaining[-1][rhino];
+			$this.zSign=aGame.zobrist.update($this.zSign,"board",indexes[-1].U,remaining[1][rhino]);	
+
+
 			this.setupState="done";
 		} else
 			SuperModelBoardApplyMove.apply(this,arguments);

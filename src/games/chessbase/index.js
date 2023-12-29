@@ -231,8 +231,8 @@ exports.games = (function () {
 	var config_view_js_2 = [
 		"base-view.js",
 		"grid-board-view.js",
-		"xiangqi-board-view.js",
-		"xiangqi-set-view.js",
+		"famous/xiangqi-board-view.js",
+		"famous/xiangqi-set-view.js",
 		"famous/xiangqi-view.js"
 	]
 	var modelScripts_3 = [
@@ -336,7 +336,7 @@ exports.games = (function () {
 	var modelScripts_11 = [
 		"base-model.js",
 		"grid-geo-model.js",
-		"courier-model.js"
+		"historical/courier-model.js"
 	]
 	var config_model_levels_6 = {
 		"name": "easy",
@@ -394,9 +394,9 @@ exports.games = (function () {
 	var config_view_js_11 = [
 		"base-view.js",
 		"grid-board-view.js",
-		"courier-board-view.js",
-		"courierchess-set-view.js",
-		"courier-view.js"
+		"historical/courier-board-view.js",
+		"historical/courierchess-set-view.js",
+		"historical/courier-view.js"
 	]
 	var modelScripts_12 = [
 		"base-model.js",
@@ -1258,13 +1258,13 @@ exports.games = (function () {
 	var modelScripts_lca = [
  		"base-model.js",
  		"grid-geo-model.js",
- 		"leychessalpha-model.js"
+ 		"duodecimal/leychessalpha-model.js"
  	]
  	var config_view_js_lca = [
  		"base-view.js",
  		"grid-board-view.js",
  		"fairy-set-view.js",
- 		"leychessalpha-view.js"
+ 		"duodecimal/leychessalpha-view.js"
 	]
 
 	var modelScripts_wtamerlane = [
@@ -1281,141 +1281,132 @@ exports.games = (function () {
 	var modelScripts_fantasticXIII = [
  		"base-model.js",
  		"grid-geo-model.js",
- 		"fantasticXIII-model.js"
+ 		"fairy-move-model.js",
+ 		"cazaux/fantasticXIII-model.js"
  	]
  	var config_view_js_fantasticXIII = [
  		"base-view.js",
  		"grid-board-view.js",
  		"fairy-set-view.js",
- 		"fantasticXIII-view.js"
+ 		"cazaux/fantasticXIII-view.js"
  	]
 	var modelScripts_bigorra = [
  		"base-model.js",
  		"grid-geo-model.js",
-
- 		"bigorra-model.js"
+        "fairy-move-model.js",
+ 		"cazaux/bigorra-model.js"
  	]
  	var config_view_js_bigorra = [
  		"base-view.js",
  		"grid-board-view.js",
  		"fairy-set-view.js",
-
- 		"bigorra-view.js"
+ 		"cazaux/bigorra-view.js"
  	]
 	var modelScripts_pemba = [
  		"base-model.js",
  		"grid-geo-model.js",
- 		"pemba-model.js"
+ 		"cazaux/pemba-model.js"
  	]
  	var config_view_js_pemba = [
  		"base-view.js",
  		"grid-board-view.js",
  		"fairy-set-view.js",
- 		"pemba-view.js"
+ 		"cazaux/pemba-view.js"
  	]
 	var modelScripts_gigaII = [
 		"base-model.js",
 		"grid-geo-model.js",
-		"gigachessII-model.js"
+        "fairy-move-model.js",
+		"cazaux/gigachessII-model.js"
 	]
 	var config_view_js_gigaII = [
 		"base-view.js",
 		"grid-board-view.js",
 		"fairy-set-view.js",
-		"gigachessII-view.js"
-	]
-	var modelScripts_pemba = [
- 		"base-model.js",
- 		"grid-geo-model.js",
- 		"pemba-model.js"
- 	]
- 	var config_view_js_pemba = [
- 		"base-view.js",
- 		"grid-board-view.js",
- 		"fairy-set-view.js",
- 		"pemba-view.js"
- 	]
-	var modelScripts_gigaII = [
-		"base-model.js",
-		"grid-geo-model.js",
-		"gigachessII-model.js"
-	]
-	var config_view_js_gigaII = [
-		"base-view.js",
-		"grid-board-view.js",
-		"fairy-set-view.js",
-		"gigachessII-view.js"
+		"cazaux/gigachessII-view.js"
 	]
 	var modelScripts_wtimurid = [
  		"base-model.js",
  		"grid-geo-model.js",
- 		"wild-timurid-model.js"
+        "fairy-move-model.js",
+ 		"duodecimal/wild-timurid-model.js"
  	]
  	var config_view_js_wtimurid = [
  		"base-view.js",
  		"grid-board-view.js",
  		"fairy-set-view.js",
- 		"timurid-view.js"
+ 		"duodecimal/timurid-view.js"
  	]
 	var modelScripts_timurid = [
  		"base-model.js",
  		"grid-geo-model.js",
- 		"timurid-model.js"
-
+        "fairy-move-model.js",
+ 		"duodecimal/timurid-model.js"
  	]
  	var config_view_js_timurid = [
  		"base-view.js",
  		"grid-board-view.js",
  		"fairy-set-view.js",
- 		"timurid-view.js"
+ 		"duodecimal/timurid-view.js"
  	]
 	var modelScripts_wbabur = [
  		"base-model.js",
  		"grid-geo-model.js",
- 		"wild-babur-model.js"
-
+        "fairy-move-model.js",
+ 		"duodecimal/wild-babur-model.js"
  	]
  	var config_view_js_wbabur = [
  		"base-view.js",
  		"grid-board-view.js",
  		"fairy-set-view.js",
- 		"timurid-view.js"
+ 		"duodecimal/timurid-view.js"
  	]
 	var modelScripts_babur = [
  		"base-model.js",
  		"grid-geo-model.js",
- 		"babur-model.js"
-
+        "fairy-move-model.js",
+ 		"duodecimal/babur-model.js"
  	]
  	var config_view_js_babur = [
  		"base-view.js",
  		"grid-board-view.js",
  		"fairy-set-view.js",
- 		"timurid-view.js"
+ 		"duodecimal/timurid-view.js"
  	]
 	var modelScripts_wmirza = [
  		"base-model.js",
  		"grid-geo-model.js",
- 		"wild-mirza-model.js"
-
+        "fairy-move-model.js",
+ 		"duodecimal/wild-mirza-model.js"
  	]
  	var config_view_js_wmirza = [
  		"base-view.js",
  		"grid-board-view.js",
  		"fairy-set-view.js",
- 		"timurid-view.js"
+ 		"duodecimal/timurid-view.js"
  	]
 	var modelScripts_zanzibars = [
-
 		"base-model.js",
 		"grid-geo-model.js",
-		"zanzibar-s-model.js"
+        "fairy-move-model.js",
+		"cazaux/zanzibar-s-model.js"
 	]
 	var config_view_js_zanzibars = [
 		"base-view.js",
 		"grid-board-view.js",
 		"fairy-set-view.js",
-		"zanzibar-view.js"
+		"cazaux/zanzibar-view.js"
+	]
+	var modelScripts_acedrex = [
+		"base-model.js",
+		"grid-geo-model.js",
+		"historical/grant-acedrex-model.js"
+	]
+	var config_view_js_acedrex = [
+		"base-view.js",
+		"grid-board-view.js",
+		"fairy-set-view.js",
+		"historical/grant-acedrex-view.js"
 	]
 	return [
 		{
@@ -1431,12 +1422,12 @@ exports.games = (function () {
 					"plazza": "true",
 					"released": 1389887778,
 					"rules": {
-						"en": "famous/rules.html",
-						"fr": "famous/rules-fr.html"
+						"en": "res/rules/famous/rules.html",
+						"fr": "res/rules/famous/rules-fr.html"
 					},
 					"credits": {
-						"en": "famous/credits.html",
-						"fr": "famous/credits-fr.html"
+						"en": "res/rules/famous/credits.html",
+						"fr": "res/rules/famous/credits-fr.html"
 					},
 					"gameOptions": config_model_gameOptions,
 					"js": modelScripts,
@@ -1525,11 +1516,11 @@ exports.games = (function () {
 					"plazza": "true",
 					"released": 1495039002,
 					"rules": {
-						"en": "standard/losing-rules.html",
+						"en": "res/rules/standard/losing-rules.html",
 					},
 					"credits": {
-						"en": "standard/credits.html",
-						"fr": "standard/credits-fr.html"
+						"en": "res/rules/standard/credits.html",
+						"fr": "res/rules/standard/credits-fr.html"
 					},
 					"gameOptions": config_model_gameOptions,
 					"js": [
@@ -1614,19 +1605,19 @@ exports.games = (function () {
 					"title-en": "Xiangqi",
 					"summary": "Chinese Chess",
 					"rules": {
-						"en": "famous/xiangqi-rules.html"
+						"en": "res/rules/xiangqi/xiangqi-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
 					"thumbnail": "res/rules/xiangqi/xiangqi-thumb.png",
 					"released": 1394466978,
 					"credits": {
-						"en": "famous/xiangqi-credits.html"
+						"en": "res/rules/xiangqi/xiangqi-credits.html"
 					},
 					"gameOptions": config_model_gameOptions_2,
 					"js": modelScripts_2,
 					"description": {
-						"en": "famous/xiangqi-description.html"
+						"en": "res/rules/xiangqi/xiangqi-description.html"
 					},
 					"levels": config_model_levels_5
 				},
@@ -1746,21 +1737,21 @@ exports.games = (function () {
 					"title-en": "Gardner MiniChess",
 					"summary": "Gardner 5x5 minichess (1969)",
 					"rules": {
-						"en": "mini/gardner-rules.html"
+						"en": "res/rules/mini/gardner-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
 					"thumbnail": "res/rules/mini/gardner-thumb.png",
 					"released": 1398178578,
 					"credits": {
-						"en": "mini/gardner-credits.html"
+						"en": "res/rules/mini/gardner-credits.html"
 					},
 					"gameOptions": config_model_gameOptions_2,
 					"obsolete": false,
 					"js": modelScripts_3,
 					"levels": config_model_levels_5,
 					"description": {
-						"en": "mini/gardner-description.html"
+						"en": "res/rules/mini/gardner-description.html"
 					}
 				},
 				"view": {
@@ -1797,21 +1788,21 @@ exports.games = (function () {
 					"title-en": "Mini Chess 4x4",
 					"summary": "4x4 mini chess variant",
 					"rules": {
-						"en": "mini/mini4x4-rules.html"
+						"en": "res/rules/mini/mini4x4-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
 					"thumbnail": "res/rules/mini/mini4x4-thumb.png",
 					"released": 1398178577,
 					"credits": {
-						"en": "mini/mini4x4-credits.html"
+						"en": "res/rules/mini/mini4x4-credits.html"
 					},
 					"gameOptions": config_model_gameOptions_2,
 					"obsolete": false,
 					"js": modelScripts_4,
 					"levels": config_model_levels_5,
 					"description": {
-						"en": "mini/mini4x4-description.html"
+						"en": "res/rules/mini/mini4x4-description.html"
 					}
 				},
 				"view": {
@@ -1848,21 +1839,21 @@ exports.games = (function () {
 					"title-en": "Mini Chess 4x5",
 					"summary": "4x5 mini chess variant",
 					"rules": {
-						"en": "mini/mini4x5-rules.html"
+						"en": "res/rules/mini/mini4x5-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
 					"thumbnail": "res/rules/mini/mini4x5-thumb.png",
 					"released": 1398178576,
 					"credits": {
-						"en": "mini/mini4x5-credits.html"
+						"en": "res/rules/mini/mini4x5-credits.html"
 					},
 					"gameOptions": config_model_gameOptions_2,
 					"obsolete": false,
 					"js": modelScripts_5,
 					"levels": config_model_levels_5,
 					"description": {
-						"en": "mini/mini4x5-description.html"
+						"en": "res/rules/mini/mini4x5-description.html"
 					}
 				},
 				"view": {
@@ -1899,21 +1890,21 @@ exports.games = (function () {
 					"title-en": "Micro Chess",
 					"summary": "4x5 chess variant by Glimne (1997)",
 					"rules": {
-						"en": "mini/micro4x5-rules.html"
+						"en": "res/rules/mini/micro4x5-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
 					"thumbnail": "res/rules/mini/micro4x5-thumb.png",
 					"released": 1398178575,
 					"credits": {
-						"en": "mini/micro4x5-credits.html"
+						"en": "res/rules/mini/micro4x5-credits.html"
 					},
 					"gameOptions": config_model_gameOptions_2,
 					"obsolete": false,
 					"js": modelScripts_6,
 					"levels": config_model_levels_5,
 					"description": {
-						"en": "mini/micro4x5-description.html"
+						"en": "res/rules/mini/micro4x5-description.html"
 					}
 				},
 				"view": {
@@ -1950,21 +1941,21 @@ exports.games = (function () {
 					"title-en": "Baby Chess",
 					"summary": "5x5 Baby chess",
 					"rules": {
-						"en": "mini/baby-rules.html"
+						"en": "res/rules/mini/baby-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
 					"thumbnail": "res/rules/mini/baby-thumb.png",
 					"released": 1398178574,
 					"credits": {
-						"en": "mini/baby-credits.html"
+						"en": "res/rules/mini/baby-credits.html"
 					},
 					"gameOptions": config_model_gameOptions_2,
 					"obsolete": false,
 					"js": modelScripts_7,
 					"levels": config_model_levels_5,
 					"description": {
-						"en": "mini/baby-description.html"
+						"en": "res/rules/mini/baby-description.html"
 					}
 				},
 				"view": {
@@ -2001,21 +1992,21 @@ exports.games = (function () {
 					"title-en": "Malett Chess",
 					"summary": "5x5 chess variant by Jeff Malett",
 					"rules": {
-						"en": "mini/malett-rules.html"
+						"en": "res/rules/mini/malett-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
 					"thumbnail": "res/rules/mini/malett-thumb.png",
 					"released": 1398178573,
 					"credits": {
-						"en": "mini/malett-credits.html"
+						"en": "res/rules/mini/malett-credits.html"
 					},
 					"gameOptions": config_model_gameOptions_2,
 					"obsolete": false,
 					"js": modelScripts_8,
 					"levels": config_model_levels_5,
 					"description": {
-						"en": "mini/malett-description.html"
+						"en": "res/rules/mini/malett-description.html"
 					}
 				},
 				"view": {
@@ -2052,21 +2043,21 @@ exports.games = (function () {
 					"title-en": "Los Alamos Chess",
 					"summary": "6x6 chess variant",
 					"rules": {
-						"en": "mini/los-alamos-rules.html"
+						"en": "res/rules/mini/los-alamos-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
 					"thumbnail": "res/rules/mini/los-alamos-thumb.png",
 					"released": 1398178573,
 					"credits": {
-						"en": "mini/los-alamos-credits.html"
+						"en": "res/rules/mini/los-alamos-credits.html"
 					},
 					"gameOptions": config_model_gameOptions_2,
 					"obsolete": false,
 					"js": modelScripts_9,
 					"levels": config_model_levels_5,
 					"description": {
-						"en": "mini/los-alamos-description.html"
+						"en": "res/rules/mini/los-alamos-description.html"
 					}
 				},
 				"view": {
@@ -2103,21 +2094,21 @@ exports.games = (function () {
 					"title-en": "Chess Attack",
 					"summary": "5x6 chess variant",
 					"rules": {
-						"en": "mini/attack-rules.html"
+						"en": "res/rules/mini/attack-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
 					"thumbnail": "res/rules/mini/attack-thumb.png",
 					"released": 1398178572,
 					"credits": {
-						"en": "mini/attack-credits.html"
+						"en": "res/rules/mini/attack-credits.html"
 					},
 					"gameOptions": config_model_gameOptions_2,
 					"obsolete": false,
 					"js": modelScripts_10,
 					"levels": config_model_levels_5,
 					"description": {
-						"en": "mini/attack-description.html"
+						"en": "res/rules/mini/attack-description.html"
 					}
 				},
 				"view": {
@@ -2154,19 +2145,19 @@ exports.games = (function () {
 					"title-en": "Courier Chess",
 					"summary": "12x8 chess (12th century)",
 					"rules": {
-						"en": "courier-rules.html"
+						"en": "res/rules/historical/courier-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
-					"thumbnail": "courier-thumb.png",
+					"thumbnail": "res/rules/historical/courier-thumb.png",
 					"released": 1393430178,
 					"credits": {
-						"en": "courier-credits.html"
+						"en": "res/rules/historical/courier-credits.html"
 					},
 					"gameOptions": config_model_gameOptions_2,
 					"js": modelScripts_11,
 					"description": {
-						"en": "courier-description.html"
+						"en": "res/rules/historical/courier-description.html"
 					},
 					"levels": config_model_levels_10
 				},
@@ -2266,12 +2257,12 @@ exports.games = (function () {
 					"thumbnail": "res/rules/makruk/mk-thumb.png",
 					"released": 1393948578,
 					"credits": {
-						"en": "famous/mk-credits.html"
+						"en": "res/rules/makruk/mk-credits.html"
 					},
 					"gameOptions": config_model_gameOptions_2,
 					"js": modelScripts_12,
 					"description": {
-						"en": "famous/mk-description.html"
+						"en": "res/rules/makruk/mk-description.html"
 					},
 					"levels": config_model_levels_5
 				},
@@ -2352,22 +2343,22 @@ exports.games = (function () {
 					"title-en": "Shako",
 					"summary": "10x10 Chess",
 					"rules": {
-						"en": "cazaux/shako-rules.html",
-						"fr": "cazaux/shako-rules-fr.html"
+						"en": "res/rules/shako/shako-rules.html",
+						"fr": "res/rules/shako/shako-rules-fr.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
 					"thumbnail": "res/rules/shako/shako-thumb.png",
 					"released": 1396536978,
 					"credits": {
-						"en": "cazaux/shako-credits.html",
-						"fr": "cazaux/shako-credits-fr.html"
+						"en": "res/rules/shako/shako-credits.html",
+						"fr": "res/rules/shako/shako-credits-fr.html"
 					},
 					"gameOptions": config_model_gameOptions_2,
 					"js": modelScripts_13,
 					"description": {
-						"en": "cazaux/shako-description.html",
-						"fr": "cazaux/shako-description-fr.html"
+						"en": "res/rules/shako/shako-description.html",
+						"fr": "res/rules/shako/shako-description-fr.html"
 					},
 					"levels": config_model_levels_15
 				},
@@ -2419,20 +2410,20 @@ exports.games = (function () {
 					"title-en": "Shatranj",
 					"summary": "Ancient Chess",
 					"rules": {
-						"en": "famous/shatranj-rules.html"
+						"en": "res/rules/shatranj/shatranj-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
 					"thumbnail": "res/rules/shatranj/shatranj-thumb.png",
 					"released": 1401461778,
 					"credits": {
-						"en": "famous/shatranj-credits.html"
+						"en": "res/rules/shatranj/shatranj-credits.html"
 					},
 					"gameOptions": config_model_gameOptions_3,
 					"obsolete": false,
 					"js": modelScripts_14,
 					"description": {
-						"en": "famous/shatranj-description.html"
+						"en": "res/rules/shatranj/shatranj-description.html"
 					},
 					"levels": config_model_levels_5
 				},
@@ -2562,20 +2553,20 @@ exports.games = (function () {
 					"title-en": "Raumschach",
 					"summary": "5x5x5 Chess",
 					"rules": {
-						"en": "3d/raumschach-rules.html"
+						"en": "res/rules/raumschach/raumschach-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
 					"thumbnail": "res/rules/raumschach/raumschach-thumb.png",
 					"released": 1402066578,
 					"credits": {
-						"en": "3d/raumschach-credits.html"
+						"en": "res/rules/raumschach/raumschach-credits.html"
 					},
 					"gameOptions": config_model_gameOptions,
 					"obsolete": false,
 					"js": modelScripts_16,
 					"description": {
-						"en": "3d/raumschach-description.html"
+						"en": "res/rules/raumschach/raumschach-description.html"
 					},
 					"levels": config_model_levels_10
 				},
@@ -2671,20 +2662,20 @@ exports.games = (function () {
 					"title-en": "Glinski Chess",
 					"summary": "Hexagonal Chess",
 					"rules": {
-						"en": "hex/glinski-rules.html"
+						"en": "res/rules/glinski/glinski-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
 					"thumbnail": "res/rules/glinski/glinski-thumb.png",
 					"released": 1396882578,
 					"credits": {
-						"en": "hex/glinski-credits.html"
+						"en": "res/rules/glinski/glinski-credits.html"
 					},
 					"gameOptions": config_model_gameOptions,
 					"obsolete": false,
 					"js": modelScripts_17,
 					"description": {
-						"en": "hex/glinski-description.html"
+						"en": "res/rules/glinski/glinski-description.html"
 					},
 					"levels": config_model_levels_15
 				},
@@ -2722,20 +2713,20 @@ exports.games = (function () {
 					"title-en": "Brusky Chess",
 					"summary": "Hexagonal Chess",
 					"rules": {
-						"en": "hex/brusky-rules.html"
+						"en": "res/rules/brusky/brusky-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
 					"thumbnail": "res/rules/brusky/brusky-thumb.png",
 					"released": 1398790818,
 					"credits": {
-						"en": "hex/brusky-credits.html"
+						"en": "res/rules/brusky/brusky-credits.html"
 					},
 					"gameOptions": config_model_gameOptions,
 					"obsolete": false,
 					"js": modelScripts_18,
 					"description": {
-						"en": "hex/brusky-description.html"
+						"en": "res/rules/brusky/brusky-description.html"
 					},
 					"levels": config_model_levels_15
 				},
@@ -2783,20 +2774,20 @@ exports.games = (function () {
 					"title-en": "De Vasa Chess",
 					"summary": "Hexagonal Chess",
 					"rules": {
-						"en": "hex/devasa-rules.html"
+						"en": "res/rules/devasa/devasa-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
 					"thumbnail": "res/rules/devasa/devasa-thumb.png",
 					"released": 1403189777,
 					"credits": {
-						"en": "hex/devasa-credits.html"
+						"en": "res/rules/devasa/devasa-credits.html"
 					},
 					"gameOptions": config_model_gameOptions,
 					"obsolete": false,
 					"js": modelScripts_19,
 					"description": {
-						"en": "hex/devasa-description.html"
+						"en": "res/rules/devasa/devasa-description.html"
 					},
 					"levels": config_model_levels_15
 				},
@@ -2852,20 +2843,20 @@ exports.games = (function () {
 					"title-en": "McCooey Chess",
 					"summary": "Hexagonal Chess",
 					"rules": {
-						"en": "hex/mccooey-rules.html"
+						"en": "res/rules/mccooey/mccooey-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
 					"thumbnail": "res/rules/mccooey/mccooey-thumb.png",
 					"released": 1402671378,
 					"credits": {
-						"en": "hex/mccooey-credits.html"
+						"en": "res/rules/mccooey/mccooey-credits.html"
 					},
 					"gameOptions": config_model_gameOptions,
 					"obsolete": false,
 					"js": modelScripts_20,
 					"description": {
-						"en": "hex/mccooey-description.html"
+						"en": "res/rules/mccooey/mccooey-description.html"
 					},
 					"levels": config_model_levels_15
 				},
@@ -2903,20 +2894,20 @@ exports.games = (function () {
 					"title-en": "Shafran Chess",
 					"summary": "Hexagonal Chess",
 					"rules": {
-						"en": "hex/shafran-rules.html"
+						"en": "res/rules/shafran/shafran-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
 					"thumbnail": "res/rules/shafran/shafran-thumb.png",
 					"released": 1403535378,
 					"credits": {
-						"en": "hex/shafran-credits.html"
+						"en": "res/rules/shafran/shafran-credits.html"
 					},
 					"gameOptions": config_model_gameOptions,
 					"obsolete": false,
 					"js": modelScripts_21,
 					"description": {
-						"en": "hex/shafran-description.html"
+						"en": "res/rules/shafran/shafran-description.html"
 					},
 					"levels": config_model_levels_15
 				},
@@ -2964,20 +2955,20 @@ exports.games = (function () {
 					"title-en": "Modern Circular Chess",
 					"summary": "Chess on a ring",
 					"rules": {
-						"en": "circular/circular-rules.html"
+						"en": "res/rules/circular/circular-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
 					"thumbnail": "res/rules/circular/circular-thumb.png",
 					"released": 1397055378,
 					"credits": {
-						"en": "circular/circular-credits.html"
+						"en": "res/rules/circular/circular-credits.html"
 					},
 					"gameOptions": config_model_gameOptions,
 					"obsolete": false,
 					"js": modelScripts_22,
 					"description": {
-						"en": "circular/circular-description.html"
+						"en": "res/rules/circular/circular-description.html"
 					},
 					"levels": config_model_levels_5
 				},
@@ -3025,20 +3016,20 @@ exports.games = (function () {
 					"title-en": "Byzantine Chess",
 					"summary": "10th century circular Chess",
 					"rules": {
-						"en": "circular/byzantine-rules.html"
+						"en": "res/rules/byzantine/byzantine-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
 					"thumbnail": "res/rules/byzantine/byzantine-thumb.png",
 					"released": 1401461778,
 					"credits": {
-						"en": "circular/byzantine-credits.html"
+						"en": "res/rules/byzantine/byzantine-credits.html"
 					},
 					"gameOptions": config_model_gameOptions_3,
 					"obsolete": false,
 					"js": modelScripts_23,
 					"description": {
-						"en": "circular/byzantine-description.html"
+						"en": "res/rules/byzantine/byzantine-description.html"
 					},
 					"levels": config_model_levels_5
 				},
@@ -3118,20 +3109,20 @@ exports.games = (function () {
 					"title-en": "3D Chess",
 					"summary": "6x8x3 Chess",
 					"rules": {
-						"en": "3d/3dchess-rules.html"
+						"en": "res/rules/3dchess/3dchess-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
 					"thumbnail": "res/rules/3dchess/3dchess-thumb.png",
 					"released": 1402584978,
 					"credits": {
-						"en": "3d/3dchess-credits.html"
+						"en": "res/rules/3dchess/3dchess-credits.html"
 					},
 					"gameOptions": config_model_gameOptions,
 					"obsolete": false,
 					"js": modelScripts_24,
 					"description": {
-						"en": "3d/3dchess-description.html"
+						"en": "res/rules/3dchess/3dchess-description.html"
 					},
 					"levels": config_model_levels_15
 				},
@@ -3202,20 +3193,20 @@ exports.games = (function () {
 					"title-en": "Cylinder Chess",
 					"summary": "Cylinder Chess",
 					"rules": {
-						"en": "circular/cylinder-rules.html"
+						"en": "res/rules/cylinder/cylinder-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
 					"thumbnail": "res/rules/cylinder/cylinder-thumb.png",
 					"released": 1401720978,
 					"credits": {
-						"en": "circular/cylinder-credits.html"
+						"en": "res/rules/cylinder/cylinder-credits.html"
 					},
 					"gameOptions": config_model_gameOptions,
 					"obsolete": false,
 					"js": modelScripts_25,
 					"description": {
-						"en": "circular/cylinder-description.html"
+						"en": "res/rules/cylinder/cylinder-description.html"
 					},
 					"levels": config_model_levels_5
 				},
@@ -3364,14 +3355,14 @@ exports.games = (function () {
 					"title-en": "Rollerball Chess",
 					"summary": "Chess variant on an unusual board",
 					"rules": {
-						"en": "cazaux/rollerball-rules.html"
+						"en": "res/rules/rollerball/rollerball-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
 					"thumbnail": "res/rules/rollerball/rollerball-thumb.png",
 					"released": 1397141778,
 					"credits": {
-						"en": "cazaux/rollerball-credits.html"
+						"en": "res/rules/rollerball/rollerball-credits.html"
 					},
 					"gameOptions": {
 						"preventRepeat": true,
@@ -3395,7 +3386,7 @@ exports.games = (function () {
 					"obsolete": false,
 					"js": modelScripts_27,
 					"description": {
-						"en": "cazaux/rollerball-description.html"
+						"en": "res/rules/rollerball/rollerball-description.html"
 					},
 					"levels": config_model_levels_5
 				},
@@ -3466,20 +3457,20 @@ exports.games = (function () {
 					"title-en": "Chess 960",
 					"summary": "Chess from randomized positions",
 					"rules": {
-						"en": "famous/chess960-rules.html"
+						"en": "res/rules/famous/chess960-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
 					"thumbnail": "res/rules/famous/chess960-thumb.png",
 					"released": 1401720878,
 					"credits": {
-						"en": "famous/chess960-credits.html"
+						"en": "res/rules/famous/chess960-credits.html"
 					},
 					"gameOptions": config_model_gameOptions,
 					"obsolete": false,
 					"js": modelScripts_28,
 					"description": {
-						"en": "famous/chess960-description.html"
+						"en": "res/rules/famous/chess960-description.html"
 					},
 					"levels": config_model_levels_5
 				},
@@ -3517,20 +3508,20 @@ exports.games = (function () {
 					"title-en": "Metamachy",
 					"summary": "Chess on 12x12 with fairy pieces",
 					"rules": {
-						"en": "cazaux/metamachy-rules.html"
+						"en": "res/rules/metamachy/metamachy-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
 					"thumbnail": "res/rules/metamachy/metamachy-thumb.png",
 					"released": 1402412178,
 					"credits": {
-						"en": "cazaux/metamachy-credits.html"
+						"en": "res/rules/metamachy/metamachy-credits.html"
 					},
 					"gameOptions": config_model_gameOptions,
 					"obsolete": false,
 					"js": modelScripts_29,
 					"description": {
-						"en": "cazaux/metamachy-description.html"
+						"en": "res/rules/metamachy/metamachy-description.html"
 					},
 					"levels": config_model_levels_15
 				},
@@ -3618,20 +3609,20 @@ exports.games = (function () {
 					"title-en": "Capablanca Chess",
 					"summary": "Chess on 10x8 (1920)",
 					"rules": {
-						"en": "capa10x8/capablanca-rules.html"
+						"en": "res/rules/capablanca/capablanca-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
 					"thumbnail": "res/rules/capablanca/capablanca-thumb.png",
 					"released": 1404893076,
 					"credits": {
-						"en": "capa10x8/capablanca-credits.html"
+						"en": "res/rules/capablanca/capablanca-credits.html"
 					},
 					"gameOptions": config_model_gameOptions,
 					"obsolete": false,
 					"js": modelScripts_30,
 					"description": {
-						"en": "capa10x8/capablanca-description.html"
+						"en": "res/rules/capablanca/capablanca-description.html"
 					},
 					"levels": config_model_levels_5
 				},
@@ -3669,20 +3660,20 @@ exports.games = (function () {
 					"title-en": "Carerra Chess",
 					"summary": "Chess on 10x8 (1617)",
 					"rules": {
-						"en": "capa10x8/carrera-rules.html"
+						"en": "res/rules/carrera/carrera-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
 					"thumbnail": "res/rules/carrera/carrera-thumb.png",
 					"released": 1404916434,
 					"credits": {
-						"en": "capa10x8/carrera-credits.html"
+						"en": "res/rules/carrera/carrera-credits.html"
 					},
 					"gameOptions": config_model_gameOptions,
 					"obsolete": false,
 					"js": modelScripts_31,
 					"description": {
-						"en": "capa10x8/carrera-description.html"
+						"en": "res/rules/carrera/carrera-description.html"
 					},
 					"levels": config_model_levels_5
 				},
@@ -3720,20 +3711,20 @@ exports.games = (function () {
 					"title-en": "Gothic Chess",
 					"summary": "Chess on 10x8 (2000)",
 					"rules": {
-						"en": "capa10x8/gothic-rules.html"
+						"en": "res/rules/gothic/gothic-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
 					"thumbnail": "res/rules/gothic/gothic-thumb.png",
 					"released": 1404982805,
 					"credits": {
-						"en": "capa10x8/gothic-credits.html"
+						"en": "res/rules/gothic/gothic-credits.html"
 					},
 					"gameOptions": config_model_gameOptions,
 					"obsolete": false,
 					"js": modelScripts_32,
 					"description": {
-						"en": "capa10x8/gothic-description.html"
+						"en": "res/rules/gothic/gothic-description.html"
 					},
 					"levels": config_model_levels_5
 				},
@@ -3771,20 +3762,20 @@ exports.games = (function () {
 					"title-en": "Janus Chess",
 					"summary": "Chess on 10x8 (1978)",
 					"rules": {
-						"en": "capa10x8/janus-rules.html"
+						"en": "res/rules/janus/janus-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
 					"thumbnail": "res/rules/janus/janus-thumb.png",
 					"released": 1404997707,
 					"credits": {
-						"en": "capa10x8/janus-credits.html"
+						"en": "res/rules/janus/janus-credits.html"
 					},
 					"gameOptions": config_model_gameOptions,
 					"obsolete": false,
 					"js": modelScripts_33,
 					"description": {
-						"en": "capa10x8/janus-description.html"
+						"en": "res/rules/janus/janus-description.html"
 					},
 					"levels": config_model_levels_5
 				},
@@ -3873,20 +3864,20 @@ exports.games = (function () {
 					"title-en": "Modern Chess",
 					"summary": "Chess on 9x9 (1968)",
 					"rules": {
-						"en": "knighted/modern-rules.html"
+						"en": "res/rules/knighted/modern-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
 					"thumbnail": "res/rules/knighted/modern-thumb.png",
 					"released": 1404999946,
 					"credits": {
-						"en": "knighted/modern-credits.html"
+						"en": "res/rules/knighted/modern-credits.html"
 					},
 					"gameOptions": config_model_gameOptions,
 					"obsolete": false,
 					"js": modelScripts_35,
 					"description": {
-						"en": "knighted/modern-description.html"
+						"en": "res/rules/knighted/modern-description.html"
 					},
 					"levels": config_model_levels_5
 				},
@@ -3924,20 +3915,20 @@ exports.games = (function () {
 					"title-en": "Chancellor Chess",
 					"summary": "Chess on 9x9 (1887)",
 					"rules": {
-						"en": "knighted/chancellor-rules.html"
+						"en": "res/rules/knighted/chancellor-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
 					"thumbnail": "res/rules/knighted/chancellor-thumb.png",
 					"released": 1404918051,
 					"credits": {
-						"en": "knighted/chancellor-credits.html"
+						"en": "res/rules/knighted/chancellor-credits.html"
 					},
 					"gameOptions": config_model_gameOptions,
 					"obsolete": false,
 					"js": modelScripts_36,
 					"description": {
-						"en": "knighted/chancellor-description.html"
+						"en": "res/rules/knighted/chancellor-description.html"
 					},
 					"levels": config_model_levels_5
 				},
@@ -4206,21 +4197,21 @@ exports.games = (function () {
 					"title-en": "Demi-Chess",
 					"summary": "4x8 chess variant by Peter Krystufek (1986)",
 					"rules": {
-						"en": "standard/demi-rules.html"
+						"en": "res/rules/demi/demi-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
 					"thumbnail": "res/rules/demi/demi-thumb.png",
 					"released": 1403189778,
 					"credits": {
-						"en": "standard/demi-credits.html"
+						"en": "res/rules/demi/demi-credits.html"
 					},
 					"gameOptions": config_model_gameOptions_2,
 					"obsolete": false,
 					"js": modelScripts_39,
 					"levels": config_model_levels_5,
 					"description": {
-						"en": "standard/demi-description.html"
+						"en": "res/rules/demi/demi-description.html"
 					}
 				},
 				"view": {
@@ -4257,7 +4248,7 @@ exports.games = (function () {
 					"title-en": "Romanchenko's Chess",
 					"summary": "Shifted 8x8 chess variant by V. Romanchenko",
 					"rules": {
-						"en": "standard/romanchenko-rules.html"
+						"en": "res/rules/standard/romanchenko-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
@@ -4271,7 +4262,7 @@ exports.games = (function () {
 					"js": modelScripts_40,
 					"levels": config_model_levels_5,
 					"description": {
-						"en": "standard/romanchenko-description.html"
+						"en": "res/rules/standard/romanchenko-description.html"
 					}
 				},
 				"view": {
@@ -4308,21 +4299,21 @@ exports.games = (function () {
 					"title-en": "Amazon Chess",
 					"summary": "18th century, Russia",
 					"rules": {
-						"en": "amazon/amazon-rules.html"
+						"en": "res/rules/amazon/amazon-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
 					"thumbnail": "res/rules/amazon/amazon-thumb.png",
 					"released": 1405068607,
 					"credits": {
-						"en": "amazon/amazon-credits.html"
+						"en": "res/rules/amazon/amazon-credits.html"
 					},
 					"gameOptions": config_model_gameOptions,
 					"obsolete": false,
 					"js": modelScripts_41,
 					"levels": config_model_levels_5,
 					"description": {
-						"en": "amazon/amazon-description.html"
+						"en": "res/rules/amazon/amazon-description.html"
 					}
 				},
 				"view": {
@@ -4480,20 +4471,20 @@ exports.games = (function () {
 					"title-en": "Gustav III Chess",
 					"summary": "Gustav Johan Billberg, 1839",
 					"rules": {
-						"en": "amazon/gustav3-rules.html"
+						"en": "res/rules/amazon/gustav3-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
 					"thumbnail": "res/rules/amazon/gustav3-thumb.png",
 					"released": 1405068609,
 					"credits": {
-						"en": "amazon/gustav3-credits.html"
+						"en": "res/rules/amazon/gustav3-credits.html"
 					},
 					"gameOptions": config_model_gameOptions,
 					"obsolete": false,
 					"js": modelScripts_43,
 					"description": {
-						"en": "amazon/gustav3-description.html"
+						"en": "res/rules/amazon/gustav3-description.html"
 					},
 					"levels": config_model_levels_5
 				},
@@ -4658,20 +4649,20 @@ exports.games = (function () {
 					"title-en": "Kaiserspiel",
 					"summary": "Tressau, 1840",
 					"rules": {
-						"en": "tressau/kaisergame-rules.html"
+						"en": "res/rules/tressau/kaisergame-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
 					"thumbnail": "res/rules/tressau/kaisergame-thumb.png",
 					"released": 1405068611,
 					"credits": {
-						"en": "tressau/kaisergame-credits.html"
+						"en": "res/rules/tressau/kaisergame-credits.html"
 					},
 					"gameOptions": config_model_gameOptions,
 					"obsolete": false,
 					"js": modelScripts_45,
 					"description": {
-						"en": "tressau/kaisergame-description.html"
+						"en": "res/rules/tressau/kaisergame-description.html"
 					},
 					"levels": config_model_levels_5
 				},
@@ -4747,20 +4738,20 @@ exports.games = (function () {
 					"title-en": "Sultanspiel",
 					"summary": "Tressau, 1840",
 					"rules": {
-						"en": "tressau/sultangame-rules.html"
+						"en": "res/rules/tressau/sultangame-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
 					"thumbnail": "res/rules/tressau/sultangame-thumb.png",
 					"released": 1405068612,
 					"credits": {
-						"en": "tressau/sultangame-credits.html"
+						"en": "res/rules/tressau/sultangame-credits.html"
 					},
 					"gameOptions": config_model_gameOptions,
 					"obsolete": false,
 					"js": modelScripts_46,
 					"description": {
-						"en": "tressau/sultangame-description.html"
+						"en": "res/rules/tressau/sultangame-description.html"
 					},
 					"levels": config_model_levels_5
 				},
@@ -4931,20 +4922,20 @@ exports.games = (function () {
 					"title-en": "Tutti-Frutti Chess",
 					"summary": "Ralph Betza et Philip Cohen, 1978-79",
 					"rules": {
-						"en": "amazon/tutti-frutti-rules.html"
+						"en": "res/rules/amazon/tutti-frutti-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
 					"thumbnail": "res/rules/amazon/tutti-frutti-thumb.png",
 					"released": 1405068614,
 					"credits": {
-						"en": "amazon/tutti-frutti-credits.html"
+						"en": "res/rules/amazon/tutti-frutti-credits.html"
 					},
 					"gameOptions": config_model_gameOptions,
 					"obsolete": false,
 					"js": modelScripts_48,
 					"description": {
-						"en": "amazon/tutti-frutti-description.html"
+						"en": "res/rules/amazon/tutti-frutti-description.html"
 					},
 					"levels": config_model_levels_5
 				},
@@ -5023,14 +5014,14 @@ exports.games = (function () {
 					"title-en": "Sweet 16 Chess",
 					"summary": "A huge 16x16 Chess Variant",
 					"rules": {
-						"en": "standard/sweet16-rules.html"
+						"en": "res/rules/standard/sweet16-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
 					"thumbnail": "res/rules/standard/sweet16-thumb.png",
 					"released": 1482940591,
 					"credits": {
-						"en": "standard/sweet16-credits.html"
+						"en": "res/rules/standard/sweet16-credits.html"
 					},
 					"gameOptions": {
 						"preventRepeat": true,
@@ -5041,7 +5032,7 @@ exports.games = (function () {
 					"obsolete": false,
 					"js": modelScripts_49,
 					"description": {
-						"en": "sstandard/weet16-description.html"
+						"en": "res/rules/standard/sweet16-description.html"
 					},
 					"levels": config_model_levels_5
 				},
@@ -5079,20 +5070,20 @@ exports.games = (function () {
 					"title-en": "Terachess",
 					"summary": "Chess on 16x16 with fairy pieces",
 					"rules": {
-						"en": "cazaux/terachess-rules.html"
+						"en": "res/rules/terachess/terachess-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
 					"thumbnail": "res/rules/terachess/terachess-thumb.png",
 					"released": 1497442763,
 					"credits": {
-						"en": "cazaux/terachess-credits.html"
+						"en": "res/rules/terachess/terachess-credits.html"
 					},
 					"gameOptions": config_model_gameOptions,
 					"obsolete": false,
 					"js": modelScripts_tera,
 					"description": {
-						"en": "cazaux/terachess-description.html"
+						"en": "res/rules/terachess/terachess-description.html"
 					},
 					"levels": config_model_levels_15
 				},
@@ -5216,20 +5207,20 @@ exports.games = (function () {
 					"title-en": "Gigachess",
 					"summary": "Chess on 14x14 with fairy pieces",
 					"rules": {
-						"en": "cazaux/gigachess-rules.html"
+						"en": "res/rules/gigachess/gigachess-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
 					"thumbnail": "res/rules/gigachess/gigachess-thumb.png",
 					"released": 1497771910,
 					"credits": {
-						"en": "cazaux/gigachess-credits.html"
+						"en": "res/rules/gigachess/gigachess-credits.html"
 					},
 					"gameOptions": config_model_gameOptions,
 					"obsolete": false,
 					"js": modelScripts_giga,
 					"description": {
-						"en": "cazaux/gigachess-description.html"
+						"en": "res/rules/gigachess/gigachess-description.html"
 					},
 					"levels": config_model_levels_15
 				},
@@ -5341,20 +5332,20 @@ exports.games = (function () {
 					"title-en": "LeyChessAlpha",
 					"summary": "Chess on 12x12 with fairy pieces",
 					"rules": {
-						"en": "cazaux/metamachy-rules.html"
+						"en": "res/rules/metamachy/metamachy-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
 					"thumbnail": "res/rules/metamachy/metamachy-thumb.png",
 					"released": 1402412178,
 					"credits": {
-						"en": "leychessalpha-credits.html"
+						"en": "res/rules/duodecimal/leychessalpha-credits.html"
 					},
 					"gameOptions": config_model_gameOptions,
 					"obsolete": false,
 					"js": modelScripts_lca,
 					"description": {
-						"en": "leychessalpha-description.html"
+						"en": "res/rules/duodecimal/leychessalpha-description.html"
 					},
 					"levels": config_model_levels_15
 				},
@@ -5463,23 +5454,23 @@ exports.games = (function () {
 					"title-en": "Fantastic XIII",
 					"summary": "Chess on 13x13 with fairy pieces",
 					"rules": {
-						"en": "fantasticXIII-rules.html",
-						"fr": "fantasticXIII-rules-fr.html"
+						"en": "res/rules/fantasticXIII/fantasticXIII-rules.html",
+						"fr": "res/rules/fantasticXIII/fantasticXIII-rules-fr.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
-					"thumbnail": "fantasticXIII-thumb.png",
+					"thumbnail": "res/rules/fantasticXIII/fantasticXIII-thumb.png",
 					"released": 1497771910,
 					"credits": {
-						"en": "fantasticXIII-credits.html"
+						"en": "res/rules/fantasticXIII/fantasticXIII-credits.html"
 					},
 					"gameOptions": config_model_gameOptions,
 
 					"obsolete": false,
 					"js": modelScripts_fantasticXIII,
 					"description": {
-						"en": "fantasticXIII-description.html",
-						"fr": "fantasticXIII-description-fr.html"
+						"en": "res/rules/fantasticXIII/fantasticXIII-description.html",
+						"fr": "res/rules/fantasticXIII/fantasticXIII-description-fr.html"
 					},
 					"levels": config_model_levels_15
 				},
@@ -5562,15 +5553,15 @@ exports.games = (function () {
 
 					"summary": "FantasticXIII and Gigachess II on 16x16",
 					"rules": {
-						"en": "bigorra-rules.html"
+						"en": "res/rules/fantasticXIII/bigorra-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
 
-					"thumbnail": "bigorra-thumb.png",
+					"thumbnail": "res/rules/fantasticXIII/bigorra-thumb.png",
 					"released": 1497771910,
 					"credits": {
-						"en": "fantasticXIII-credits.html"
+						"en": "res/rules/fantasticXIII/fantasticXIII-credits.html"
 					},
 
 					"gameOptions": config_model_gameOptions,
@@ -5578,8 +5569,8 @@ exports.games = (function () {
 					"obsolete": false,
 					"js": modelScripts_bigorra,
 					"description": {
-						"en": "bigorra-description.html",
-						"fr": "bigorra-description-fr.html"
+						"en": "res/rules/fantasticXIII/bigorra-description.html",
+						"fr": "res/rules/fantasticXIII/bigorra-description-fr.html"
 
 					},
 					"levels": config_model_levels_15
@@ -5712,20 +5703,20 @@ exports.games = (function () {
  					"title-en": "Wild Tamerlane",
  					"summary": "Chess on 11x11 with fairy pieces",
  					"rules": {
- 						"en": "wild-tamerlane-rules.html"
+ 						"en": "res/rules/wildtamerlane/wild-tamerlane-rules.html"
  					},
  					"module": "chessbase",
  					"plazza": "true",
- 					"thumbnail": "wild-tamerlane-thumb.png",
+ 					"thumbnail": "res/rules/wildtamerlane/wild-tamerlane-thumb.png",
  					"released": 1497874349,
  					"credits": {
- 						"en": "wild-tamerlane-credits.html"
+ 						"en": "res/rules/wildtamerlane/wild-tamerlane-credits.html"
  					},
  					"gameOptions": config_model_gameOptions,
  					"obsolete": false,
  					"js": modelScripts_wtamerlane,
  					"description": {
- 						"en": "wild-tamerlane-description.html"
+ 						"en": "res/rules/wildtamerlane/wild-tamerlane-description.html"
  					},
  					"levels": config_model_levels_15
  				},
@@ -5807,22 +5798,22 @@ exports.games = (function () {
  					"title-en": "Pemba",
  					"summary": "Extended Shako on 10x10 with fairy pieces",
  					"rules": {
- 						"en": "pemba-rules.html",
-						"fr": "pemba-rules-fr.html"
+ 						"en": "res/rules/shako/pemba-rules.html",
+						"fr": "res/rules/shako/pemba-rules-fr.html"
  					},
  					"module": "chessbase",
  					"plazza": "true",
- 					"thumbnail": "pemba-thumb.png",
+ 					"thumbnail": "res/rules/shako/pemba-thumb.png",
  					"released": 1497874349,
  					"credits": {
- 						"en": "pemba-credits.html"
+ 						"en": "res/rules/shako/pemba-credits.html"
  					},
  					"gameOptions": config_model_gameOptions,
  					"obsolete": false,
  					"js": modelScripts_pemba,
  					"description": {
- 						"en": "pemba-description.html",
-						"fr": "pemba-description-fr.html"
+ 						"en": "res/rules/shako/pemba-description.html",
+						"fr": "res/rules/shako/pemba-description-fr.html"
  					},
  					"levels": config_model_levels_15
  				},
@@ -5907,21 +5898,21 @@ exports.games = (function () {
 					"title-en": "Gigachess II",
 					"summary": "Chess on 14x14 with fairy pieces",
 					"rules": {
-						"en": "gigachessII-rules.html"
+						"en": "res/rules/gigachess/gigachessII-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
-					"thumbnail": "gigachessII-thumb.png",
+					"thumbnail": "res/rules/gigachess/gigachessII-thumb.png",
 					"released": 1497771910,
 					"credits": {
-						"en": "gigachessII-credits.html"
+						"en": "res/rules/gigachess/gigachessII-credits.html"
 					},
 					"gameOptions": config_model_gameOptions,
 
 					"obsolete": false,
 					"js": modelScripts_gigaII,
 					"description": {
-						"en": "gigachessII-description.html"
+						"en": "res/rules/gigachess/gigachessII-description.html"
 					},
 					"levels": config_model_levels_15
 				},
@@ -6036,20 +6027,20 @@ exports.games = (function () {
  					"title-en": "Wild Timurid",
  					"summary": "Chess on 12x12 with fairy pieces",
  					"rules": {
- 						"en": "wild-timurid-rules.html"
+ 						"en": "res/rules/duodecimal/wild-timurid-rules.html"
  					},
  					"module": "chessbase",
  					"plazza": "true",
- 					"thumbnail": "wild-timurid-thumb.png",
+ 					"thumbnail": "res/rules/duodecimal/wild-timurid-thumb.png",
  					"released": 1497874349,
  					"credits": {
- 						"en": "wild-timurid-credits.html"
+ 						"en": "res/rules/duodecimal/timurid-credits.html"
  					},
  					"gameOptions": config_model_gameOptions,
  					"obsolete": false,
  					"js": modelScripts_wtimurid,
  					"description": {
- 						"en": "wild-timurid-description.html"
+ 						"en": "res/rules/duodecimal/wild-timurid-description.html"
  					},
  					"levels": config_model_levels_15
  				},
@@ -6135,21 +6126,21 @@ exports.games = (function () {
 
  					"summary": "Tamerlan II on 12x12 with fairy pieces",
  					"rules": {
- 						"en": "timurid-rules.html"
+ 						"en": "res/rules/duodecimal/timurid-rules.html"
  					},
  					"module": "chessbase",
  					"plazza": "true",
- 					"thumbnail": "timurid-thumb.png",
+ 					"thumbnail": "res/rules/duodecimal/timurid-thumb.png",
  					"released": 1497874349,
 
  					"credits": {
- 						"en": "timurid-credits.html"
+ 						"en": "res/rules/duodecimal/timurid-credits.html"
  					},
  					"gameOptions": config_model_gameOptions,
  					"obsolete": false,
  					"js": modelScripts_timurid,
  					"description": {
- 						"en": "timurid-description.html"
+ 						"en": "res/rules/duodecimal/timurid-description.html"
  					},
  					"levels": config_model_levels_15
  				},
@@ -6236,22 +6227,22 @@ exports.games = (function () {
 
  					"summary": "Wild Timurid on 12x12 with Lion",
  					"rules": {
- 						"en": "wild-babur-rules.html"
+ 						"en": "res/rules/duodecimal/wild-babur-rules.html"
  					},
  					"module": "chessbase",
  					"plazza": "true",
- 					"thumbnail": "wild-babur-thumb.png",
+ 					"thumbnail": "res/rules/duodecimal/wild-babur-thumb.png",
 
  					"released": 1497874349,
 
  					"credits": {
- 						"en": "wild-babur-credits.html"
+ 						"en": "res/rules/duodecimal/timurid-credits.html"
  					},
  					"gameOptions": config_model_gameOptions,
  					"obsolete": false,
  					"js": modelScripts_wbabur,
  					"description": {
- 						"en": "wild-babur-description.html"
+ 						"en": "res/rules/duodecimal/wild-babur-description.html"
  					},
  					"levels": config_model_levels_15
  				},
@@ -6340,22 +6331,22 @@ exports.games = (function () {
 
  					"summary": "Wild Timurid on 12x12 with snake",
  					"rules": {
- 						"en": "wild-mirza-rules.html"
+ 						"en": "res/rules/duodecimal/wild-mirza-rules.html"
  					},
  					"module": "chessbase",
  					"plazza": "true",
- 					"thumbnail": "wild-mirza-thumb.png",
+ 					"thumbnail": "res/rules/duodecimal/wild-mirza-thumb.png",
 
  					"released": 1497874349,
 
  					"credits": {
- 						"en": "wild-mirza-credits.html"
+ 						"en": "res/rules/duodecimal/timurid-credits.html"
  					},
  					"gameOptions": config_model_gameOptions,
  					"obsolete": false,
  					"js": modelScripts_wmirza,
  					"description": {
- 						"en": "wild-mirza-description.html"
+ 						"en": "res/rules/duodecimal/wild-mirza-description.html"
  					},
  					"levels": config_model_levels_15
  				},
@@ -6444,26 +6435,26 @@ exports.games = (function () {
 
  					"summary": "Tamerlan II on 12x12 with lion",
  					"rules": {
- 						"en": "wild-babur-rules.html"
+ 						"en": "res/rules/duodecimal/wild-babur-rules.html"
  					},
  					"module": "chessbase",
  					"plazza": "true",
- 					"thumbnail": "babur-thumb.png",
+ 					"thumbnail": "res/rules/duodecimal/babur-thumb.png",
  					"released": 1497874349,
 
  					"credits": {
- 						"en": "wild-babur-credits.html"
+ 						"en": "res/rules/duodecimal/timurid-credits.html"
  					},
  					"gameOptions": config_model_gameOptions,
  					"obsolete": false,
  					"js": modelScripts_babur,
  					"description": {
- 						"en": "babur-description.html"
+ 						"en": "res/rules/duodecimal/wild-babur-description.html"
  					},
  					"levels": config_model_levels_15
  				},
  				"view": {
- 					"title-en": "Wild Timurid view",
+ 					"title-en": "Wild babur view",
  					"visuals": {
  						"600x600": [
  							"res/visuals/babur-600x600-3d.jpg",
@@ -6543,20 +6534,20 @@ exports.games = (function () {
 					"title-en": "Zanzibar S",
 					"summary": "Extended Metamachy - 12x12",
 					"rules": {
-						"en": "zanzibar-s-rules.html"
+						"en": "res/rules/metamachy/zanzibar-s-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
-					"thumbnail": "zanzibar-s-thumb.png",
+					"thumbnail": "res/rules/metamachy/zanzibar-s-thumb.png",
 					"released": 1402412178,
 					"credits": {
-						"en": "zanzibar-credits.html"
+						"en": "res/rules/metamachy/zanzibar-credits.html"
 					},
 					"gameOptions": config_model_gameOptions,
 					"obsolete": false,
 					"js": modelScripts_zanzibars,
 					"description": {
-						"en": "zanzibar-description.html"
+						"en": "res/rules/metamachy/zanzibar-description.html"
 					},
 					"levels": config_model_levels_15
 				},
@@ -7354,6 +7345,94 @@ exports.games = (function () {
 				}
 			},
 			"viewScripts": config_view_js_110
+		},
+		{
+			"name": "acedrex-chess",
+			"modelScripts": modelScripts_acedrex,
+			"config": {
+				"status": true,
+				"model": {
+					"title-en": "Grant acedrex",
+					"summary": "Medieval Castillan chess variant",
+					"rules": {
+						"en": "res/rules/historical/grant-acedrex-rules.html"
+					},
+					"module": "chessbase",
+					"plazza": "true",
+					"thumbnail": "res/rules/historical/grant-acedrex-thumb.png",
+					"released": 1394466978,
+					"credits": {
+						"en": "res/rules/historical/grant-acedrex-credits.html"
+					},
+					"gameOptions": config_model_gameOptions,
+					"js": modelScripts_acedrex,
+					"description": {
+						"en": "res/rules/historical/grant-acedrex-description.html"
+					},
+					"levels": config_model_levels_15
+				},
+				"view": {
+					"title-en": "Chessbase view",
+					"visuals": {
+						"600x600": [
+							"res/visuals/grant-acedrex-600x600-3d.png",
+							"res/visuals/grant-acedrex-600x600-2d.png"
+						]
+					},
+					"xdView": true,
+					"css": config_view_css,
+					"preferredRatio": 0.9,
+					"useShowMoves": true,
+					"useNotation": true,
+					"module": "chessbase",
+					"defaultOptions": config_view_defaultOptions,
+					"skins": [
+						{
+							"name": "skin3d",
+							"title": "3D Classic",
+							"3d": true,
+							"preload": [
+								"smoothedfilegeo|0|/res/ring-target.js",
+								"image|/res/images/cancel.png",
+								"image|/res/images/wikipedia.png",
+								"smoothedfilegeo|0|/res/fairy/pawn/pawn.js",
+								"image|/res/fairy/pawn/pawn-diffusemap.jpg",
+								"image|/res/fairy/pawn/pawn-normalmap.jpg",
+								"smoothedfilegeo|0|/res/fairy/griffin/griffin.js",
+ 								"image|/res/fairy/griffin/griffin-diffusemap.jpg",
+ 								"image|/res/fairy/griffin/griffin-normalmap.jpg",
+								"smoothedfilegeo|0|/res/fairy/bishop/bishop.js",
+								"image|/res/fairy/bishop/bishop-diffusemap.jpg",
+								"image|/res/fairy/bishop/bishop-normalmap.jpg",
+ 								"smoothedfilegeo|0|/res/fairy/lion/lion.js",
+								"image|/res/fairy/lion/lion-diffusemap.jpg",
+								"image|/res/fairy/lion/lion-normalmap.jpg",
+								"smoothedfilegeo|0|/res/fairy/king/king.js",
+								"image|/res/fairy/king/king-diffusemap.jpg",
+								"image|/res/fairy/king/king-normalmap.jpg",
+								"smoothedfilegeo|0|/res/fairy/rook/rook.js",
+								"image|/res/fairy/rook/rook-diffusemap.jpg",
+								"image|/res/fairy/rook/rook-normalmap.jpg",
+								"smoothedfilegeo|0|/res/fairy/rhino/rhino.js",
+								"image|/res/fairy/rhino/rhino-diffusemap.jpg",
+								"image|/res/fairy/rhino/rhino-normalmap.jpg",
+								"smoothedfilegeo|0|/res/fairy/giraffe/giraffe.js",
+								"image|/res/fairy/giraffe/giraffe-diffuse-map.jpg",
+								"image|/res/fairy/giraffe/giraffe-normal-map.jpg",
+							],
+							"world": config_view_skins_world,
+							"camera": config_view_skins_camera
+						},
+						config_view_skins_9
+					],
+					"animateSelfMoves": false,
+					"switchable": true,
+					"sounds": config_view_sounds,
+					"js": config_view_js_acedrex,
+					"useAutoComplete": true
+				}
+			},
+			"viewScripts": config_view_js_acedrex
 		}
 	  		
 
