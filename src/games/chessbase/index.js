@@ -967,7 +967,7 @@ exports.games = (function () {
 	var modelScripts_30 = [
 		"base-model.js",
 		"grid-geo-model.js",
-        "fairy-move-model.js",
+		"fairy-move-model.js",
 		"capa10x8/capablanca-model.js"
 	]
 	var config_view_skins_preload_10 = [
@@ -1073,7 +1073,7 @@ exports.games = (function () {
 	var modelScripts_34 = [
 		"base-model.js",
 		"grid-geo-model.js",
-        "fairy-move-model.js",
+		"fairy-move-model.js",
 		"decimal/grand-model.js"
 	]
 	var config_view_js_31 = [
@@ -1295,7 +1295,7 @@ exports.games = (function () {
 	var modelScripts_bigorra = [
  		"base-model.js",
  		"grid-geo-model.js",
-        "fairy-move-model.js",
+ 		"fairy-move-model.js",
  		"cazaux/bigorra-model.js"
  	]
  	var config_view_js_bigorra = [
@@ -1390,20 +1390,7 @@ exports.games = (function () {
 	var modelScripts_zanzibars = [
 		"base-model.js",
 		"grid-geo-model.js",
-<<<<<<< HEAD
-<<<<<<< HEAD
-        "fairy-move-model.js",
-=======
-<<<<<<< HEAD
->>>>>>> 82e61e8 (add nex Fairy piece : terror, a dragon used in makromachy)
-=======
->>>>>>> 21cf4c8 (add nex Fairy piece : terror, a dragon used in makromachy)
-<<<<<<< HEAD
->>>>>>> a29bd7f (add nex Fairy piece : terror, a dragon used in makromachy)
-=======
-=======
->>>>>>> 8816c75 (add nex Fairy piece : terror, a dragon used in makromachy)
->>>>>>> 6207973 (add nex Fairy piece : terror, a dragon used in makromachy)
+ 		"fairy-move-model.js",
 		"cazaux/zanzibar-s-model.js"
 	]
 	var config_view_js_zanzibars = [
@@ -1411,9 +1398,6 @@ exports.games = (function () {
 		"grid-board-view.js",
 		"fairy-set-view.js",
 		"cazaux/zanzibar-view.js"
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 	]
 	var modelScripts_acedrex = [
 		"base-model.js",
@@ -1436,42 +1420,7 @@ exports.games = (function () {
 		"grid-board-view.js",
 		"fairy-set-view.js",
 		"historical/grant-acedrex-view.js"
-=======
->>>>>>> 82e61e8 (add nex Fairy piece : terror, a dragon used in makromachy)
-=======
->>>>>>> a29bd7f (add nex Fairy piece : terror, a dragon used in makromachy)
-=======
->>>>>>> 6207973 (add nex Fairy piece : terror, a dragon used in makromachy)
 	]
-	var modelScripts_acedrex = [
-		"base-model.js",
-		"grid-geo-model.js",
-		"historical/grant-acedrex-model.js"
-	]
-	var config_view_js_acedrex = [
-		"base-view.js",
-		"grid-board-view.js",
-		"fairy-set-view.js",
-		"historical/grant-acedrex-view.js"
-=======
->>>>>>> 21cf4c8 (add nex Fairy piece : terror, a dragon used in makromachy)
-	]
-<<<<<<< HEAD
-=======
-	var modelScripts_acedrex = [
-		"base-model.js",
-		"grid-geo-model.js",
-		"historical/grant-acedrex-model.js"
-	]
-	var config_view_js_acedrex = [
-		"base-view.js",
-		"grid-board-view.js",
-		"fairy-set-view.js",
-		"historical/grant-acedrex-view.js"
-=======
->>>>>>> 8816c75 (add nex Fairy piece : terror, a dragon used in makromachy)
-	]
->>>>>>> 6207973 (add nex Fairy piece : terror, a dragon used in makromachy)
 	return [
 		{
 			"name": "classic-chess",
@@ -6098,28 +6047,8 @@ exports.games = (function () {
  					"thumbnail": "res/rules/duodecimal/wild-timurid-thumb.png",
  					"released": 1497874349,
  					"credits": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 
  						"en": "res/rules/duodecimal/timurid-credits.html"
-=======
- 						"en": "timurid-credits.html"
->>>>>>> 82e61e8 (add nex Fairy piece : terror, a dragon used in makromachy)
-=======
-=======
->>>>>>> 6207973 (add nex Fairy piece : terror, a dragon used in makromachy)
- 						"en": "res/rules/duodecimal/timurid-credits.html"
-=======
- 						"en": "timurid-credits.html"
->>>>>>> 21cf4c8 (add nex Fairy piece : terror, a dragon used in makromachy)
-<<<<<<< HEAD
->>>>>>> a29bd7f (add nex Fairy piece : terror, a dragon used in makromachy)
-=======
-=======
- 						"en": "timurid-credits.html"
->>>>>>> 8816c75 (add nex Fairy piece : terror, a dragon used in makromachy)
->>>>>>> 6207973 (add nex Fairy piece : terror, a dragon used in makromachy)
  					},
  					"gameOptions": config_model_gameOptions,
  					"obsolete": false,
@@ -6321,22 +6250,7 @@ exports.games = (function () {
  					"released": 1497874349,
 
  					"credits": {
-<<<<<<< HEAD
-<<<<<<< HEAD
  						"en": "res/rules/duodecimal/timurid-credits.html"
-=======
- 						"en": "timurid-credits.html"
-<<<<<<< HEAD
->>>>>>> 82e61e8 (add nex Fairy piece : terror, a dragon used in makromachy)
-=======
->>>>>>> 21cf4c8 (add nex Fairy piece : terror, a dragon used in makromachy)
-<<<<<<< HEAD
->>>>>>> a29bd7f (add nex Fairy piece : terror, a dragon used in makromachy)
-=======
-=======
- 						"en": "timurid-credits.html"
->>>>>>> 8816c75 (add nex Fairy piece : terror, a dragon used in makromachy)
->>>>>>> 6207973 (add nex Fairy piece : terror, a dragon used in makromachy)
  					},
  					"gameOptions": config_model_gameOptions,
  					"obsolete": false,
@@ -6440,22 +6354,7 @@ exports.games = (function () {
  					"released": 1497874349,
 
  					"credits": {
-<<<<<<< HEAD
-<<<<<<< HEAD
  						"en": "res/rules/duodecimal/timurid-credits.html"
-=======
- 						"en": "timurid-credits.html"
-<<<<<<< HEAD
->>>>>>> 82e61e8 (add nex Fairy piece : terror, a dragon used in makromachy)
-=======
->>>>>>> 21cf4c8 (add nex Fairy piece : terror, a dragon used in makromachy)
-<<<<<<< HEAD
->>>>>>> a29bd7f (add nex Fairy piece : terror, a dragon used in makromachy)
-=======
-=======
- 						"en": "timurid-credits.html"
->>>>>>> 8816c75 (add nex Fairy piece : terror, a dragon used in makromachy)
->>>>>>> 6207973 (add nex Fairy piece : terror, a dragon used in makromachy)
  					},
  					"gameOptions": config_model_gameOptions,
  					"obsolete": false,
@@ -6558,43 +6457,13 @@ exports.games = (function () {
  					"released": 1497874349,
 
  					"credits": {
-<<<<<<< HEAD
-<<<<<<< HEAD
  						"en": "res/rules/duodecimal/timurid-credits.html"
-=======
- 						"en": "timurid-credits.html"
-<<<<<<< HEAD
->>>>>>> 82e61e8 (add nex Fairy piece : terror, a dragon used in makromachy)
-=======
->>>>>>> 21cf4c8 (add nex Fairy piece : terror, a dragon used in makromachy)
-<<<<<<< HEAD
->>>>>>> a29bd7f (add nex Fairy piece : terror, a dragon used in makromachy)
-=======
-=======
- 						"en": "timurid-credits.html"
->>>>>>> 8816c75 (add nex Fairy piece : terror, a dragon used in makromachy)
->>>>>>> 6207973 (add nex Fairy piece : terror, a dragon used in makromachy)
  					},
  					"gameOptions": config_model_gameOptions,
  					"obsolete": false,
  					"js": modelScripts_babur,
  					"description": {
-<<<<<<< HEAD
-<<<<<<< HEAD
  						"en": "res/rules/duodecimal/wild-babur-description.html"
-=======
- 						"en": "wild-babur-description"
-<<<<<<< HEAD
->>>>>>> 82e61e8 (add nex Fairy piece : terror, a dragon used in makromachy)
-=======
->>>>>>> 21cf4c8 (add nex Fairy piece : terror, a dragon used in makromachy)
-<<<<<<< HEAD
->>>>>>> a29bd7f (add nex Fairy piece : terror, a dragon used in makromachy)
-=======
-=======
- 						"en": "wild-babur-description"
->>>>>>> 8816c75 (add nex Fairy piece : terror, a dragon used in makromachy)
->>>>>>> 6207973 (add nex Fairy piece : terror, a dragon used in makromachy)
  					},
  					"levels": config_model_levels_15
  				},
@@ -6753,7 +6622,7 @@ exports.games = (function () {
 								"smoothedfilegeo|0|/res/fairy/lion/lion.js",
 								"image|/res/fairy/lion/lion-diffusemap.jpg",
 								"image|/res/fairy/lion/lion-normalmap.jpg",
-                                "smoothedfilegeo|0|/res/fairy/bow/bow.js",
+								"smoothedfilegeo|0|/res/fairy/bow/bow.js",
 								"image|/res/fairy/bow/bow-diffusemap.jpg",
 								"image|/res/fairy/bow/bow-normalmap.jpg",
 								"smoothedfilegeo|0|/res/fairy/machine/machine.js",
