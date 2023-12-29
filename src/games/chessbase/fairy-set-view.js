@@ -117,14 +117,11 @@
 					clipx: 500,
 				},
 			},
-<<<<<<< HEAD
-=======
 			"fr-man": {
 				"2d": {
 					clipx: 3900,
 				},
 			},
->>>>>>> c2d4d1b (Small cleanup of fairy-set-view.js)
 			"fr-cannon": {
 				"2d": {
 					clipx: 600,
@@ -361,8 +358,6 @@
 					clipx: 5100,
 					},
 			},
-<<<<<<< HEAD
-<<<<<<< HEAD
 			"fr-flying-queen": {
 				"2d": {
 					clipx: 6300,
@@ -381,11 +376,6 @@
 			"fr-flying-saint": {
 				"2d": {
 					clipx: 6600,
-=======
-			"fr-flying-queen": {
-				"2d": {
-					clipx: 5100,
->>>>>>> b2642c2 (add visuals for Gold, Silver and Copper General + Champion and Wizard + Phoenix + Stork)
 					},
 			},
 			"fr-phoenix": {
@@ -418,72 +408,26 @@
 					clipx: 5900,
 					},
 			},
-<<<<<<< HEAD
-<<<<<<< HEAD
 			"fr-cobra": {
 				"2d": {
 					clipx: 6000,
 					},
 			},
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> c4abace (New fairy piece: Flamingo)
 			"fr-flamingo": {
 				"2d": {
 					clipx: 6100,
 					},
 			},
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 91249b6 (New fairy piece: Terror)
 			"fr-terror": {
 				"2d": {
 					clipx: 6200,
 					},
 			},
-<<<<<<< HEAD
-=======
->>>>>>> 40a0cb5 (New fairy piece: Cobra)
-=======
->>>>>>> c4abace (New fairy piece: Flamingo)
-=======
-=======
->>>>>>> 91249b6 (New fairy piece: Terror)
 			"fr-samurai": {
 				"2d": {
 					clipx: 6700,
-=======
-			"fr-terror": {
-				"2d": {
-					clipx: 5200,
->>>>>>> d427617 (add nex Fairy piece : terror, a dragon used in makromachy)
-=======
-			"fr-terror": {
-=======
-			"fr-cobra": {
->>>>>>> 4d207b9 (New fairy piece: Cobra)
-				"2d": {
-					clipx: 6000,
->>>>>>> b2642c2 (add visuals for Gold, Silver and Copper General + Champion and Wizard + Phoenix + Stork)
 					},
 			},
-<<<<<<< HEAD
->>>>>>> 2cd6c90 (New fairy piece: Samurai)
-=======
-			"fr-flamingo": {
-				"2d": {
-					clipx: 6100,
-					},
-			},
-			"fr-terror": {
-				"2d": {
-					clipx: 6200,
-					},
-			},
->>>>>>> 6929c2a (New fairy piece: Cobra)
 		},modifier);
 	}
 
@@ -1012,7 +956,6 @@
 			},
 		},
 
-<<<<<<< HEAD
 		"fr-flying-rook": {
 			mesh: {
 				jsFile:"/res/fairy/rook/flying-rook.js"
@@ -1057,8 +1000,6 @@
 			},
 		},
 
-=======
->>>>>>> b2642c2 (add visuals for Gold, Silver and Copper General + Champion and Wizard + Phoenix + Stork)
 		"fr-king": {
 			mesh: {
 				jsFile:"/res/fairy/king/king.js"
@@ -2016,7 +1957,6 @@
 				}
 			},
 		},
-<<<<<<< HEAD
 		"fr-berolina": {
 			mesh: {
 				jsFile:"/res/fairy/pawn/pawn-berolina.js"
@@ -2038,8 +1978,6 @@
 				}
 			},
 		},
-=======
->>>>>>> b2642c2 (add visuals for Gold, Silver and Copper General + Champion and Wizard + Phoenix + Stork)
 		"fr-copper": {
 			mesh: {
 				jsFile:"/res/fairy/generals/copper.js"
@@ -2105,31 +2043,19 @@
 		},
 		"fr-champion": {
 			mesh: {
-<<<<<<< HEAD
 				jsFile:"/res/fairy/omega/champion.js"
-=======
-				jsFile:"/res/fairy/champion/champion.js"
->>>>>>> b2642c2 (add visuals for Gold, Silver and Copper General + Champion and Wizard + Phoenix + Stork)
 			},
 			materials: {
 				mat0: {
 					channels: {
 						diffuse: {
 							texturesImg: {
-<<<<<<< HEAD
 								diffImg : "/res/fairy/omega/champion-diffusemap.jpg",
-=======
-								diffImg : "/res/fairy/champion/champion-diffusemap.jpg",
->>>>>>> b2642c2 (add visuals for Gold, Silver and Copper General + Champion and Wizard + Phoenix + Stork)
 							}
 						},
 						normal: {
 							texturesImg: {
-<<<<<<< HEAD
 								normalImg: "/res/fairy/omega/champion-normalmap.jpg",
-=======
-								normalImg: "/res/fairy/champion/champion-normalmap.jpg",
->>>>>>> b2642c2 (add visuals for Gold, Silver and Copper General + Champion and Wizard + Phoenix + Stork)
 							}
 						}
 					}
@@ -2138,27 +2064,18 @@
 		},
 		"fr-wizard": {
 			mesh: {
-<<<<<<< HEAD
 				jsFile:"/res/fairy/omega/wizard.js"
-=======
-				jsFile:"/res/fairy/wizard/wizard.js"
->>>>>>> b2642c2 (add visuals for Gold, Silver and Copper General + Champion and Wizard + Phoenix + Stork)
 			},
 			materials: {
 				mat0: {
 					channels: {
 						diffuse: {
 							texturesImg: {
-<<<<<<< HEAD
 								diffImg : "/res/fairy/omega/wizard-diffusemap.jpg",
-=======
-								diffImg : "/res/fairy/wizard/wizard-diffusemap.jpg",
->>>>>>> b2642c2 (add visuals for Gold, Silver and Copper General + Champion and Wizard + Phoenix + Stork)
 							}
 						},
 						normal: {
 							texturesImg: {
-<<<<<<< HEAD
 								normalImg: "/res/fairy/omega/wizard-normalmap.jpg",
 							}
 						}
@@ -2181,12 +2098,6 @@
 						normal: {
 							texturesImg: {
 								normalImg: "/res/fairy/birds/flamingo-normalmap.jpg",
-<<<<<<< HEAD
-=======
-								normalImg: "/res/fairy/wizard/wizard-normalmap.jpg",
->>>>>>> b2642c2 (add visuals for Gold, Silver and Copper General + Champion and Wizard + Phoenix + Stork)
-=======
->>>>>>> 4d207b9 (New fairy piece: Cobra)
 							}
 						}
 					}
@@ -2195,27 +2106,18 @@
 		},
 		"fr-phoenix": {
 			mesh: {
-<<<<<<< HEAD
 				jsFile:"/res/fairy/birds/phoenix.js"
-=======
-				jsFile:"/res/fairy/phoenix/phoenix.js"
->>>>>>> b2642c2 (add visuals for Gold, Silver and Copper General + Champion and Wizard + Phoenix + Stork)
 			},
 			materials: {
 				mat0: {
 					channels: {
 						diffuse: {
 							texturesImg: {
-<<<<<<< HEAD
 								diffImg : "/res/fairy/birds/phoenix-diffusemap.jpg",
-=======
-								diffImg : "/res/fairy/phoenix/phoenix-diffusemap.jpg",
->>>>>>> b2642c2 (add visuals for Gold, Silver and Copper General + Champion and Wizard + Phoenix + Stork)
 							}
 						},
 						normal: {
 							texturesImg: {
-<<<<<<< HEAD
 								normalImg: "/res/fairy/birds/phoenix-normalmap.jpg",
 							}
 						}
@@ -2244,7 +2146,6 @@
 				}
 			},
 		},
-<<<<<<< HEAD
 		"fr-samurai": {
 			mesh: {
 				jsFile:"/res/fairy/persons/samurai.js"
@@ -2266,8 +2167,6 @@
 				}
 			},
 		},
-=======
->>>>>>> 4d207b9 (New fairy piece: Cobra)
 		"fr-cobra": {
 			mesh: {
 				jsFile:"/res/fairy/cobra/cobra.js"
@@ -2283,12 +2182,6 @@
 						normal: {
 							texturesImg: {
 								normalImg: "/res/fairy/cobra/cobra-normalmap.jpg",
-<<<<<<< HEAD
-=======
-								normalImg: "/res/fairy/phoenix/phoenix-normalmap.jpg",
->>>>>>> b2642c2 (add visuals for Gold, Silver and Copper General + Champion and Wizard + Phoenix + Stork)
-=======
->>>>>>> 4d207b9 (New fairy piece: Cobra)
 							}
 						}
 					}
@@ -2337,33 +2230,5 @@
 				}
 			},
 		},
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
->>>>>>> 91249b6 (New fairy piece: Terror)
-=======
-=======
-
->>>>>>> d427617 (add nex Fairy piece : terror, a dragon used in makromachy)
->>>>>>> 82e61e8 (add nex Fairy piece : terror, a dragon used in makromachy)
-=======
-=======
->>>>>>> 6929c2a (New fairy piece: Cobra)
-=======
-
->>>>>>> d427617 (add nex Fairy piece : terror, a dragon used in makromachy)
-=======
->>>>>>> b2642c2 (add visuals for Gold, Silver and Copper General + Champion and Wizard + Phoenix + Stork)
-<<<<<<< HEAD
->>>>>>> 5276367 (add visuals for Gold, Silver and Copper General + Champion and Wizard + Phoenix + Stork)
-=======
-=======
-
->>>>>>> 4d207b9 (New fairy piece: Cobra)
->>>>>>> 6929c2a (New fairy piece: Cobra)
 	});
 })();
-
