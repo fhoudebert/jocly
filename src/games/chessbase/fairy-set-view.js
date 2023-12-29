@@ -227,6 +227,11 @@
 					clipx: 1900,
 				},
 			},
+			"fr-rhino2": {
+				"2d": {
+					clipx: 1900,
+				},
+			},
 			"fr-bull": {
 				"2d": {
 					clipx: 2000,
@@ -2027,6 +2032,27 @@
 						normal: {
 							texturesImg: {
 								normalImg: "/res/fairy/birds/phoenix-normalmap.jpg",
+							}
+						}
+					}
+				}
+			},
+		},
+		"fr-rhino2": {
+			mesh: {
+				jsFile:"/res/fairy/rhino/rhino2.js"
+			},
+			materials: {
+				mat0: {
+					channels: {
+						diffuse: {
+							texturesImg: {
+								diffImg : "/res/fairy/rhino/rhino2-diffusemap.jpg",
+							}
+						},
+						normal: {
+							texturesImg: {
+								normalImg: "/res/fairy/rhino/rhino2-normalmap.jpg",
 							}
 						}
 					}
