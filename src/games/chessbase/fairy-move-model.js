@@ -239,6 +239,13 @@
 					this.castle={}; this.pieceTypes[rook].castle=true;
 					SetCastling(rook,kstep,0); SetCastling(rook,kstep,1);
 				},
+			setValues: function(table) {
+				for(var i=0; i<this.nr; i++) {
+					var t=this.pieceTypes[i], id=t.abbrev;
+					if(!id) id='P';
+					if(table[id]) t.value=table[id];
+				}
+			},
 			nr: 0,
 			name2nr: [],
 			maxPromote: 0,
@@ -321,52 +328,52 @@
 			MakePiece('soldierb', 'fr-pawn', this.cbShortRangeGraph(geometry,[[0,-1]]), 1, [[],locations['P'][1]]);
 		}
 
-		if('N' in locations)
-			MakePiece('knight', 'fr-knight', this.cbKnightGraph(geometry), 3.25, locations['N']);
-		if('B' in locations)
-			MakePiece('bishop', 'fr-bishop', this.cbBishopGraph(geometry), 3.50, locations['B']);
-		if('R' in locations)
-			MakePiece('rook', 'fr-rook', this.cbRookGraph(geometry), 5.0, locations['R'], 'castle');
-		if('Q' in locations)
-			MakePiece('queen', 'fr-proper-queen', this.cbQueenGraph(geometry), 9.5, locations['Q']);
 		if('A' in locations)
 			MakePiece('archbishop', 'fr-proper-cardinal', this.cbCardinalGraph(geometry), 8.75, locations['A']);
-		if('M' in locations)
-			MakePiece('marshall', 'fr-proper-marshall', this.cbMarshallGraph(geometry), 9.0, locations['M']);
-		if('H' in locations) {
-			var graph=this.MergeGraphs(geometry,
-					this.cbBishopGraph(geometry),
-					this.cbSchleichGraph(geometry));
-			MakePiece('dragon-horse', 'fr-saint', graph, 5.25, locations['H']);
-		}
+		if('B' in locations)
+			MakePiece('bishop', 'fr-bishop', this.cbBishopGraph(geometry), 3.50, locations['B']);
+		if('C' in locations)
+			MakePiece('camel', 'fr-camel', this.cbCamelGraph(geometry), 2.5, locations['C']);
 		if('D' in locations) {
 			var graph=this.MergeGraphs(geometry,
 					this.cbRookGraph(geometry),
 					this.cbFersGraph(geometry));
 			MakePiece('dragon-king', 'fr-proper-crowned-rook', graph, 7.0, locations['D']);
 		}
-		if('G' in locations)
-			MakePiece('griffon', 'fr-griffon', this.cbGriffonGraph(geometry), 8.3, locations['G']);
-		if('U' in locations)
-			MakePiece('rhino', 'fr-rhino', this.cbRhinoGraph(geometry), 7.8, locations['U']);
 		if('E' in locations)
 			MakePiece('elephant', 'fr-proper-elephant', this.cbElephantGraph(geometry), 3.35, locations['E']);
-		if('C' in locations)
-			MakePiece('camel', 'fr-camel', this.cbCamelGraph(geometry), 2.5, locations['C']);
-		if('Z' in locations)
-			MakePiece('zebra', 'fr-zebra', this.cbZebraGraph(geometry), 2.5, locations['Z']);
+		if('G' in locations)
+			MakePiece('griffon', 'fr-griffon', this.cbGriffonGraph(geometry), 8.3, locations['G']);
+		if('H' in locations) {
+			var graph=this.MergeGraphs(geometry,
+					this.cbBishopGraph(geometry),
+					this.cbSchleichGraph(geometry));
+			MakePiece('dragon-horse', 'fr-saint', graph, 5.25, locations['H']);
+		}
+		if('L' in locations)
+			MakePiece('lion', 'fr-lion', this.cbLionGraph(geometry), 11, locations['L']);
+		if('M' in locations)
+			MakePiece('marshall', 'fr-proper-marshall', this.cbMarshallGraph(geometry), 9.0, locations['M']);
+		if('N' in locations)
+			MakePiece('knight', 'fr-knight', this.cbKnightGraph(geometry), 3.25, locations['N']);
 		if('O' in locations)
 			MakePiece('champion', 'fr-champion', this.cbChampionGraph(geometry), 4.5, locations['O']);
+		if('Q' in locations)
+			MakePiece('queen', 'fr-proper-queen', this.cbQueenGraph(geometry), 9.5, locations['Q']);
+		if('R' in locations)
+			MakePiece('rook', 'fr-rook', this.cbRookGraph(geometry), 5.0, locations['R'], 'castle');
+		if('T' in locations)
+			MakePiece('amazon', 'fr-amazon', this.cbAmazonGraph(geometry), 12.5, locations['T']);
+		if('U' in locations)
+			MakePiece('rhino', 'fr-rhino', this.cbRhinoGraph(geometry), 7.8, locations['U']);
+		if('V' in locations)
+			MakePiece('vao', 'fr-cannon2', this.cbVaoGraph(geometry), 2, locations['V']);
 		if('W' in locations)
 			MakePiece('wizard', 'fr-wizard', this.cbWizardGraph(geometry), 4, locations['W']);
 		if('X' in locations)
 			MakePiece('cannon', 'fr-cannon', this.cbXQCannonGraph(geometry), 3, locations['X']);
-		if('V' in locations)
-			MakePiece('vao', 'fr-cannon2', this.cbVaoGraph(geometry), 2, locations['V']);
-		if('L' in locations)
-			MakePiece('lion', 'fr-lion', this.cbLionGraph(geometry), 11, locations['L']);
-		if('T' in locations)
-			MakePiece('amazon', 'fr-amazon', this.cbAmazonGraph(geometry), 12.5, locations['T']);
+		if('Z' in locations)
+			MakePiece('zebra', 'fr-zebra', this.cbZebraGraph(geometry), 2.5, locations['Z']);
 		if('K' in locations)
 			MakePiece('king', 'fr-king', this.cbKingGraph(geometry), 100, locations['K'],'isKing');
 
@@ -554,3 +561,4 @@
 	}
 	
 })();
+
