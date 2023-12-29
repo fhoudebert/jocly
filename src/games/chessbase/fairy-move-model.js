@@ -188,73 +188,73 @@
 				ini.push({s: -1, p: pos[1][i]});
 			if(ini.length) piece.initial = ini;
 		}
+		return piece;
 	}
 
 	Model.Game.cbPiecesFromFEN = function(geometry, fen, step) {
 		var pieces={};
 		var locations=[];
-		var sqr=0;
+		var sqr=geometry.boardSize, nr=0;
 
 		for(var i=0; i<fen.length; i++) {
 			var c = fen[i];
 			if(c == '/') {
-				sqr = (sqr - sqr%geometry.width) + geometry.width; // start next rank
+				sqr -= sqr%geometry.width; // start next rank
 				continue;
 			}
 			var n=parseInt(fen.substring(i));
 			if(n) { // skip number of squares
-				sqr+=n; i+=(n>99?2:n>9?1:0);
+				sqr-=n; i+=(n>99?2:n>9?1:0);
 				continue;
 			}
 			var cc=c.toUpperCase();
-			if(!locations[cc]) locations[cc]==[[],[]];
-			if(sqr<geometry.boardSize) locations[c][c==cc?0:1].push(sqr);
+			if(!locations[cc]) locations[cc]=[[],[]];
+			if(sqr>0) locations[cc][c==cc?0:1].push(--sqr);
 		}
 
 		if('P' in locations) {
-			if(step===undefined) step=2;
-			pieces.push(MakePiece('ipawnw', 'fr-pawn', this.cbInitialPawnGraph(geometry,1,step), 1, [locations['P'][0],[]], 'epTarget', true));
-			pieces.push(MakePiece('ipawnb', 'fr-pawn', this.cbInitialPawnGraph(geometry,-1,step), 1, [[],locations['P'][1]], 'epTarget', true));
-			pieces.push(MakePiece('pawnw', 'fr-pawn', this.cbInitialPawnGraph(geometry,1,1), 1, null, 'epCatch', true));
-			pieces.push(MakePiece('pawnb', 'fr-pawn', this.cbInitialPawnGraph(geometry,-1,1), 1, null, 'epCatch', true));
+			pieces[nr++]=MakePiece('pawnw', 'fr-pawn', this.cbInitialPawnGraph(geometry,1,1), 1, null, 'epCatch', true);
+			pieces[nr++]=MakePiece('ipawnw', 'fr-pawn', this.cbInitialPawnGraph(geometry,1,step), 1, [locations['P'][0],[]], 'epTarget', true);
+			pieces[nr++]=MakePiece('pawnb', 'fr-pawn', this.cbInitialPawnGraph(geometry,-1,1), 1, null, 'epCatch', true);
+			pieces[nr++]=MakePiece('ipawnb', 'fr-pawn', this.cbInitialPawnGraph(geometry,-1,step), 1, [[],locations['P'][1]], 'epTarget', true);
 		}
 		if('S' in locations) { // Shogi Pawn
-			pieces.push(MakePiece('pawnw', 'fr-pawn', this.cbShortRangeGraph(geometry,[[0,1]]), 1, [locations['P'][0],[]]));
-			pieces.push(MakePiece('pawnb', 'fr-pawn', this.cbShortRangeGraph(geometry,[[0,-1]]), 1, [[],locations['P'][1]]));
+			pieces[nr++]=MakePiece('pawnw', 'fr-pawn', this.cbShortRangeGraph(geometry,[[0,1]]), 1, [locations['P'][0],[]]);
+			pieces[nr++]=MakePiece('pawnb', 'fr-pawn', this.cbShortRangeGraph(geometry,[[0,-1]]), 1, [[],locations['P'][1]]);
 		}
 
 		if('N' in locations)
-			pieces.push(MakePiece('knight', 'fr-knight', this.cbKnightGraph(geometry), 3.25, locations['N']));
+			pieces[nr++]=MakePiece('knight', 'fr-knight', this.cbKnightGraph(geometry), 3.25, locations['N']);
 		if('B' in locations)
-			pieces.push(MakePiece('bishop', 'fr-bishop', this.cbBishopGraph(geometry), 3.50, locations['B']));
+			pieces[nr++]=MakePiece('bishop', 'fr-bishop', this.cbBishopGraph(geometry), 3.50, locations['B']);
 		if('R' in locations)
-			pieces.push(MakePiece('rook', 'fr-rook', this.cbRookGraph(geometry), 5.0, locations['R'], 'castle', true));
+			pieces[nr++]=MakePiece('rook', 'fr-rook', this.cbRookGraph(geometry), 5.0, locations['R'], 'castle', true);
 		if('Q' in locations)
-			pieces.push(MakePiece('queen', 'fr-proper-queen', this.cbQueenGraph(geometry), 9.5, locations['Q']));
+			pieces[nr++]=MakePiece('queen', 'fr-proper-queen', this.cbQueenGraph(geometry), 9.5, locations['Q']);
 		if('A' in locations)
-			pieces.push(MakePiece('archbishop', 'fr-proper-cardinal', this.cbCardinalGraph(geometry), 8.75, locations['A']));
+			pieces[nr++]=MakePiece('archbishop', 'fr-proper-cardinal', this.cbCardinalGraph(geometry), 8.75, locations['A']);
 		if('M' in locations)
-			pieces.push(MakePiece('marshall', 'fr-proper-marshall', this.cbMarshallGraph(geometry), 9.0, locations['M']));
+			pieces[nr++]=MakePiece('marshall', 'fr-proper-marshall', this.cbMarshallGraph(geometry), 9.0, locations['M']);
 		if('G' in locations)
-			pieces.push(MakePiece('griffon', 'fr-eagle', this.cbGriffonGraph(geometry), 8.3, locations['G']));
+			pieces[nr++]=MakePiece('griffon', 'fr-eagle', this.cbGriffonGraph(geometry), 8.3, locations['G']);
 		if('U' in locations)
-			pieces.push(MakePiece('rhino', 'fr-rhino', this.cbRhinoGraph(geometry), 7.8, locations['U']));
+			pieces[nr++]=MakePiece('rhino', 'fr-rhino', this.cbRhinoGraph(geometry), 7.8, locations['U']);
 		if('E' in locations)
-			pieces.push(MakePiece('elephant', 'fr-proper-elephant', this.cbElephantGraph(geometry), 3.35, locations['E']));
+			pieces[nr++]=MakePiece('elephant', 'fr-proper-elephant', this.cbElephantGraph(geometry), 3.35, locations['E']);
 		if('C' in locations)
-			pieces.push(MakePiece('camel', 'fr-camel', this.cbCamelGraph(geometry), 2.5, locations['C']));
+			pieces[nr++]=MakePiece('camel', 'fr-camel', this.cbCamelGraph(geometry), 2.5, locations['C']);
 		if('Z' in locations)
-			pieces.push(MakePiece('zebra', 'fr-zebra', this.cbZebraGraph(geometry), 2.5, locations['Z']));
+			pieces[nr++]=MakePiece('zebra', 'fr-zebra', this.cbZebraGraph(geometry), 2.5, locations['Z']);
 		if('H' in locations)
-			pieces.push(MakePiece('champion', 'fr-admiral', this.cbChampionGraph(geometry), 4.5, locations['H']));
+			pieces[nr++]=MakePiece('champion', 'fr-admiral', this.cbChampionGraph(geometry), 4.5, locations['H']);
 		if('W' in locations)
-			pieces.push(MakePiece('wizard', 'fr-star', this.cbWizardGraph(geometry), 4, locations['W']));
+			pieces[nr++]=MakePiece('wizard', 'fr-star', this.cbWizardGraph(geometry), 4, locations['W']);
 		if('X' in locations)
-			pieces.push(MakePiece('cannon', 'fr-cannon', this.cbXQCannonGraph(geometry), 3, locations['X']));
+			pieces[nr++]=MakePiece('cannon', 'fr-cannon', this.cbXQCannonGraph(geometry), 3, locations['X']);
 		if('V' in locations)
-			pieces.push(MakePiece('vao', 'fr-cannon2', this.cbVaoGraph(geometry), 2, locations['V']));
+			pieces[nr++]=MakePiece('vao', 'fr-cannon2', this.cbVaoGraph(geometry), 2, locations['V']);
 		if('K' in locations)
-			pieces.push(MakePiece('king', 'fr-king', this.cbKingGraph(geometry), 100, locations['K'],'isKing', true));
+			pieces[nr++]=MakePiece('king', 'fr-king', this.cbKingGraph(geometry), 100, locations['K'],'isKing', true);
 
 		return pieces;
 	}
