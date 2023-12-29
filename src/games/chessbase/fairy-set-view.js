@@ -428,6 +428,7 @@
 					clipx: 6000,
 					},
 			},
+<<<<<<< HEAD
 			"fr-flamingo": {
 				"2d": {
 					clipx: 6100,
@@ -438,6 +439,8 @@
 					clipx: 6200,
 					},
 			},
+=======
+>>>>>>> 40a0cb5 (New fairy piece: Cobra)
 		},modifier);
 	}
 
