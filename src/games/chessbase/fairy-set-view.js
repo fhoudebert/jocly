@@ -429,11 +429,15 @@
 					},
 			},
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c4abace (New fairy piece: Flamingo)
 			"fr-flamingo": {
 				"2d": {
 					clipx: 6100,
 					},
 			},
+<<<<<<< HEAD
 			"fr-terror": {
 				"2d": {
 					clipx: 6200,
@@ -441,6 +445,8 @@
 			},
 =======
 >>>>>>> 40a0cb5 (New fairy piece: Cobra)
+=======
+>>>>>>> c4abace (New fairy piece: Flamingo)
 		},modifier);
 	}
 
