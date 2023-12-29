@@ -434,11 +434,15 @@
 					},
 			},
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c4abace (New fairy piece: Flamingo)
 			"fr-flamingo": {
 				"2d": {
 					clipx: 6100,
 					},
 			},
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -455,6 +459,8 @@
 >>>>>>> 21cf4c8 (add nex Fairy piece : terror, a dragon used in makromachy)
 =======
 >>>>>>> 40a0cb5 (New fairy piece: Cobra)
+=======
+>>>>>>> c4abace (New fairy piece: Flamingo)
 		},modifier);
 	}
 
