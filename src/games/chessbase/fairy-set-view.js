@@ -448,10 +448,13 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 21cf4c8 (add nex Fairy piece : terror, a dragon used in makromachy)
 =======
 >>>>>>> 8816c75 (add nex Fairy piece : terror, a dragon used in makromachy)
+=======
+>>>>>>> a048986 (New fairy piece: Flamingo)
 			"fr-terror": {
 				"2d": {
 					clipx: 6200,
@@ -489,7 +492,12 @@
 					clipx: 6200,
 					},
 			},
+<<<<<<< HEAD
 >>>>>>> c3f3352 (New fairy piece: Cobra)
+=======
+=======
+>>>>>>> c4abace (New fairy piece: Flamingo)
+>>>>>>> a048986 (New fairy piece: Flamingo)
 		},modifier);
 	}
 
