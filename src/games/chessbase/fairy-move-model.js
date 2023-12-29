@@ -105,11 +105,35 @@
 		return graph;
 	}
 
-	Model.Game.cbInitialPawnGraph = function(geometry,direction,initialPush) {
-		if(initialPush===undefined) initialPush=2;
+	Model.Game.cbPushGraph = function(geometry,direction,maxDist,rank) {
+		var $this=this;
+		var h = geometry.height;
+                var half=h-1>>1;
+		if(!maxDist) maxDist=Infinity;
+		if(rank===undefined) rank=h;
+		var graph={};
+		for(var pos=0;pos<geometry.boardSize;pos++) {
+			graph[pos]=[];
+			var line=[];
+			var pos1=geometry.Graph(pos,[0,direction]);
+			var dist=0;
+			while(pos1!=null) {
+				line.push(pos1 | c.FLAG_MOVE);
+				if(++dist==maxDist) break;
+				if(h-1+direction*(2*geometry.R(pos)-h+1) > 2*rank) break; // stop if starting beyond 'rank'
+				pos1=geometry.Graph(pos1,[0,direction]);
+				if(h-1+direction*(2*geometry.R(pos1)-h+1) > 2*half) break; // stop if we enter enemy half
+			}
+			if(line.length>0)
+				graph[pos].push($this.cbTypedArray(line));
+		}
+		return graph;
+	}
+
+	Model.Game.cbFlexiPawnGraph = function(geometry,direction,pawnRank,maxPush) {
       		return this.cbMergeGraphs(geometry,
-			this.cbShortRangeGraph(geometry,[[1,direction],[-1,direction]],null,c.FLAG_CAPTURE),
-			this.cbLongRangeGraph(geometry,[[0,direction]],null,c.FLAG_MOVE,initialPush));
+			this.cbPushGraph(geometry,direction,maxPush,pawnRank),
+			this.cbShortRangeGraph(geometry,[[1,direction],[-1,direction]],null,c.FLAG_CAPTURE));
 	}
 
 	Model.Game.cbCamelGraph = function(geometry,confine) {
@@ -169,7 +193,7 @@
 		if(!this.burnZone)  this.burnZone  = this.cbShortRangeGraph(geometry,All4([[1,0],[1,1]]));
 	}
 
-	function MakePiece(name, aspect, graph, value, pos, extra, extraVal) {
+	function MakePiece(name, aspect, graph, value, pos, prop1, prop2) {
 		var abbrev=name[0].toUpperCase();
 		if(name=='rhino') abbrev='U'; else if(name=='champion') abbrev='H';
 		var piece = {
@@ -179,7 +203,8 @@
 			graph: graph,
 		};
 		if(aspect=='fr-pawn') piece.abbrev='', piece.fenAbbrev='P';
-		if(extra) piece[extra] = extraVal;
+		if(prop1) piece[prop1] = true;
+		if(prop2) piece[prop2] = true;
 		if(pos) {
 			var ini = [];
 			for(var i=0; i<pos[0].length; i++)
@@ -191,7 +216,7 @@
 		return piece;
 	}
 
-	Model.Game.cbPiecesFromFEN = function(geometry, fen, step) {
+	Model.Game.cbPiecesFromFEN = function(geometry, fen, pawnRank, maxPush) {
 		var pieces={};
 		var locations=[];
 		var sqr=geometry.boardSize, nr=0;
@@ -213,10 +238,9 @@
 		}
 
 		if('P' in locations) {
-			pieces[nr++]=MakePiece('pawnw', 'fr-pawn', this.cbInitialPawnGraph(geometry,1,1), 1, null, 'epCatch', true);
-			pieces[nr++]=MakePiece('ipawnw', 'fr-pawn', this.cbInitialPawnGraph(geometry,1,step), 1, [locations['P'][0],[]], 'epTarget', true);
-			pieces[nr++]=MakePiece('pawnb', 'fr-pawn', this.cbInitialPawnGraph(geometry,-1,1), 1, null, 'epCatch', true);
-			pieces[nr++]=MakePiece('ipawnb', 'fr-pawn', this.cbInitialPawnGraph(geometry,-1,step), 1, [[],locations['P'][1]], 'epTarget', true);
+			if(pawnRank===undefined) pawnRank=geometry.R(locations['P'][0][0]);
+			pieces[nr++]=MakePiece('pawnw', 'fr-pawn', this.cbFlexiPawnGraph(geometry,1,pawnRank,maxPush), 1, [locations['P'][0],[]], 'epTarget', 'epCatch');
+			pieces[nr++]=MakePiece('pawnb', 'fr-pawn', this.cbFlexiPawnGraph(geometry,-1,pawnRank,maxPush), 1, [[],locations['P'][1]], 'epTarget', 'epCatch');
 		}
 		if('S' in locations) { // Shogi Pawn
 			pieces[nr++]=MakePiece('pawnw', 'fr-pawn', this.cbShortRangeGraph(geometry,[[0,1]]), 1, [locations['P'][0],[]]);
@@ -254,7 +278,7 @@
 		if('V' in locations)
 			pieces[nr++]=MakePiece('vao', 'fr-cannon2', this.cbVaoGraph(geometry), 2, locations['V']);
 		if('K' in locations)
-			pieces[nr++]=MakePiece('king', 'fr-king', this.cbKingGraph(geometry), 100, locations['K'],'isKing', true);
+			pieces[nr++]=MakePiece('king', 'fr-king', this.cbKingGraph(geometry), 100, locations['K'],'isKing');
 
 		return pieces;
 	}
