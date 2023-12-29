@@ -438,11 +438,14 @@
 					clipx: 6100,
 					},
 			},
+<<<<<<< HEAD
 			"fr-terror": {
 				"2d": {
 					clipx: 6200,
 					},
 			},
+=======
+>>>>>>> c4abace (New fairy piece: Flamingo)
 		},modifier);
 	}
 
