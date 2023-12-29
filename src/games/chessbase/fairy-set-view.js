@@ -1946,19 +1946,19 @@
 		},
 		"fr-champion": {
 			mesh: {
-				jsFile:"/res/fairy/champion/champion.js"
+				jsFile:"/res/fairy/omega/champion.js"
 			},
 			materials: {
 				mat0: {
 					channels: {
 						diffuse: {
 							texturesImg: {
-								diffImg : "/res/fairy/champion/champion-diffusemap.jpg",
+								diffImg : "/res/fairy/omega/champion-diffusemap.jpg",
 							}
 						},
 						normal: {
 							texturesImg: {
-								normalImg: "/res/fairy/champion/champion-normalmap.jpg",
+								normalImg: "/res/fairy/omega/champion-normalmap.jpg",
 							}
 						}
 					}
@@ -1967,19 +1967,19 @@
 		},
 		"fr-wizard": {
 			mesh: {
-				jsFile:"/res/fairy/wizard/wizard.js"
+				jsFile:"/res/fairy/omega/wizard.js"
 			},
 			materials: {
 				mat0: {
 					channels: {
 						diffuse: {
 							texturesImg: {
-								diffImg : "/res/fairy/wizard/wizard-diffusemap.jpg",
+								diffImg : "/res/fairy/omega/wizard-diffusemap.jpg",
 							}
 						},
 						normal: {
 							texturesImg: {
-								normalImg: "/res/fairy/wizard/wizard-normalmap.jpg",
+								normalImg: "/res/fairy/omega/wizard-normalmap.jpg",
 							}
 						}
 					}
