@@ -124,7 +124,7 @@
 			},
 			"fr-cannon2": {
 				"2d": {
-					clipx: 600,
+					clipx: 5200,
 				},
 			},
 			"fr-elephant": {
@@ -169,7 +169,7 @@
 			},
 			"fr-stork": {
 				"2d": {
-					clipx: 1100,
+					clipx: 5300,
 				},
 			},
 			"fr-lion": {
@@ -383,9 +383,44 @@
 					clipx: 5100,
 					},
 			},
+			"fr-flying-queen": {
+				"2d": {
+					clipx: 5100,
+					},
+			},
+			"fr-phoenix": {
+				"2d": {
+					clipx: 5400,
+					},
+			},
+			"fr-champion": {
+				"2d": {
+					clipx: 5500,
+					},
+			},
+			"fr-wizard": {
+				"2d": {
+					clipx: 5600,
+					},
+			},
+			"fr-gold": {
+				"2d": {
+					clipx: 5700,
+					},
+			},
+			"fr-silver": {
+				"2d": {
+					clipx: 5800,
+					},
+			},
+			"fr-copper": {
+				"2d": {
+					clipx: 5900,
+					},
+			},
 			"fr-terror": {
 				"2d": {
-					clipx: 5200,
+					clipx: 6000,
 					},
 			},
 		},modifier);
@@ -853,6 +888,28 @@
 		"fr-proper-queen": {
 			mesh: {
 				jsFile:"/res/fairy/queen/proper-queen.js"
+			},
+			materials: {
+				mat0: {
+					channels: {
+						diffuse: {
+							texturesImg: {
+								diffImg : "/res/fairy/queen/queen-diffusemap.jpg",
+							}
+						},
+						normal: {
+							texturesImg: {
+								normalImg: "/res/fairy/queen/queen-normalmap.jpg",
+							}
+						}
+					}
+				}
+			},
+		},
+
+		"fr-flying-queen": {
+			mesh: {
+				jsFile:"/res/fairy/queen/flying-queen.js"
 			},
 			materials: {
 				mat0: {
@@ -1829,6 +1886,132 @@
 				}
 			},
 		},
+		"fr-copper": {
+			mesh: {
+				jsFile:"/res/fairy/generals/copper.js"
+			},
+			materials: {
+				mat0: {
+					channels: {
+						diffuse: {
+							texturesImg: {
+								diffImg : "/res/fairy/generals/copper-diffusemap.jpg",
+							}
+						},
+						normal: {
+							texturesImg: {
+								normalImg: "/res/fairy/generals/copper-normalmap.jpg",
+							}
+						}
+					}
+				}
+			},
+		},
+		"fr-silver": {
+			mesh: {
+				jsFile:"/res/fairy/generals/silver.js"
+			},
+			materials: {
+				mat0: {
+					channels: {
+						diffuse: {
+							texturesImg: {
+								diffImg : "/res/fairy/generals/silver-diffusemap.jpg",
+							}
+						},
+						normal: {
+							texturesImg: {
+								normalImg: "/res/fairy/generals/silver-normalmap.jpg",
+							}
+						}
+					}
+				}
+			},
+		},
+		"fr-gold": {
+			mesh: {
+				jsFile:"/res/fairy/generals/gold.js"
+			},
+			materials: {
+				mat0: {
+					channels: {
+						diffuse: {
+							texturesImg: {
+								diffImg : "/res/fairy/generals/gold-diffusemap.jpg",
+							}
+						},
+						normal: {
+							texturesImg: {
+								normalImg: "/res/fairy/generals/gold-normalmap.jpg",
+							}
+						}
+					}
+				}
+			},
+		},
+		"fr-champion": {
+			mesh: {
+				jsFile:"/res/fairy/champion/champion.js"
+			},
+			materials: {
+				mat0: {
+					channels: {
+						diffuse: {
+							texturesImg: {
+								diffImg : "/res/fairy/champion/champion-diffusemap.jpg",
+							}
+						},
+						normal: {
+							texturesImg: {
+								normalImg: "/res/fairy/champion/champion-normalmap.jpg",
+							}
+						}
+					}
+				}
+			},
+		},
+		"fr-wizard": {
+			mesh: {
+				jsFile:"/res/fairy/wizard/wizard.js"
+			},
+			materials: {
+				mat0: {
+					channels: {
+						diffuse: {
+							texturesImg: {
+								diffImg : "/res/fairy/wizard/wizard-diffusemap.jpg",
+							}
+						},
+						normal: {
+							texturesImg: {
+								normalImg: "/res/fairy/wizard/wizard-normalmap.jpg",
+							}
+						}
+					}
+				}
+			},
+		},
+		"fr-phoenix": {
+			mesh: {
+				jsFile:"/res/fairy/phoenix/phoenix.js"
+			},
+			materials: {
+				mat0: {
+					channels: {
+						diffuse: {
+							texturesImg: {
+								diffImg : "/res/fairy/phoenix/phoenix-diffusemap.jpg",
+							}
+						},
+						normal: {
+							texturesImg: {
+								normalImg: "/res/fairy/phoenix/phoenix-normalmap.jpg",
+							}
+						}
+					}
+				}
+			},
+		},
 		"fr-hawk": {
 			mesh: {
 				jsFile:"/res/fairy/hawk/hawk.js"
@@ -1871,6 +2054,5 @@
 				}
 			},
 		},
-
 	});
 })();
