@@ -428,6 +428,31 @@
 					clipx: 6700,
 					},
 			},
+			"fr-owl": {
+				"2d": {
+					clipx: 6800,
+					},
+			},
+			"fr-scout": {
+				"2d": {
+					clipx: 6900,
+					},
+			},
+			"fr-caliph": {
+				"2d": {
+					clipx: 7000,
+					},
+			},
+			"fr-lance": {
+				"2d": {
+					clipx: 7100,
+					},
+			},
+			"fr-sword": {
+				"2d": {
+					clipx: 7200,
+					},
+			},
 		},modifier);
 	}
 
@@ -2125,6 +2150,90 @@
 				}
 			},
 		},
+		"fr-owl": {
+			mesh: {
+				jsFile:"/res/fairy/birds/owl.js"
+			},
+			materials: {
+				mat0: {
+					channels: {
+						diffuse: {
+							texturesImg: {
+								diffImg : "/res/fairy/birds/owl-diffusemap.jpg",
+							}
+						},
+						normal: {
+							texturesImg: {
+								normalImg: "/res/fairy/birds/owl-normalmap.jpg",
+							}
+						}
+					}
+				}
+			},
+		},
+		"fr-scout": {
+			mesh: {
+				jsFile:"/res/fairy/persons/scout.js"
+			},
+			materials: {
+				mat0: {
+					channels: {
+						diffuse: {
+							texturesImg: {
+								diffImg : "/res/fairy/persons/scout-diffusemap.jpg",
+							}
+						},
+						normal: {
+							texturesImg: {
+								normalImg: "/res/fairy/persons/scout-normalmap.jpg",
+							}
+						}
+					}
+				}
+			},
+		},
+		"fr-lance": {
+			mesh: {
+				jsFile:"/res/fairy/arms/lance.js"
+			},
+			materials: {
+				mat0: {
+					channels: {
+						diffuse: {
+							texturesImg: {
+								diffImg : "/res/fairy/arms/lance-diffusemap.jpg",
+							}
+						},
+						normal: {
+							texturesImg: {
+								normalImg: "/res/fairy/arms/lance-normalmap.jpg",
+							}
+						}
+					}
+				}
+			},
+		},
+		"fr-sword": {
+			mesh: {
+				jsFile:"/res/fairy/arms/sword.js"
+			},
+			materials: {
+				mat0: {
+					channels: {
+						diffuse: {
+							texturesImg: {
+								diffImg : "/res/fairy/arms/sword-diffusemap.jpg",
+							}
+						},
+						normal: {
+							texturesImg: {
+								normalImg: "/res/fairy/arms/sword-normalmap.jpg",
+							}
+						}
+					}
+				}
+			},
+		},
 		"fr-rhino2": {
 			mesh: {
 				jsFile:"/res/fairy/rhino/rhino2.js"
@@ -2232,3 +2341,4 @@
 		},
 	});
 })();
+
