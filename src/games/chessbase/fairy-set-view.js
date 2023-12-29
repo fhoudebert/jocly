@@ -1190,19 +1190,19 @@
 
 		"fr-stork": {
 			mesh: {
-				jsFile:"/res/fairy/stork/stork.js"
+				jsFile:"/res/fairy/birds/stork.js"
 			},
 			materials: {
 				mat0: {
 					channels: {
 						diffuse: {
 							texturesImg: {
-								diffImg : "/res/fairy/stork/stork-diffusemap.jpg",
+								diffImg : "/res/fairy/birds/stork-diffusemap.jpg",
 							}
 						},
 						normal: {
 							texturesImg: {
-								normalImg: "/res/fairy/stork/stork-normalmap.jpg",
+								normalImg: "/res/fairy/birds/stork-normalmap.jpg",
 							}
 						}
 					}
@@ -1988,19 +1988,19 @@
 		},
 		"fr-phoenix": {
 			mesh: {
-				jsFile:"/res/fairy/phoenix/phoenix.js"
+				jsFile:"/res/fairy/birds/phoenix.js"
 			},
 			materials: {
 				mat0: {
 					channels: {
 						diffuse: {
 							texturesImg: {
-								diffImg : "/res/fairy/phoenix/phoenix-diffusemap.jpg",
+								diffImg : "/res/fairy/birds/phoenix-diffusemap.jpg",
 							}
 						},
 						normal: {
 							texturesImg: {
-								normalImg: "/res/fairy/phoenix/phoenix-normalmap.jpg",
+								normalImg: "/res/fairy/birds/phoenix-normalmap.jpg",
 							}
 						}
 					}
