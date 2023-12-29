@@ -419,6 +419,7 @@
 					},
 			},
 <<<<<<< HEAD
+<<<<<<< HEAD
 			"fr-cobra": {
 				"2d": {
 					clipx: 6000,
@@ -461,12 +462,28 @@
 >>>>>>> d427617 (add nex Fairy piece : terror, a dragon used in makromachy)
 =======
 			"fr-terror": {
+=======
+			"fr-cobra": {
+>>>>>>> 4d207b9 (New fairy piece: Cobra)
 				"2d": {
 					clipx: 6000,
 >>>>>>> b2642c2 (add visuals for Gold, Silver and Copper General + Champion and Wizard + Phoenix + Stork)
 					},
 			},
+<<<<<<< HEAD
 >>>>>>> 2cd6c90 (New fairy piece: Samurai)
+=======
+			"fr-flamingo": {
+				"2d": {
+					clipx: 6100,
+					},
+			},
+			"fr-terror": {
+				"2d": {
+					clipx: 6200,
+					},
+			},
+>>>>>>> 6929c2a (New fairy piece: Cobra)
 		},modifier);
 	}
 
@@ -2164,9 +2181,12 @@
 						normal: {
 							texturesImg: {
 								normalImg: "/res/fairy/birds/flamingo-normalmap.jpg",
+<<<<<<< HEAD
 =======
 								normalImg: "/res/fairy/wizard/wizard-normalmap.jpg",
 >>>>>>> b2642c2 (add visuals for Gold, Silver and Copper General + Champion and Wizard + Phoenix + Stork)
+=======
+>>>>>>> 4d207b9 (New fairy piece: Cobra)
 							}
 						}
 					}
@@ -2224,6 +2244,7 @@
 				}
 			},
 		},
+<<<<<<< HEAD
 		"fr-samurai": {
 			mesh: {
 				jsFile:"/res/fairy/persons/samurai.js"
@@ -2245,6 +2266,8 @@
 				}
 			},
 		},
+=======
+>>>>>>> 4d207b9 (New fairy piece: Cobra)
 		"fr-cobra": {
 			mesh: {
 				jsFile:"/res/fairy/cobra/cobra.js"
@@ -2260,9 +2283,12 @@
 						normal: {
 							texturesImg: {
 								normalImg: "/res/fairy/cobra/cobra-normalmap.jpg",
+<<<<<<< HEAD
 =======
 								normalImg: "/res/fairy/phoenix/phoenix-normalmap.jpg",
 >>>>>>> b2642c2 (add visuals for Gold, Silver and Copper General + Champion and Wizard + Phoenix + Stork)
+=======
+>>>>>>> 4d207b9 (New fairy piece: Cobra)
 							}
 						}
 					}
@@ -2314,6 +2340,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> 91249b6 (New fairy piece: Terror)
@@ -2324,11 +2351,19 @@
 >>>>>>> 82e61e8 (add nex Fairy piece : terror, a dragon used in makromachy)
 =======
 =======
+>>>>>>> 6929c2a (New fairy piece: Cobra)
+=======
 
 >>>>>>> d427617 (add nex Fairy piece : terror, a dragon used in makromachy)
 =======
 >>>>>>> b2642c2 (add visuals for Gold, Silver and Copper General + Champion and Wizard + Phoenix + Stork)
+<<<<<<< HEAD
 >>>>>>> 5276367 (add visuals for Gold, Silver and Copper General + Champion and Wizard + Phoenix + Stork)
+=======
+=======
+
+>>>>>>> 4d207b9 (New fairy piece: Cobra)
+>>>>>>> 6929c2a (New fairy piece: Cobra)
 	});
 })();
 
