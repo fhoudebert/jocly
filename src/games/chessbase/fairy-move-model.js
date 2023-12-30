@@ -205,11 +205,6 @@
 		var sqr=geometry.boardSize;
 
 		var res = { // what this function will return
-			nr: 0,
-			name2nr: [],
-			maxPromote: 0,
-			promoZone: 1,
-			promoChoice: [],
 			geometry: geometry,
 			pieceTypes: {}, // too be filled by MakePiece()
 			promote: function(e,piece,move) { // watch out! called with unnatural 'this'
@@ -235,8 +230,42 @@
 					if(!typeDef.isKing) this.promoChoice.push(this.nr);
 					return this.nr++;
 				},
-
+			setCastling: function(kstep,partnerName) {
+					if(!locations['K']) return;
+					if(!partnerName) partnerName='rook';
+					if(partnerName!='rook') delete this.pieceTypes[this.name2nr['rook']].castle;
+					var rook=this.name2nr[partnerName];
+					if(!rook) return;
+					this.castle={}; this.pieceTypes[rook].castle=true;
+					SetCastling(rook,kstep,0); SetCastling(rook,kstep,1);
+				},
+			nr: 0,
+			name2nr: [],
+			maxPromote: 0,
+			promoZone: 1,
+			promoChoice: [],
 		};
+
+		function SetCastling(rookType,kstep,player) {
+			var k=locations['K'][player][0];
+			var loc=locations[res.pieceTypes[rookType].abbrev][player];
+			var rank=geometry.R(k);
+			if(!kstep) kstep=(geometry.width-3>>1)-geometry.C(loc[0]); // file of left rook
+			for(var i=0; i<loc.length; i++) {
+				var r=loc[i];
+				if(geometry.R(r)!=rank) continue;
+				var kk=[], rr=[], text='O-O';
+				if(r<k) {
+					for(var j=r+1; j<=k-kstep+1; j++) rr.push(j);
+					for(var j=k-1; j>=k-kstep; j--) kk.push(j);
+					text+='-O'
+				} else {
+					for(var j=r-1; j>=k+kstep-1; j--) rr.push(j);
+					for(var j=k+1; j<=k+kstep; j++) kk.push(j);
+				}
+				res.castle[k+'/'+r] = { k:kk, r:rr, n:text};
+			}
+		}
 
 		function MakePiece(name, aspect, graph, value, pos, prop1, prop2) {
 			var abbrev=name[0].toUpperCase();
@@ -278,7 +307,8 @@
 			}
 			var cc=c.toUpperCase();
 			if(!locations[cc]) locations[cc]=[[],[]];
-			if(sqr>0) locations[cc][c==cc?0:1].push(--sqr);
+			--sqr;
+			if(sqr>=0) locations[cc][c==cc?0:1].push(geometry.width*(geometry.R(sqr)+1)-geometry.C(sqr)-1);
 		}
 
 		if('P' in locations) {
@@ -296,7 +326,7 @@
 		if('B' in locations)
 			MakePiece('bishop', 'fr-bishop', this.cbBishopGraph(geometry), 3.50, locations['B']);
 		if('R' in locations)
-			MakePiece('rook', 'fr-rook', this.cbRookGraph(geometry), 5.0, locations['R'], 'castle', true);
+			MakePiece('rook', 'fr-rook', this.cbRookGraph(geometry), 5.0, locations['R'], 'castle');
 		if('Q' in locations)
 			MakePiece('queen', 'fr-proper-queen', this.cbQueenGraph(geometry), 9.5, locations['Q']);
 		if('A' in locations)
@@ -327,6 +357,8 @@
 			MakePiece('amazon', 'fr-amazon', this.cbAmazonGraph(geometry), 12.5, locations['T']);
 		if('K' in locations)
 			MakePiece('king', 'fr-king', this.cbKingGraph(geometry), 100, locations['K'],'isKing');
+
+		res.setCastling(); // now we know where all pieces are
 
 		return res;
 	}
