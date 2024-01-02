@@ -54,12 +54,12 @@
 			},
 			"fr-ferz": {
 				"2d": {
-					clipx: 3900,
+					clipx: 3800,
 				},
 			},
 			"fr-wazir": {
 				"2d": {
-					clipx: 3800,
+					clipx: 3700,
 				},
 			},
 			"fr-knight": {
@@ -74,7 +74,7 @@
 			},
 			"fr-small-bishop": {
 				"2d": {
-					clipx: 3400,
+					clipx: 3600,
 				},
 			},
 			"fr-saint": {
@@ -89,12 +89,12 @@
 			},
 			"fr-small-rook": {
 				"2d": {
-					clipx: 3500,
+					clipx: 3300,
 				},
 			},
 			"fr-gate": {
 				"2d": {
-					clipx: 3600,
+					clipx: 3400,
 				},
 			},
 			"fr-queen": {
@@ -117,6 +117,14 @@
 					clipx: 500,
 				},
 			},
+<<<<<<< HEAD
+=======
+			"fr-man": {
+				"2d": {
+					clipx: 3900,
+				},
+			},
+>>>>>>> c2d4d1b (Small cleanup of fairy-set-view.js)
 			"fr-cannon": {
 				"2d": {
 					clipx: 600,
@@ -288,44 +296,9 @@
 					clipx: 3100,
 				},
 			},
-			"fr-saint": {
-				"2d": {
-					clipx: 3200,
-				},
-			},
-			"fr-small-rook": {
-				"2d": {
-					clipx: 3300,
-				},
-			},
-			"fr-gate": {
-				"2d": {
-					clipx: 3400,
-				},
-			},
 			"fr-zebra": {
 				"2d": {
 					clipx: 3500,
-				},
-			},
-			"fr-small-bishop": {
-				"2d": {
-					clipx: 3600,
-				},
-			},
-			"fr-wazir": {
-				"2d": {
-					clipx: 3700,
-				},
-			},
-			"fr-ferz": {
-				"2d": {
-					clipx: 3800,
-				},
-			},
-			"fr-man": {
-				"2d": {
-					clipx: 3900,
 				},
 			},
 			"fr-giraffe": {
@@ -386,6 +359,21 @@
 			"fr-hawk": {
 				"2d": {
 					clipx: 5100,
+					},
+			},
+			"fr-flying-queen": {
+				"2d": {
+					clipx: 6200,
+					},
+			},
+			"fr-flying-rook": {
+				"2d": {
+					clipx: 6300,
+					},
+			},
+			"fr-flying-bishop": {
+				"2d": {
+					clipx: 6400,
 					},
 			},
 			"fr-phoenix": {
@@ -919,6 +907,72 @@
 						normal: {
 							texturesImg: {
 								normalImg: "/res/fairy/queen/queen-normalmap.jpg",
+							}
+						}
+					}
+				}
+			},
+		},
+
+		"fr-flying-queen": {
+			mesh: {
+				jsFile:"/res/fairy/queen/flying-queen.js"
+			},
+			materials: {
+				mat0: {
+					channels: {
+						diffuse: {
+							texturesImg: {
+								diffImg : "/res/fairy/queen/queen-diffusemap.jpg",
+							}
+						},
+						normal: {
+							texturesImg: {
+								normalImg: "/res/fairy/queen/queen-normalmap.jpg",
+							}
+						}
+					}
+				}
+			},
+		},
+
+		"fr-flying-rook": {
+			mesh: {
+				jsFile:"/res/fairy/rook/flying-rook.js"
+			},
+			materials: {
+				mat0: {
+					channels: {
+						diffuse: {
+							texturesImg: {
+								diffImg : "/res/fairy/rook/rook-diffusemap.jpg",
+							}
+						},
+						normal: {
+							texturesImg: {
+								normalImg: "/res/fairy/rook/rook-normalmap.jpg",
+							}
+						}
+					}
+				}
+			},
+		},
+
+		"fr-flying-bishop": {
+			mesh: {
+				jsFile:"/res/fairy/bishop/flying-bishop.js"
+			},
+			materials: {
+				mat0: {
+					channels: {
+						diffuse: {
+							texturesImg: {
+								diffImg : "/res/fairy/bishop/bishop-diffusemap.jpg",
+							}
+						},
+						normal: {
+							texturesImg: {
+								normalImg: "/res/fairy/bishop/bishop-normalmap.jpg",
 							}
 						}
 					}
