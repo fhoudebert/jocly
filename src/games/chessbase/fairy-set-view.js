@@ -388,11 +388,6 @@
 					clipx: 5100,
 					},
 			},
-			"fr-flying-queen": {
-				"2d": {
-					clipx: 5100,
-					},
-			},
 			"fr-phoenix": {
 				"2d": {
 					clipx: 5400,
@@ -912,28 +907,6 @@
 		"fr-proper-queen": {
 			mesh: {
 				jsFile:"/res/fairy/queen/proper-queen.js"
-			},
-			materials: {
-				mat0: {
-					channels: {
-						diffuse: {
-							texturesImg: {
-								diffImg : "/res/fairy/queen/queen-diffusemap.jpg",
-							}
-						},
-						normal: {
-							texturesImg: {
-								normalImg: "/res/fairy/queen/queen-normalmap.jpg",
-							}
-						}
-					}
-				}
-			},
-		},
-
-		"fr-flying-queen": {
-			mesh: {
-				jsFile:"/res/fairy/queen/flying-queen.js"
 			},
 			materials: {
 				mat0: {
@@ -2072,6 +2045,27 @@
 						normal: {
 							texturesImg: {
 								normalImg: "/res/fairy/birds/phoenix-normalmap.jpg",
+							}
+						}
+					}
+				}
+			},
+		},
+		"fr-owl": {
+			mesh: {
+				jsFile:"/res/fairy/birds/owl.js"
+			},
+			materials: {
+				mat0: {
+					channels: {
+						diffuse: {
+							texturesImg: {
+								diffImg : "/res/fairy/birds/owl-diffusemap.jpg",
+							}
+						},
+						normal: {
+							texturesImg: {
+								normalImg: "/res/fairy/birds/owl-normalmap.jpg",
 							}
 						}
 					}
