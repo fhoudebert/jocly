@@ -15,6 +15,7 @@
 	
 	Model.Game.cbDefine=function(){
         p = this.cbPiecesFromFEN(geometry, "r8r/1nbqkmabn1/pppppppppp/10/10/10/10/PPPPPPPPPP/1NBQKMABN1/R8R");
+<<<<<<< HEAD
         
 
         /** custom promotion rules */
@@ -32,6 +33,17 @@
                     var T_archbishop = p.name2nr['archbishop'];*/
                     
                     var considerTypes={ 2:2, 3:2, 4:2, 5:1, 7:1, 6:1 };
+=======
+
+        /** custom promotion rules */
+        p.promote=function(aGame,piece,move) {
+				// rook:4, knight:2, bishop:3, queen:5, marshall:7, archbishop:6
+				var r=geometry.R(move.t);
+				console.log("piece:------------",piece, piece.abbrev, piece.name);
+				console.log("move:------------",move);
+				if((piece.t==0 && r<=9 && r>=7) || (piece.t==1 && r>=0 && r<=2)) {
+					var considerTypes={ 2:2, 3:2, 4:2, 5:1, 7:1, 6:1 };
+>>>>>>> 3755025 (build grand chess from a FEN string)
 					for(var i=0;i<this.pieces.length;i++) {
 						var piece1=this.pieces[i];
 						
