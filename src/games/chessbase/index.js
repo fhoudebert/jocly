@@ -1072,7 +1072,6 @@ exports.games = (function () {
 	var modelScripts_34 = [
 		"base-model.js",
 		"grid-geo-model.js",
-        "fairy-move-model.js",
 		"decimal/grand-model.js"
 	]
 	var config_view_js_31 = [
@@ -1389,23 +1388,7 @@ exports.games = (function () {
 	var modelScripts_zanzibars = [
 		"base-model.js",
 		"grid-geo-model.js",
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
         "fairy-move-model.js",
-=======
->>>>>>> 21cf4c8 (add nex Fairy piece : terror, a dragon used in makromachy)
-=======
->>>>>>> 8816c75 (add nex Fairy piece : terror, a dragon used in makromachy)
-=======
-        "fairy-move-model.js",
-=======
->>>>>>> 21cf4c8 (add nex Fairy piece : terror, a dragon used in makromachy)
->>>>>>> 75f3a20 (add nex Fairy piece : terror, a dragon used in makromachy)
-=======
-        "fairy-move-model.js",
->>>>>>> 826deca (build grand chess from a FEN string)
 		"cazaux/zanzibar-s-model.js"
 	]
 	var config_view_js_zanzibars = [
@@ -1413,12 +1396,6 @@ exports.games = (function () {
 		"grid-board-view.js",
 		"fairy-set-view.js",
 		"cazaux/zanzibar-view.js"
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 826deca (build grand chess from a FEN string)
 	]
 	var modelScripts_acedrex = [
 		"base-model.js",
@@ -1441,23 +1418,6 @@ exports.games = (function () {
 		"grid-board-view.js",
 		"fairy-set-view.js",
 		"historical/grant-acedrex-view.js"
-=======
->>>>>>> 8816c75 (add nex Fairy piece : terror, a dragon used in makromachy)
-=======
->>>>>>> 75f3a20 (add nex Fairy piece : terror, a dragon used in makromachy)
-	]
-	var modelScripts_acedrex = [
-		"base-model.js",
-		"grid-geo-model.js",
-		"historical/grant-acedrex-model.js"
-	]
-	var config_view_js_acedrex = [
-		"base-view.js",
-		"grid-board-view.js",
-		"fairy-set-view.js",
-		"historical/grant-acedrex-view.js"
-=======
->>>>>>> 21cf4c8 (add nex Fairy piece : terror, a dragon used in makromachy)
 	]
 	return [
 		{
@@ -6085,26 +6045,8 @@ exports.games = (function () {
  					"thumbnail": "res/rules/duodecimal/wild-timurid-thumb.png",
  					"released": 1497874349,
  					"credits": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 75f3a20 (add nex Fairy piece : terror, a dragon used in makromachy)
- 						"en": "res/rules/duodecimal/timurid-credits.html"
-=======
- 						"en": "timurid-credits.html"
->>>>>>> 21cf4c8 (add nex Fairy piece : terror, a dragon used in makromachy)
-<<<<<<< HEAD
-=======
- 						"en": "timurid-credits.html"
->>>>>>> 8816c75 (add nex Fairy piece : terror, a dragon used in makromachy)
-=======
->>>>>>> 75f3a20 (add nex Fairy piece : terror, a dragon used in makromachy)
-=======
- 						"en": "res/rules/duodecimal/timurid-credits.html"
 
->>>>>>> 826deca (build grand chess from a FEN string)
+ 						"en": "res/rules/duodecimal/timurid-credits.html"
  					},
  					"gameOptions": config_model_gameOptions,
  					"obsolete": false,
@@ -6306,25 +6248,7 @@ exports.games = (function () {
  					"released": 1497874349,
 
  					"credits": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 75f3a20 (add nex Fairy piece : terror, a dragon used in makromachy)
  						"en": "res/rules/duodecimal/timurid-credits.html"
-=======
- 						"en": "timurid-credits.html"
->>>>>>> 21cf4c8 (add nex Fairy piece : terror, a dragon used in makromachy)
-<<<<<<< HEAD
-=======
- 						"en": "timurid-credits.html"
->>>>>>> 8816c75 (add nex Fairy piece : terror, a dragon used in makromachy)
-=======
->>>>>>> 75f3a20 (add nex Fairy piece : terror, a dragon used in makromachy)
-=======
- 						"en": "res/rules/duodecimal/timurid-credits.html"
->>>>>>> 826deca (build grand chess from a FEN string)
  					},
  					"gameOptions": config_model_gameOptions,
  					"obsolete": false,
@@ -6428,25 +6352,7 @@ exports.games = (function () {
  					"released": 1497874349,
 
  					"credits": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 75f3a20 (add nex Fairy piece : terror, a dragon used in makromachy)
  						"en": "res/rules/duodecimal/timurid-credits.html"
-=======
- 						"en": "timurid-credits.html"
->>>>>>> 21cf4c8 (add nex Fairy piece : terror, a dragon used in makromachy)
-<<<<<<< HEAD
-=======
- 						"en": "timurid-credits.html"
->>>>>>> 8816c75 (add nex Fairy piece : terror, a dragon used in makromachy)
-=======
->>>>>>> 75f3a20 (add nex Fairy piece : terror, a dragon used in makromachy)
-=======
- 						"en": "res/rules/duodecimal/timurid-credits.html"
->>>>>>> 826deca (build grand chess from a FEN string)
  					},
  					"gameOptions": config_model_gameOptions,
  					"obsolete": false,
@@ -6549,49 +6455,13 @@ exports.games = (function () {
  					"released": 1497874349,
 
  					"credits": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 75f3a20 (add nex Fairy piece : terror, a dragon used in makromachy)
  						"en": "res/rules/duodecimal/timurid-credits.html"
-=======
- 						"en": "timurid-credits.html"
->>>>>>> 21cf4c8 (add nex Fairy piece : terror, a dragon used in makromachy)
-<<<<<<< HEAD
-=======
- 						"en": "timurid-credits.html"
->>>>>>> 8816c75 (add nex Fairy piece : terror, a dragon used in makromachy)
-=======
->>>>>>> 75f3a20 (add nex Fairy piece : terror, a dragon used in makromachy)
-=======
- 						"en": "res/rules/duodecimal/timurid-credits.html"
->>>>>>> 826deca (build grand chess from a FEN string)
  					},
  					"gameOptions": config_model_gameOptions,
  					"obsolete": false,
  					"js": modelScripts_babur,
  					"description": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 75f3a20 (add nex Fairy piece : terror, a dragon used in makromachy)
  						"en": "res/rules/duodecimal/wild-babur-description.html"
-=======
- 						"en": "wild-babur-description"
->>>>>>> 21cf4c8 (add nex Fairy piece : terror, a dragon used in makromachy)
-<<<<<<< HEAD
-=======
- 						"en": "wild-babur-description"
->>>>>>> 8816c75 (add nex Fairy piece : terror, a dragon used in makromachy)
-=======
->>>>>>> 75f3a20 (add nex Fairy piece : terror, a dragon used in makromachy)
-=======
- 						"en": "res/rules/duodecimal/wild-babur-description.html"
->>>>>>> 826deca (build grand chess from a FEN string)
  					},
  					"levels": config_model_levels_15
  				},

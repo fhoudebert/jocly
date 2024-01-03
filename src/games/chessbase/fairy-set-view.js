@@ -117,11 +117,6 @@
 					clipx: 500,
 				},
 			},
-			"fr-man": {
-				"2d": {
-					clipx: 3700,
-				},
-			},
 			"fr-cannon": {
 				"2d": {
 					clipx: 600,
@@ -433,87 +428,16 @@
 					clipx: 6000,
 					},
 			},
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> c4abace (New fairy piece: Flamingo)
 			"fr-flamingo": {
 				"2d": {
 					clipx: 6100,
 					},
 			},
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 21cf4c8 (add nex Fairy piece : terror, a dragon used in makromachy)
-=======
->>>>>>> 8816c75 (add nex Fairy piece : terror, a dragon used in makromachy)
-=======
->>>>>>> a048986 (New fairy piece: Flamingo)
-=======
-=======
->>>>>>> 21cf4c8 (add nex Fairy piece : terror, a dragon used in makromachy)
->>>>>>> 75f3a20 (add nex Fairy piece : terror, a dragon used in makromachy)
-			"fr-terror": {
-				"2d": {
-					clipx: 6200,
-=======
-			"fr-terror": {
-=======
-			"fr-cobra": {
->>>>>>> 4d207b9 (New fairy piece: Cobra)
-				"2d": {
-					clipx: 6000,
->>>>>>> b2642c2 (add visuals for Gold, Silver and Copper General + Champion and Wizard + Phoenix + Stork)
-					},
-			},
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> c4abace (New fairy piece: Flamingo)
-=======
->>>>>>> 21cf4c8 (add nex Fairy piece : terror, a dragon used in makromachy)
-=======
->>>>>>> 40a0cb5 (New fairy piece: Cobra)
-=======
->>>>>>> c4abace (New fairy piece: Flamingo)
-=======
->>>>>>> 8816c75 (add nex Fairy piece : terror, a dragon used in makromachy)
-=======
-			"fr-flamingo": {
-				"2d": {
-					clipx: 6100,
-					},
-			},
-=======
->>>>>>> 826deca (build grand chess from a FEN string)
 			"fr-terror": {
 				"2d": {
 					clipx: 6200,
 					},
 			},
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> c3f3352 (New fairy piece: Cobra)
-=======
-=======
->>>>>>> c4abace (New fairy piece: Flamingo)
->>>>>>> a048986 (New fairy piece: Flamingo)
-=======
-=======
->>>>>>> c4abace (New fairy piece: Flamingo)
-=======
->>>>>>> 21cf4c8 (add nex Fairy piece : terror, a dragon used in makromachy)
->>>>>>> 75f3a20 (add nex Fairy piece : terror, a dragon used in makromachy)
-=======
->>>>>>> 826deca (build grand chess from a FEN string)
 		},modifier);
 	}
 
@@ -2229,6 +2153,7 @@
 				}
 			},
 		},
+
 	});
 })();
 
