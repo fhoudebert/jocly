@@ -333,6 +333,18 @@
 			MakePiece('archbishop', 'fr-proper-cardinal', this.cbCardinalGraph(geometry), 8.75, locations['A']);
 		if('M' in locations)
 			MakePiece('marshall', 'fr-proper-marshall', this.cbMarshallGraph(geometry), 9.0, locations['M']);
+		if('H' in locations) {
+			var graph=this.MergeGraphs(geometry,
+					this.cbBishopGraph(geometry),
+					this.cbSchleichGraph(geometry));
+			MakePiece('dragon-horse', 'fr-saint', graph, 5.25, locations['H']);
+		}
+		if('D' in locations) {
+			var graph=this.MergeGraphs(geometry,
+					this.cbRookGraph(geometry),
+					this.cbFersGraph(geometry));
+			MakePiece('dragon-king', 'fr-proper-crowned-rook', graph, 7.0, locations['D']);
+		}
 		if('G' in locations)
 			MakePiece('griffon', 'fr-griffon', this.cbGriffonGraph(geometry), 8.3, locations['G']);
 		if('U' in locations)
@@ -343,8 +355,8 @@
 			MakePiece('camel', 'fr-camel', this.cbCamelGraph(geometry), 2.5, locations['C']);
 		if('Z' in locations)
 			MakePiece('zebra', 'fr-zebra', this.cbZebraGraph(geometry), 2.5, locations['Z']);
-		if('H' in locations)
-			MakePiece('champion', 'fr-champion', this.cbChampionGraph(geometry), 4.5, locations['H']);
+		if('O' in locations)
+			MakePiece('champion', 'fr-champion', this.cbChampionGraph(geometry), 4.5, locations['O']);
 		if('W' in locations)
 			MakePiece('wizard', 'fr-wizard', this.cbWizardGraph(geometry), 4, locations['W']);
 		if('X' in locations)
