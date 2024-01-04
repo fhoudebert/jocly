@@ -1072,6 +1072,7 @@ exports.games = (function () {
 	var modelScripts_34 = [
 		"base-model.js",
 		"grid-geo-model.js",
+        "fairy-move-model.js",
 		"decimal/grand-model.js"
 	]
 	var config_view_js_31 = [
