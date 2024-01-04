@@ -2115,27 +2115,6 @@
 				}
 			},
 		},
-		"fr-owl": {
-			mesh: {
-				jsFile:"/res/fairy/birds/owl.js"
-			},
-			materials: {
-				mat0: {
-					channels: {
-						diffuse: {
-							texturesImg: {
-								diffImg : "/res/fairy/birds/owl-diffusemap.jpg",
-							}
-						},
-						normal: {
-							texturesImg: {
-								normalImg: "/res/fairy/birds/owl-normalmap.jpg",
-							}
-						}
-					}
-				}
-			},
-		},
 		"fr-rhino2": {
 			mesh: {
 				jsFile:"/res/fairy/rhino/rhino2.js"
