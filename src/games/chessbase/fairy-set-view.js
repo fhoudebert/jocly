@@ -381,6 +381,11 @@
 >>>>>>> 069befd (Alter 2d images of flying pieces)
 					},
 			},
+			"fr-flying-saint": {
+				"2d": {
+					clipx: 6600,
+					},
+			},
 			"fr-phoenix": {
 				"2d": {
 					clipx: 5400,
