@@ -89,7 +89,7 @@
 			abbrev : '',
 			fenAbbrev: 'P',
 			aspect : 'fr-pawn',
-			graph : this.cbInitialPawnGraph(geometry,1,3),
+			graph : this.cbFlexiPawnGraph(geometry,1,3),
 			value : 0.89,
 			initial: [{s:1,p:42},{s:1,p:43},{s:1,p:44},{s:1,p:45},{s:1,p:52},{s:1,p:53},{s:1,p:54},
 				  {s:1,p:55},{s:1,p:46},{s:1,p:47},{s:1,p:48},{s:1,p:49},{s:1,p:50},{s:1,p:51}],
@@ -101,7 +101,7 @@
 			abbrev : '',
 			fenAbbrev: 'P',
 			aspect : 'fr-pawn',
-			graph : this.cbInitialPawnGraph(geometry,-1,3),
+			graph : this.cbFlexiPawnGraph(geometry,-1,3),
 			value : 0.89,
 			initial: [{s:-1,p:144},{s:-1,p:145},{s:-1,p:146},{s:-1,p:147},{s:-1,p:148},{s:-1,p:149},{s:-1,p:140},
 				  {s:-1,p:141},{s:-1,p:142},{s:-1,p:143},{s:-1,p:150},{s:-1,p:151},{s:-1,p:152},{s:-1,p:153}],
@@ -133,7 +133,7 @@
 			abbrev : 'W',
 			aspect : 'fr-corporal',
 			graph : this.cbMergeGraphs(geometry,
-				    this.cbInitialPawnGraph(geometry,1,2),
+				    this.cbFlexiPawnGraph(geometry,1,2),
 				    this.cbShortRangeGraph(geometry,[[2,-1],[-2,-1],[1,-2],[-1,-2]],null,this.cbConstants.FLAG_SPECIAL_CAPTURE)
 				),
 			value : 2.01,
@@ -147,7 +147,7 @@
 			abbrev : 'W',
 			aspect : 'fr-corporal',
 			graph : this.cbMergeGraphs(geometry,
-				    this.cbInitialPawnGraph(geometry,-1,2),
+				    this.cbFlexiPawnGraph(geometry,-1,2),
 				    this.cbShortRangeGraph(geometry,[[2,1],[-2,1],[1,2],[-1,2]],null,this.cbConstants.FLAG_SPECIAL_CAPTURE)
 				),
 			value : 2.01,
@@ -236,7 +236,7 @@
 		    15: {
 			name : 'champion',
 			abbrev : 'I',
-			aspect : 'fr-machine',
+			aspect : 'fr-champion',
 			graph : this.cbMergeGraphs(geometry,
 				    this.cbChampionGraph(geometry),
 				    AirliftGraph(geometry,[[1,0],[0,1],[-1,0],[0,-1]])),
@@ -247,7 +247,7 @@
 		    16: { // B after W bent slider
 			name : 'rhino',
 			abbrev : 'U',
-			aspect : 'fr-rhino',
+			aspect : 'fr-rhino2',
 			graph : this.cbRhinoGraph(geometry),
 			 value : 8.54,
 			initial: [{s:1,p:6},{s:-1,p:188}],
@@ -256,7 +256,7 @@
 		    17: { // R after F bent slider
 			name : 'griffon',
 			abbrev : 'G',
-			aspect : 'fr-ship',
+			aspect : 'fr-griffin',
 			graph : this.cbGriffonGraph(geometry),
 			value : 9.61,
 			initial: [{s:1,p:5},{s:-1,p:187}],
@@ -265,7 +265,7 @@
 		    18: { // flying piece: Queen that can jump over arbitrary many to capture
 			name : 'eagle',
 			abbrev : 'L',
-			aspect : 'fr-eagle',
+			aspect : 'fr-flying-queen',
 			graph : this.cbLongRangeGraph(geometry,adjacent,null,flying),
 			value : 19.18,
 			initial: [{s:1,p:7},{s:-1,p:189}],
@@ -347,7 +347,7 @@
 		    26: { // flying piece: Rook that can jump over arbitrary many to capture
 			name : 'raven',
 			abbrev : 'F',
-			aspect : 'fr-birdie',
+			aspect : 'fr-flying-rook',
 			graph : this.cbLongRangeGraph(geometry,[[1,0],[-1,0],[0,1],[0,-1]],null,flying),
 			value : 10.16,
 			initial: [{s:1,p:19},{s:1,p:22},{s:-1,p:173},{s:-1,p:176}],
@@ -366,7 +366,7 @@
 		    28: { // flying piece: Bishop that can jump over arbitrary many to capture
 			name : 'bat',
 			abbrev : 'S',
-			aspect : 'fr-star',
+			aspect : 'fr-flying-bishop',
 			graph : this.cbLongRangeGraph(geometry,[[1,1],[-1,1],[1,-1],[-1,-1]],null,flying),
 			value : 6.93,
 			initial: [{s:1,p:34},{s:1,p:35},{s:-1,p:160},{s:-1,p:161}],
