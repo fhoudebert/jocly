@@ -418,6 +418,11 @@
 					clipx: 6100,
 					},
 			},
+			"fr-terror": {
+				"2d": {
+					clipx: 6200,
+					},
+			},
 			"fr-samurai": {
 				"2d": {
 					clipx: 6700,
@@ -2198,6 +2203,27 @@
 						normal: {
 							texturesImg: {
 								normalImg: "/res/fairy/hawk/hawk-normalmap.jpg",
+							}
+						}
+					}
+				}
+			},
+		},
+		"fr-terror": {
+			mesh: {
+				jsFile:"/res/fairy/terror/terror.js"
+			},
+			materials: {
+				mat0: {
+					channels: {
+						diffuse: {
+							texturesImg: {
+								diffImg : "/res/fairy/terror/terror-diffusemap.jpg",
+							}
+						},
+						normal: {
+							texturesImg: {
+								normalImg: "/res/fairy/terror/terror-normalmap.jpg",
 							}
 						}
 					}
