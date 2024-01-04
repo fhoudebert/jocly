@@ -426,6 +426,7 @@
 					},
 			},
 <<<<<<< HEAD
+<<<<<<< HEAD
 			"fr-terror": {
 				"2d": {
 					clipx: 6200,
@@ -435,6 +436,13 @@
 >>>>>>> 40a0cb5 (New fairy piece: Cobra)
 =======
 >>>>>>> c4abace (New fairy piece: Flamingo)
+=======
+			"fr-samurai": {
+				"2d": {
+					clipx: 6700,
+					},
+			},
+>>>>>>> 2cd6c90 (New fairy piece: Samurai)
 		},modifier);
 	}
 
@@ -2147,6 +2155,27 @@
 						normal: {
 							texturesImg: {
 								normalImg: "/res/fairy/rhino/rhino2-normalmap.jpg",
+							}
+						}
+					}
+				}
+			},
+		},
+		"fr-samurai": {
+			mesh: {
+				jsFile:"/res/fairy/persons/samurai.js"
+			},
+			materials: {
+				mat0: {
+					channels: {
+						diffuse: {
+							texturesImg: {
+								diffImg : "/res/fairy/persons/samurai-diffusemap.jpg",
+							}
+						},
+						normal: {
+							texturesImg: {
+								normalImg: "/res/fairy/persons/samurai-normalmap.jpg",
 							}
 						}
 					}
