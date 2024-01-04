@@ -363,17 +363,17 @@
 			},
 			"fr-flying-queen": {
 				"2d": {
-					clipx: 6200,
+					clipx: 6300,
 					},
 			},
 			"fr-flying-rook": {
 				"2d": {
-					clipx: 6300,
+					clipx: 6400,
 					},
 			},
 			"fr-flying-bishop": {
 				"2d": {
-					clipx: 6400,
+					clipx: 6500,
 					},
 			},
 			"fr-phoenix": {
