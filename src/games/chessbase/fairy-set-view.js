@@ -418,6 +418,11 @@
 					clipx: 6100,
 					},
 			},
+			"fr-samurai": {
+				"2d": {
+					clipx: 6700,
+					},
+			},
 		},modifier);
 	}
 
@@ -2130,6 +2135,27 @@
 						normal: {
 							texturesImg: {
 								normalImg: "/res/fairy/rhino/rhino2-normalmap.jpg",
+							}
+						}
+					}
+				}
+			},
+		},
+		"fr-samurai": {
+			mesh: {
+				jsFile:"/res/fairy/persons/samurai.js"
+			},
+			materials: {
+				mat0: {
+					channels: {
+						diffuse: {
+							texturesImg: {
+								diffImg : "/res/fairy/persons/samurai-diffusemap.jpg",
+							}
+						},
+						normal: {
+							texturesImg: {
+								normalImg: "/res/fairy/persons/samurai-normalmap.jpg",
 							}
 						}
 					}
