@@ -240,7 +240,7 @@
       			14: {
                   name : 'rhino',
                   abbrev : 'U',
-                  aspect : 'fr-rhino',
+                  aspect : 'fr-rhino2',
                   graph : this.cbRhinoGraph(geometry),
                   value : 8.1,
                   initial: [{s:1,p:10},{s:-1,p:250}],
