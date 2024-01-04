@@ -443,6 +443,11 @@
 					clipx: 7000,
 					},
 			},
+			"fr-lance": {
+				"2d": {
+					clipx: 7100,
+					},
+			},
 		},modifier);
 	}
 
@@ -2224,21 +2229,21 @@
 				}
 			},
 		},
-		"fr-caliph": {
+		"fr-lance": {
 			mesh: {
-				jsFile:"/res/fairy/persons/caliph.js"
+				jsFile:"/res/fairy/arms/lance.js"
 			},
 			materials: {
 				mat0: {
 					channels: {
 						diffuse: {
 							texturesImg: {
-								diffImg : "/res/fairy/persons/caliph-diffusemap.jpg",
+								diffImg : "/res/fairy/arms/lance-diffusemap.jpg",
 							}
 						},
 						normal: {
 							texturesImg: {
-								normalImg: "/res/fairy/persons/caliph-normalmap.jpg",
+								normalImg: "/res/fairy/arms/lance-normalmap.jpg",
 							}
 						}
 					}
