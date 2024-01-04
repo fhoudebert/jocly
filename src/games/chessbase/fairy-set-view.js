@@ -427,16 +427,22 @@
 			},
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 91249b6 (New fairy piece: Terror)
 			"fr-terror": {
 				"2d": {
 					clipx: 6200,
 					},
 			},
+<<<<<<< HEAD
 =======
 >>>>>>> 40a0cb5 (New fairy piece: Cobra)
 =======
 >>>>>>> c4abace (New fairy piece: Flamingo)
 =======
+=======
+>>>>>>> 91249b6 (New fairy piece: Terror)
 			"fr-samurai": {
 				"2d": {
 					clipx: 6700,
@@ -2245,7 +2251,10 @@
 				}
 			},
 		},
+<<<<<<< HEAD
 
+=======
+>>>>>>> 91249b6 (New fairy piece: Terror)
 	});
 })();
 
