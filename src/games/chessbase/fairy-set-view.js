@@ -371,11 +371,14 @@
 			"fr-flying-bishop": {
 				"2d": {
 					clipx: 6500,
+<<<<<<< HEAD
 					},
 			},
 			"fr-flying-saint": {
 				"2d": {
 					clipx: 6600,
+=======
+>>>>>>> 069befd (Alter 2d images of flying pieces)
 					},
 			},
 			"fr-phoenix": {
