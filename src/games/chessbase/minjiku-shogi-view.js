@@ -12,11 +12,19 @@
 				},
 		};
 
+		var delta2D = {
+				'colorFill' : {
+					"!": "rgba(0,0,0,1)",
+					"b": "rgba(40,40,40,1)",
+				},
+		};
+
 		var board3D = $.extend(true,{},this.cbGridBoardClassic3DMargin,delta3D);
+		var board2D = $.extend(true,{},this.cbGridBoardClassic2DMargin,delta2D);
 
 		return {
 			coords: {
-				"2d": this.cbGridBoard.coordsFn.call(this,this.cbGridBoardClassic2DMargin),
+				"2d": this.cbGridBoard.coordsFn.call(this,board2D),
 				"3d": this.cbGridBoard.coordsFn.call(this,board3D),
 			},
 			boardLayout: [
@@ -35,7 +43,7 @@
 			],
 			board: {
 				"2d": {
-					draw: this.cbDrawBoardFn(this.cbGridBoardClassic2DMargin),										
+					draw: this.cbDrawBoardFn(board2D),										
 				},
 				"3d": {
 					display: this.cbDisplayBoardFn(board3D),					
