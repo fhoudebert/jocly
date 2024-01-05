@@ -244,7 +244,7 @@
       4: {
       name : 'princew',
       abbrev : 'I',
-      aspect : 'fr-prince',
+      aspect : 'fr-admiral',
       graph : this.cbPrinceGraph(geometry,1,confine),
       value : 2.2,
       initial: [{s:1,p:38},{s:1,p:41}],
@@ -254,7 +254,7 @@
       5: {
       name : 'princeb',
       abbrev : 'I',
-      aspect : 'fr-prince',
+      aspect : 'fr-admiral',
       graph : this.cbPrinceGraph(geometry,-1,confine),
       value : 2.2,
       initial: [{s:-1,p:214},{s:-1,p:217}],
@@ -327,7 +327,7 @@
       13: {
       name : 'rhino',
       abbrev : 'U',
-      aspect : 'fr-rhino',
+      aspect : 'fr-rhino2',
       graph : this.cbRhinoGraph(geometry,confine),
       value : 6.1,
       initial: [{s:1,p:6},{s:-1,p:246}],
@@ -424,7 +424,7 @@
       22: {
       name : 'eagle',
       abbrev : 'H',
-      aspect : 'fr-eagle',
+      aspect : 'fr-griffin',
       graph : this.cbEagleGraph(geometry),
       value : 8.4,
       initial: [{s:1,p:24},{s:-1,p:232}],

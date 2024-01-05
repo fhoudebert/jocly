@@ -2171,48 +2171,6 @@
 				}
 			},
 		},
-		"fr-rhino2": {
-			mesh: {
-				jsFile:"/res/fairy/rhino/rhino2.js"
-			},
-			materials: {
-				mat0: {
-					channels: {
-						diffuse: {
-							texturesImg: {
-								diffImg : "/res/fairy/rhino/rhino2-diffusemap.jpg",
-							}
-						},
-						normal: {
-							texturesImg: {
-								normalImg: "/res/fairy/rhino/rhino2-normalmap.jpg",
-							}
-						}
-					}
-				}
-			},
-		},
-		"fr-samurai": {
-			mesh: {
-				jsFile:"/res/fairy/persons/samurai.js"
-			},
-			materials: {
-				mat0: {
-					channels: {
-						diffuse: {
-							texturesImg: {
-								diffImg : "/res/fairy/persons/samurai-diffusemap.jpg",
-							}
-						},
-						normal: {
-							texturesImg: {
-								normalImg: "/res/fairy/persons/samurai-normalmap.jpg",
-							}
-						}
-					}
-				}
-			},
-		},
 		"fr-scout": {
 			mesh: {
 				jsFile:"/res/fairy/persons/scout.js"
@@ -2270,6 +2228,48 @@
 						normal: {
 							texturesImg: {
 								normalImg: "/res/fairy/arms/sword-normalmap.jpg",
+							}
+						}
+					}
+				}
+			},
+		},
+		"fr-rhino2": {
+			mesh: {
+				jsFile:"/res/fairy/rhino/rhino2.js"
+			},
+			materials: {
+				mat0: {
+					channels: {
+						diffuse: {
+							texturesImg: {
+								diffImg : "/res/fairy/rhino/rhino2-diffusemap.jpg",
+							}
+						},
+						normal: {
+							texturesImg: {
+								normalImg: "/res/fairy/rhino/rhino2-normalmap.jpg",
+							}
+						}
+					}
+				}
+			},
+		},
+		"fr-samurai": {
+			mesh: {
+				jsFile:"/res/fairy/persons/samurai.js"
+			},
+			materials: {
+				mat0: {
+					channels: {
+						diffuse: {
+							texturesImg: {
+								diffImg : "/res/fairy/persons/samurai-diffusemap.jpg",
+							}
+						},
+						normal: {
+							texturesImg: {
+								normalImg: "/res/fairy/persons/samurai-normalmap.jpg",
 							}
 						}
 					}
