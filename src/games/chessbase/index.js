@@ -3826,20 +3826,20 @@ exports.games = (function () {
 					"title-en": "Grand Chess",
 					"summary": "Chess on 10x10 (1984)",
 					"rules": {
-						"en": "decimal/grand-rules.html"
+						"en": "res/rules/decimal/grand-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
 					"thumbnail": "res/rules/decimal/grand-thumb.png",
 					"released": 1404985842,
 					"credits": {
-						"en": "decimal/grand-credits.html"
+						"en": "res/rules/decimal/grand-credits.html"
 					},
 					"gameOptions": config_model_gameOptions,
 					"obsolete": false,
 					"js": modelScripts_34,
 					"description": {
-						"en": "decimal/grand-description.html"
+						"en": "res/rules/decimal/grand-description.html"
 					},
 					"levels": config_model_levels_5
 				},
@@ -4570,20 +4570,20 @@ exports.games = (function () {
 					"title-en": "Hyderabad Decimal Chess",
 					"summary": "Shir Muhammad Khan Iman, 1797-1798",
 					"rules": {
-						"en": "decimal/hyderabad-rules.html"
+						"en": "res/rules/decimal/hyderabad-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
 					"thumbnail": "res/rules/decimal/hyderabad-thumb.png",
 					"released": 1405068610,
 					"credits": {
-						"en": "decimal/hyderabad-credits.html"
+						"en": "res/rules/decimal/hyderabad-credits.html"
 					},
 					"gameOptions": config_model_gameOptions,
 					"obsolete": false,
 					"js": modelScripts_44,
 					"description": {
-						"en": "decimal/hyderabad-description.html"
+						"en": "res/rules/decimal/hyderabad-description.html"
 					},
 					"levels": config_model_levels_5
 				},
@@ -6792,19 +6792,19 @@ exports.games = (function () {
 					"title-en": "Elven Chess",
 					"summary": "10x10 variant with double-capturing super-piece",
 					"rules": {
-						"en": "decimal/elven-rules.html"
+						"en": "res/rules/decimal/elven-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
 					"thumbnail": "res/rules/elven/elven-thumb.png",
 					"released": 1396536978,
 					"credits": {
-						"en": "decimal/elven-credits.html"
+						"en": "res/rules/decimal/elven-credits.html"
 					},
 					"gameOptions": config_model_gameOptions_2,
 					"js": modelScripts_102,
 					"description": {
-						"en": "decimal/elven-description.html"
+						"en": "res/rules/decimal/elven-description.html"
 					},
 					"levels": config_model_levels_15
 				},
@@ -6920,19 +6920,19 @@ exports.games = (function () {
 					"title-en": "Scirocco",
 					"summary": "10x10 variant with weak but promoting pieces",
 					"rules": {
-						"en": "decimal/scirocco-rules.html"
+						"en": "res/rules/decimal/scirocco-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
 					"thumbnail": "res/rules/scirocco/scirocco-thumb.png",
 					"released": 1396536978,
 					"credits": {
-						"en": "decimal/scirocco-credits.html"
+						"en": "res/rules/decimal/scirocco-credits.html"
 					},
 					"gameOptions": config_model_gameOptions_2,
 					"js": modelScripts_104,
 					"description": {
-						"en": "decimal/scirocco-description.html"
+						"en": "res/rules/decimal/scirocco-description.html"
 					},
 					"levels": config_model_levels_15
 				},
@@ -6984,19 +6984,19 @@ exports.games = (function () {
 					"title-en": "Shogi",
 					"summary": "Japanese Chess",
 					"rules": {
-						"en": "shogi-rules.html"
+						"en": "res/rules/shogi/shogi-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
 					"thumbnail": "res/rules/shogi/shogi-thumb.png",
 					"released": 1396536978,
 					"credits": {
-						"en": "shogi/shogi-credits.html"
+						"en": "res/rules/shogi/shogi-credits.html"
 					},
 					"gameOptions": config_model_gameOptions_2,
 					"js": modelScripts_105,
 					"description": {
-						"en": "shogi/shogi-description.html"
+						"en": "res/rules/shogi/shogi-description.html"
 					},
 					"levels": config_model_levels_15
 				},
@@ -7048,19 +7048,19 @@ exports.games = (function () {
 					"title-en": "Mini-Shogi",
 					"summary": "Shogi on 5x5 with 6 pieces",
 					"rules": {
-						"en": "mini-shogi-rules.html"
+						"en": "res/rules/shogi/mini-shogi-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
 					"thumbnail": "res/rules/shogi/shogi-thumb.png",
 					"released": 1396536978,
 					"credits": {
-						"en": "shogi/shogi-credits.html"
+						"en": "res/rules/shogi/shogi-credits.html"
 					},
 					"gameOptions": config_model_gameOptions_2,
 					"js": modelScripts_107,
 					"description": {
-						"en": "shogi/mini-shogi-description.html"
+						"en": "res/rules/shogi/mini-shogi-description.html"
 					},
 					"levels": config_model_levels_15
 				},
@@ -7112,19 +7112,19 @@ exports.games = (function () {
 					"title-en": "Tori Shogi",
 					"summary": "7x7 Shogi Variant with bird pieces",
 					"rules": {
-						"en": "shogi/tori-shogi-rules.html"
+						"en": "res/rules/shogi/tori-shogi-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
 					"thumbnail": "res/rules/shogi/tori-shogi-thumb.png",
 					"released": 1396536978,
 					"credits": {
-						"en": "shogi/shogi-credits.html"
+						"en": "res/rules/shogi/shogi-credits.html"
 					},
 					"gameOptions": config_model_gameOptions_2,
 					"js": modelScripts_106,
 					"description": {
-						"en": "shogi/tori-shogi-description.html"
+						"en": "res/rules/shogi/tori-shogi-description.html"
 					},
 					"levels": config_model_levels_15
 				},
@@ -7176,19 +7176,19 @@ exports.games = (function () {
 					"title-en": "Chu Shogi",
 					"summary": "Historic 12x12 Shogi variant",
 					"rules": {
-						"en": "shogi/chu-shogi-rules.html"
+						"en": "res/rules/shogi/chu-shogi-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
 					"thumbnail": "res/rules/shogi/chu-shogi-thumb.png",
 					"released": 1396536978,
 					"credits": {
-						"en": "shogi/shogi-credits.html"
+						"en": "res/rules/shogi/shogi-credits.html"
 					},
 					"gameOptions": config_model_gameOptions_2,
 					"js": modelScripts_108,
 					"description": {
-						"en": "shogi/chu-shogi-description.html"
+						"en": "res/rules/shogi/chu-shogi-description.html"
 					},
 					"levels": config_model_levels_15
 				},

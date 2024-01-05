@@ -22,16 +22,17 @@
 				
 				var r=geometry.R(move.t);
 				
+
 				if((piece.t==0 && r<=9 && r>=7) || (piece.t==1 && r>=0 && r<=2)) {
-                    // rook:4, knight:2, bishop:3, queen:5, marshall:7, archbishop:6
-                    /*var T_knight = p.name2nr['knight'];
+                    // rook:7, knight:5, bishop:3, queen:6, marshall:4, archbishop:2
+                   /* var T_knight = p.name2nr['knight'];
                     var T_bishop = p.name2nr['bishop'];
                     var T_queen = p.name2nr['queen'];
                     var T_rook = p.name2nr['rook'];
                     var T_marshall = p.name2nr['marshall'];
                     var T_archbishop = p.name2nr['archbishop'];*/
-                    
-                    var considerTypes={ 2:2, 3:2, 4:2, 5:1, 7:1, 6:1 };
+
+                    var considerTypes={ 5:2, 3:2, 7:2, 6:1, 4:1, 2:1 };
 					for(var i=0;i<this.pieces.length;i++) {
 						var piece1=this.pieces[i];
 						
