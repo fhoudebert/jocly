@@ -239,6 +239,13 @@
 					this.castle={}; this.pieceTypes[rook].castle=true;
 					SetCastling(rook,kstep,0); SetCastling(rook,kstep,1);
 				},
+			setValues: function(table) {
+				for(var i=0; i<this.nr; i++) {
+					var t=this.pieceTypes[i], id=t.abbrev;
+					if(!id) id='P';
+					if(table[id]) t.value=table[id];
+				}
+			},
 			nr: 0,
 			name2nr: [],
 			maxPromote: 0,
