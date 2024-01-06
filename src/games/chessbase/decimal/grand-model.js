@@ -15,7 +15,7 @@
 	
 	Model.Game.cbDefine=function(){
         p = this.cbPiecesFromFEN(geometry, "r8r/1nbqkmabn1/pppppppppp/10/10/10/10/PPPPPPPPPP/1NBQKMABN1/R8R");
-        
+        p.setValues({P:1, N:2.9, B:3.1, R:5, Q:9, M:7.8, A:6});
 
         /** custom promotion rules */
         p.promote=function(aGame,piece,move) {

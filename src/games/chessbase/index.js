@@ -7240,19 +7240,19 @@ exports.games = (function () {
 					"title-en": "Makromachy",
 					"summary": "14x14 variant with flying pieces",
 					"rules": {
-						"en": "makromachy-rules.html"
+						"en": "res/rules/makromachy/makromachy-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
 					"thumbnail": "res/rules/makromachy-thumb.png",
 					"released": 1396536978,
 					"credits": {
-						"en": "makromachy-credits.html"
+						"en": "res/rules/makromachy/makromachy-credits.html"
 					},
 					"gameOptions": config_model_gameOptions_2,
 					"js": modelScripts_109,
 					"description": {
-						"en": "makromachy-description.html"
+						"en": "res/rules/makromachy/makromachy-description.html"
 					},
 					"levels": config_model_levels_15
 				},
@@ -7304,20 +7304,20 @@ exports.games = (function () {
 					"title-en": "Minjiku Shogi",
 					"summary": "10x10 variant with flying pieces and Fire Dragon",
 					"rules": {
-						"en": "minjiku-rules.html"
+						"en": "res/rules/minjiku-shogi/minjiku-shogi-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
 					"thumbnail": "res/rules/minjiku-thumb.png",
 					"released": 1396536978,
 					"credits": {
-						"en": "minjiku-credits.html"
+						"en": "res/rules/minjiku-shogi/minjiku-credits.html"
 					},
 					"gameOptions": config_model_gameOptions_2,
 					"js": modelScripts_110,
 
 					"description": {
-						"en": "minjiku-description.html"
+						"en": "res/rules/minjiku-shogi/minjiku-description.html"
 					},
 					"levels": config_model_levels_15
 				},
