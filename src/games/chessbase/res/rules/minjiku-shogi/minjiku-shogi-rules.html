@@ -30,74 +30,111 @@
 		clear: both;
 	}
 </style>
-<h1>Differences from orthodox shogi</h1>
-<p>Played on a 10x10 board, with 4 additional squares that disappear when no longer occupied. Captured pieces cannot be dropped. Of the orthodox Shogi pieces only the King, Pawn, Rook and Bishop participate, but Kirin and Phoenix are known from many of the larger Shogi variants, and the jumping sliders are known from the historic shogi variant variant Tenjiku Shogi. Most other piece are novelties, especially conceived for this game. Even most of the orthodox Shogi pieces have different promotions.
-<ul>
-	<li>The Fire Dragon: moves and captures like Queen, and has an 'area move' (see below under Lion). But also automatically captures ('burns') all enemies diagonally adjacent to a square it ends its move on.
-		<p style='text-align:center'><img style="max-width:100%;" src="{GAME}/res/rules/fairy/terror.png"/></p>
-		</li>
-	<li>The Jumping General (aka Great General): moves and captures like a Queen, but for capturing it can jump over arbitrary many pieces (friend or foe). The jumped-over pieces are not affected. It cannot jump over another Jumping General or King, though.
-		<p style='text-align:center'><img style="max-width:100%;" src="{GAME}/res/rules/fairy/flying-queen.png"/></p>
-		</li>
-	<li>The Area General: moves and captures like a Bishop, but for capturing it can jump over arbitrary many pieces (friend or foe). The jumped-over pieces are not affected. It cannot jump over a Jumping General, King or other Area General, though. In addition it has an 'area move' (see below under Lion).
-		<p style='text-align:center'><img style="max-width:100%;" src="{GAME}/res/rules/fairy/flying-queen.png"/></p>
-		</li>
-	<li>The Orthogonal Jumper (aka Rook General): moves and captures like a Rook, but for capturing it can jump over arbitrary many pieces (friend or foe). The jumped-over pieces are not affected. It cannot jump over a Jumping General, Area General, Diagonal Jumper, King or other Orthogonal Jumper, though.
-		<p style='text-align:center'><img style="max-width:100%;" src="{GAME}/res/rules/fairy/flying-rook.png"/></p>
-		</li>
-	<li>The Lion: moves or captures once as a King, and if the square thus reached is empty, can optionally move or capture to a square adjacent to that ('area move').
-		<p style='text-align:center'><img style="max-width:100%;" src="{GAME}/res/rules/fairy/lion.png"/></p>
-		</li>
-	<li>The Samurai: moves and captures like an orthodox Knight, and can capture adjacent enemies in all 8 directions without moving.
-		<p style='text-align:center'><img style="max-width:100%;" src="{GAME}/res/rules/fairy/samurai.png"/></p>
-		</li>
-	<li>The Ninja: moves and captures sideways like a Rook, but then skips the adjacent square (whether empty or occupied), or to diagonally adjacent squares. In addition it can capture orthogonally adjacent enemies without moving.
-		<p style='text-align:center'><img style="max-width:100%;" src="{GAME}/res/rules/fairy/gate.png"/></p>
-		</li>
-	<li>The Queen: moves and captures like an orthodox Queen. It can optionally promote to Fire Dragon on entering the promotion zone consisting of the furthest 3 ranks.
-		<p style='text-align:center'><img style="max-width:100%;" src="{GAME}/res/rules/fairy/rook.png"/></p>
-		</li>
-	<li>The Diagonal Jumper (aka Bishop General): moves and captures like a Bishop, but for capturing it can jump over arbitrary many pieces (friend or foe). The jumped-over pieces are not affected. It cannot jump over a Jumping General, Area General, Orthogonal Jumper, King or other Diagonal Jumper, though. The Diagonal Jumper can optionally promote to Lion on entering the promotion zone.
-		<p style='text-align:center'><img style="max-width:100%;" src="{GAME}/res/rules/fairy/flying-bishop.png"/></p>
-		</li>
-	<li>The Cobra: moves and captures like a Rook, and can capture diagonally adjacent enemies without moving. The Cobra can optionally promote to Jumping General on entering the promotion zone.
-		<p style='text-align:center'><img style="max-width:100%;" src="{GAME}/res/rules/fairy/crowned-rook.png"/></p>
-		</li>
-	<li>The Viper: moves and captures like a Bishop, and can capture orthogonally adjacent enemies without moving. The Viper can optionally promote to Area Jumper on entering the promotion zone consisting of the furthest 3 ranks.
-		<p style='text-align:center'><img style="max-width:100%;" src="{GAME}/res/rules/fairy/crowned-bishop.png"/></p>
-		</li>
-	<li>The Rook: moves and captures like an orthodox Rook. It can optionally promote to Cobra on entering the promotion zone.
-		<p style='text-align:center'><img style="max-width:100%;" src="{GAME}/res/rules/fairy/rook.png"/></p>
-		</li>
-	<li>The Bishop: moves and captures like an orthodox Bishop. It can optionally promote to Viper on entering the promotion zone.
-		<p style='text-align:center'><img style="max-width:100%;" src="{GAME}/res/rules/fairy/bishop.png"/></p>
-		</li>
-	<li>The Lateral Mover: moves and captures by sliding sideways like a Rook, or to orthogonally adjacent squares. If it has not moved yet it can also move and capture by sliding 2 squares forward (non-jumpping!). The Lateral Mover can optionally promote to Ninja on entering the promotion zone.
-		<p style='text-align:center'><img style="max-width:100%;" src="{GAME}/res/rules/fairy/machine.png"/></p>
-		</li>
-	<li>The Phoenix: moves and captures to orthogonally adjacent squares, or by jumping to the second square diagonally. It can optionally promote to Queen on entering the promotion zone consisting of the furthest 3 ranks.
-		<p style='text-align:center'><img style="max-width:100%;" src="{GAME}/res/rules/fairy/phoenix.png"/></p>
-		</li>
-	<li>The Kirin: moves and captures to diagonally adjacent squares, or by jumping to the second square orthogonally. It can optionally promote to Samurai on entering the promotion zone.
-		<p style='text-align:center'><img style="max-width:100%;" src="{GAME}/res/rules/fairy/giraffe.png"/></p>
-		</li>
-	<li>The Minister: moves and captures like an orthodox King. It can optionally promote to Orthogonal Jumper on entering the promotion zone. The square the Minister starts on disappears as soon as it gets evacuated.
-		<p style='text-align:center'><img style="max-width:100%;" src="{GAME}/res/rules/fairy/man.png"/></p>
-		</li>
-	<li>The Gold General: moves and captures to adjacent squares in any orthogonal or the forward diagonal direction. The Gold General can optionally promote to Rook on entering the promotion zone.
-		<p style='text-align:center'><img style="max-width:100%;" src="{GAME}/res/rules/fairy/gold.png"/></p>
-		</li>
-	<li>The Silver General: moves and captures to adjacent squares in any diagonal or the forward orthogonal direction. The Silver General can optionally promote to Bishop on entering the promotion zone consisting of the furthest 3 ranks.
-		<p style='text-align:center'><img style="max-width:100%;" src="{GAME}/res/rules/fairy/silver.png"/></p>
-		</li>
-	<li>The Pawn: moves and captures to the square directly in front of it. It can optionally promote to Gold General on entering the promotion zone.
-		<p style='text-align:center'><img style="max-width:100%;" src="{GAME}/res/rules/fairy/pawn.png"/></p>
-		</li>
-	<li>The King: moves and captures to any of the eight adjacent squares. The square the King starts on disappears as soon as it gets evacuated.
-		<p style='text-align:center'><img style="max-width:100%;" src="{GAME}/res/rules/fairy/king.png"/></p>
-		</li>
-</ul>
+<h1>Differences from orthodox chess</h1>
+<p>Since this is a Shogi variant the differences with orthodox chess are numerous.
+The most striking differences between chess and shogi are the Pawn move, and the fact that pieces other than Pawns can promote too, even before they reach last rank.
+</p><p>
+Minjiku Shogi is played on a 10x10 board, with 4 additional squares that disappear when no longer occupied.
+Unlike in modern shogi, captured pieces cannot be dropped, but remain out of play forever.
+Of the orthodox shogi pieces only the King, Pawn, Rook and Bishop participate, but Queen, Kirin and Phoenix are known from many of the larger shogi variants,
+and the jumping sliders are known from the historic shogi variant variant tenjiku shogi.
+Most other piece are novelties, especially conceived for this game.
+Even most of the orthodox Shogi pieces have different promotions than usual.
 </p>
+<table><tr>
+		<td><img style="max-width:100%;" src="{GAME}/res/rules/fairy/terror.png"/></td>
+	<td>The Fire Dragon: moves and captures like Queen, and has an 'area move' (see below for Lion).
+		But it also automatically captures ('burns') all enemies diagonally adjacent to a square it ends its move on.
+		</td>
+</tr><tr>
+		<td><img style="max-width:100%;" src="{GAME}/res/rules/fairy/flying-queen.png"/></td>
+	<td>The Jumping General (aka Great General): moves and captures like a Queen, but for capturing it can jump over arbitrary many pieces (friend or foe).
+		The jumped-over pieces are not affected. It cannot jump over another Jumping General or King, though.
+		</td>
+</tr><tr>
+		<td><img style="max-width:100%;" src="{GAME}/res/rules/fairy/flying-saint.png"/></td>
+	<td>The Area Jumper: moves and captures like a Bishop, but for capturing it can jump over arbitrary many pieces (friend or foe).
+		The jumped-over pieces are not affected. It cannot jump over a Jumping General, King or other Area Jumper, though.
+		In addition it has an 'area move' (see below for Lion).
+		</td>
+</tr><tr>
+		<td><img style="max-width:100%;" src="{GAME}/res/rules/fairy/flying-rook.png"/></td>
+	<td>The Orthogonal Jumper (aka Rook General): moves and captures like a Rook, but for capturing it can jump over arbitrary many pieces (friend or foe).
+		The jumped-over pieces are not affected. It cannot jump over a Jumping General, Area Jumper, Diagonal Jumper, King or other Orthogonal Jumper, though.
+		</td>
+</tr><tr>
+		<td><img style="max-width:100%;" src="{GAME}/res/rules/fairy/lion.png"/></td>
+	<td>The Lion: moves or captures as a King, but if the square thus reached is empty it can optionally move on or capture to a square adjacent to that ('area move').
+		It cannot return to where it came from, though.
+		</td>
+</tr><tr>
+		<td><img style="max-width:100%;" src="{GAME}/res/rules/fairy/samurai.png"/></td>
+	<td>The Samurai: moves and captures like an orthodox Knight, and can capture adjacent enemies in all 8 directions without moving.
+		</td>
+</tr><tr>
+		<td><img style="max-width:100%;" src="{GAME}/res/rules/fairy/gate.png"/></td>
+	<td>The Ninja: moves and captures sideways like a Rook, but skips the adjacent square (whether empty or occupied) when doing so.
+		Can also move or capture to diagonally adjacent squares, or capture orthogonally adjacent enemies without moving.
+		</td>
+</tr><tr>
+		<td><img style="max-width:100%;" src="{GAME}/res/rules/fairy/queen.png"/></td>
+	<td>The Queen: moves and captures like an orthodox Queen.
+		</td>
+</tr><tr>
+		<td><img style="max-width:100%;" src="{GAME}/res/rules/fairy/flying-bishop.png"/></td>
+	<td>The Diagonal Jumper (aka Bishop General): moves and captures like a Bishop, but for capturing it can jump over arbitrary many pieces (friend or foe).
+		The jumped-over pieces are not affected. It cannot jump over a Jumping General, Area Jumper, Orthogonal Jumper, King or other Diagonal Jumper, though.
+		</td>
+</tr><tr>
+		<td><img style="max-width:100%;" src="{GAME}/res/rules/fairy/proper-crowned-rook.png"/></td>
+	<td>The Cobra: moves and captures like a Rook, and can capture diagonally adjacent enemies without moving.
+		</td>
+</tr><tr>
+		<td><img style="max-width:100%;" src="{GAME}/res/rules/fairy/saint.png"/></td>
+	<td>The Viper: moves and captures like a Bishop, and can capture orthogonally adjacent enemies without moving.
+		</td>
+</tr><tr>
+		<td><img style="max-width:100%;" src="{GAME}/res/rules/fairy/rook.png"/></td>
+	<td>The Rook: moves and captures like an orthodox Rook.
+		</td>
+</tr><tr>
+		<td><img style="max-width:100%;" src="{GAME}/res/rules/fairy/bishop.png"/></td>
+	<td>The Bishop: moves and captures like an orthodox Bishop.
+		</td>
+</tr><tr>
+		<td><img style="max-width:100%;" src="{GAME}/res/rules/fairy/machine.png"/></td>
+	<td>The Lateral Mover: moves and captures by sliding sideways like a Rook, or to orthogonally adjacent squares.
+		If it has not moved yet it can also move and capture by sliding 2 squares forward (non-jumping!). 
+		</td>
+</tr><tr>
+		<td><img style="max-width:100%;" src="{GAME}/res/rules/fairy/phoenix.png"/></td>
+	<td>The Phoenix: moves and captures to orthogonally adjacent squares, or by jumping to the second square diagonally.
+		</td>
+</tr><tr>
+		<td><img style="max-width:100%;" src="{GAME}/res/rules/fairy/giraffe.png"/></td>
+	<td>The Kirin: moves and captures to diagonally adjacent squares, or by jumping to the second square orthogonally.
+		</td>
+</tr><tr>
+		<td><img style="max-width:100%;" src="{GAME}/res/rules/fairy/man.png"/></td>
+	<td>The Minister: moves and captures like an orthodox King. The square the Minister starts on disappears as soon as it gets evacuated.
+		</td>
+</tr><tr>
+		<td><img style="max-width:100%;" src="{GAME}/res/rules/fairy/gold.png"/></td>
+	<td>The Gold General: moves and captures to adjacent squares in any orthogonal or the forward diagonal direction.
+		</td>
+</tr><tr>
+		<td><img style="max-width:100%;" src="{GAME}/res/rules/fairy/silver.png"/></td>
+	<td>The Silver General: moves and captures to adjacent squares in any diagonal or the forward orthogonal direction.
+		</td>
+</tr><tr>
+		<td><img style="max-width:100%;" src="{GAME}/res/rules/fairy/pawn.png"/></td>
+	<td>The Pawn: moves and captures to the square directly in front of it.
+		</td>
+</tr><tr>
+		<td><img style="max-width:100%;" src="{GAME}/res/rules/fairy/king.png"/></td>
+	<td>The King: moves and captures to any of the eight adjacent squares. The square the King starts on disappears as soon as it gets evacuated.
+		</td>
+</tr></table>
 
 <h2>Inital setup</h2>
 
@@ -105,20 +142,20 @@
 
 <p>Each player starts with:
 <ul>
-<li>10 Pawns</li>
-<li>2 Silver Generals</li>
-<li>2 Gold Generals</li>
-<li>2 Lateral Movers</li>
-<li>2 Bishops</li>
-<li>2 Rooks</li>
-<li>2 Diagonal Jumpers</li>
-<li>1 Minister</li>
-<li>1 Kirin</li>
-<li>1 Phoenix</li>
-<li>1 Queen</li>
-<li>1 Viper</li>
-<li>1 Cobra</li>
-<li>1 Area General</li>
+<li>10 Pawns, which can promote to Gold General</li>
+<li>2 Silver Generals, which can promote to Bishop</li>
+<li>2 Gold Generals, which can promote to Rook</li>
+<li>2 Lateral Movers, which can promote to Ninja</li>
+<li>2 Bishops, which can promote to Viper</li>
+<li>2 Rooks, which can promote to Cobra</li>
+<li>2 Diagonal Jumpers, which can promote to Lion</li>
+<li>1 Minister, which can promote to Orthogonal Jumper</li>
+<li>1 Kirin, which can promote to Samurai</li>
+<li>1 Phoenix, which can promote to Queen</li>
+<li>1 Queen, which can promote to Fire Dragon</li>
+<li>1 Viper, which can promote to Area Jumper</li>
+<li>1 Cobra, which can promote to Jumping General</li>
+<li>1 Area Jumper</li>
 <li>1 Jumping General</li>
 <li>1 Fire Dragon</li>
 <li>1 King</li>
@@ -129,7 +166,9 @@
 <p>Double move for Pawns (start): no.</p>
 <p>"En passant" capture: no.</p>
 <p>Piece drops: no.</p>
-<p>Promotion: most pieces promote, to a dedicated promoted type. The promoted pieces cannot promote again, even if the identically moving piece in the initial setup could.</p>
+<p>Promotion: most pieces can promote, to a dedicated promoted type, when they <i>enter</i> the promotion zone consisting of the last three ranks, or capture a piece in it.
+This is optional.
+Once promoted the pieces cannot promote again, even if an identically moving piece in the initial setup could.</p>
 
 <p>Please see below for orthodox Chess rules.</p>
 <hr>
