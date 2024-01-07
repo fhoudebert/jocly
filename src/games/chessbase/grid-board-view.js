@@ -318,7 +318,7 @@
 		for(t in types) { // search info for moved piece type
 			if(aMove.a==types[t].abbrev) { // got it
 				var g=types[t].graph[aMove.f]; // get its moves from where it was
-				var hit=-0.01
+				var hit=-1
 				for(var j=0; j<g.length; j++) { // for all directions
 					var path=g[j], first=path[0]&0xffff;
 					if(first==aMove.t) // does first step go to where we went?
@@ -334,9 +334,14 @@
 				// no, so intermediate squares must be visited: slide
 				if(hit>=0) {
 					g=aGame.cbVar.geometry;
-					hit=(g.C(hit) != g.C(aMove.f) && g.R(hit) != g.R(aMove.f) ? -0.01 : 0); // diagonal?
+					var dx=g.C(aMove.t)-g.C(aMove.f), dy=g.R(aMove.t)-g.R(aMove.f);
+					if(dx*dy*(dx*dx-dy*dy)) { // move is oblique
+						dx=g.C(hit)-g.C(aMove.f); dy=g.R(hit)-g.R(aMove.f);
+						hit=(dx*dy ? 4 : 2);
+						return (zFrom+zTo-hit)/2; // request break up
+					}
 				}
-				return (zFrom+zTo+hit)/2; // kludge: small negative value means diagonal leg first
+				return (zFrom+zTo)/2;
 			}
 		};
 		return (zFrom+zTo)/2; // nonexistent type or illegal move
