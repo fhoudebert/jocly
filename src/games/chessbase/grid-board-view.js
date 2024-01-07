@@ -310,17 +310,26 @@
 			}
 		},
 	});
-	
+
 	View.Board.cbMoveMidZ = function(aGame,aMove,zFrom,zTo) {
-		var geometry = aGame.cbVar.geometry;
-		var x0 = geometry.C(aMove.f);
-		var x1 = geometry.C(aMove.t);
-		var y0 = geometry.R(aMove.f);
-		var y1 = geometry.R(aMove.t);
-		if(x1-x0==0 || y1-y0==0 || Math.abs(x1-x0)==Math.abs(y1-y0))
-			return (zFrom+zTo)/2;
-		else
-			return Math.max(zFrom,zTo)+1500;
+		var d=aGame.g.distGraph[aMove.f][aMove.t];
+		if(d==1) return (zFrom+zTo)/2; // adjacent: always slide
+		var types=aGame.cbVar.pieceTypes;
+		for(t in types) { // search info for moved piece type
+			if(aMove.a==types[t].abbrev) { // got it
+				var g=types[t].graph[aMove.f]; // get its moves from where it was
+				for(var j=0; j<g.length; j++) { // for all directions
+					var path=g[j];
+					if((g[j][0]&0xffff)==aMove.t) // does first step go to where we went?
+						return (zFrom+zTo+1100+100*d)/2; // yes, jump
+					if(aMove.c) for(var k=1; k<path.length; k++)
+						if((path[k]&0xffff)==aMove.t && path[k]&aGame.cbConstants.FLAG_SCREEN_CAPTURE)
+							return (zFrom+zTo+1300)/2; // screen capture: jump
+				}
+				return (zFrom+zTo)/2; // no, so there must be intermediates: slide
+			}
+		};
+		return (zFrom+zTo)/2; // nonexistent type or illegal move
 	}
 
 	View.Game.cbGridBoardClassic2D = $.extend({},View.Game.cbGridBoardClassic,{
