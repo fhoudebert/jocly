@@ -318,15 +318,25 @@
 		for(t in types) { // search info for moved piece type
 			if(aMove.a==types[t].abbrev) { // got it
 				var g=types[t].graph[aMove.f]; // get its moves from where it was
+				var hit=-0.01
 				for(var j=0; j<g.length; j++) { // for all directions
-					var path=g[j];
-					if((g[j][0]&0xffff)==aMove.t) // does first step go to where we went?
+					var path=g[j], first=path[0]&0xffff;
+					if(first==aMove.t) // does first step go to where we went?
 						return (zFrom+zTo+1100+100*d)/2; // yes, jump
-					if(aMove.c) for(var k=1; k<path.length; k++)
-						if((path[k]&0xffff)==aMove.t && path[k]&aGame.cbConstants.FLAG_SCREEN_CAPTURE)
-							return (zFrom+zTo+1300)/2; // screen capture: jump
+					for(var k=1; k<path.length; k++) {
+						if((path[k]&0xffff)==aMove.t) {
+							if(aMove.c && path[k]&aGame.cbConstants.FLAG_SCREEN_CAPTURE)
+								return (zFrom+zTo+1300)/2; // screen capture: jump
+							hit=first; // remember first step of path
+						}
+					}
 				}
-				return (zFrom+zTo)/2; // no, so there must be intermediates: slide
+				// no, so intermediate squares must be visited: slide
+				if(hit>=0) {
+					g=aGame.cbVar.geometry;
+					hit=(g.C(hit) != g.C(aMove.f) && g.R(hit) != g.R(aMove.f) ? -0.01 : 0); // diagonal?
+				}
+				return (zFrom+zTo+hit)/2; // kludge: small negative value means diagonal leg first
 			}
 		};
 		return (zFrom+zTo)/2; // nonexistent type or illegal move
