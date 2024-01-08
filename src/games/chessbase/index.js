@@ -7308,7 +7308,7 @@ exports.games = (function () {
 					},
 					"module": "chessbase",
 					"plazza": "true",
-					"thumbnail": "res/rules/minjiku-thumb.png",
+					"thumbnail": "res/rules/minjiku/minjiku-shogi-thumb.png",
 					"released": 1396536978,
 					"credits": {
 						"en": "minjiku-credits.html"
