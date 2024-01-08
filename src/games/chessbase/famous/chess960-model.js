@@ -9,7 +9,7 @@
 			
 			geometry: geometry,
 
-			zobrist: "old",
+//			zobrist: "old",
 			
 			pieceTypes: {
 
@@ -309,7 +309,8 @@
 			var pieces={ "1": {}, "-1": {} };
 			this.pieces.forEach(function(piece,pIndex) {
 				if(piece.t>=4) {
-					$this.zSign=aGame.zobrist.update($this.zSign,"board",pIndex,piece.p);				
+					$this.zSign^=aGame.bKey(piece);
+//					$this.zSign=aGame.zobrist.update($this.zSign,"board",pIndex,piece.p);				
 					$this.board[piece.p]=-1;
 					piece.p=-1;
 					var pType=aGame.g.pTypes[piece.t];
@@ -329,7 +330,8 @@
 					//console.log("index",index,"to pos",pos)
 					$this.board[pos]=index;
 					piece.p=pos;
-					$this.zSign=aGame.zobrist.update($this.zSign,"board",index,pos);	
+					$this.zSign^=aGame.bKey(piece);
+//					$this.zSign=aGame.zobrist.update($this.zSign,"board",index,pos);	
 					if(type=="K")
 						$this.kings[piece.s]=pos;
 				});
