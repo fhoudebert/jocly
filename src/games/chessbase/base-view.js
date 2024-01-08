@@ -818,30 +818,7 @@
 	}
 
 	View.Board.cbMoveMidZ = function(aGame,aMove,zFrom,zTo) {
-		var d=aGame.g.distGraph[aMove.f][aMove.t];
-console.log(aMove,', d=',d);
-		if(d==1) return (zFrom+zTo)/2; // adjacent: always slide
-		var types=aGame.cbVar.pieceTypes;
-		types.forEach(function(t) { // search info for moved piece type
-console.log('try ',t);
-			if(aMove.a==t.abbrev) { // got it
-				var g=t.graph[aMove.f]; // get its moves from where it was
-				for(var j=0; j<g.length; j++) { // for all directions
-					var path=g[j];
-console.log('path=',path);
-					if((g[j][0]&0xffff)==aMove.t) // does first step go to where we went?
-						return (zFrom+zTo+1100+100*d)/2; // yes, jump
-console.log('try hopper');
-					if(move.c) for(var k=1; k<path.length; k++)
-{console.log(k,':',path[k]);
-						if((path[k]&0xffff)==aMove.t && path[k]&aGame.cbConstants.FLAG_SCREEN_CAPTURE)
-							return (zFrom+zTo+1300)/2; // screen capture: jump
-}
-				}
-				return (zFrom+zTo)/2; // no, so there must be intermediates: slide
-			}
-		});
-		return (zFrom+zTo)/2; // nonexistent type or illegal move
+		return (zFrom+zTo)/2;
 	}
 
 	

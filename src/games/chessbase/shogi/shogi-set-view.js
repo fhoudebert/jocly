@@ -496,4 +496,14 @@
 
 	});
 
+	View.Game.cbShogiWesternPieceStyle = function(modifier) {
+		return $.extend(true,this.cbShogiPieceStyle(),{
+			"default": {
+				"2d": {
+					file: this.mViewOptions.fullPath + "/res/shogi/shogi-sprites-western.png",                                                                   
+				},
+			}
+		},modifier);
+	}
+
 })();

@@ -203,7 +203,7 @@
 			}),
 		};
 	}
-
+// no longer needed?
 	/* Make the jumps */
 	View.Board.cbMoveMidZ = function(aGame,aMove,zFrom,zTo) {
 		var geo=aGame.cbVar.geometry;

@@ -60,7 +60,7 @@
 			graph[pos] = [];
 			stepSet.forEach(function(vec){
 				SkiSlide(pos, vec, flags2, bend, flags1, 1000);
-				if(bend & 3) SkiSlide(pos, vec, flags2, -bend, (flags1<0 ? flags1 : c.FLAG_STOP), 1000); // for bent: both forks
+				if(bend&3 && bend>0) SkiSlide(pos, vec, flags2, -bend, (flags1<0 ? flags1 : c.FLAG_STOP), 1000); // for bent: both forks
 			});
 		}
 		return graph;
