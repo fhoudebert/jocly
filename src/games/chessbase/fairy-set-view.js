@@ -338,7 +338,7 @@
 					clipx: 4700,
 					},
 			},
-			"fr-griffin": {
+			"fr-griffon": {
 				"2d": {
 					clipx: 4800,
 					},
@@ -1919,21 +1919,21 @@
 				}
 			}
 		},
-		"fr-griffin": {
+		"fr-griffon": {
 			mesh: {
-				jsFile:"/res/fairy/griffin/griffin.js"
+				jsFile:"/res/fairy/griffon/griffon.js"
 			},
 			materials: {
 				mat0: {
 					channels: {
 						diffuse: {
 							texturesImg: {
-								diffImg : "/res/fairy/griffin/griffin-diffusemap.jpg",
+								diffImg : "/res/fairy/griffon/griffon-diffusemap.jpg",
 							}
 						},
 						normal: {
 							texturesImg: {
-								normalImg: "/res/fairy/griffin/griffin-normalmap.jpg",
+								normalImg: "/res/fairy/griffon/griffon-normalmap.jpg",
 							}
 						}
 					}
