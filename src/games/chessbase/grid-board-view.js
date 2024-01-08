@@ -331,8 +331,10 @@
 						}
 					}
 				}
-				// no, so intermediate squares must be visited: slide
+				// no, so intermediate squares must be visited
 				if(hit>=0) {
+					d=aGame.g.distGraph[aMove.f][hit];
+					if(d>1) return (zFrom+zTo+1100+100*d)/2; // non-contiguous path: jump
 					g=aGame.cbVar.geometry;
 					var dx=g.C(aMove.t)-g.C(aMove.f), dy=g.R(aMove.t)-g.R(aMove.f);
 					if(dx*dy*(dx*dx-dy*dy)) { // move is oblique
