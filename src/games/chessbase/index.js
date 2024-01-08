@@ -7260,7 +7260,7 @@ exports.games = (function () {
 					},
 					"module": "chessbase",
 					"plazza": "true",
-					"thumbnail": "res/rules/makromachy-thumb.png",
+					"thumbnail": "res/rules/makromachy/makromachy-thumb.png",
 					"released": 1396536978,
 					"credits": {
 						"en": "res/rules/makromachy/makromachy-credits.html"
@@ -7324,7 +7324,7 @@ exports.games = (function () {
 					},
 					"module": "chessbase",
 					"plazza": "true",
-					"thumbnail": "res/rules/minjiku-thumb.png",
+					"thumbnail": "res/rules/minjiku/minjiku-shogi-thumb.png",
 					"released": 1396536978,
 					"credits": {
 						"en": "res/rules/minjiku-shogi/minjiku-credits.html"
