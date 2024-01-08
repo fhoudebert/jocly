@@ -7244,7 +7244,7 @@ exports.games = (function () {
 					},
 					"module": "chessbase",
 					"plazza": "true",
-					"thumbnail": "res/rules/makromachy-thumb.png",
+					"thumbnail": "res/rules/makromachy/makromachy-thumb.png",
 					"released": 1396536978,
 					"credits": {
 						"en": "makromachy-credits.html"
