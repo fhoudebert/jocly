@@ -232,7 +232,7 @@
       			13: {
                   name : 'griffon',
                   abbrev : 'G',
-                  aspect : 'fr-griffin',
+                  aspect : 'fr-griffon',
                   graph : this.cbGriffonGraph(geometry),
                   value : 9,
                   initial: [{s:1,p:25},{s:-1,p:233}],

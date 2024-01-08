@@ -5523,9 +5523,9 @@ exports.games = (function () {
  								"smoothedfilegeo|0|/res/fairy/squirrel/squirrel.js",
  								"image|/res/fairy/squirrel/squirrel-diffusemap.jpg",
  								"image|/res/fairy/squirrel/squirrel-normalmap.jpg",
- 								"smoothedfilegeo|0|/res/fairy/griffin/griffin.js",
- 								"image|/res/fairy/griffin/griffin-diffusemap.jpg",
- 								"image|/res/fairy/griffin/griffin-normalmap.jpg",
+ 								"smoothedfilegeo|0|/res/fairy/griffon/griffon.js",
+ 								"image|/res/fairy/griffon/griffon-diffusemap.jpg",
+ 								"image|/res/fairy/griffon/griffon-normalmap.jpg",
                                 "smoothedfilegeo|0|/res/fairy/axe/axe.js",
  								"image|/res/fairy/axe/axe-diffusemap.jpg",
  								"image|/res/fairy/axe/axe-normalmap.jpg",
@@ -5629,9 +5629,9 @@ exports.games = (function () {
  								"smoothedfilegeo|0|/res/fairy/squirrel/squirrel.js",
  								"image|/res/fairy/squirrel/squirrel-diffusemap.jpg",
  								"image|/res/fairy/squirrel/squirrel-normalmap.jpg",
- 								"smoothedfilegeo|0|/res/fairy/griffin/griffin.js",
- 								"image|/res/fairy/griffin/griffin-diffusemap.jpg",
- 								"image|/res/fairy/griffin/griffin-normalmap.jpg",
+ 								"smoothedfilegeo|0|/res/fairy/griffon/griffon.js",
+ 								"image|/res/fairy/griffon/griffon-diffusemap.jpg",
+ 								"image|/res/fairy/griffon/griffon-normalmap.jpg",
                                 "smoothedfilegeo|0|/res/fairy/axe/axe.js",
  								"image|/res/fairy/axe/axe-diffusemap.jpg",
  								"image|/res/fairy/axe/axe-normalmap.jpg",
@@ -7028,14 +7028,14 @@ exports.games = (function () {
 							"world": config_view_skins_world,
 							"camera": config_view_skins_camera
 						},
-						{
+						/*{
 							"name": "skin2dwestern",
 							"title": "2D Western",
 							"3d": false,
 							"preload": [
 								"image|/res/shogi/shogi-sprites-western.png"
 							]
-						},
+						},*/
 						config_view_skins_2
 					],
 					"animateSelfMoves": false,
@@ -7100,14 +7100,14 @@ exports.games = (function () {
 							"world": config_view_skins_world,
 							"camera": config_view_skins_camera
 						},
-						{
+						/*{
 							"name": "skin2dwestern",
 							"title": "2D Western",
 							"3d": false,
 							"preload": [
 								"image|/res/shogi/shogi-sprites-western.png"
 							]
-						},
+						},*/
 						config_view_skins_2
 					],
 					"animateSelfMoves": false,
@@ -7428,9 +7428,9 @@ exports.games = (function () {
 								"smoothedfilegeo|0|/res/fairy/pawn/pawn.js",
 								"image|/res/fairy/pawn/pawn-diffusemap.jpg",
 								"image|/res/fairy/pawn/pawn-normalmap.jpg",
-								"smoothedfilegeo|0|/res/fairy/griffin/griffin.js",
- 								"image|/res/fairy/griffin/griffin-diffusemap.jpg",
- 								"image|/res/fairy/griffin/griffin-normalmap.jpg",
+								"smoothedfilegeo|0|/res/fairy/griffon/griffon.js",
+ 								"image|/res/fairy/griffon/griffon-diffusemap.jpg",
+ 								"image|/res/fairy/griffon/griffon-normalmap.jpg",
 								"smoothedfilegeo|0|/res/fairy/bishop/bishop.js",
 								"image|/res/fairy/bishop/bishop-diffusemap.jpg",
 								"image|/res/fairy/bishop/bishop-normalmap.jpg",
