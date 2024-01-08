@@ -296,7 +296,7 @@
 			abbrev : '+L',
 			aspect : 'fr-ship',
 			graph : this.cbMergeGraphs(geometry,
-			            this.cbSkiGraph(geometry,[[1,0],[-1,0]],1,-1),
+			            this.cbSkiGraph(geometry,[[1,0],[-1,0]],0,-1),
 			            this.cbShortRangeGraph(geometry,[[1,0],[0,-1],[-1,0],[0,1]],area,rifle),
 			            this.cbFersGraph(geometry,area)),
 			value : 4.64,
@@ -359,7 +359,7 @@
 		    29: { // burns on move and capture
 			name : 'fire dragon',
 			abbrev : 'F',
-			aspect : 'fr-dragon',
+			aspect : 'fr-terror',
 			graph : this.cbMergeGraphs(geometry,
 			            this.cbLongRangeGraph(geometry,adjacent,area,burning),
 			            AreaGraph(geometry,area)),
