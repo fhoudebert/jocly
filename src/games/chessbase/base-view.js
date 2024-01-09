@@ -608,9 +608,17 @@
 											promoMoves.forEach(function(move,index) {
 												var aspect=cbVar.pieceTypes[move.pr].aspect || cbVar.pieceTypes[move.pr].name;
 												var aspectSpec = $.extend(true,{},aGame.cbView.pieces["default"],aGame.cbView.pieces[aspect]);
+												
 												if(aGame.cbView.pieces[this.mWho])
 													aspectSpec = $.extend(true,aspectSpec,
 															aGame.cbView.pieces[this.mWho]["default"],aGame.cbView.pieces[this.mWho][aspect]);
+													
+													// use alternative skin sprites for promotion when specified
+													if( typeof aspectSpec[xdv.game.mSkin] !== "undefined"){														
+														aspectSpec["2d"].file = aspectSpec[xdv.game.mSkin].file;
+													}
+														
+
 												xdv.updateGadget("promo#"+move.pr, {
 													base: $.extend(aspectSpec["2d"], { 
 														x: (index-promoMoves.length/2)*aGame.cbPromoSize 
