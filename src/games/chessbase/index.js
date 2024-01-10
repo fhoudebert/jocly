@@ -7028,14 +7028,14 @@ exports.games = (function () {
 							"world": config_view_skins_world,
 							"camera": config_view_skins_camera
 						},
-						/*{
+						{
 							"name": "skin2dwestern",
 							"title": "2D Western",
 							"3d": false,
 							"preload": [
 								"image|/res/shogi/shogi-sprites-western.png"
 							]
-						},*/
+						},
 						config_view_skins_2
 					],
 					"animateSelfMoves": false,
@@ -7076,8 +7076,8 @@ exports.games = (function () {
 					"title-en": "Chessbase view",
 					"visuals": {
 						"600x600": [
-							"res/visuals/mini-shogi-600x600-3d.jpg",
-							"res/visuals/mini-shogi-600x600-2d.jpg"
+							"res/visuals/mini-shogi-600x600-3d.png",
+							"res/visuals/mini-shogi-600x600-2d.png"
 						]
 					},
 					"xdView": true,
@@ -7100,14 +7100,14 @@ exports.games = (function () {
 							"world": config_view_skins_world,
 							"camera": config_view_skins_camera
 						},
-						/*{
+						{
 							"name": "skin2dwestern",
 							"title": "2D Western",
 							"3d": false,
 							"preload": [
 								"image|/res/shogi/shogi-sprites-western.png"
 							]
-						},*/
+						},
 						config_view_skins_2
 					],
 					"animateSelfMoves": false,
@@ -7212,8 +7212,8 @@ exports.games = (function () {
 					"title-en": "Chessbase view",
 					"visuals": {
 						"600x600": [
-							"res/visuals/tori-600x600-3d.jpg",
-							"res/visuals/tori-600x600-2d.jpg"
+							"res/visuals/chu-shogi-600x600-3d.jpg",
+							"res/visuals/chu-shogi-600x600-2d.jpg"
 						]
 					},
 					"xdView": true,
@@ -7324,7 +7324,7 @@ exports.games = (function () {
 					},
 					"module": "chessbase",
 					"plazza": "true",
-					"thumbnail": "res/rules/minjiku/minjiku-shogi-thumb.png",
+					"thumbnail": "res/rules/minjiku-shogi/minjiku-shogi-thumb.png",
 					"released": 1396536978,
 					"credits": {
 						"en": "res/rules/minjiku-shogi/minjiku-credits.html"
@@ -7341,8 +7341,8 @@ exports.games = (function () {
 					"title-en": "Chessbase view",
 					"visuals": {
 						"600x600": [
-							"res/visuals/minjiku-600x600-3d.jpg",
-							"res/visuals/minjiku-600x600-2d.jpg"
+							"res/visuals/minjiku-shogi-600x600-3d.jpg",                        
+							"res/visuals/minjiku-shogi-600x600-2d.jpg"
 						]
 					},
 					"xdView": true,
