@@ -7028,14 +7028,14 @@ exports.games = (function () {
 							"world": config_view_skins_world,
 							"camera": config_view_skins_camera
 						},
-						{
+						/*{
 							"name": "skin2dwestern",
 							"title": "2D Western",
 							"3d": false,
 							"preload": [
 								"image|/res/shogi/shogi-sprites-western.png"
 							]
-						},
+						},*/
 						config_view_skins_2
 					],
 					"animateSelfMoves": false,
@@ -7100,14 +7100,14 @@ exports.games = (function () {
 							"world": config_view_skins_world,
 							"camera": config_view_skins_camera
 						},
-						{
+						/*{
 							"name": "skin2dwestern",
 							"title": "2D Western",
 							"3d": false,
 							"preload": [
 								"image|/res/shogi/shogi-sprites-western.png"
 							]
-						},
+						},*/
 						config_view_skins_2
 					],
 					"animateSelfMoves": false,
