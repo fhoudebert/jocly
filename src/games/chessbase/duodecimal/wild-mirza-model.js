@@ -198,7 +198,7 @@
       11: {
       name : 'eagle',
       abbrev : 'H',
-      aspect : 'fr-griffin',
+      aspect : 'fr-griffon',
       graph : this.cbGriffonGraph(geometry),
       value : 8.1,
       initial: [{s:1,p:15},{s:1,p:20},{s:-1,p:123},{s:-1,p:128}],
@@ -222,7 +222,7 @@
       14: {
       name : 'snake',
       abbrev : 'SN',
-      aspect : 'fr-dragon',
+      aspect : 'fr-cobra',
       graph : this.cbSnakeGraph(geometry),
       value : 3.5,
       initial: [{s:1,p:18},{s:-1,p:126}],

@@ -967,6 +967,7 @@ exports.games = (function () {
 	var modelScripts_30 = [
 		"base-model.js",
 		"grid-geo-model.js",
+		"fairy-move-model.js",
 		"capa10x8/capablanca-model.js"
 	]
 	var config_view_skins_preload_10 = [
@@ -1072,6 +1073,7 @@ exports.games = (function () {
 	var modelScripts_34 = [
 		"base-model.js",
 		"grid-geo-model.js",
+		"fairy-move-model.js",
 		"decimal/grand-model.js"
 	]
 	var config_view_js_31 = [
@@ -1293,7 +1295,7 @@ exports.games = (function () {
 	var modelScripts_bigorra = [
  		"base-model.js",
  		"grid-geo-model.js",
-        "fairy-move-model.js",
+ 		"fairy-move-model.js",
  		"cazaux/bigorra-model.js"
  	]
  	var config_view_js_bigorra = [
@@ -1388,10 +1390,7 @@ exports.games = (function () {
 	var modelScripts_zanzibars = [
 		"base-model.js",
 		"grid-geo-model.js",
-<<<<<<< HEAD
-        "fairy-move-model.js",
-=======
->>>>>>> 21cf4c8 (add nex Fairy piece : terror, a dragon used in makromachy)
+ 		"fairy-move-model.js",
 		"cazaux/zanzibar-s-model.js"
 	]
 	var config_view_js_zanzibars = [
@@ -1399,7 +1398,6 @@ exports.games = (function () {
 		"grid-board-view.js",
 		"fairy-set-view.js",
 		"cazaux/zanzibar-view.js"
-<<<<<<< HEAD
 	]
 	var modelScripts_acedrex = [
 		"base-model.js",
@@ -1411,8 +1409,6 @@ exports.games = (function () {
 		"grid-board-view.js",
 		"fairy-set-view.js",
 		"historical/grant-acedrex-view.js"
-=======
->>>>>>> 21cf4c8 (add nex Fairy piece : terror, a dragon used in makromachy)
 	]
 	var modelScripts_acedrex = [
 		"base-model.js",
@@ -3830,20 +3826,20 @@ exports.games = (function () {
 					"title-en": "Grand Chess",
 					"summary": "Chess on 10x10 (1984)",
 					"rules": {
-						"en": "decimal/grand-rules.html"
+						"en": "res/rules/decimal/grand-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
 					"thumbnail": "res/rules/decimal/grand-thumb.png",
 					"released": 1404985842,
 					"credits": {
-						"en": "decimal/grand-credits.html"
+						"en": "res/rules/decimal/grand-credits.html"
 					},
 					"gameOptions": config_model_gameOptions,
 					"obsolete": false,
 					"js": modelScripts_34,
 					"description": {
-						"en": "decimal/grand-description.html"
+						"en": "res/rules/decimal/grand-description.html"
 					},
 					"levels": config_model_levels_5
 				},
@@ -4574,20 +4570,20 @@ exports.games = (function () {
 					"title-en": "Hyderabad Decimal Chess",
 					"summary": "Shir Muhammad Khan Iman, 1797-1798",
 					"rules": {
-						"en": "decimal/hyderabad-rules.html"
+						"en": "res/rules/decimal/hyderabad-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
 					"thumbnail": "res/rules/decimal/hyderabad-thumb.png",
 					"released": 1405068610,
 					"credits": {
-						"en": "decimal/hyderabad-credits.html"
+						"en": "res/rules/decimal/hyderabad-credits.html"
 					},
 					"gameOptions": config_model_gameOptions,
 					"obsolete": false,
 					"js": modelScripts_44,
 					"description": {
-						"en": "decimal/hyderabad-description.html"
+						"en": "res/rules/decimal/hyderabad-description.html"
 					},
 					"levels": config_model_levels_5
 				},
@@ -5524,15 +5520,15 @@ exports.games = (function () {
  								"smoothedfilegeo|0|/res/fairy/mamoth/mamoth.js",
  								"image|/res/fairy/mamoth/mamoth-diffusemap.jpg",
  								"image|/res/fairy/mamoth/mamoth-normalmap.jpg",
- 								"smoothedfilegeo|0|/res/fairy/squirle/squirle.js",
- 								"image|/res/fairy/cannon2/squirle-diffusemap.jpg",
- 								"image|/res/fairy/cannon2/squirle-normalmap.jpg",
- 								"smoothedfilegeo|0|/res/fairy/griffin/griffin.js",
- 								"image|/res/fairy/griffin/griffin-diffusemap.jpg",
- 								"image|/res/fairy/griffin/griffin-normalmap.jpg",
-                                "smoothedfilegeo|0|/res/fairy/huscarl/huscarl.js",
- 								"image|/res/fairy/huscarl/huscarl-diffusemap.jpg",
- 								"image|/res/fairy/huscarl/huscarl-normalmap.jpg",
+ 								"smoothedfilegeo|0|/res/fairy/squirrel/squirrel.js",
+ 								"image|/res/fairy/squirrel/squirrel-diffusemap.jpg",
+ 								"image|/res/fairy/squirrel/squirrel-normalmap.jpg",
+ 								"smoothedfilegeo|0|/res/fairy/griffon/griffon.js",
+ 								"image|/res/fairy/griffon/griffon-diffusemap.jpg",
+ 								"image|/res/fairy/griffon/griffon-normalmap.jpg",
+                                "smoothedfilegeo|0|/res/fairy/axe/axe.js",
+ 								"image|/res/fairy/axe/axe-diffusemap.jpg",
+ 								"image|/res/fairy/axe/axe-normalmap.jpg",
                                 "smoothedfilegeo|0|/res/fairy/hawk/hawk.js",
  								"image|/res/fairy/hawk/hawk-diffusemap.jpg",
  								"image|/res/fairy/hawk/hawk-normalmap.jpg",
@@ -5630,15 +5626,15 @@ exports.games = (function () {
  								"smoothedfilegeo|0|/res/fairy/mamoth/elephant.js",
  								"image|/res/fairy/mamoth/mamoth-diffusemap.jpg",
  								"image|/res/fairy/mamoth/mamoth-normalmap.jpg",
- 								"smoothedfilegeo|0|/res/fairy/squirle/squirle.js",
- 								"image|/res/fairy/cannon2/squirle-diffusemap.jpg",
- 								"image|/res/fairy/cannon2/squirle-normalmap.jpg",
- 								"smoothedfilegeo|0|/res/fairy/griffin/griffin.js",
- 								"image|/res/fairy/griffin/griffin-diffusemap.jpg",
- 								"image|/res/fairy/griffin/griffin-normalmap.jpg",
-                                "smoothedfilegeo|0|/res/fairy/huscarl/huscarl.js",
- 								"image|/res/fairy/huscarl/huscarl-diffusemap.jpg",
- 								"image|/res/fairy/huscarl/huscarl-normalmap.jpg",
+ 								"smoothedfilegeo|0|/res/fairy/squirrel/squirrel.js",
+ 								"image|/res/fairy/squirrel/squirrel-diffusemap.jpg",
+ 								"image|/res/fairy/squirrel/squirrel-normalmap.jpg",
+ 								"smoothedfilegeo|0|/res/fairy/griffon/griffon.js",
+ 								"image|/res/fairy/griffon/griffon-diffusemap.jpg",
+ 								"image|/res/fairy/griffon/griffon-normalmap.jpg",
+                                "smoothedfilegeo|0|/res/fairy/axe/axe.js",
+ 								"image|/res/fairy/axe/axe-diffusemap.jpg",
+ 								"image|/res/fairy/axe/axe-normalmap.jpg",
                                 "smoothedfilegeo|0|/res/fairy/hawk/hawk.js",
  								"image|/res/fairy/hawk/hawk-diffusemap.jpg",
  								"image|/res/fairy/hawk/hawk-normalmap.jpg",
@@ -6051,11 +6047,8 @@ exports.games = (function () {
  					"thumbnail": "res/rules/duodecimal/wild-timurid-thumb.png",
  					"released": 1497874349,
  					"credits": {
-<<<<<<< HEAD
+
  						"en": "res/rules/duodecimal/timurid-credits.html"
-=======
- 						"en": "timurid-credits.html"
->>>>>>> 21cf4c8 (add nex Fairy piece : terror, a dragon used in makromachy)
  					},
  					"gameOptions": config_model_gameOptions,
  					"obsolete": false,
@@ -6257,11 +6250,7 @@ exports.games = (function () {
  					"released": 1497874349,
 
  					"credits": {
-<<<<<<< HEAD
  						"en": "res/rules/duodecimal/timurid-credits.html"
-=======
- 						"en": "timurid-credits.html"
->>>>>>> 21cf4c8 (add nex Fairy piece : terror, a dragon used in makromachy)
  					},
  					"gameOptions": config_model_gameOptions,
  					"obsolete": false,
@@ -6365,11 +6354,7 @@ exports.games = (function () {
  					"released": 1497874349,
 
  					"credits": {
-<<<<<<< HEAD
  						"en": "res/rules/duodecimal/timurid-credits.html"
-=======
- 						"en": "timurid-credits.html"
->>>>>>> 21cf4c8 (add nex Fairy piece : terror, a dragon used in makromachy)
  					},
  					"gameOptions": config_model_gameOptions,
  					"obsolete": false,
@@ -6472,21 +6457,13 @@ exports.games = (function () {
  					"released": 1497874349,
 
  					"credits": {
-<<<<<<< HEAD
  						"en": "res/rules/duodecimal/timurid-credits.html"
-=======
- 						"en": "timurid-credits.html"
->>>>>>> 21cf4c8 (add nex Fairy piece : terror, a dragon used in makromachy)
  					},
  					"gameOptions": config_model_gameOptions,
  					"obsolete": false,
  					"js": modelScripts_babur,
  					"description": {
-<<<<<<< HEAD
  						"en": "res/rules/duodecimal/wild-babur-description.html"
-=======
- 						"en": "wild-babur-description"
->>>>>>> 21cf4c8 (add nex Fairy piece : terror, a dragon used in makromachy)
  					},
  					"levels": config_model_levels_15
  				},
@@ -6645,7 +6622,7 @@ exports.games = (function () {
 								"smoothedfilegeo|0|/res/fairy/lion/lion.js",
 								"image|/res/fairy/lion/lion-diffusemap.jpg",
 								"image|/res/fairy/lion/lion-normalmap.jpg",
-                                "smoothedfilegeo|0|/res/fairy/bow/bow.js",
+								"smoothedfilegeo|0|/res/fairy/bow/bow.js",
 								"image|/res/fairy/bow/bow-diffusemap.jpg",
 								"image|/res/fairy/bow/bow-normalmap.jpg",
 								"smoothedfilegeo|0|/res/fairy/machine/machine.js",
@@ -6815,19 +6792,19 @@ exports.games = (function () {
 					"title-en": "Elven Chess",
 					"summary": "10x10 variant with double-capturing super-piece",
 					"rules": {
-						"en": "decimal/elven-rules.html"
+						"en": "res/rules/decimal/elven-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
 					"thumbnail": "res/rules/elven/elven-thumb.png",
 					"released": 1396536978,
 					"credits": {
-						"en": "decimal/elven-credits.html"
+						"en": "res/rules/decimal/elven-credits.html"
 					},
 					"gameOptions": config_model_gameOptions_2,
 					"js": modelScripts_102,
 					"description": {
-						"en": "decimal/elven-description.html"
+						"en": "res/rules/decimal/elven-description.html"
 					},
 					"levels": config_model_levels_15
 				},
@@ -6943,19 +6920,19 @@ exports.games = (function () {
 					"title-en": "Scirocco",
 					"summary": "10x10 variant with weak but promoting pieces",
 					"rules": {
-						"en": "decimal/scirocco-rules.html"
+						"en": "res/rules/decimal/scirocco-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
 					"thumbnail": "res/rules/scirocco/scirocco-thumb.png",
 					"released": 1396536978,
 					"credits": {
-						"en": "decimal/scirocco-credits.html"
+						"en": "res/rules/decimal/scirocco-credits.html"
 					},
 					"gameOptions": config_model_gameOptions_2,
 					"js": modelScripts_104,
 					"description": {
-						"en": "decimal/scirocco-description.html"
+						"en": "res/rules/decimal/scirocco-description.html"
 					},
 					"levels": config_model_levels_15
 				},
@@ -7007,19 +6984,19 @@ exports.games = (function () {
 					"title-en": "Shogi",
 					"summary": "Japanese Chess",
 					"rules": {
-						"en": "shogi-rules.html"
+						"en": "res/rules/shogi/shogi-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
 					"thumbnail": "res/rules/shogi/shogi-thumb.png",
 					"released": 1396536978,
 					"credits": {
-						"en": "shogi/shogi-credits.html"
+						"en": "res/rules/shogi/shogi-credits.html"
 					},
 					"gameOptions": config_model_gameOptions_2,
 					"js": modelScripts_105,
 					"description": {
-						"en": "shogi/shogi-description.html"
+						"en": "res/rules/shogi/shogi-description.html"
 					},
 					"levels": config_model_levels_15
 				},
@@ -7051,6 +7028,14 @@ exports.games = (function () {
 							"world": config_view_skins_world,
 							"camera": config_view_skins_camera
 						},
+						/*{
+							"name": "skin2dwestern",
+							"title": "2D Western",
+							"3d": false,
+							"preload": [
+								"image|/res/shogi/shogi-sprites-western.png"
+							]
+						},*/
 						config_view_skins_2
 					],
 					"animateSelfMoves": false,
@@ -7071,19 +7056,19 @@ exports.games = (function () {
 					"title-en": "Mini-Shogi",
 					"summary": "Shogi on 5x5 with 6 pieces",
 					"rules": {
-						"en": "mini-shogi-rules.html"
+						"en": "res/rules/shogi/mini-shogi-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
 					"thumbnail": "res/rules/shogi/shogi-thumb.png",
 					"released": 1396536978,
 					"credits": {
-						"en": "shogi/shogi-credits.html"
+						"en": "res/rules/shogi/shogi-credits.html"
 					},
 					"gameOptions": config_model_gameOptions_2,
 					"js": modelScripts_107,
 					"description": {
-						"en": "shogi/mini-shogi-description.html"
+						"en": "res/rules/shogi/mini-shogi-description.html"
 					},
 					"levels": config_model_levels_15
 				},
@@ -7115,6 +7100,14 @@ exports.games = (function () {
 							"world": config_view_skins_world,
 							"camera": config_view_skins_camera
 						},
+						/*{
+							"name": "skin2dwestern",
+							"title": "2D Western",
+							"3d": false,
+							"preload": [
+								"image|/res/shogi/shogi-sprites-western.png"
+							]
+						},*/
 						config_view_skins_2
 					],
 					"animateSelfMoves": false,
@@ -7135,19 +7128,19 @@ exports.games = (function () {
 					"title-en": "Tori Shogi",
 					"summary": "7x7 Shogi Variant with bird pieces",
 					"rules": {
-						"en": "shogi/tori-shogi-rules.html"
+						"en": "res/rules/shogi/tori-shogi-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
 					"thumbnail": "res/rules/shogi/tori-shogi-thumb.png",
 					"released": 1396536978,
 					"credits": {
-						"en": "shogi/shogi-credits.html"
+						"en": "res/rules/shogi/shogi-credits.html"
 					},
 					"gameOptions": config_model_gameOptions_2,
 					"js": modelScripts_106,
 					"description": {
-						"en": "shogi/tori-shogi-description.html"
+						"en": "res/rules/shogi/tori-shogi-description.html"
 					},
 					"levels": config_model_levels_15
 				},
@@ -7199,19 +7192,19 @@ exports.games = (function () {
 					"title-en": "Chu Shogi",
 					"summary": "Historic 12x12 Shogi variant",
 					"rules": {
-						"en": "shogi/chu-shogi-rules.html"
+						"en": "res/rules/shogi/chu-shogi-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
 					"thumbnail": "res/rules/shogi/chu-shogi-thumb.png",
 					"released": 1396536978,
 					"credits": {
-						"en": "shogi/shogi-credits.html"
+						"en": "res/rules/shogi/shogi-credits.html"
 					},
 					"gameOptions": config_model_gameOptions_2,
 					"js": modelScripts_108,
 					"description": {
-						"en": "shogi/chu-shogi-description.html"
+						"en": "res/rules/shogi/chu-shogi-description.html"
 					},
 					"levels": config_model_levels_15
 				},
@@ -7263,19 +7256,19 @@ exports.games = (function () {
 					"title-en": "Makromachy",
 					"summary": "14x14 variant with flying pieces",
 					"rules": {
-						"en": "makromachy-rules.html"
+						"en": "res/rules/makromachy/makromachy-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
-					"thumbnail": "res/rules/makromachy-thumb.png",
+					"thumbnail": "res/rules/makromachy/makromachy-thumb.png",
 					"released": 1396536978,
 					"credits": {
-						"en": "makromachy-credits.html"
+						"en": "res/rules/makromachy/makromachy-credits.html"
 					},
 					"gameOptions": config_model_gameOptions_2,
 					"js": modelScripts_109,
 					"description": {
-						"en": "makromachy-description.html"
+						"en": "res/rules/makromachy/makromachy-description.html"
 					},
 					"levels": config_model_levels_15
 				},
@@ -7327,20 +7320,20 @@ exports.games = (function () {
 					"title-en": "Minjiku Shogi",
 					"summary": "10x10 variant with flying pieces and Fire Dragon",
 					"rules": {
-						"en": "minjiku-rules.html"
+						"en": "res/rules/minjiku-shogi/minjiku-shogi-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
-					"thumbnail": "res/rules/minjiku-thumb.png",
+					"thumbnail": "res/rules/minjiku/minjiku-shogi-thumb.png",
 					"released": 1396536978,
 					"credits": {
-						"en": "minjiku-credits.html"
+						"en": "res/rules/minjiku-shogi/minjiku-credits.html"
 					},
 					"gameOptions": config_model_gameOptions_2,
 					"js": modelScripts_110,
 
 					"description": {
-						"en": "minjiku-description.html"
+						"en": "res/rules/minjiku-shogi/minjiku-description.html"
 					},
 					"levels": config_model_levels_15
 				},
@@ -7435,9 +7428,9 @@ exports.games = (function () {
 								"smoothedfilegeo|0|/res/fairy/pawn/pawn.js",
 								"image|/res/fairy/pawn/pawn-diffusemap.jpg",
 								"image|/res/fairy/pawn/pawn-normalmap.jpg",
-								"smoothedfilegeo|0|/res/fairy/griffin/griffin.js",
- 								"image|/res/fairy/griffin/griffin-diffusemap.jpg",
- 								"image|/res/fairy/griffin/griffin-normalmap.jpg",
+								"smoothedfilegeo|0|/res/fairy/griffon/griffon.js",
+ 								"image|/res/fairy/griffon/griffon-diffusemap.jpg",
+ 								"image|/res/fairy/griffon/griffon-normalmap.jpg",
 								"smoothedfilegeo|0|/res/fairy/bishop/bishop.js",
 								"image|/res/fairy/bishop/bishop-diffusemap.jpg",
 								"image|/res/fairy/bishop/bishop-normalmap.jpg",

@@ -54,12 +54,12 @@
 			},
 			"fr-ferz": {
 				"2d": {
-					clipx: 3900,
+					clipx: 3800,
 				},
 			},
 			"fr-wazir": {
 				"2d": {
-					clipx: 3800,
+					clipx: 3700,
 				},
 			},
 			"fr-knight": {
@@ -74,7 +74,7 @@
 			},
 			"fr-small-bishop": {
 				"2d": {
-					clipx: 3400,
+					clipx: 3600,
 				},
 			},
 			"fr-saint": {
@@ -89,12 +89,12 @@
 			},
 			"fr-small-rook": {
 				"2d": {
-					clipx: 3500,
+					clipx: 3300,
 				},
 			},
 			"fr-gate": {
 				"2d": {
-					clipx: 3600,
+					clipx: 3400,
 				},
 			},
 			"fr-queen": {
@@ -119,7 +119,7 @@
 			},
 			"fr-man": {
 				"2d": {
-					clipx: 3700,
+					clipx: 3900,
 				},
 			},
 			"fr-cannon": {
@@ -293,44 +293,9 @@
 					clipx: 3100,
 				},
 			},
-			"fr-saint": {
-				"2d": {
-					clipx: 3200,
-				},
-			},
-			"fr-small-rook": {
-				"2d": {
-					clipx: 3300,
-				},
-			},
-			"fr-gate": {
-				"2d": {
-					clipx: 3400,
-				},
-			},
 			"fr-zebra": {
 				"2d": {
 					clipx: 3500,
-				},
-			},
-			"fr-small-bishop": {
-				"2d": {
-					clipx: 3600,
-				},
-			},
-			"fr-wazir": {
-				"2d": {
-					clipx: 3700,
-				},
-			},
-			"fr-ferz": {
-				"2d": {
-					clipx: 3800,
-				},
-			},
-			"fr-man": {
-				"2d": {
-					clipx: 3900,
 				},
 			},
 			"fr-giraffe": {
@@ -343,7 +308,7 @@
 					clipx: 4100,
 				},
 			},
-			"fr-squirle": {
+			"fr-squirrel": {
 				"2d": {
 					clipx: 4200,
 				},
@@ -368,12 +333,12 @@
 					clipx: 4600,
 				},
 			},
-			"fr-huscarl": {
+			"fr-axe": {
 				"2d": {
 					clipx: 4700,
 					},
 			},
-			"fr-griffin": {
+			"fr-griffon": {
 				"2d": {
 					clipx: 4800,
 					},
@@ -395,7 +360,22 @@
 			},
 			"fr-flying-queen": {
 				"2d": {
-					clipx: 5100,
+					clipx: 6300,
+					},
+			},
+			"fr-flying-rook": {
+				"2d": {
+					clipx: 6400,
+					},
+			},
+			"fr-flying-bishop": {
+				"2d": {
+					clipx: 6500,
+					},
+			},
+			"fr-flying-saint": {
+				"2d": {
+					clipx: 6600,
 					},
 			},
 			"fr-phoenix": {
@@ -438,20 +418,41 @@
 					clipx: 6100,
 					},
 			},
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 21cf4c8 (add nex Fairy piece : terror, a dragon used in makromachy)
 			"fr-terror": {
 				"2d": {
 					clipx: 6200,
 					},
 			},
-<<<<<<< HEAD
-=======
->>>>>>> c4abace (New fairy piece: Flamingo)
-=======
->>>>>>> 21cf4c8 (add nex Fairy piece : terror, a dragon used in makromachy)
+			"fr-samurai": {
+				"2d": {
+					clipx: 6700,
+					},
+			},
+			"fr-owl": {
+				"2d": {
+					clipx: 6800,
+					},
+			},
+			"fr-scout": {
+				"2d": {
+					clipx: 6900,
+					},
+			},
+			"fr-caliph": {
+				"2d": {
+					clipx: 7000,
+					},
+			},
+			"fr-lance": {
+				"2d": {
+					clipx: 7100,
+					},
+			},
+			"fr-sword": {
+				"2d": {
+					clipx: 7200,
+					},
+			},
 		},modifier);
 	}
 
@@ -806,19 +807,41 @@
 
 		"fr-saint": {
 			mesh: {
-				jsFile:"/res/fairy/bishop/tiara.js"
+				jsFile:"/res/fairy/saint/saint.js"
 			},
 			materials: {
 				mat0: {
 					channels: {
 						diffuse: {
 							texturesImg: {
-								diffImg : "/res/fairy/bishop/bishop-diffusemap.jpg",
+								diffImg : "/res/fairy/saint/saint-diffusemap.jpg",
 							}
 						},
 						normal: {
 							texturesImg: {
-								normalImg: "/res/fairy/bishop/bishop-normalmap.jpg",
+								normalImg: "/res/fairy/saint/saint-normalmap.jpg",
+							}
+						}
+					}
+				}
+			},
+		},
+
+		"fr-flying-saint": {
+			mesh: {
+				jsFile:"/res/fairy/saint/flying-saint.js"
+			},
+			materials: {
+				mat0: {
+					channels: {
+						diffuse: {
+							texturesImg: {
+								diffImg : "/res/fairy/saint/fsaint-diffusemap.jpg",
+							}
+						},
+						normal: {
+							texturesImg: {
+								normalImg: "/res/fairy/saint/fsaint-normalmap.jpg",
 							}
 						}
 					}
@@ -951,6 +974,50 @@
 						normal: {
 							texturesImg: {
 								normalImg: "/res/fairy/queen/queen-normalmap.jpg",
+							}
+						}
+					}
+				}
+			},
+		},
+
+		"fr-flying-rook": {
+			mesh: {
+				jsFile:"/res/fairy/rook/flying-rook.js"
+			},
+			materials: {
+				mat0: {
+					channels: {
+						diffuse: {
+							texturesImg: {
+								diffImg : "/res/fairy/rook/rook-diffusemap.jpg",
+							}
+						},
+						normal: {
+							texturesImg: {
+								normalImg: "/res/fairy/rook/rook-normalmap.jpg",
+							}
+						}
+					}
+				}
+			},
+		},
+
+		"fr-flying-bishop": {
+			mesh: {
+				jsFile:"/res/fairy/bishop/flying-bishop.js"
+			},
+			materials: {
+				mat0: {
+					channels: {
+						diffuse: {
+							texturesImg: {
+								diffImg : "/res/fairy/bishop/bishop-diffusemap.jpg",
+							}
+						},
+						normal: {
+							texturesImg: {
+								normalImg: "/res/fairy/bishop/bishop-normalmap.jpg",
 							}
 						}
 					}
@@ -1726,21 +1793,21 @@
 				}
 			}
 		},
-		"fr-squirle": {
+		"fr-squirrel": {
 			mesh: {
-				jsFile:"/res/fairy/squirle/squirle.js"
+				jsFile:"/res/fairy/squirrel/squirrel.js"
 			},
 			materials: {
 				mat0: {
 					channels: {
 						diffuse: {
 							texturesImg: {
-								diffImg : "/res/fairy/squirle/squirle-diffusemap.jpg",
+								diffImg : "/res/fairy/squirrel/squirrel-diffusemap.jpg",
 							}
 						},
 						normal: {
 							texturesImg: {
-								normalImg: "/res/fairy/squirle/squirle-normalmap.jpg",
+								normalImg: "/res/fairy/squirrel/squirrel-normalmap.jpg",
 							}
 						}
 					}
@@ -1831,42 +1898,42 @@
 				}
 			}
 		},
-		"fr-huscarl": {
+		"fr-axe": {
 			mesh: {
-				jsFile:"/res/fairy/huscarl/huscarl.js"
+				jsFile:"/res/fairy/axe/axe.js"
 			},
 			materials: {
 				mat0: {
 					channels: {
 						diffuse: {
 							texturesImg: {
-								diffImg : "/res/fairy/huscarl/huscarl-diffusemap.jpg",
+								diffImg : "/res/fairy/axe/axe-diffusemap.jpg",
 							}
 						},
 						normal: {
 							texturesImg: {
-								normalImg: "/res/fairy/huscarl/huscarl-normalmap.jpg",
+								normalImg: "/res/fairy/axe/axe-normalmap.jpg",
 							}
 						}
 					}
 				}
 			}
 		},
-		"fr-griffin": {
+		"fr-griffon": {
 			mesh: {
-				jsFile:"/res/fairy/griffin/griffin.js"
+				jsFile:"/res/fairy/griffon/griffon.js"
 			},
 			materials: {
 				mat0: {
 					channels: {
 						diffuse: {
 							texturesImg: {
-								diffImg : "/res/fairy/griffin/griffin-diffusemap.jpg",
+								diffImg : "/res/fairy/griffon/griffon-diffusemap.jpg",
 							}
 						},
 						normal: {
 							texturesImg: {
-								normalImg: "/res/fairy/griffin/griffin-normalmap.jpg",
+								normalImg: "/res/fairy/griffon/griffon-normalmap.jpg",
 							}
 						}
 					}
@@ -2083,6 +2150,90 @@
 				}
 			},
 		},
+		"fr-owl": {
+			mesh: {
+				jsFile:"/res/fairy/birds/owl.js"
+			},
+			materials: {
+				mat0: {
+					channels: {
+						diffuse: {
+							texturesImg: {
+								diffImg : "/res/fairy/birds/owl-diffusemap.jpg",
+							}
+						},
+						normal: {
+							texturesImg: {
+								normalImg: "/res/fairy/birds/owl-normalmap.jpg",
+							}
+						}
+					}
+				}
+			},
+		},
+		"fr-scout": {
+			mesh: {
+				jsFile:"/res/fairy/persons/scout.js"
+			},
+			materials: {
+				mat0: {
+					channels: {
+						diffuse: {
+							texturesImg: {
+								diffImg : "/res/fairy/persons/scout-diffusemap.jpg",
+							}
+						},
+						normal: {
+							texturesImg: {
+								normalImg: "/res/fairy/persons/scout-normalmap.jpg",
+							}
+						}
+					}
+				}
+			},
+		},
+		"fr-lance": {
+			mesh: {
+				jsFile:"/res/fairy/arms/lance.js"
+			},
+			materials: {
+				mat0: {
+					channels: {
+						diffuse: {
+							texturesImg: {
+								diffImg : "/res/fairy/arms/lance-diffusemap.jpg",
+							}
+						},
+						normal: {
+							texturesImg: {
+								normalImg: "/res/fairy/arms/lance-normalmap.jpg",
+							}
+						}
+					}
+				}
+			},
+		},
+		"fr-sword": {
+			mesh: {
+				jsFile:"/res/fairy/arms/sword.js"
+			},
+			materials: {
+				mat0: {
+					channels: {
+						diffuse: {
+							texturesImg: {
+								diffImg : "/res/fairy/arms/sword-diffusemap.jpg",
+							}
+						},
+						normal: {
+							texturesImg: {
+								normalImg: "/res/fairy/arms/sword-normalmap.jpg",
+							}
+						}
+					}
+				}
+			},
+		},
 		"fr-rhino2": {
 			mesh: {
 				jsFile:"/res/fairy/rhino/rhino2.js"
@@ -2098,6 +2249,27 @@
 						normal: {
 							texturesImg: {
 								normalImg: "/res/fairy/rhino/rhino2-normalmap.jpg",
+							}
+						}
+					}
+				}
+			},
+		},
+		"fr-samurai": {
+			mesh: {
+				jsFile:"/res/fairy/persons/samurai.js"
+			},
+			materials: {
+				mat0: {
+					channels: {
+						diffuse: {
+							texturesImg: {
+								diffImg : "/res/fairy/persons/samurai-diffusemap.jpg",
+							}
+						},
+						normal: {
+							texturesImg: {
+								normalImg: "/res/fairy/persons/samurai-normalmap.jpg",
 							}
 						}
 					}
@@ -2167,7 +2339,5 @@
 				}
 			},
 		},
-
 	});
 })();
-

@@ -12,7 +12,7 @@
         return $this.cbSkiGraph(geometry,[[0,1],[0,-1]],1);
 	}
 
-    /** Move graph for the Snake */
+    /** Move graph for the Ship */
 	Model.Game.cbShipGraph = function(geometry){
 		var $this=this;
 
@@ -136,8 +136,8 @@
 					initial: [{s:1,p:1},{s:1,p:14},{s:-1,p:241},{s:-1,p:254}],
 				},
 				4: {
-					name: 'squirle',
-					aspect: 'fr-squirle',
+					name: 'squirrel',
+					aspect: 'fr-squirrel',
 					graph: this.cbShortRangeGraph(geometry,[
 						[-2,0],[-2,-1],[-2,-2],[-1,-2],[0,-2],
 						[1,-2],[2,-2],[2,-1],[2,0],[2,1],
@@ -171,7 +171,7 @@
 				},
 				7: {
 					name: 'snake',
-					aspect: 'fr-dragon',
+					aspect: 'fr-cobra',
 					graph: this.cbSnakeGraph(geometry),
 					value: 3.7,
 					abbrev: 'N',
@@ -189,7 +189,7 @@
       			9: {
                     name : 'troll-w',
                     abbrev : 'T',
-                    aspect : 'fr-huscarl',
+                    aspect : 'fr-axe',
                     graph : this.cbMergeGraphs(geometry,
                   this.cbPawnGraph(geometry,1),
                   this.cbShortRangeGraph(geometry,[
@@ -201,7 +201,7 @@
                 10: {
                     name : 'troll-b',
                     abbrev : 'T',
-                    aspect : 'fr-huscarl',
+                    aspect : 'fr-axe',
                     graph : this.cbMergeGraphs(geometry,
                   this.cbPawnGraph(geometry,-1),
                   this.cbShortRangeGraph(geometry,[
@@ -232,7 +232,7 @@
       			13: {
                   name : 'griffon',
                   abbrev : 'G',
-                  aspect : 'fr-griffin',
+                  aspect : 'fr-griffon',
                   graph : this.cbGriffonGraph(geometry),
                   value : 9,
                   initial: [{s:1,p:25},{s:-1,p:233}],
@@ -240,7 +240,7 @@
       			14: {
                   name : 'rhino',
                   abbrev : 'U',
-                  aspect : 'fr-rhino',
+                  aspect : 'fr-rhino2',
                   graph : this.cbRhinoGraph(geometry),
                   value : 8.1,
                   initial: [{s:1,p:10},{s:-1,p:250}],

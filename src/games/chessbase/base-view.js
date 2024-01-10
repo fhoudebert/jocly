@@ -608,9 +608,17 @@
 											promoMoves.forEach(function(move,index) {
 												var aspect=cbVar.pieceTypes[move.pr].aspect || cbVar.pieceTypes[move.pr].name;
 												var aspectSpec = $.extend(true,{},aGame.cbView.pieces["default"],aGame.cbView.pieces[aspect]);
+												
 												if(aGame.cbView.pieces[this.mWho])
 													aspectSpec = $.extend(true,aspectSpec,
 															aGame.cbView.pieces[this.mWho]["default"],aGame.cbView.pieces[this.mWho][aspect]);
+													
+													// use alternative skin sprites for promotion when specified
+													if( typeof aspectSpec[xdv.game.mSkin] !== "undefined"){														
+														aspectSpec["2d"].file = aspectSpec[xdv.game.mSkin].file;
+													}
+														
+
 												xdv.updateGadget("promo#"+move.pr, {
 													base: $.extend(aspectSpec["2d"], { 
 														x: (index-promoMoves.length/2)*aGame.cbPromoSize 
@@ -751,18 +759,18 @@
 				var x2=displaySpec[skin].x, y2=displaySpec[skin].y;
 				var xa=x0, xb=x2, ya=y0, yb=y2;
 				var h=1, l=1, dx = Math.abs(x2-x0), dy = Math.abs(y2-y0);
-				if(hop <= 0) { // use bent trajectory for oblique slides
+				if(hop < 0) { // use bent trajectory for oblique slides
 					if(dx<dy) {
 						h = dy - dx; l = dy;
-						if(2*h <= l + hop)
+						if(hop==-1)
 							xa = (l*x0 - h*x2)/(l-h), xb = x0;
-						else if(dx)
+						else if(hop==-2)
 							xb = (l*x2 - h*x0)/(l-h), xa = x2, h = l - h;
 					} else {
 						h = dx - dy; l = dx;
-						if(2*h <= l + hop)
+						if(hop==-1)
 							ya = (l*y0 - h*y2)/(l-h), yb = y0;
-						else if(dy)
+						else if(hop==-2)
 							yb = (l*y2 - h*y0)/(l-h), ya = y2, h = l - h;
 					}
 					h /= l;

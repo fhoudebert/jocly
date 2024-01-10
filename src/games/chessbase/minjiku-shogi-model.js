@@ -103,7 +103,7 @@
 		    2: { // shogi generals also are directional
 			name : 'silverw',
 			abbrev : 'S',
-			aspect : 'fr-admiral',
+			aspect : 'fr-silver',
 			graph : this.cbShortRangeGraph(geometry,[[1,1],[-1,1],[1,-1],[-1,-1],[0,1]],area),
 			value : 2.30,
 			initial: [{s:1,p:12},{s:1,p:17}],
@@ -112,7 +112,7 @@
 		    3: {
 			name : 'silverb',
 			abbrev : 'S',
-			aspect : 'fr-admiral',
+			aspect : 'fr-silver',
 			graph : this.cbShortRangeGraph(geometry,[[1,1],[-1,1],[1,-1],[-1,-1],[0,-1]],area),
 			value : 2.30,
 			initial: [{s:-1,p:102},{s:-1,p:107}],
@@ -121,7 +121,7 @@
 		    4: {
 			name : 'goldw',
 			abbrev : 'G',
-			aspect : 'fr-lighthouse',
+			aspect : 'fr-gold',
 			graph : this.cbShortRangeGraph(geometry,[[1,0],[-1,0],[0,1],[0,-1],[1,1],[-1,1]],area),
 			value : 2.93,
 			initial: [{s:1,p:13},{s:1,p:16}],
@@ -130,7 +130,7 @@
 		    5: {
 			name : 'goldb',
 			abbrev : 'G',
-			aspect : 'fr-lighthouse',
+			aspect : 'fr-gold',
 			graph : this.cbShortRangeGraph(geometry,[[1,0],[-1,0],[0,1],[0,-1],[1,-1],[-1,-1]],area),
 			value : 2.93,
 			initial: [{s:-1,p:103},{s:-1,p:106}],
@@ -148,7 +148,7 @@
 		    7: {
 			name : 'kirin',
 			abbrev : 'Y',
-			aspect : 'fr-rhino',
+			aspect : 'fr-giraffe',
 			graph : this.cbShortRangeGraph(geometry,[[1,1],[1,-1],[-1,1],[-1,-1],[2,0],[-2,0],[0,2],[0,-2]],area),
 			value : 3.44,
 			initial: [{s:1,p:21},{s:-1,p:98}],
@@ -157,7 +157,7 @@
 		    8: {
 			name : 'phoenix',
 			abbrev : 'X',
-			aspect : 'fr-stork',
+			aspect : 'fr-phoenix',
 			graph : this.cbShortRangeGraph(geometry,[[2,2],[2,-2],[-2,2],[-2,-2],[1,0],[-1,0],[0,1],[0,-1]],area),
 			value : 4.07,
 			initial: [{s:1,p:28},{s:-1,p:91}],
@@ -194,7 +194,7 @@
 		    12: { // flying piece: Bishop that can jump over arbitrary many to capture
 			name : 'diagonal jumper',
 			abbrev : 'D',
-			aspect : 'fr-bow',
+			aspect : 'fr-flying-bishop',
 			graph : this.cbLongRangeGraph(geometry,[[1,1],[-1,1],[1,-1],[-1,-1]],area,flying),
 			value : 6.13,
 			initial: [{s:1,p:22},{s:1,p:27},{s:-1,p:92},{s:-1,p:97}],
@@ -267,7 +267,7 @@
 		    20: { // flying piece: Rook that can jump over arbitrary many to capture
 			name : 'orthogonal jumper',
 			abbrev : '+M',
-			aspect : 'fr-cannon',
+			aspect : 'fr-flying-rook',
 			graph : this.cbLongRangeGraph(geometry,[[1,0],[-1,0],[0,1],[0,-1]],area,flying),
 			value : 7.80,
 			ranking: 3,
@@ -276,7 +276,7 @@
 		    21: {
 			name : 'samurai',
 			abbrev : '+Y',
-			aspect : 'fr-ferz-knight',
+			aspect : 'fr-samurai',
 			graph : this.cbMergeGraphs(geometry,
 			            this.cbShortRangeGraph(geometry,adjacent,area,rifle),
 			            this.cbKnightGraph(geometry,area)),
@@ -286,7 +286,7 @@
 		    22: {
 			name : 'queen',
 			abbrev : '+X',
-			aspect : 'fr-proper-queen',
+			aspect : 'fr-queen',
 			graph : this.cbQueenGraph(geometry,area),
 			value : 9.52,
 		    },
@@ -296,7 +296,7 @@
 			abbrev : '+L',
 			aspect : 'fr-ship',
 			graph : this.cbMergeGraphs(geometry,
-			            this.cbSkiGraph(geometry,[[1,0],[-1,0]],1,-1),
+			            this.cbSkiGraph(geometry,[[1,0],[-1,0]],0,-1),
 			            this.cbShortRangeGraph(geometry,[[1,0],[0,-1],[-1,0],[0,1]],area,rifle),
 			            this.cbFersGraph(geometry,area)),
 			value : 4.64,
@@ -335,7 +335,7 @@
 		    27: {
 			name : 'area jumper',
 			abbrev : 'A',
-			aspect : 'fr-cannon2',
+			aspect : 'fr-flying-saint',
 			graph : this.cbMergeGraphs(geometry,
 					this.cbLongRangeGraph(geometry,[[1,1],[-1,1],[1,-1],[-1,-1]],area,flying),
 					this.cbLongRangeGraph(geometry,[[1,0],[-1,0],[0,1],[0,-1]],area,undefined,2),
@@ -348,7 +348,7 @@
 		    28: { // flying piece: Queen that can jump over arbitrary many to capture
 			name : 'jumping general',
 			abbrev : 'J',
-			aspect : 'fr-star',
+			aspect : 'fr-flying-queen',
 			graph : this.cbLongRangeGraph(geometry,adjacent,null,flying),
 			value : 20.00,
 			initial: [{s:1,p:25},{s:-1,p:94}],
@@ -359,7 +359,7 @@
 		    29: { // burns on move and capture
 			name : 'fire dragon',
 			abbrev : 'F',
-			aspect : 'fr-dragon',
+			aspect : 'fr-terror',
 			graph : this.cbMergeGraphs(geometry,
 			            this.cbLongRangeGraph(geometry,adjacent,area,burning),
 			            AreaGraph(geometry,area)),

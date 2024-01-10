@@ -327,7 +327,7 @@
       13: {
       name : 'rhino',
       abbrev : 'U',
-      aspect : 'fr-rhino',
+      aspect : 'fr-rhino2',
       graph : this.cbRhinoGraph(geometry,confine),
       value : 6.1,
       initial: [{s:1,p:6},{s:-1,p:246}],
@@ -424,7 +424,7 @@
       22: {
       name : 'eagle',
       abbrev : 'H',
-      aspect : 'fr-griffin',
+      aspect : 'fr-griffon',
       graph : this.cbEagleGraph(geometry),
       value : 8.4,
       initial: [{s:1,p:24},{s:-1,p:232}],

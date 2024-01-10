@@ -23,6 +23,9 @@
 						width: 850,
 						height: 850,						
 					},
+                   /* // Uncomment to add a western skin
+                    "skin2dwestern": this.cbShogiWesternPieceStyle()["default"]["2d"],
+                    */
 					"3d": {
 						scale: [.42,.42,.42],
 					},
@@ -79,4 +82,3 @@
 	}
 
 })();
-
