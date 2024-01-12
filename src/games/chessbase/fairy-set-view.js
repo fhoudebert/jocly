@@ -453,6 +453,11 @@
 					clipx: 7200,
 					},
 			},
+			"fr-tiger": {
+				"2d": {
+					clipx: 7300,
+					},
+			},
 		},modifier);
 	}
 
@@ -2339,5 +2344,27 @@
 				}
 			},
 		},
+		"fr-tiger": {
+			mesh: {
+				jsFile:"/res/fairy/tiger/tiger.js"
+			},
+			materials: {
+				mat0: {
+					channels: {
+						diffuse: {
+							texturesImg: {
+								diffImg : "/res/fairy/tiger/tiger-diffusemap.jpg",
+							}
+						},
+						normal: {
+							texturesImg: {
+								normalImg: "/res/fairy/tiger/tiger-normalmap.jpg",
+							}
+						}
+					}
+				}
+			},
+		},
+
 	});
 })();
