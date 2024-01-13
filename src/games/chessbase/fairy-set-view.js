@@ -2192,6 +2192,27 @@
 				}
 			},
 		},
+		"fr-caliph": {
+			mesh: {
+				jsFile:"/res/fairy/persons/caliph.js"
+			},
+			materials: {
+				mat0: {
+					channels: {
+						diffuse: {
+							texturesImg: {
+								diffImg : "/res/fairy/persons/caliph-diffusemap.jpg",
+							}
+						},
+						normal: {
+							texturesImg: {
+								normalImg: "/res/fairy/persons/caliph-normalmap.jpg",
+							}
+						}
+					}
+				}
+			},
+		},
 		"fr-lance": {
 			mesh: {
 				jsFile:"/res/fairy/arms/lance.js"

@@ -631,6 +631,12 @@ exports.games = (function () {
 		"grid-geo-model.js",
 		"famous/shatranj-model.js"
 	]
+	var modelScripts_kyoto = [
+		"base-model.js",
+		"grid-geo-model.js",
+		"drop-model.js",
+		"shogi/kyoto-shogi-model.js"
+	]
 	var config_model_gameOptions_levelOptions_3 = {
 		"checkFactor": 0.2,
 		"pieceValueFactor": 1,
@@ -6664,19 +6670,19 @@ exports.games = (function () {
 					"title-en": "Team-Mate Chess",
 					"summary": "8x8 variant with many different pieces",
 					"rules": {
-						"en": "team-mate-rules.html"
+						"en": "res/rules/team-mate/team-mate-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
-					"thumbnail": "team-mate-thumb.png",
+					"thumbnail": "res/rules/team-mate/team-mate-thumb.png",
 					"released": 1396536978,
 					"credits": {
-						"en": "team-mate-credits.html"
+						"en": "res/rules/team-mate/team-mate-credits.html"
 					},
 					"gameOptions": config_model_gameOptions_2,
 					"js": modelScripts_100,
 					"description": {
-						"en": "team-mate-description.html"
+						"en": "res/rules/team-mate/team-mate-description.html"
 					},
 					"levels": config_model_levels_15
 				},
@@ -6732,15 +6738,15 @@ exports.games = (function () {
 					},
 					"module": "chessbase",
 					"plazza": "true",
-					"thumbnail": "werewolf-thumb.png",
+					"thumbnail": "res/rules/werewolf/werewolf-thumb.png",
 					"released": 1396536978,
 					"credits": {
-						"en": "werewolf-credits.html"
+						"en": "res/rules/werewolf/werewolf-credits.html"
 					},
 					"gameOptions": config_model_gameOptions_2,
 					"js": modelScripts_101,
 					"description": {
-						"en": "werewolf-description.html"
+						"en": "res/rules/werewolf/werewolf-description.html"
 					},
 					"levels": config_model_levels_15
 				},
@@ -6792,19 +6798,19 @@ exports.games = (function () {
 					"title-en": "Elven Chess",
 					"summary": "10x10 variant with double-capturing super-piece",
 					"rules": {
-						"en": "res/rules/decimal/elven-rules.html"
+						"en": "res/rules/elven/elven-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
 					"thumbnail": "res/rules/elven/elven-thumb.png",
 					"released": 1396536978,
 					"credits": {
-						"en": "res/rules/decimal/elven-credits.html"
+						"en": "res/rules/elven/elven-credits.html"
 					},
 					"gameOptions": config_model_gameOptions_2,
 					"js": modelScripts_102,
 					"description": {
-						"en": "res/rules/decimal/elven-description.html"
+						"en": "res/rules/elven/elven-description.html"
 					},
 					"levels": config_model_levels_15
 				},
@@ -7148,8 +7154,8 @@ exports.games = (function () {
 					"title-en": "Chessbase view",
 					"visuals": {
 						"600x600": [
-							"res/visuals/tori-600x600-3d.jpg",
-							"res/visuals/tori-600x600-2d.jpg"
+							"res/visuals/tori-600x600-3d.png",
+							"res/visuals/tori-600x600-2d.png"
 						]
 					},
 					"xdView": true,
@@ -7183,134 +7189,7 @@ exports.games = (function () {
 			},
 			"viewScripts": config_view_js_106
 		},
-		{
-			"name": "chu-shogi",
-			"modelScripts": modelScripts_108,
-			"config": {
-				"status": true,
-				"model": {
-					"title-en": "Chu Shogi",
-					"summary": "Historic 12x12 Shogi variant",
-					"rules": {
-						"en": "res/rules/shogi/chu-shogi-rules.html"
-					},
-					"module": "chessbase",
-					"plazza": "true",
-					"thumbnail": "res/rules/shogi/chu-shogi-thumb.png",
-					"released": 1396536978,
-					"credits": {
-						"en": "res/rules/shogi/shogi-credits.html"
-					},
-					"gameOptions": config_model_gameOptions_2,
-					"js": modelScripts_108,
-					"description": {
-						"en": "res/rules/shogi/chu-shogi-description.html"
-					},
-					"levels": config_model_levels_15
-				},
-				"view": {
-					"title-en": "Chessbase view",
-					"visuals": {
-						"600x600": [
-							"res/visuals/chu-shogi-600x600-3d.jpg",
-							"res/visuals/chu-shogi-600x600-2d.jpg"
-						]
-					},
-					"xdView": true,
-					"css": config_view_css,
-					"preferredRatio": 1,
-					"useShowMoves": true,
-					"useNotation": true,
-					"module": "chessbase",
-					"defaultOptions": config_view_defaultOptions,
-					"skins": [
-						{
-							"name": "skin3d",
-							"title": "3D Classic",
-							"3d": true,
-							"preload": [
-								"smoothedfilegeo|0|/res/ring-target.js",
-								"image|/res/images/cancel.png",
-								"image|/res/images/wikipedia.png"
-							],
-							"world": config_view_skins_world,
-							"camera": config_view_skins_camera
-						},
-						config_view_skins_2
-					],
-					"animateSelfMoves": false,
-					"switchable": true,
-					"sounds": config_view_sounds,
-					"js": config_view_js_108,
-					"useAutoComplete": true
-				}
-			},
-			"viewScripts": config_view_js_108
-		},
-		{
-			"name": "makromachy",
-			"modelScripts": modelScripts_109,
-			"config": {
-				"status": true,
-				"model": {
-					"title-en": "Makromachy",
-					"summary": "14x14 variant with flying pieces",
-					"rules": {
-						"en": "res/rules/makromachy/makromachy-rules.html"
-					},
-					"module": "chessbase",
-					"plazza": "true",
-					"thumbnail": "res/rules/makromachy/makromachy-thumb.png",
-					"released": 1396536978,
-					"credits": {
-						"en": "res/rules/makromachy/makromachy-credits.html"
-					},
-					"gameOptions": config_model_gameOptions_2,
-					"js": modelScripts_109,
-					"description": {
-						"en": "res/rules/makromachy/makromachy-description.html"
-					},
-					"levels": config_model_levels_15
-				},
-				"view": {
-					"title-en": "Chessbase view",
-					"visuals": {
-						"600x600": [
-							"res/visuals/makromachy-600x600-3d.jpg",
-							"res/visuals/makromachy-600x600-2d.jpg"
-						]
-					},
-					"xdView": true,
-					"css": config_view_css,
-					"preferredRatio": 1,
-					"useShowMoves": true,
-					"useNotation": true,
-					"module": "chessbase",
-					"defaultOptions": config_view_defaultOptions,
-					"skins": [
-						{
-							"name": "skin3d",
-							"title": "3D Classic",
-							"3d": true,
-							"preload": [
-								"smoothedfilegeo|0|/res/ring-target.js",
-								"image|/res/images/cancel.png",
-								"image|/res/images/wikipedia.png"
-							],
-							"world": config_view_skins_world,
-							"camera": config_view_skins_camera
-						},
-						config_view_skins_2
-					],
-					"animateSelfMoves": false,
-					"switchable": true,
-					"sounds": config_view_sounds,
-					"js": config_view_js_109,
-					"useAutoComplete": true
-				}
-			},
-			"viewScripts": config_view_js_109
-		},
+
 		{
 			"name": "minjiku-shogi",
 			"modelScripts": modelScripts_110,
@@ -7327,13 +7206,13 @@ exports.games = (function () {
 					"thumbnail": "res/rules/minjiku-shogi/minjiku-shogi-thumb.png",
 					"released": 1396536978,
 					"credits": {
-						"en": "res/rules/minjiku-shogi/minjiku-credits.html"
+						"en": "res/rules/minjiku-shogi/minjiku-shogi-credits.html"
 					},
 					"gameOptions": config_model_gameOptions_2,
 					"js": modelScripts_110,
 
 					"description": {
-						"en": "res/rules/minjiku-shogi/minjiku-description.html"
+						"en": "res/rules/minjiku-shogi/minjiku-shogi-description.html"
 					},
 					"levels": config_model_levels_15
 				},
