@@ -439,6 +439,7 @@ exports.games = (function () {
 	var modelScripts_101 = [
 		"base-model.js",
 		"grid-geo-model.js",
+		"fairy-move-model.js",
 		"werewolf-model.js"
 	]
 	var modelScripts_102 = [
@@ -7189,7 +7190,70 @@ exports.games = (function () {
 			},
 			"viewScripts": config_view_js_106
 		},
-
+		{
+			"name": "makromachy",
+			"modelScripts": modelScripts_109,
+			"config": {
+				"status": true,
+				"model": {
+					"title-en": "Makromachy",
+					"summary": "14x14 variant with flying pieces",
+					"rules": {
+						"en": "res/rules/makromachy/makromachy-rules.html"
+					},
+					"module": "chessbase",
+					"plazza": "true",
+					"thumbnail": "res/rules/makromachy/makromachy-thumb.png",
+					"released": 1396536978,
+					"credits": {
+						"en": "res/rules/makromachy/makromachy-credits.html"
+					},
+					"gameOptions": config_model_gameOptions_2,
+					"js": modelScripts_109,
+					"description": {
+						"en": "res/rules/makromachy/makromachy-description.html"
+					},
+					"levels": config_model_levels_15
+				},
+				"view": {
+					"title-en": "Chessbase view",
+					"visuals": {
+						"600x600": [
+							"res/visuals/makromachy-600x600-3d.jpg",
+							"res/visuals/makromachy-600x600-2d.jpg"
+						]
+					},
+					"xdView": true,
+					"css": config_view_css,
+					"preferredRatio": 1,
+					"useShowMoves": true,
+					"useNotation": true,
+					"module": "chessbase",
+					"defaultOptions": config_view_defaultOptions,
+					"skins": [
+						{
+							"name": "skin3d",
+							"title": "3D Classic",
+							"3d": true,
+							"preload": [
+								"smoothedfilegeo|0|/res/ring-target.js",
+								"image|/res/images/cancel.png",
+								"image|/res/images/wikipedia.png"
+							],
+							"world": config_view_skins_world,
+							"camera": config_view_skins_camera
+						},
+						config_view_skins_2
+					],
+					"animateSelfMoves": false,
+					"switchable": true,
+					"sounds": config_view_sounds,
+					"js": config_view_js_109,
+					"useAutoComplete": true
+				}
+			},
+			"viewScripts": config_view_js_109
+		},
 		{
 			"name": "minjiku-shogi",
 			"modelScripts": modelScripts_110,
