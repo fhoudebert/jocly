@@ -367,8 +367,8 @@
 				castle: !!pType.castle,
 				epTarget: !!pType.epTarget,
 				epCatch: !!pType.epCatch,
-				antiTrade: pType.antiTrade || 0,
 				ranking: r,
+				antiTrade: pType.antiTrade || 0,
 			}
 		}
 		
