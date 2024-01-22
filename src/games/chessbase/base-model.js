@@ -379,27 +379,56 @@
 		this.zSign=0;
 	}
 
+	Model.Board.cbPlacePieces = function(aGame) {
+
+		var $this=this;
+
+		this.pieces.sort(function(p1,p2) {
+			if(p1.s!=p2.s)
+				return p2.s-p1.s;
+			var v1=aGame.cbVar.pieceTypes[p1.t].value || 100;
+			var v2=aGame.cbVar.pieceTypes[p2.t].value || 100;
+			if(v1!=v2)
+				return v1-v2;
+			return p1.p-p2.p;
+		});
+
+		this.zSign=aGame.wKey(0);
+		for(var pos=0;pos<aGame.g.boardSize;pos++)
+			this.board[pos]=-1;
+		this.pieces.forEach(function(piece,index) {
+			piece.i=index;
+			$this.board[piece.p]=index;
+			var pType=aGame.g.pTypes[piece.t];
+			if(pType.isKing)
+				$this.kings[piece.s*pType.isKing]=piece.p;
+			$this.zSign^=aGame.bKey(piece) ^ aGame.tKey(piece);
+		});
+		
+	}
+
 	Model.Board.InitialPosition = function(aGame) {
 		var $this=gameState=this;
 		if(USE_TYPED_ARRAYS)
 			this.board=new Int16Array(aGame.g.boardSize);
 		else
 			this.board=[];
-		for(var pos=0;pos<aGame.g.boardSize;pos++)
-			this.board[pos]=-1;
 		this.kings={};
 		this.pieces=[];
 		this.ending={
 			'1': false,
 			'-1': false,
 		}
-		this.lastMove=null;
+		this.lastMove={  // (invalid) dummy, to make sure it exists...
+			f: -1,
+			t: 0,
+			c: null, // ... and is not mistaken for a capture
+		};
 		if(aGame.cbVar.castle)
 			this.castled={
 				'1': false,
 				'-1': false,
 			}
-		this.zSign=aGame.wKey(0);
 
 		this.noCaptCount = this.check = this.oppoCheck = 0;
 		this.mWho = 1;
@@ -417,6 +446,7 @@
 				this.lastMove={
 					f: aGame.mInitial.lastMove.f,
 					t: aGame.mInitial.lastMove.t,
+					c: aGame.mInitial.lastMove.c,
 				}
 			if(aGame.mInitial.noCaptCount!==undefined)
 				this.noCaptCount=aGame.mInitial.noCaptCount;
@@ -448,25 +478,8 @@
 				}
 			}
 		}
-		
-		this.pieces.sort(function(p1,p2) {
-			if(p1.s!=p2.s)
-				return p2.s-p1.s;
-			var v1=aGame.cbVar.pieceTypes[p1.t].value || 100;
-			var v2=aGame.cbVar.pieceTypes[p2.t].value || 100;
-			if(v1!=v2)
-				return v1-v2;
-			return p1.p-p2.p;
-		});
 
-		this.pieces.forEach(function(piece,index) {
-			piece.i=index;
-			$this.board[piece.p]=index;
-			var pType=aGame.g.pTypes[piece.t];
-			if(pType.isKing)
-				$this.kings[piece.s*pType.isKing]=piece.p;
-			$this.zSign^=aGame.bKey(piece) ^ aGame.tKey(piece);
-		});
+		this.cbPlacePieces(aGame);
 		
 		//console.log("sign",this.zSign);
 		
@@ -518,14 +531,11 @@
 			this.kings[i] = aBoard.kings[i];
 		this.check=aBoard.check;
 		this.oppoCheck=aBoard.oppoCheck;
-		if(aBoard.lastMove)
-			this.lastMove={
-				f: aBoard.lastMove.f,
-				t: aBoard.lastMove.t,
-				c: aBoard.lastMove.c,
-			}
-		else
-			this.lastMove=null;
+		this.lastMove={
+			f: aBoard.lastMove.f,
+			t: aBoard.lastMove.t,
+			c: aBoard.lastMove.c,
+		}
 		this.ending={
 			'1': aBoard.ending[1],
 			'-1': aBoard.ending[-1],
@@ -797,7 +807,7 @@
 			return;
 		}
 		
-		if(this.lastMove && this.lastMove.c!=null) {
+		if(this.lastMove.c!==null) {
 			var piece=this.pieces[this.board[this.lastMove.t]];
 			pieceValue[-piece.s]+=this.cbStaticExchangeEval(aGame,piece.p,piece.s,{piece:piece})
 		}
@@ -906,8 +916,7 @@
 					castlePieces=null;
 				else
 					king=piece;
-			}
-			if(castlePieces && pType.castle && !piece.m) // rook considered for castle
+			} else if(pType.castle && !piece.m && castlePieces) // rook considered for castle
 				castlePieces.push(piece);
 			
 			var graph, graphLength;
@@ -1008,21 +1017,26 @@
 					}
 				}
 				if(rookOk) {
-					var kingOk=true;
-					for(var j=0;j<spec.k.length;j++) {
-						var pos=spec.k[j];
+					var step=(rook.p>king.p ? 1 : -1);
+					var last=spec.k.length-1; // nominal King destination found here
+					var extra=spec.extra || 0;
+					var d=0;
+					if(extra<0) extra*=-1,d=1;
+					for(var j=0;j<=last+extra;j++) { // allow optional extension of King move
+						var pos=(j<last ? spec.k[j] : spec.k[last]+step*(j-last));
 						if((this.board[pos]>=0 && pos!=rook.p && pos!=king.p) || this.cbGetAttackers(aGame,pos,who).length>0) {
-							kingOk=false;
 							break;
 						}
-					}
-					if(kingOk) {
-						moves.push({
-							f: king.p,
-							t: spec.k[spec.k.length-1],
-							c: null,
-							cg: rook.p,
-						});
+						if(j>=last+d) {
+							move={
+								f: king.p,
+								t: pos | step*(j-last)<<16,
+								c: null,
+								cg: rook.p,
+							}
+							if(j>last) move.a=pType.abbrev;
+							moves.push(move);
+						}
 					}
 				}
 			}
@@ -1193,7 +1207,8 @@
 		function NaturalFormat() {
 			var str;
 			if(self.cg!==undefined) {
-				str=cbVar.castle[self.f+"/"+self.cg].n;
+				if(self.t>>16) str=self.a+cbVar.geometry.PosName(self.f)+'~'+cbVar.geometry.PosName(self.t&0xffff);
+				else str=cbVar.castle[self.f+"/"+self.cg].n;
 			} else {
 				str=self.a || '';
 				str+=cbVar.geometry.PosName(self.f);
