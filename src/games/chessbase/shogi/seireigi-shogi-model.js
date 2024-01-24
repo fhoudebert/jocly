@@ -298,12 +298,10 @@
 				if(piece.t >= 12)
 					return [];
 				var f = geometry.C(move.f);
-				if(f < 2 || f > 12) return []; // drop
+				if(f < 2 || f > 10) return []; // no promotion on drops
 				var f = geometry.R(move.f);
 				var t = geometry.R(move.t);
-				
 				if(piece.s == 1) {
-					
 					if(t > 5 || f > 5)
 						return	piece.t < 6 && t > 7 - (piece.t > 3)
 						?	[piece.t+13]
