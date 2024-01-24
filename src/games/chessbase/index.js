@@ -457,6 +457,12 @@ exports.games = (function () {
 		"grid-geo-model.js",
 		"decimal/scirocco-model.js"
 	]
+	var modelScripts_seireigi = [
+		"base-model.js",
+		"grid-geo-model.js",
+		"drop-model.js",
+		"shogi/seireigi-shogi-model.js"
+	]
 	var modelScripts_105 = [
 		"base-model.js",
 		"grid-geo-model.js",
@@ -584,6 +590,13 @@ exports.games = (function () {
 		"fairy-set-view.js",
 		"multi-leg-view.js",
 		"decimal/scirocco-view.js"
+	]
+	var config_view_js_seireigi = [
+		"base-view.js",
+		"grid-board-view.js",
+		"shogi/seireigi-shogi-set-view.js",
+		"drop-view.js",
+		"shogi/shogi-view.js"
 	]
 	var config_view_js_105 = [
 		"base-view.js",
@@ -7055,6 +7068,80 @@ exports.games = (function () {
 			"viewScripts": config_view_js_105
 		},
 		{
+			"name": "seireigi-shogi",
+			"modelScripts": modelScripts_seireigi,
+			"config": {
+				"status": true,
+				"model": {
+
+					"title-en": "Seireigi Shogi",
+					"summary": "Spirit shogi variant",
+					"rules": {
+						"en": "res/rules/shogi/seireigi-shogi-rules.html"
+					},
+					"module": "chessbase",
+					"plazza": "true",
+					"thumbnail": "res/rules/shogi/seireigi-shogi-thumb.png",
+					"released": 1396536978,
+					"credits": {
+						"en": "res/rules/shogi/seireigi-shogi-credits.html"
+					},
+					"gameOptions": config_model_gameOptions_2,
+					"js": modelScripts_seireigi,
+					"description": {
+						"en": "res/rules/shogi/seireigi-shogi-description.html"
+					},
+					"levels": config_model_levels_15
+				},
+				"view": {
+					"title-en": "Chessbase view",
+					"visuals": {
+						"600x600": [
+							"res/visuals/seireigi-shogi-600x600-3d.jpg",
+							"res/visuals/seireigi-shogi-600x600-2d.jpg"
+						]
+					},
+					"xdView": true,
+					"css": config_view_css,
+					"preferredRatio": 1,
+					"useShowMoves": true,
+					"useNotation": true,
+					"module": "chessbase",
+					"defaultOptions": config_view_defaultOptions,
+					"skins": [
+
+						{
+							"name": "skin3d",
+							"title": "3D Classic",
+							"3d": true,
+							"preload": [
+								"smoothedfilegeo|0|/res/ring-target.js",
+								"image|/res/images/cancel.png",
+								"image|/res/images/wikipedia.png"
+							],
+							"world": config_view_skins_world,
+							"camera": config_view_skins_camera
+						},
+						{
+							"name": "skin2dwestern",
+							"title": "2D Western",
+							"3d": false,
+							"preload": [
+								"image|/res/shogi/seireigi-shogi-sprites-western.png"
+							]
+						},
+						config_view_skins_2
+					],
+					"animateSelfMoves": false,
+					"switchable": true,
+					"sounds": config_view_sounds,
+					"js": config_view_js_seireigi,
+					"useAutoComplete": true
+				}
+			},
+			"viewScripts": config_view_js_seireigi
+		},
+		{
 			"name": "mini-shogi",
 			"modelScripts": modelScripts_107,
 			"config": {
@@ -7189,6 +7276,70 @@ exports.games = (function () {
 				}
 			},
 			"viewScripts": config_view_js_106
+		},
+		{
+			"name": "chu-shogi",
+			"modelScripts": modelScripts_108,
+			"config": {
+				"status": true,
+				"model": {
+					"title-en": "Chu Shogi",
+					"summary": "Historic 12x12 Shogi variant",
+					"rules": {
+						"en": "res/rules/shogi/chu-shogi-rules.html"
+					},
+					"module": "chessbase",
+					"plazza": "true",
+					"thumbnail": "res/rules/shogi/chu-shogi-thumb.png",
+					"released": 1396536978,
+					"credits": {
+						"en": "res/rules/shogi/shogi-credits.html"
+					},
+					"gameOptions": config_model_gameOptions_2,
+					"js": modelScripts_108,
+					"description": {
+						"en": "res/rules/shogi/chu-shogi-description.html"
+					},
+					"levels": config_model_levels_15
+				},
+				"view": {
+					"title-en": "Chessbase view",
+					"visuals": {
+						"600x600": [
+							"res/visuals/chu-shogi-600x600-3d.jpg",
+							"res/visuals/chu-shogi-600x600-2d.jpg"
+						]
+					},
+					"xdView": true,
+					"css": config_view_css,
+					"preferredRatio": 1,
+					"useShowMoves": true,
+					"useNotation": true,
+					"module": "chessbase",
+					"defaultOptions": config_view_defaultOptions,
+					"skins": [
+						{
+							"name": "skin3d",
+							"title": "3D Classic",
+							"3d": true,
+							"preload": [
+								"smoothedfilegeo|0|/res/ring-target.js",
+								"image|/res/images/cancel.png",
+								"image|/res/images/wikipedia.png"
+							],
+							"world": config_view_skins_world,
+							"camera": config_view_skins_camera
+						},
+						config_view_skins_2
+					],
+					"animateSelfMoves": false,
+					"switchable": true,
+					"sounds": config_view_sounds,
+					"js": config_view_js_108,
+					"useAutoComplete": true
+				}
+			},
+			"viewScripts": config_view_js_108
 		},
 		{
 			"name": "makromachy",
