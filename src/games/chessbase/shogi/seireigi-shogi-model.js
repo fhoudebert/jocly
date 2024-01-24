@@ -223,7 +223,7 @@
 				18: {
 					name: 'p-knight-b',
 					aspect: 'sh-promoted-knight',
-					graph: this.cbDropGraph(geometry, [[-2,2],[2,2],[0,2],[1,-2],[-1,-2],[0,-1],[1,1],[1,-1],[-1,1],[-1,-1]],[]),
+					graph: this.cbDropGraph(geometry, [[-2,-2],[2,-2],[0,-2],[1,2],[-1,2],[0,-1],[1,1],[1,-1],[-1,1],[-1,-1]],[]),
 					value: 6.4,
 					abbrev: '+N',
 					demoted: 4,
@@ -264,8 +264,6 @@
 					abbrev: '+R',
 					demoted: 9,
 				},
-
-				
 				23: {
 					name: 'p-gold-w',
 					aspect: 'sh-promoted-gold',
@@ -305,7 +303,7 @@
 				var t = geometry.R(move.t);
 				
 				if(piece.s == 1) {
-					console.log("-------------------t,f",t,f);
+					
 					if(t > 5 || f > 5)
 						return	piece.t < 6 && t > 7 - (piece.t > 3)
 						?	[piece.t+13]
