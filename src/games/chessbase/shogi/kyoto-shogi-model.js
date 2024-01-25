@@ -14,13 +14,14 @@
   }
 
 	Model.Game.cbMateEval = function(board) { // detect Pawn-drop mate
-		var m = board.lastMove;
+		/*var m = board.lastMove;
 		var piece = board.pieces[board.board[m.t]];
 		if(piece.t < 2) { // Pawn
 		  var f = geometry.C(m.f);
 		  if(f==1 || f==geometry.width-2) return board.mWho; // dropped: flip result
 		}
-		return -board.mWho;
+		return -board.mWho;*/
+return board.mWho;
   }
 
 	Model.Game.cbDefine = function() {
