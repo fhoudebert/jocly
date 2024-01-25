@@ -4,7 +4,7 @@
 	
 	Model.Game.cbOnStaleMate = -1; // stalemate = last player wins
 	Model.Game.cbMaxRepeats = 4;
-	Model.Game.cbSetPawnLimit(1);
+	Model.Game.cbSetPawnLimit(2);
 
   Model.Game.cbPerpEval = function(board, aGame) {
 		var loop = aGame.GetRepeatOccurence(board, 1) >> 1;
