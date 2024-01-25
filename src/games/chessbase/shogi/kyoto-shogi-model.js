@@ -36,7 +36,7 @@
 				0: {
 					name: 'pawn-w',
 					aspect: 'sh-pawn',
-					graph: this.cbDropGraph(geometry, [[0,1]],[],0,1),
+					graph: this.cbDropGraph(geometry, [[0,1]],[]),
 					value: 1,
 					abbrev: '',
 					fenAbbrev: 'P',
@@ -47,7 +47,7 @@
 				1: {
 					name: 'pawn-b',
 					aspect: 'sh-pawn',
-					graph: this.cbDropGraph(geometry, [[0,-1]],[],1,0),
+					graph: this.cbDropGraph(geometry, [[0,-1]],[]),
 					value: 1,
 					abbrev: '',
 					fenAbbrev: 'P',
@@ -138,7 +138,7 @@
 				10: {
 					name: 'lance-w',
 					aspect: 'sh-lance',
-					graph: this.cbDropGraph(geometry, [],[[0,1]],0,1),
+					graph: this.cbDropGraph(geometry, [],[[0,1]]),
 					value: 4.3,
 					abbrev: 'L',
 					demoted: 11,
@@ -147,7 +147,7 @@
 				11: {
 					name: 'lance-b',
 					aspect: 'sh-lance',
-					graph: this.cbDropGraph(geometry, [],[[0,-1]],1,0),
+					graph: this.cbDropGraph(geometry, [],[[0,-1]]),
 					value: 4.3,
 					abbrev: 'L',
 					demoted: 10,
@@ -181,7 +181,7 @@
 				16: {
 					name: 'knight-w',
 					aspect: 'sh-knight',
-					graph: this.cbDropGraph(geometry, [[1,2],[-1,2]],[],0,2),
+					graph: this.cbDropGraph(geometry, [[1,2],[-1,2]],[]),
 					value: 4.5,
 					abbrev: 'N',
 					initial: [],
@@ -193,7 +193,7 @@
 				17: {
 					name: 'knight-b',
 					aspect: 'sh-knight',
-					graph: this.cbDropGraph(geometry, [[1,-2],[-1,-2]],[],2,0),
+					graph: this.cbDropGraph(geometry, [[1,-2],[-1,-2]],[]),
 					value: 4.5,
 					abbrev: 'N',
 					initial: [],
