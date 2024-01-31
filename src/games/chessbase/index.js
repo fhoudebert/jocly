@@ -463,6 +463,13 @@ exports.games = (function () {
 		"drop-model.js",
 		"shogi/seireigi-shogi-model.js"
 	]
+	var modelScripts_chu_seireigi = [
+		"base-model.js",
+		"grid-geo-model.js",
+		"drop-model.js",
+        "fairy-move-model.js",
+		"shogi/chu-seireigi-model.js"
+	]
 	var modelScripts_105 = [
 		"base-model.js",
 		"grid-geo-model.js",
@@ -597,7 +604,14 @@ exports.games = (function () {
 		"multi-leg-view.js",
 		"decimal/scirocco-view.js"
 	]
-	var config_view_js_seireigi = [
+	var config_view_js_chu_seireigi = [
+		"base-view.js",
+		"grid-board-view.js",
+		"shogi/chu-seireigi-set-view.js",
+		"drop-view.js",
+		"shogi/chu-seireigi-view.js"
+	]
+		var config_view_js_seireigi = [
 		"base-view.js",
 		"grid-board-view.js",
 		"shogi/seireigi-shogi-set-view.js",
@@ -7146,6 +7160,87 @@ exports.games = (function () {
 				}
 			},
 			"viewScripts": config_view_js_seireigi
+		},
+		{
+			"name": "chu-seireigi",
+			"modelScripts": modelScripts_chu_seireigi,
+			"config": {
+				"status": true,
+				"model": {
+
+					"title-en": "Chu Seireigi Shogi",
+					"summary": "Spirit shogi variant",
+					"rules": {
+						"en": "res/rules/shogi/chu-seireigi-rules.html"
+					},
+					"module": "chessbase",
+					"plazza": "true",
+					"thumbnail": "res/rules/shogi/seireigi-shogi-thumb.png",
+					"released": 1396536978,
+
+					"credits": {
+						"en": "res/rules/shogi/seireigi-shogi-credits.html"
+					},
+					"gameOptions": config_model_gameOptions_2,
+					"js": modelScripts_chu_seireigi,
+					"description": {
+						"en": "res/rules/shogi/seireigi-shogi-description.html"
+					},
+					"levels": config_model_levels_15
+				},
+				"view": {
+					"title-en": "Chessbase view",
+					"visuals": {
+						"600x600": [
+							"res/visuals/seireigi-shogi-600x600-3d.jpg",
+							"res/visuals/seireigi-shogi-600x600-2d.jpg"
+						]
+					},
+					"xdView": true,
+					"css": config_view_css,
+					"preferredRatio": 1,
+					"useShowMoves": true,
+					"useNotation": true,
+					"module": "chessbase",
+					"defaultOptions": config_view_defaultOptions,
+					"skins": [
+
+
+						{
+							"name": "skin3d",
+							"title": "3D Classic",
+							"3d": true,
+							"preload": [
+
+								"smoothedfilegeo|0|/res/ring-target.js",
+								"image|/res/images/cancel.png",
+								"image|/res/images/wikipedia.png"
+							],
+							"world": config_view_skins_world,
+
+							"camera": config_view_skins_camera
+						},
+						{
+							"name": "skin2dwestern",
+							"title": "2D Western",
+							"3d": false,
+
+							"preload": [
+								"image|/res/shogi/seireigi-shogi-sprites-western.png"
+							]
+						},
+						config_view_skins_2
+					],
+
+					"animateSelfMoves": false,
+					"switchable": true,
+					"sounds": config_view_sounds,
+					"js": config_view_js_chu_seireigi,
+					"useAutoComplete": true
+
+				}
+			},
+			"viewScripts": config_view_js_chu_seireigi
 		},
 		{
 			"name": "mini-shogi",
