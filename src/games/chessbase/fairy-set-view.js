@@ -453,6 +453,16 @@
 					clipx: 7200,
 					},
 			},
+			"fr-goat": {
+				"2d": {
+					clipx: 7300,
+					},
+			},
+			"fr-ram": {
+				"2d": {
+					clipx: 7400,
+					},
+			},
 		},modifier);
 	}
 
@@ -2171,6 +2181,48 @@
 				}
 			},
 		},
+		"fr-rhino2": {
+			mesh: {
+				jsFile:"/res/fairy/rhino/rhino2.js"
+			},
+			materials: {
+				mat0: {
+					channels: {
+						diffuse: {
+							texturesImg: {
+								diffImg : "/res/fairy/rhino/rhino2-diffusemap.jpg",
+							}
+						},
+						normal: {
+							texturesImg: {
+								normalImg: "/res/fairy/rhino/rhino2-normalmap.jpg",
+							}
+						}
+					}
+				}
+			},
+		},
+		"fr-samurai": {
+			mesh: {
+				jsFile:"/res/fairy/persons/samurai.js"
+			},
+			materials: {
+				mat0: {
+					channels: {
+						diffuse: {
+							texturesImg: {
+								diffImg : "/res/fairy/persons/samurai-diffusemap.jpg",
+							}
+						},
+						normal: {
+							texturesImg: {
+								normalImg: "/res/fairy/persons/samurai-normalmap.jpg",
+							}
+						}
+					}
+				}
+			},
+		},
 		"fr-scout": {
 			mesh: {
 				jsFile:"/res/fairy/persons/scout.js"
@@ -2255,42 +2307,42 @@
 				}
 			},
 		},
-		"fr-rhino2": {
+		"fr-goat": {
 			mesh: {
-				jsFile:"/res/fairy/rhino/rhino2.js"
+				jsFile:"/res/fairy/farm/goat.js"
 			},
 			materials: {
 				mat0: {
 					channels: {
 						diffuse: {
 							texturesImg: {
-								diffImg : "/res/fairy/rhino/rhino2-diffusemap.jpg",
+								diffImg : "/res/fairy/farm/goat-diffusemap.jpg",
 							}
 						},
 						normal: {
 							texturesImg: {
-								normalImg: "/res/fairy/rhino/rhino2-normalmap.jpg",
+								normalImg: "/res/fairy/farm/goat-normalmap.jpg",
 							}
 						}
 					}
 				}
 			},
 		},
-		"fr-samurai": {
+		"fr-ram": {
 			mesh: {
-				jsFile:"/res/fairy/persons/samurai.js"
+				jsFile:"/res/fairy/farm/ram.js"
 			},
 			materials: {
 				mat0: {
 					channels: {
 						diffuse: {
 							texturesImg: {
-								diffImg : "/res/fairy/persons/samurai-diffusemap.jpg",
+								diffImg : "/res/fairy/farm/ram-diffusemap.jpg",
 							}
 						},
 						normal: {
 							texturesImg: {
-								normalImg: "/res/fairy/persons/samurai-normalmap.jpg",
+								normalImg: "/res/fairy/farm/ram-normalmap.jpg",
 							}
 						}
 					}

@@ -174,7 +174,7 @@
 					name: 'elephant-w',
 					aspect: 'sh-elephant',
 					value: 4,
-					graph: this.cbDropGraph(geometry, [[0,1],[1,0],[-1,0],[1,-1],[-1,-1],[1,1],[-1,1]],[[1,1],[-1,1]]),
+					graph: this.cbDropGraph(geometry, [[0,1],[1,0],[-1,0],[1,-1],[-1,-1],[1,1],[-1,1]],[[1,1],[-1,1]],[]),
 					abbrev: 'E',
 					demoted: 13,
 					hand: 5,
@@ -185,7 +185,7 @@
 				13: {
 					name: 'elephant-b',
 					aspect: 'sh-elephant',
-					graph: this.cbDropGraph(geometry, [[-1,1],[1,1],[1,0],[-1,0],[0,-1],[1,-1],[-1,-1]],[[1,-1],[-1,-1]]),
+					graph: this.cbDropGraph(geometry, [[-1,1],[1,1],[1,0],[-1,0],[0,-1],[1,-1],[-1,-1]],[[1,-1],[-1,-1]],[]),
 					value: 4,
 					abbrev: 'E',
 					demoted: 12,
@@ -196,7 +196,7 @@
 				14: {
 					name: 'copper-w',
 					aspect: 'sh-copper',
-					graph: this.cbShortRangeGraph(geometry,[[0,1],[0,-1],[-1,1],[1,1]]),
+					graph: this.cbDropGraph(geometry,[[0,1],[0,-1],[-1,1],[1,1]],[]),
 					value: 2.3,
 					abbrev: 'C',
 					hand: 6,
@@ -207,7 +207,7 @@
 				15: {
 					name: 'copper-b',
 					aspect: 'sh-copper',
-					graph: this.cbShortRangeGraph(geometry,[[0,1],[0,-1],[-1,-1],[1,-1]]),
+					graph: this.cbDropGraph(geometry,[[0,1],[0,-1],[-1,-1],[1,-1]],[]),
 					value: 2.3,
 					abbrev: 'C',
 					hand: 6,
@@ -238,7 +238,7 @@
 				18: {
 					name: 'ram-w',
 					aspect: 'sh-ram',
-					graph: this.cbDropGraph(geometry, [],[[1,1],[-1,1]]),
+					graph: this.cbDropGraph(geometry, [],[[1,1],[-1,1]],0,1),
 					value: 3.1,
 					hand: 8,
 					abbrev: 'RS',
@@ -249,7 +249,7 @@
 				19: {
 					name: 'ram-b',
 					aspect: 'sh-ram',
-					graph: this.cbDropGraph(geometry, [],[[1,-1],[-1,-1]]),
+					graph: this.cbDropGraph(geometry, [],[[1,-1],[-1,-1]],1,0),
 					value: 3.1,
 					hand: 8,
 					abbrev: 'RS',
@@ -308,7 +308,7 @@
 				24: {
 					name: 'swallow-w',
 					aspect: 'sh-swallow',
-					graph: this.cbDropGraph(geometry, [[-2,2],[0,2],[2,2]],[]),
+					graph: this.cbDropGraph(geometry, [[-2,2],[0,2],[2,2]],[],0,2),
 					value: 1.8,
 					hand: 11,
 					abbrev: 'FS',
@@ -319,7 +319,7 @@
 				25: {
 					name: 'swallow-b',
 					aspect: 'sh-swallow',
-					graph: this.cbDropGraph(geometry, [[-2,-2],[0,-2],[2,-2]],[]),
+					graph: this.cbDropGraph(geometry, [[-2,-2],[0,-2],[2,-2]],[],2,0),
 					
 					value: 1.8,
 					hand: 11,
@@ -332,7 +332,7 @@
 					name: 'rabbit-w',
 					aspect: 'sh-rabbit',
 					value: 4.2,
-					graph: this.cbDropGraph(geometry, [],[[1,1],[0,1],[-1,1]]),
+					graph: this.cbDropGraph(geometry, [],[[1,1],[0,1],[-1,1]],0,1),
 					abbrev: 'RU',
 					demoted: 27,
 					hand: 12,
@@ -341,7 +341,7 @@
 				27: {
 					name: 'rabbit-b',
 					aspect: 'sh-rabbit',
-					graph: this.cbDropGraph(geometry, [],[[1,-1],[0,-1],[-1,-1]]),
+					graph: this.cbDropGraph(geometry, [],[[1,-1],[0,-1],[-1,-1]],1,0),
 					value: 4.2,
 					abbrev: 'RU',
 					demoted: 26,
@@ -501,7 +501,7 @@
 				44: {
 					name: 'p-elephant-w',
 					aspect: 'sh-teacher',
-					graph: this.cbDropGraph(geometry, [[0,1],[-1,0],[-1,-1],[1,-1]],[[1,1],[0,1],[0,-1],[-1,1]]),
+					graph: this.cbDropGraph(geometry, [[1,0],[-1,0],[-1,-1],[1,-1]],[[1,1],[0,1],[0,-1],[-1,1]]),
 					value: 7,
 					abbrev: '+E',
 					demoted: 13,
@@ -509,7 +509,7 @@
 				45: {
 					name: 'p-elephant-b',
 					aspect: 'sh-teacher',
-					graph: this.cbDropGraph(geometry, [[-1,1],[1,1],[1,0],[-1,0]],[[1,-1][0,1],[0,-1],[-1,-1]]),
+					graph: this.cbDropGraph(geometry, [[-1,1],[1,1],[-1,0],[1,0]],[[1,-1],[0,1],[0,-1],[-1,-1]]),
 					value: 7,
 					abbrev: '+E',
 					demoted: 12,
@@ -533,7 +533,7 @@
 				48: {
 					name: 'p-wolf-w',
 					aspect: 'sh-boar',
-					graph: this.cbDropGraph(geometry, [],[[0,1],[0,-1],[1,1],[-1,-1],[-1,1],[1,-1]]),
+					graph: this.cbDropGraph(geometry, [],[[1,0],[-1,0],[1,1],[-1,-1],[-1,1],[1,-1]]),
 					value: 7.2,
 					abbrev: '+W',
 					demoted: 17,
@@ -541,7 +541,7 @@
 				49: {
 					name: 'p-wolf-b',
 					aspect: 'sh-boar',
-					graph: this.cbDropGraph(geometry, [],[[0,1],[0,-1],[1,1],[-1,-1],[-1,1],[1,-1]]),
+					graph: this.cbDropGraph(geometry, [],[[1,0],[-1,0],[1,1],[-1,-1],[-1,1],[1,-1]]),
 					value: 7.2,
 					abbrev: '+W',
 					demoted: 16,
@@ -582,7 +582,7 @@
 				54: {
 					name: 'p-leopard-w',
 					aspect: 'sh-ox',
-					graph: this.cbDropGraph(geometry, [[-1,-1],[0,-1],[1,-1]],[[0,1],[1,1],[-1,1]]),
+					graph: this.cbDropGraph(geometry, [],[[-1,-1],[0,-1],[1,-1],[0,1],[1,1],[-1,1]]),
 					value: 7,
 					abbrev: '+GL',
 					demoted: 23,
@@ -590,7 +590,7 @@
 				55: {
 					name: 'p-leopard-b',
 					aspect: 'sh-ox',
-					graph: this.cbDropGraph(geometry, [[-1,1],[0,1],[1,1]] ,[[0,-1],[-1,-1],[1,-1]]),
+					graph: this.cbDropGraph(geometry, [] ,[[-1,1],[0,1],[1,1],[0,-1],[-1,-1],[1,-1]]),
 					value: 7,
 					abbrev: '+GL',
 					demoted: 22,
@@ -598,7 +598,7 @@
 				56: {
 					name: 'p-swallow-w',
 					aspect: 'sh-bird',
-					graph: this.cbDropGraph(geometry, [[-1,2],[1,2],[-2,1],[-1,1],[0,1],[1,1], [2,1],[0,-1],[0,2],[0,-2],[2,-2],[0,-2],[-2,-2]],[]),
+					graph: this.cbDropGraph(geometry, [[-1,2],[1,2],[-2,1],[-1,1],[0,1],[1,1], [2,1],[0,-1],[0,-2],[2,-2],[0,-2],[-2,-2]],[]),
 					value: 5.5,
 					abbrev: '+FS',
 					demoted: 25,
@@ -606,7 +606,7 @@
 				57: {
 					name: 'p-swallow-b',
 					aspect: 'sh-bird',
-					graph: this.cbDropGraph(geometry, [[-2,2],[0,2],[2,2],[0,1],[-2,0],[2,0], [-2,-1],[-1,-1],[0,-1],[1,-1],[2,-1],[-2,-1],[-2,-1]],[]),
+					graph: this.cbDropGraph(geometry, [[-2,2],[0,2],[2,2],[0,1],[-2,0],[2,0], [-1,-2],[-1,-1],[0,-1],[1,-1],[2,-1],[-2,-1],[-1,-2]],[]),
 					value: 5.5,
 					abbrev: '+FS',
 					demoted: 24,
@@ -615,7 +615,7 @@
 					name: 'p-rabbit-w',
 					aspect: 'sh-fox',
 					value: 4.9,
-					graph: this.cbDropGraph(geometry, [[-1,-1],[0,-1],[1,-1]],[[1,1],[0,-1],[-1,1]]),
+					graph: this.cbDropGraph(geometry, [[-1,-1],[0,-1],[0,1],[1,-1]],[[1,1],[0,-1],[-1,1]]),
 					abbrev: '+RU',
 					demoted: 27,
 					
@@ -706,19 +706,20 @@
 				66: {
 					name: 'lion',
 					aspect: 'sh-lion',
-                    graph: this.cbDropGraph(geometry, [[0,1],[1,0],[-1,0],[0,-1],[1,1],[-1,1],[1,-1],[-1,-1],[2,0],[0,2],[-2,0],[0,-2], [2,2],[2,-2],[-2,2],[-2,-2]],[]),
-					//this.cbLongRangeGraph(geometry,[[1,0],[-1,0],[0,1],[0,-1],[1,-1],[-1,-1]])
+                    graph: this.cbShortRangeGraph(geometry,[[1,0],[-1,0],[0,1],[0,-1],[1,-1],[-1,-1],[2,0],[0,2],[-2,0],[0,-2], [2,2],[2,-2],[-2,2],[-2,-2]]),
 					value: 15.6,
 					abbrev: 'LN',
+                    hand: 15,
 					fenAbbrev: 'N',
 					initial: [{s:1,p:39},{s:-1,p:152}]
 				},
 				67: {
 					name: 'queen',
 					aspect: 'sh-queen',
-					graph: this.cbDropGraph(geometry, [],[[0,1],[1,0],[-1,0],[0,-1],[1,1],[-1,1],[1,-1],[-1,-1]]),
+					graph: this.cbLongRangeGraph(geometry,[[0,1],[1,0],[-1,0],[0,-1],[1,1],[-1,1],[1,-1],[-1,-1]]),
 					value: 11,
 					abbrev: 'FK',
+                    hand: 16,
 					fenAbbrev: 'Q',
 					initial: [{s:1,p:40},{s:-1,p:151}],
 				},
