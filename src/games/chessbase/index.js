@@ -439,13 +439,15 @@ exports.games = (function () {
 	var modelScripts_101 = [
 		"base-model.js",
 		"grid-geo-model.js",
-		"fairy-move-model.js",
+		"fairy-piece-model.js",
+		"locust-move-model.js",
 		"werewolf-model.js"
 	]
 	var modelScripts_102 = [
 		"base-model.js",
 		"grid-geo-model.js",
-		"fairy-move-model.js",
+		"fairy-piece-model.js",
+		"locust-move-model.js",
 		"decimal/elven-model.js"
 	]
 	var modelScripts_103 = [
@@ -468,7 +470,7 @@ exports.games = (function () {
 		"base-model.js",
 		"grid-geo-model.js",
 		"drop-model.js",
-        "fairy-move-model.js",
+        "fairy-piece-model.js",
 		"shogi/chu-seireigi-model.js"
 	]
 	var modelScripts_105 = [
@@ -492,19 +494,21 @@ exports.games = (function () {
 	var modelScripts_108 = [
 		"base-model.js",
 		"grid-geo-model.js",
-		"fairy-move-model.js",
+		"locust-move-model.js",
 		"shogi/chu-shogi-model.js"
 	]
 	var modelScripts_109 = [
 		"base-model.js",
 		"grid-geo-model.js",
-		"fairy-move-model.js",
+		"fairy-piece-model.js",
+		"locust-move-model.js",
 		"makromachy-model.js"
 	]
 	var modelScripts_110 = [
 		"base-model.js",
 		"grid-geo-model.js",
-		"fairy-move-model.js",
+		"fairy-piece-model.js",
+		"locust-move-model.js",
 		"minjiku-shogi-model.js"
 	]
 	var config_model_levels_11 = {
@@ -1005,10 +1009,12 @@ exports.games = (function () {
 		"fairy-set-view.js",
 		"cazaux/metamachy-view.js"
 	]
-	var modelScripts_30 = [
+	var modelScripts_capablanca = [
+
 		"base-model.js",
 		"grid-geo-model.js",
-		"fairy-move-model.js",
+		"fairy-piece-model.js",
+		"prelude-model.js",
 		"capa10x8/capablanca-model.js"
 	]
 	var config_view_skins_preload_10 = [
@@ -1056,6 +1062,13 @@ exports.games = (function () {
 		"base-view.js",
 		"grid-board-view.js",
 		"fairy-set-view.js",
+		"capa10x8/capablanca-view.js"
+	]
+	var config_view_js_capablanca = [
+		"base-view.js",
+		"grid-board-view.js",
+		"fairy-set-view.js",
+		"prelude-view.js",
 		"capa10x8/capablanca-view.js"
 	]
 	var modelScripts_31 = [
@@ -1114,13 +1127,13 @@ exports.games = (function () {
 	var modelScripts_34 = [
 		"base-model.js",
 		"grid-geo-model.js",
-		"fairy-move-model.js",
+		"fairy-piece-model.js",
 		"decimal/grand-model.js"
 	]
 	var modelScripts_hectochess = [
 		"base-model.js",
 		"grid-geo-model.js",
-		"fairy-move-model.js",
+		"fairy-piece-model.js",
 		"decimal/hectochess-model.js"
 	]
 	var config_view_js_31 = [
@@ -1330,7 +1343,7 @@ exports.games = (function () {
 	var modelScripts_fantasticXIII = [
  		"base-model.js",
  		"grid-geo-model.js",
- 		"fairy-move-model.js",
+ 		"fairy-piece-model.js",
  		"cazaux/fantasticXIII-model.js"
  	]
  	var config_view_js_fantasticXIII = [
@@ -1342,7 +1355,7 @@ exports.games = (function () {
 	var modelScripts_bigorra = [
  		"base-model.js",
  		"grid-geo-model.js",
- 		"fairy-move-model.js",
+ 		"fairy-piece-model.js",
  		"cazaux/bigorra-model.js"
  	]
  	var config_view_js_bigorra = [
@@ -1365,7 +1378,7 @@ exports.games = (function () {
 	var modelScripts_gigaII = [
 		"base-model.js",
 		"grid-geo-model.js",
-        "fairy-move-model.js",
+        "fairy-piece-model.js",
 		"cazaux/gigachessII-model.js"
 	]
 	var config_view_js_gigaII = [
@@ -1377,14 +1390,14 @@ exports.games = (function () {
 	var modelScripts_timurid = [
  		"base-model.js",
  		"grid-geo-model.js",
-        "fairy-move-model.js",
+        "fairy-piece-model.js",
         "prelude-model.js",
  		"duodecimal/timurid-model.js"
  	]
 	var modelScripts_gross = [
  		"base-model.js",
  		"grid-geo-model.js",
-        "fairy-move-model.js",
+        "fairy-piece-model.js",
  		"duodecimal/gross-model.js"
  	]
  	var config_view_js_timurid = [
@@ -1403,7 +1416,7 @@ exports.games = (function () {
 	var modelScripts_zanzibars = [
 		"base-model.js",
 		"grid-geo-model.js",
- 		"fairy-move-model.js",
+		"fairy-piece-model.js",
 		"cazaux/zanzibar-s-model.js"
 	]
 	var config_view_js_zanzibars = [
@@ -1423,7 +1436,6 @@ exports.games = (function () {
 		"fairy-set-view.js",
 		"historical/grant-acedrex-view.js"
 	]
-
 	return [
 		{
 			"name": "classic-chess",
@@ -3618,7 +3630,7 @@ exports.games = (function () {
 		},
 		{
 			"name": "capablanca-chess",
-			"modelScripts": modelScripts_30,
+			"modelScripts": modelScripts_capablanca,
 			"config": {
 				"status": true,
 				"model": {
@@ -3636,7 +3648,7 @@ exports.games = (function () {
 					},
 					"gameOptions": config_model_gameOptions,
 					"obsolete": false,
-					"js": modelScripts_30,
+					"js": modelScripts_capablanca,
 					"description": {
 						"en": "res/rules/capablanca/capablanca-description.html"
 					},
@@ -3661,11 +3673,11 @@ exports.games = (function () {
 					"animateSelfMoves": false,
 					"switchable": true,
 					"sounds": config_view_sounds,
-					"js": config_view_js_30,
+					"js": config_view_js_capablanca,
 					"useAutoComplete": true
 				}
 			},
-			"viewScripts": config_view_js_30
+			"viewScripts": config_view_js_capablanca
 		},
 		{
 			"name": "carrera-chess",
@@ -3821,6 +3833,60 @@ exports.games = (function () {
 			"viewScripts": config_view_js_30
 		},
 		{
+			"name": "grand-chess",
+			"modelScripts": modelScripts_34,
+			"config": {
+				"status": true,
+				"model": {
+					"title-en": "Grand Chess",
+					"summary": "Chess on 10x10 (1984)",
+					"rules": {
+						"en": "res/rules/decimal/grand-rules.html"
+					},
+					"module": "chessbase",
+					"plazza": "true",
+					"thumbnail": "res/rules/decimal/grand-thumb.png",
+					"released": 1404985842,
+					"credits": {
+						"en": "res/rules/decimal/grand-credits.html"
+					},
+					"gameOptions": config_model_gameOptions,
+					"obsolete": false,
+					"js": modelScripts_34,
+
+					"description": {
+						"en": "res/rules/decimal/grand-description.html"
+					},
+					"levels": config_model_levels_5
+				},
+				"view": {
+					"title-en": "Chessbase view",
+					"visuals": {
+						"600x600": [
+							"res/visuals/grand-600x600-3d.jpg",
+							"res/visuals/grand-600x600-2d.jpg"
+						]
+					},
+					"xdView": true,
+					"css": config_view_css,
+					"preferredRatio": 1,
+					"useShowMoves": true,
+					"useNotation": true,
+					"module": "chessbase",
+					"defaultOptions": config_view_defaultOptions,
+
+					"skins": config_view_skins_11,
+					"animateSelfMoves": false,
+					"switchable": true,
+					"sounds": config_view_sounds,
+					"js": config_view_js_31,
+					"useAutoComplete": true
+
+				}
+			},
+			"viewScripts": config_view_js_31
+		},
+		{
 			"name": "hectochess",
 			"modelScripts": modelScripts_hectochess,
 			"config": {
@@ -3853,57 +3919,6 @@ exports.games = (function () {
 						"600x600": [
 							"res/visuals/hectochess-600x600-3d.jpg",
 							"res/visuals/hectochess-600x600-2d.jpg"
-						]
-					},
-					"xdView": true,
-					"css": config_view_css,
-					"preferredRatio": 1,
-					"useShowMoves": true,
-					"useNotation": true,
-					"module": "chessbase",
-					"defaultOptions": config_view_defaultOptions,
-					"skins": config_view_skins_11,
-					"animateSelfMoves": false,
-					"switchable": true,
-					"sounds": config_view_sounds,
-					"js": config_view_js_31,
-					"useAutoComplete": true
-				}
-			},
-			"viewScripts": config_view_js_31
-		},
-		{
-			"name": "grand-chess",
-			"modelScripts": modelScripts_34,
-			"config": {
-				"status": true,
-				"model": {
-					"title-en": "Grand Chess",
-					"summary": "Chess on 10x10 (1984)",
-					"rules": {
-						"en": "res/rules/decimal/grand-rules.html"
-					},
-					"module": "chessbase",
-					"plazza": "true",
-					"thumbnail": "res/rules/decimal/grand-thumb.png",
-					"released": 1404985842,
-					"credits": {
-						"en": "res/rules/decimal/grand-credits.html"
-					},
-					"gameOptions": config_model_gameOptions,
-					"obsolete": false,
-					"js": modelScripts_34,
-					"description": {
-						"en": "res/rules/decimal/grand-description.html"
-					},
-					"levels": config_model_levels_5
-				},
-				"view": {
-					"title-en": "Chessbase view",
-					"visuals": {
-						"600x600": [
-							"res/visuals/grand-600x600-3d.jpg",
-							"res/visuals/grand-600x600-2d.jpg"
 						]
 					},
 					"xdView": true,
