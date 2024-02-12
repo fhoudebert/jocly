@@ -1136,6 +1136,13 @@ exports.games = (function () {
 		"fairy-piece-model.js",
 		"decimal/hectochess-model.js"
 	]
+	var modelScripts_heavychess = [
+		"base-model.js",
+		"grid-geo-model.js",
+		"fairy-piece-model.js",
+		"decimal/heavy-model.js"
+
+	]
 	var config_view_js_31 = [
 		"base-view.js",
 		"grid-board-view.js",
@@ -3932,6 +3939,61 @@ exports.games = (function () {
 					"animateSelfMoves": false,
 					"switchable": true,
 					"sounds": config_view_sounds,
+					"js": config_view_js_31,
+					"useAutoComplete": true
+				}
+			},
+			"viewScripts": config_view_js_31
+		},
+		{
+			"name": "heavychess",
+			"modelScripts": modelScripts_heavychess,
+			"config": {
+				"status": true,
+				"model": {
+
+					"title-en": "Heavy chess",
+					"summary": "Chess on 10x10 with many strong pieces",
+					"rules": {
+						"en": "res/rules/decimal/heavychess-rules.html",
+                        "fr": "res/rules/decimal/heavychess-rules_fr.html"
+					},
+					"module": "chessbase",
+					"plazza": "true",
+					"thumbnail": "res/rules/decimal/heavychess-thumb.png",
+					"released": 1404985842,
+					"credits": {
+						"en": "res/rules/decimal/heavychess-credits.html"
+					},
+					"gameOptions": config_model_gameOptions,
+					"obsolete": false,
+					"js": modelScripts_heavychess,
+					"description": {
+						"en": "res/rules/decimal/heavychess-description.html"
+					},
+					"levels": config_model_levels_5
+				},
+				"view": {
+					"title-en": "Chessbase view",
+					"visuals": {
+						"600x600": [
+							"res/visuals/heavychess-600x600-3d.jpg",
+							"res/visuals/heavychess-600x600-2d.jpg"
+						]
+					},
+					"xdView": true,
+
+					"css": config_view_css,
+					"preferredRatio": 1,
+					"useShowMoves": true,
+					"useNotation": true,
+					"module": "chessbase",
+					"defaultOptions": config_view_defaultOptions,
+					"skins": config_view_skins_11,
+					"animateSelfMoves": false,
+					"switchable": true,
+					"sounds": config_view_sounds,
+
 					"js": config_view_js_31,
 					"useAutoComplete": true
 				}
