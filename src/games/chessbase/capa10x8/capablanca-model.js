@@ -67,8 +67,8 @@
 			participants: p.promoChoice, // adapt auto-generated promotion choice to selected variant (Janus has no Marshall!)
 			persistent: true, // stick with selection for all subsequent games
 		},0];
-
-	        return p;
+        p.setValues({P:1, N:2.9, B:3.1, R:5, Q:9, M:7.8, A:6});
+	    return p;
 	}
 	
 })();

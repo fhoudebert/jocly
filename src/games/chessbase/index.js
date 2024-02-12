@@ -6109,7 +6109,7 @@ exports.games = (function () {
  			"config": {
  				"status": true,
  				"model": {
- 					"title-en": "Gross",
+ 					"title-en": "Gross Chess",
 
  					"summary": "Omega/Gothic/Cambaluc Chess on 12x12",
  					"rules": {

@@ -15,9 +15,9 @@
 	
 	Model.Game.cbDefine=function(){
         p = this.cbPiecesFromFEN(geometry, "mavwx2xwvam/1ronbqkbnor1/pppppppppppp/12/12/12/12/12/12/PPPPPPPPPPPP/1RONBQKBNOR1/MAVWX2XWVAM");
-        //p.setValues({P:0.9, N:2.9, B:3.7, R:5, Q:9.6, M:8.5, A:7, W:4.2, O:4.7});
-
-       
+        p.setValues({P:0.95, N:3, B:3.8, R:5, Q:10, M:8.9, A:7.5, W:4.5, O:4.8, X:3.6, V:2.3});
+        p.setProperty("vao","aspect","fr-bow");
+        p.setProperty("cannon","aspect","fr-cannon2");      
         
 		return {
 			
