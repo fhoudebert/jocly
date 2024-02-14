@@ -177,7 +177,7 @@
 					channels: {
 						diffuse: {
 							texturesImg: {
-								diffImg : "/res/shogi/seireigi-diffusemaps/pawn-b.jpg",
+								diffImg : "/res/shogi/diffusemaps/pawn-b.jpg",
 							}
 						},
 						normal: {
@@ -199,7 +199,7 @@
 					channels: {
 						diffuse: {
 							texturesImg: {
-								diffImg : "/res/shogi/seireigi-diffusemaps/tokin-r.jpg",
+								diffImg : "/res/shogi/diffusemaps/tokin-r.jpg",
 							}
 						},
 						normal: {
@@ -221,7 +221,7 @@
 					channels: {
 						diffuse: {
 							texturesImg: {
-								diffImg : "/res/shogi/seireigi-diffusemaps/knight-b.jpg",
+								diffImg : "/res/shogi/diffusemaps/knight-b.jpg",
 							}
 						},
 						normal: {
@@ -243,7 +243,7 @@
 					channels: {
 						diffuse: {
 							texturesImg: {
-								diffImg : "/res/shogi/seireigi-diffusemaps/lance-b.jpg",
+								diffImg : "/res/shogi/diffusemaps/lance-b.jpg",
 							}
 						},
 						normal: {
@@ -309,7 +309,7 @@
 					channels: {
 						diffuse: {
 							texturesImg: {
-								diffImg : "/res/shogi/seireigi-diffusemaps/silver-b.jpg",
+								diffImg : "/res/shogi/diffusemaps/silver-b.jpg",
 							}
 						},
 						normal: {
@@ -331,7 +331,7 @@
 					channels: {
 						diffuse: {
 							texturesImg: {
-								diffImg : "/res/shogi/seireigi-diffusemaps/gold-b.jpg",
+								diffImg : "/res/shogi/diffusemaps/gold-b.jpg",
 							}
 						},
 						normal: {
@@ -396,7 +396,7 @@
 					channels: {
 						diffuse: {
 							texturesImg: {
-								diffImg : "/res/shogi/seireigi-diffusemaps/bishop-b.jpg",
+								diffImg : "/res/shogi/diffusemaps/bishop-b.jpg",
 							}
 						},
 						normal: {
@@ -418,7 +418,7 @@
 					channels: {
 						diffuse: {
 							texturesImg: {
-								diffImg : "/res/shogi/seireigi-diffusemaps/rook-b.jpg",
+								diffImg : "/res/shogi/diffusemaps/rook-b.jpg",
 							}
 						},
 						normal: {
@@ -440,7 +440,7 @@
 					channels: {
 						diffuse: {
 							texturesImg: {
-								diffImg : "/res/shogi/seireigi-diffusemaps/horse-r.jpg",
+								diffImg : "/res/shogi/diffusemaps/horse-r.jpg",
 							}
 						},
 						normal: {
@@ -462,7 +462,7 @@
 					channels: {
 						diffuse: {
 							texturesImg: {
-								diffImg : "/res/shogi/seireigi-diffusemaps/dragon-r.jpg",
+								diffImg : "/res/shogi/diffusemaps/dragon-r.jpg",
 							}
 						},
 						normal: {
@@ -484,7 +484,7 @@
 					channels: {
 						diffuse: {
 							texturesImg: {
-								diffImg : "/res/shogi/seireigi-diffusemaps/king-b.jpg",
+								diffImg : "/res/shogi/diffusemaps/king-b.jpg",
 							}
 						},
 						normal: {
@@ -506,7 +506,7 @@
 					channels: {
 						diffuse: {
 							texturesImg: {
-								diffImg : "/res/shogi/seireigi-diffusemaps/jade-b.jpg",
+								diffImg : "/res/shogi/diffusemaps/jade-b.jpg",
 							}
 						},
 						normal: {
