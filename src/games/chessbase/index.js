@@ -6639,7 +6639,8 @@ exports.games = (function () {
 					"title-en": "Elven Chess",
 					"summary": "10x10 variant with double-capturing super-piece",
 					"rules": {
-						"en": "res/rules/elven/elven-rules.html"
+						"en": "res/rules/elven/elven-rules.html",
+                        "fr": "res/rules/elven/elven-rules_fr.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
