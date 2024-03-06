@@ -1,3 +1,11 @@
+<style>
+    .piece-graph {
+        height: auto;
+        max-width: 300px;
+        margin: 0 auto;
+        display: inline-flex;
+    }
+</style>
 <p>Mini-shogi is a well known variant of Shogi (Japanese Chess).</p>
 
 <p>To win you have to checkmate the king of your opponent.</p>
@@ -24,15 +32,15 @@
 <h2>Initial setup</h2>
 
 <p style="text-align:center"><img style='max-width:100%' src="{GAME}/res/rules/shogi/mini-shogi-initial-2d.png"/></p>
-<p>We made a western set of pieces for players who might not be familiar with the traditional japanese version. </p>
+<p>A skin with pictograms is available for players not familiar with the traditional japanese version.</p>
 <p style="text-align:center"><img style='max-width:100%' src="{GAME}/res/rules/shogi/mini-shogi-initial-2d-western.png"/></p>
 
 <h2>Pieces actions and properties</h2>
 
 <p><img style="max-width:100%;" src="{GAME}/res/rules/shogi/gold.png"/><b>Gold general</b>: moves and captures to adjacent squares in any orthogonal or the forward diagonal direction.</p>
-<p><img style="max-width:100%;" src="{GAME}/res/rules/graphs/gold.png"/></p>
+<p><img class='piece-graph' src="{GAME}/res/rules/graphs/gold.png"/></p>
 <p><img style="max-width:100%;" src="{GAME}/res/rules/shogi/silver.png"/><b>Silver general</b>: moves and captures to adjacent squares in any diagonal or the forward orthogonal direction.</p>
-<p><img style="max-width:100%;" src="{GAME}/res/rules/graphs/silver.png"/></p>
+<p><img class='piece-graph' src="{GAME}/res/rules/graphs/silver.png"/></p>
 <p><img style="max-width:100%;" src="{GAME}/res/rules/shogi/pawn.png"/><b>Pawn</b> : The Pawn: moves and captures to the square directly in front of it.</p>
 <p><img style="max-width:100%;" src="{GAME}/res/rules/shogi/rook.png"/><b>Rook</b> : as in chess.</p>
 <p><img style="max-width:100%;" src="{GAME}/res/rules/shogi/bishop.png"/><b>Bishop</b> : as in chess.</p>

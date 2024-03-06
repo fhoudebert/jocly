@@ -3860,7 +3860,6 @@ exports.games = (function () {
 					"gameOptions": config_model_gameOptions,
 					"obsolete": false,
 					"js": modelScripts_34,
-
 					"description": {
 						"en": "res/rules/decimal/grand-description.html"
 					},
@@ -3881,14 +3880,12 @@ exports.games = (function () {
 					"useNotation": true,
 					"module": "chessbase",
 					"defaultOptions": config_view_defaultOptions,
-
 					"skins": config_view_skins_11,
 					"animateSelfMoves": false,
 					"switchable": true,
 					"sounds": config_view_sounds,
 					"js": config_view_js_31,
 					"useAutoComplete": true
-
 				}
 			},
 			"viewScripts": config_view_js_31
@@ -6833,7 +6830,7 @@ exports.games = (function () {
 					"summary": "Japanese Chess",
 					"rules": {
 						"en": "res/rules/shogi/shogi-rules.html",
-                        "fr": "res/rules/shogi/shogi-rules_fr.html"
+						"fr": "res/rules/shogi/shogi-rules_fr.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
@@ -6880,10 +6877,28 @@ exports.games = (function () {
 						},
 						{
 							"name": "skin2dwestern",
-							"title": "2D Western",
+							"title": "2D Pictos",
 							"3d": false,
 							"preload": [
-								"image|/res/shogi/shogi-sprites-western.png"
+								"image|/res/shogi/shogi-picto-sprites.png"
+							]
+						},
+                        {
+							"name": "skin2dmotifA",
+							"title": "2D Motif A",
+
+							"3d": false,
+							"preload": [
+								"image|/res/shogi/shogi-sprites-motifA.png"
+							]
+						},
+                        {
+							"name": "skin2dmotifB",
+							"title": "2D Motif B",
+
+							"3d": false,
+							"preload": [
+								"image|/res/shogi/shogi-sprites-motifB.png"
 							]
 						},
 						config_view_skins_2
@@ -7109,10 +7124,10 @@ exports.games = (function () {
 						},
 						{
 							"name": "skin2dwestern",
-							"title": "2D Western",
+							"title": "2D Pictos",
 							"3d": false,
 							"preload": [
-								"image|/res/shogi/shogi-sprites-western.png"
+								"image|/res/shogi/shogi-picto-sprites.png"
 							]
 						},
 						config_view_skins_2
@@ -7182,10 +7197,10 @@ exports.games = (function () {
 						},
 						{
 							"name": "skin2dwestern",
-							"title": "2D Western",
+							"title": "2D Pictos",
 							"3d": false,
 							"preload": [
-								"image|/res/shogi/shogi-sprites-western.png"
+								"image|/res/shogi/shogi-picto-sprites"
 							]
 						},
 						config_view_skins_2

@@ -25,7 +25,8 @@
 					},
                     // Uncomment to add a western skin
                     "skin2dwestern": this.cbShogiWesternPieceStyle()["default"]["2d"],
-                    
+                    "skin2dmotifA": this.cbShogiMotifAPieceStyle()["default"]["2d"],
+                    "skin2dmotifB": this.cbShogiMotifBPieceStyle()["default"]["2d"],
 					"3d": {
 						scale: [.42,.42,.42],
 					},
