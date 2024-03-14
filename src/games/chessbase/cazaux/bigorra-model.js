@@ -174,7 +174,7 @@
 					aspect: 'fr-cobra',
 					graph: this.cbSnakeGraph(geometry),
 					value: 3.7,
-					abbrev: 'N',
+					abbrev: 'SN',
 					initial: [{s:1,p:37},{s:1,p:42},{s:-1,p:213},{s:-1,p:218}],
 				},
 
