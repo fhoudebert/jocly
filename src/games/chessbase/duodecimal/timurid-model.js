@@ -172,7 +172,7 @@
       abbrev : 'Q',
       aspect : 'fr-queen',
       graph : this.cbQueenGraph(geometry,confine),
-      value : 10,
+      value : 10.2,
       initial: [{s:1,p:18},{s:-1,p:126}],
       },
       8: {
@@ -212,7 +212,7 @@
       abbrev : 'J',
       aspect : 'fr-camel',
       graph : this.cbShortRangeGraph(geometry,[[-3,-1],[-3,1],[3,-1],[3,1],[1,3],[1,-3],[-1,3],[-1,-3]]),
-      value : 2.7,
+      value : 2.6,
       initial: [{s:1,p:2},{s:1,p:9},{s:-1,p:134},{s:-1,p:141}],
       },
        13: {
@@ -220,7 +220,7 @@
       abbrev : 'X',
       aspect : 'fr-ship',
       graph : this.cbShipGraph(geometry),
-      value : 4.8,
+      value : 4.9,
       initial: [{s:1,p:15},{s:1,p:20},{s:-1,p:123},{s:-1,p:128}],
       },
       14: {
@@ -253,16 +253,35 @@
       initial: [],
       },
       17: {
-      name : 'sultan',
+      name : 'emir',
       abbrev : 'C',
       aspect : 'fr-caliph',
       graph : this.cbMergeGraphs(geometry,
                   this.cbShortRangeGraph(geometry,[[-1,-1],[1,1],[1,-1],[-1,1]]),
                   this.cbKnightGraph(geometry),
                   this.cbCamelGraph(geometry)),
-      value : 7.5,
+      value : 8,
       initial: [],
       },
+      18: {
+      name : 'wizard',
+      abbrev : 'W',
+      aspect : 'fr-wizard',
+      graph : this.cbWizardGraph(geometry,confine),
+      value : 8,
+      initial: [],
+      },
+      19: {
+		name: 'squirrel',
+        abbrev : 'Y',
+		aspect: 'fr-squirrel',
+		graph: this.cbShortRangeGraph(geometry,[
+			[-2,0],[-2,-1],[-2,-2],[-1,-2],[0,-2],
+			[1,-2],[2,-2],[2,-1],[2,0],[2,1],
+			[2,2],[1,2],[0,2],[-1,2],[-2,2],[-2,1]]),
+		value: 6,
+		initial: [],
+		},
 		}
 
 		// defining types for readable promo cases
@@ -283,13 +302,14 @@
         var T_camel=12
         var T_snake=15
         var T_rhino=16
+        var T_emir=17
+        var T_wizard=18
+        var T_squirrel=19
 		return {
 			
 			geometry: geometry,
 			
 			pieceTypes: piecesTypes,
-
-
 
 			promote: function(aGame,piece,move) {
 				// initial pawns go up to last row where it promotes to Queen
@@ -301,6 +321,10 @@
 					return [T_eagle];
                 if (piece.t==T_snake && ((geometry.R(move.t)==lastRow && piece.s > 0) || (geometry.R(move.t)==firstRow && piece.s < 0)) ) 
 					return [T_rhino];
+                if (piece.t==T_wizard && ((geometry.R(move.t)==lastRow && piece.s > 0) || (geometry.R(move.t)==firstRow && piece.s < 0)) ) 
+					return [T_emir];
+                if (piece.t==T_squirrel && ((geometry.R(move.t)==lastRow && piece.s > 0) || (geometry.R(move.t)==firstRow && piece.s < 0)) ) 
+					return [T_lion];
 
 				return [];
 			},
@@ -310,7 +334,7 @@
 			prelude: [{
 				panelWidth: 2, // two buttons per row 
 				panelBackground: "/res/rules/duodecimal/timurid-parameter-panel.png",
-				setups: ["XQX","HQH","XLX","HLH","XSX","HUH","XCX","HCH"], 
+				setups: ["XQX","HQH","XYX","HLH","XSX","HUH","XWX","HCH"], 
 				castle: [ undefined, undefined, undefined, undefined, undefined, undefined, undefined],
 				squares: { 1:[15,18,20], '-1':[123,126,128] },
 				//participants: promoChoice, // adapt the auto-generated promotion choice to the selected variant
