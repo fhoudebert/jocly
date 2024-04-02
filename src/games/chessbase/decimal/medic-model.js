@@ -46,6 +46,12 @@
 		    );
 	    }
 
+// graphs
+	/** Move graph for the Snake */
+	    SnakeGraph = function(geometry,confine){
+            return $this.cbSkiGraph(geometry,[[0,1],[0,-1]],1);
+	    }
+
 		function HoplitGraph() {
 			var graph = $this.cbShortRangeGraph(geometry, [[2,-2],[-2,-2]], 0, $this.cbConstants.FLAG_MOVE ); // double pushes
 			for(var pos=0;pos<geometry.boardSize;pos++) {
@@ -77,7 +83,7 @@
 					value: 1,
 					abbrev: '',
 					fenAbbrev: 'P',
-					initial: [{s:1,p:20},{s:1,p:21},{s:1,p:22},{s:1,p:23},{s:1,p:24},{s:1,p:25},{s:1,p:26},{s:1,p:27},{s:1,p:28},{s:1,p:29}],
+					initial: [{s:1,p:20},{s:1,p:21},{s:1,p:22},{s:1,p:23},{s:1,p:24},{s:1,p:25},{s:1,p:26},{s:1,p:27},{s:1,p:28},{s:1,p:29},{s:1,p:30},{s:1,p:31},{s:1,p:32},{s:1,p:33},{s:1,p:34},{s:1,p:35},{s:1,p:36},{s:1,p:37},{s:1,p:38},{s:1,p:39}],
 					epTarget: false,
 				},
 				
@@ -108,7 +114,7 @@
 					graph: this.cbKnightGraph(geometry),
 					value: 3.25,
 					abbrev: 'N',
-					initial: [{s:1,p:11},{s:1,p:18}],
+					initial: [{s:1,p:12},{s:1,p:17}],
 				},
 				
 				5: {
@@ -117,7 +123,7 @@
 					graph: this.cbBishopGraph(geometry),
 					value: 3.5,
 					abbrev: 'B',
-					initial: [{s:1,p:12},{s:1,p:17}],
+					initial: [{s:1,p:13},{s:1,p:16}],
 				},
 
 				6: {
@@ -126,7 +132,7 @@
 					graph: this.cbRookGraph(geometry),
 					value: 5,
 					abbrev: 'R',
-					initial: [{s:1,p:10},{s:1,p:19}],
+					initial: [{s:1,p:11},{s:1,p:18}],
 					castle: true,
 				},
 
@@ -210,19 +216,18 @@
 					initial: [{s:-1,p:86}],
 				},
 				15: {
-					name : 'mage',
-					abbrev : 'M',
-					aspect : 'fr-wizard',
-					graph : this.cbWizardGraph(geometry),
-					value : 4.5,
-
-                    /*name : 'Camel',
+					name : 'Camel',
 					abbrev : 'M',
 					aspect : 'fr-camel',
 					graph: this.cbShortRangeGraph(geometry,[[-3,-1],[-3,1],[3,-1],[3,1],[1,3],[1,-3],[-1,3],[-1,-3]]),
-					value : 2.5,*/
+					value : 2.5,
 
-                    initial: [{s:1,p:13},{s:1,p:16}],
+					/*aspect : 'fr-wizard',
+					graph : this.cbWizardGraph(geometry),*/
+					value : 4.5,
+                   // initial: [{s:1,p:1},{s:1,p:8}],
+                    initial: [],
+
 					
 				},
 				16: {
@@ -256,7 +261,7 @@
                   graph : this.cbMergeGraphs(geometry,
                               this.cbKnightGraph(geometry),
                               this.cbQueenGraph(geometry)),
-                  value : 10,
+                  value : 12,
                   initial: [{s:-1,p:94}],
                 },
                 20: {
@@ -275,8 +280,33 @@
                   aspect : 'fr-bow',
                   graph : this.cbLongRangeGraph(geometry,[[-1,-1],[1,1],[-1,1],[1,-1]],null,this.cbConstants.FLAG_MOVE | this.cbConstants.FLAG_SCREEN_CAPTURE),
                   value : 2.5,
-                  initial: [{s:1,p:0},{s:1,p:9}],
+                  initial: [{s:1,p:3},{s:1,p:6}],
                 },
+                22: {
+                  name : 'phoenix',
+                  abbrev : 'F',
+                  aspect : 'fr-phoenix',
+                  graph : this.cbShortRangeGraph(geometry,[[2,2],[2,-2],[-2,2],[-2,-2],[1,0],[-1,0],[0,1],[0,-1]]),
+                  value : 4,
+                  initial: [{s:-1,p:80},{s:-1,p:89}],
+                },
+				23: {
+					name: 'immortals',
+					/*aspect: 'fr-sword',
+					graph: this.cbMergeGraphs(geometry,
+						this.cbLongRangeGraph(geometry,[[0,1],[0,-1]]),
+						this.cbShortRangeGraph(geometry,[[1,0],[-1,0]])
+						),
+					value: 2.5,*/
+
+                    aspect : 'fr-cobra',
+                    graph : SnakeGraph(geometry),
+                    value : 3.5,
+
+					abbrev: 'D',
+					//initial: [{s:1,p:10},{s:1,p:19}],
+initial: [],
+				},
 			},
 
 			promote: function(aGame,piece,move) {

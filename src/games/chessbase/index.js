@@ -467,6 +467,12 @@ exports.games = (function () {
 		"fairy-piece-model.js",
 		"decimal/plateae-model.js"
 	]
+	var modelScripts_medic = [
+		"base-model.js",
+		"grid-geo-model.js",
+		"fairy-piece-model.js",
+		"decimal/medic-model.js"
+	]
 	var modelScripts_104 = [
 		"base-model.js",
 		"grid-geo-model.js",
@@ -6775,7 +6781,7 @@ exports.games = (function () {
 				"status": true,
 				"model": {
 					"title-en": "Plateae",
-					"summary": "Asymmetric Batle : Spartans vs Achaemenids",
+					"summary": "Asymmetric battle : Spartans vs Achaemenids",
 					"rules": {
 						"en": "spartan-rules.html"
 					},
@@ -6838,13 +6844,83 @@ exports.games = (function () {
 			"viewScripts": config_view_js_31
 		},
 		{
+			"name": "medic-chess",
+			"modelScripts": modelScripts_medic,
+			"config": {
+				"status": true,
+				"model": {
+					"title-en": "Medic wars",
+					"summary": "Asymmetric battle : Spartans vs Achaemenids",
+					"rules": {
+						"en": "spartan-rules.html"
+					},
+					"module": "chessbase",
+					"plazza": "true",
+					"thumbnail": "res/rules/decimal/medic-thumb.png",
+					"released": 1396536978,
+					"credits": {
+						"en": "spartan-credits.html"
+					},
+					"gameOptions": config_model_gameOptions,
+					"js": modelScripts_medic,
+					"description": {
+						"en": "spartan-description.html"
+					},
+					"levels": config_model_levels_15
+				},
+				"view": {
+					"title-en": "Chessbase view",
+					"visuals": {
+						"600x600": [
+							"res/visuals/spartan-600x600-3d.jpg",
+							"res/visuals/spartan-600x600-2d.jpg"
+						]
+					},
+					"xdView": true,
+					"css": config_view_css,
+
+					"preferredRatio": 1,
+
+					"useShowMoves": true,
+					"useNotation": true,
+					"module": "chessbase",
+					"defaultOptions": config_view_defaultOptions,
+					"skins": [
+						{
+							"name": "skin3d",
+							"title": "3D Classic",
+							"3d": true,
+							"preload": [
+								"smoothedfilegeo|0|/res/ring-target.js",
+								"image|/res/images/cancel.png",
+
+								"image|/res/images/wikipedia.png"
+							],
+							"world": config_view_skins_world,
+							"camera": config_view_skins_camera
+						},
+
+						config_view_skins_2
+					],
+					"animateSelfMoves": false,
+					"switchable": true,
+
+					"sounds": config_view_sounds,
+					"js": config_view_js_31,
+					"useAutoComplete": true
+				}
+			},
+
+			"viewScripts": config_view_js_31
+		},
+		{
 			"name": "hegemon-chess",
 			"modelScripts": modelScripts_hegemon,
 			"config": {
 				"status": true,
 				"model": {
 					"title-en": "Spartan Hegemon",
-					"summary": "Asymmetric Batle : Spartans vs Achaemenids",
+					"summary": "Asymmetric battle : Spartans vs Achaemenids",
 					"rules": {
 						"en": "spartan-rules.html"
 					},

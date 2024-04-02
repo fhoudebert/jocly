@@ -49,7 +49,7 @@
 			},
 			"fr-berolina": {
 				"2d": {
-					clipx: 0,
+					clipx: 7600,
 				},
 			},
 			"fr-ferz": {

@@ -89,7 +89,7 @@
 				
 				2: {
 					name: 'heilotes',
-					aspect: 'fr-hoplit',
+					aspect: 'fr-berolina',
 					graph: HoplitGraph(geometry),
 					value: 1,
 					abbrev: '',
@@ -99,7 +99,7 @@
 
 				3: {
 					name: 'iheilotes',
-					aspect: 'fr-hoplit',
+					aspect: 'fr-berolina',
 					graph: HoplitGraph(geometry),
 					value: 1,
 					abbrev: 'H',
@@ -218,12 +218,12 @@
 				15: {
 					name : 'Camel',
 					abbrev : 'M',
-					aspect : 'fr-camel',
+					/*aspect : 'fr-camel',
 					graph: this.cbShortRangeGraph(geometry,[[-3,-1],[-3,1],[3,-1],[3,1],[1,3],[1,-3],[-1,3],[-1,-3]]),
-					value : 2.5,
+					value : 2.5,*/
 
-					/*aspect : 'fr-wizard',
-					graph : this.cbWizardGraph(geometry),*/
+					aspect : 'fr-wizard',
+					graph : this.cbWizardGraph(geometry),
 					value : 4.5,
                     initial: [{s:1,p:1},{s:1,p:8}],
 
@@ -386,9 +386,9 @@
 				
 				// motivate knights and bishops to deploy early
 				var minorPiecesMoved=0;
-				for(var t=4;t<=5;t++)
+				for(var t=13;t<=15;t+=2)
 					for(var s=1;s>=-1;s-=2) {
-						var pieces=material[s].byType[t];
+						var pieces=material[s].byType[t-5*s>>1];
 						if(pieces)
 							for(var i=0;i<pieces.length;i++)
 								if(pieces[i].m)
