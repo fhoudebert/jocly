@@ -232,7 +232,7 @@
 			spec.paintBackground.call(this,spec,ctx,images,channel,cSize.width,cSize.height);
 				console.log("spec,ctx,images,channel",spec,ctx,images,channel);	
 			spec.paintCells.call(this,spec,ctx,images,channel)
-			spec.paintLines.call(this,spec,ctx,images,channel);
+			//spec.paintLines.call(this,spec,ctx,images,channel);
 			if(this.mNotation)
 				spec.paintNotation.call(this,spec,ctx,channel);
 		},

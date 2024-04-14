@@ -1,5 +1,6 @@
 (function() {
-	var CANVAS_SIZE = 512;
+	//var CANVAS_SIZE = 512;
+var CANVAS_SIZE = 512;
 	var FAIRY_CANVAS_PROPERTIES = {
 			cx: CANVAS_SIZE,
 			cy: CANVAS_SIZE
@@ -32,9 +33,9 @@
 					display: this.cbDisplayPieceFn(this.cbShogiPieceStyle3D),
 				},
 				"2d": {
-					file: this.mViewOptions.fullPath + "/res/shogi/seireigi-shogi-sprites.png",
+					file: this.mViewOptions.fullPath + "/res/shogi/chu-seireigi-shogi-picto-sprites.png",
 					clipwidth: 100,
-					clipheight: 100,
+					clipheight: 100,	
 				},
 			},
 			"sh-pawn": {
@@ -137,7 +138,7 @@
 					clipx: 2900,
 				},				
 			},	
-			"sh-owl": {
+			"sh-phoenix": {
 				"2d": {
 					clipx: 3000,
 				},				
@@ -172,12 +173,7 @@
 					clipx: 3600,
 				},				
 			},	
-			"sh-rabbit": {
-				"2d": {
-					clipx: 3700,
-				},				
-			},
-			"sh-crow": {
+			"sh-kirin": {
 				"2d": {
 					clipx: 3800,
 				},				
@@ -187,12 +183,12 @@
 					clipx: 3900,
 				},				
 			},
-			"sh-boar": {
+			"sh-promoted-wolf": {
 				"2d": {
 					clipx: 4000,
 				},				
 			},	
-			"sh-stag": {
+			"sh-rabbit": {
 				"2d": {
 					clipx: 4100,
 				},				
@@ -207,7 +203,7 @@
 					clipx: 4300,
 				},				
 			},
-			"sh-dog": {
+			"sh-whale": {
 				"2d": {
 					clipx: 4400,
 				},				
@@ -232,11 +228,28 @@
 					clipx: 4800,
 				},				
 			},	
-			"sh-promoted-leopard": {
+			"sh-promoted-copper": {
 				"2d": {
 					clipx: 4900,
 				},				
-			},		
+			},
+			"sh-promoted-rabbit": {
+				"2d": {
+					clipx: 3700,
+				},
+			},
+			"sh-promoted-phoenix": {
+				"2d": {
+					clipx: 5000,
+				},				
+			},
+			"sh-promoted-kirin": {
+				"2d": {
+					clipx: 5100,
+				},				
+			},				
+
+
 		},modifier);
 	}
 
@@ -297,7 +310,7 @@
 					channels: {
 						diffuse: {
 							texturesImg: {
-								diffImg : "/res/shogi/seireigi-diffusemaps/pawn-b.jpg",
+								diffImg : "/res/shogi/diffusemaps/pawn-b.jpg",
 							}
 						},
 						normal: {
@@ -319,7 +332,7 @@
 					channels: {
 						diffuse: {
 							texturesImg: {
-								diffImg : "/res/shogi/seireigi-diffusemaps/tokin-r.jpg",
+								diffImg : "/res/shogi/diffusemaps/tokin-r.jpg",
 							}
 						},
 						normal: {
@@ -341,7 +354,7 @@
 					channels: {
 						diffuse: {
 							texturesImg: {
-								diffImg : "/res/shogi/seireigi-diffusemaps/knight-b.jpg",
+								diffImg : "/res/shogi/diffusemaps/knight-b.jpg",
 							}
 						},
 						normal: {
@@ -363,7 +376,7 @@
 					channels: {
 						diffuse: {
 							texturesImg: {
-								diffImg : "/res/shogi/seireigi-diffusemaps/lance-b.jpg",
+								diffImg : "/res/shogi/diffusemaps/lance-b.jpg",
 							}
 						},
 						normal: {
@@ -407,7 +420,7 @@
 					channels: {
 						diffuse: {
 							texturesImg: {
-								diffImg : "/res/shogi/seireigi-diffusemaps/p-lance-r.jpg",
+								diffImg : "/res/shogi/diffusemaps/p-lance-r.jpg",
 							}
 						},
 						normal: {
@@ -429,7 +442,7 @@
 					channels: {
 						diffuse: {
 							texturesImg: {
-								diffImg : "/res/shogi/seireigi-diffusemaps/silver-b.jpg",
+								diffImg : "/res/shogi/diffusemaps/silver-b.jpg",
 							}
 						},
 						normal: {
@@ -451,7 +464,7 @@
 					channels: {
 						diffuse: {
 							texturesImg: {
-								diffImg : "/res/shogi/seireigi-diffusemaps/gold-b.jpg",
+								diffImg : "/res/shogi/diffusemaps/gold-b.jpg",
 							}
 						},
 						normal: {
@@ -464,6 +477,48 @@
 			},
 		},
 
+		"sh-promoted-wolf": {
+			mesh: {
+				jsFile:"/res/shogi/g-tile.js"
+			},
+			materials: {
+				mat0: {
+					channels: {
+						diffuse: {
+							texturesImg: {
+								diffImg : "/res/shogi/seireigi-diffusemaps/p-wolf-r.jpg",
+							}
+						},
+						normal: {
+							texturesImg: {
+								normalImg: "/res/shogi/tile-normalmap.jpg",
+							}
+						}
+					}
+				}
+			},
+		},
+		"sh-promoted-copper": {
+			mesh: {
+				jsFile:"/res/shogi/g-tile.js"
+			},
+			materials: {
+				mat0: {
+					channels: {
+						diffuse: {
+							texturesImg: {
+								diffImg : "/res/shogi/seireigi-diffusemaps/p-copper-r.jpg",
+							}
+						},
+						normal: {
+							texturesImg: {
+								normalImg: "/res/shogi/tile-normalmap.jpg",
+							}
+						}
+					}
+				}
+			},
+		},
 		"sh-promoted-silver": {
 			mesh: {
 				jsFile:"/res/shogi/g-tile.js"
@@ -494,7 +549,7 @@
 					channels: {
 						diffuse: {
 							texturesImg: {
-								diffImg : "/res/shogi/seireigi-diffusemaps/p-gold-r.jpg",
+								diffImg : "/res/shogi/diffusemaps/p-gold-r.jpg",
 							}
 						},
 						normal: {
@@ -516,7 +571,7 @@
 					channels: {
 						diffuse: {
 							texturesImg: {
-								diffImg : "/res/shogi/seireigi-diffusemaps/bishop-b.jpg",
+								diffImg : "/res/shogi/diffusemaps/bishop-b.jpg",
 							}
 						},
 						normal: {
@@ -538,7 +593,7 @@
 					channels: {
 						diffuse: {
 							texturesImg: {
-								diffImg : "/res/shogi/seireigi-diffusemaps/rook-b.jpg",
+								diffImg : "/res/shogi/diffusemaps/rook-b.jpg",
 							}
 						},
 						normal: {
@@ -560,7 +615,7 @@
 					channels: {
 						diffuse: {
 							texturesImg: {
-								diffImg : "/res/shogi/seireigi-diffusemaps/horse-r.jpg",
+								diffImg : "/res/shogi/diffusemaps/horse-r.jpg",
 							}
 						},
 						normal: {
@@ -582,7 +637,7 @@
 					channels: {
 						diffuse: {
 							texturesImg: {
-								diffImg : "/res/shogi/seireigi-diffusemaps/dragon-r.jpg",
+								diffImg : "/res/shogi/diffusemaps/dragon-r.jpg",
 							}
 						},
 						normal: {
@@ -594,7 +649,447 @@
 				}
 			},
 		},
-
+		"sh-queen": {
+			mesh: {
+				jsFile:"/res/shogi/j-tile.js"
+			},
+			materials: {
+				mat0: {
+					channels: {
+						diffuse: {
+							texturesImg: {
+								diffImg : "/res/shogi/chu-diffusemaps/queen-b.jpg",
+							}
+						},
+						normal: {
+							texturesImg: {
+								normalImg: "/res/shogi/tile-normalmap.jpg",
+							}
+						}
+					}
+				}
+			},
+		},
+		"sh-lion": {
+			mesh: {
+				jsFile:"/res/shogi/j-tile.js"
+			},
+			materials: {
+				mat0: {
+					channels: {
+						diffuse: {
+							texturesImg: {
+								diffImg : "/res/shogi/chu-diffusemaps/lion-b.jpg",
+							}
+						},
+						normal: {
+							texturesImg: {
+								normalImg: "/res/shogi/tile-normalmap.jpg",
+							}
+						}
+					}
+				}
+			},
+		},
+		"sh-leopard": {
+			mesh: {
+				jsFile:"/res/shogi/n-tile.js"
+			},
+			materials: {
+				mat0: {
+					channels: {
+						diffuse: {
+							texturesImg: {
+								diffImg : "/res/shogi/seireigi-diffusemaps/leopard-b.jpg",
+							}
+						},
+						normal: {
+							texturesImg: {
+								normalImg: "/res/shogi/tile-normalmap.jpg",
+							}
+						}
+					}
+				}
+			},
+		},
+		"sh-kirin": {
+			mesh: {
+				jsFile:"/res/shogi/j-tile.js"
+			},
+			materials: {
+				mat0: {
+					channels: {
+						diffuse: {
+							texturesImg: {
+								diffImg : "/res/shogi/chu-diffusemaps/kirin-b.jpg",
+							}
+						},
+						normal: {
+							texturesImg: {
+								normalImg: "/res/shogi/tile-normalmap.jpg",
+							}
+						}
+					}
+				}
+			},
+		},
+		"sh-phoenix": {
+			mesh: {
+				jsFile:"/res/shogi/j-tile.js"
+			},
+			materials: {
+				mat0: {
+					channels: {
+						diffuse: {
+							texturesImg: {
+								diffImg : "/res/shogi/chu-diffusemaps/phoenix-b.jpg",
+							}
+						},
+						normal: {
+							texturesImg: {
+								normalImg: "/res/shogi/tile-normalmap.jpg",
+							}
+						}
+					}
+				}
+			},
+		},
+		"sh-copper": {
+			mesh: {
+				jsFile:"/res/shogi/n-tile.js"
+			},
+			materials: {
+				mat0: {
+					channels: {
+						diffuse: {
+							texturesImg: {
+								diffImg : "/res/shogi/chu-diffusemaps/copper-b.jpg",
+							}
+						},
+						normal: {
+							texturesImg: {
+								normalImg: "/res/shogi/tile-normalmap.jpg",
+							}
+						}
+					}
+				}
+			},
+		},
+		"sh-ox": {
+			mesh: {
+				jsFile:"/res/shogi/g-tile.js"
+			},
+			materials: {
+				mat0: {
+					channels: {
+						diffuse: {
+							texturesImg: {
+								diffImg : "/res/shogi/chu-diffusemaps/flyingox-r.jpg",
+							}
+						},
+						normal: {
+							texturesImg: {
+								normalImg: "/res/shogi/tile-normalmap.jpg",
+							}
+						}
+					}
+				}
+			},
+		},
+		"sh-whale": {
+			mesh: {
+				jsFile:"/res/shogi/n-tile.js"
+			},
+			materials: {
+				mat0: {
+					channels: {
+						diffuse: {
+							texturesImg: {
+								diffImg : "/res/shogi/chu-diffusemaps/whale-r.jpg",
+							}
+						},
+						normal: {
+							texturesImg: {
+								normalImg: "/res/shogi/tile-normalmap.jpg",
+							}
+						}
+					}
+				}
+			},
+		},
+		"sh-freeboar": {
+			mesh: {
+				jsFile:"/res/shogi/g-tile.js"
+			},
+			materials: {
+				mat0: {
+					channels: {
+						diffuse: {
+							texturesImg: {
+								diffImg : "/res/shogi/chu-diffusemaps/boar-r.jpg",
+							}
+						},
+						normal: {
+							texturesImg: {
+								normalImg: "/res/shogi/tile-normalmap.jpg",
+							}
+						}
+					}
+				}
+			},
+		},
+		"sh-wolf": {
+			mesh: {
+				jsFile:"/res/shogi/g-tile.js"
+			},
+			materials: {
+				mat0: {
+					channels: {
+						diffuse: {
+							texturesImg: {
+								diffImg : "/res/shogi/seireigi-diffusemaps/wolf-b.jpg",
+							}
+						},
+						normal: {
+							texturesImg: {
+								normalImg: "/res/shogi/tile-normalmap.jpg",
+							}
+						}
+					}
+				}
+			},
+		},
+		"sh-ram": {
+			mesh: {
+				jsFile:"/res/shogi/g-tile.js"
+			},
+			materials: {
+				mat0: {
+					channels: {
+						diffuse: {
+							texturesImg: {
+								diffImg : "/res/shogi/seireigi-diffusemaps/ram-b.jpg",
+							}
+						},
+						normal: {
+							texturesImg: {
+								normalImg: "/res/shogi/tile-normalmap.jpg",
+							}
+						}
+					}
+				}
+			},
+		},
+		"sh-bear": {
+			mesh: {
+				jsFile:"/res/shogi/g-tile.js"
+			},
+			materials: {
+				mat0: {
+					channels: {
+						diffuse: {
+							texturesImg: {
+								diffImg : "/res/shogi/seireigi-diffusemaps/bear-b.jpg",
+							}
+						},
+						normal: {
+							texturesImg: {
+								normalImg: "/res/shogi/tile-normalmap.jpg",
+							}
+						}
+					}
+				}
+			},
+		},
+		"sh-swallow": {
+			mesh: {
+				jsFile:"/res/shogi/g-tile.js"
+			},
+			materials: {
+				mat0: {
+					channels: {
+						diffuse: {
+							texturesImg: {
+								diffImg : "/res/shogi/seireigi-diffusemaps/swallow-b.jpg",
+							}
+						},
+						normal: {
+							texturesImg: {
+								normalImg: "/res/shogi/tile-normalmap.jpg",
+							}
+						}
+					}
+				}
+			},
+		},
+		"sh-rabbit": {
+			mesh: {
+				jsFile:"/res/shogi/g-tile.js"
+			},
+			materials: {
+				mat0: {
+					channels: {
+						diffuse: {
+							texturesImg: {
+								diffImg : "/res/shogi/seireigi-diffusemaps/rabbit-b.jpg",
+							}
+						},
+						normal: {
+							texturesImg: {
+								normalImg: "/res/shogi/tile-normalmap.jpg",
+							}
+						}
+					}
+				}
+			},
+		},
+		"sh-elephant": {
+			mesh: {
+				jsFile:"/res/shogi/g-tile.js"
+			},
+			materials: {
+				mat0: {
+					channels: {
+						diffuse: {
+							texturesImg: {
+								diffImg : "/res/shogi/seireigi-diffusemaps/elephant-b.jpg",
+							}
+						},
+						normal: {
+							texturesImg: {
+								normalImg: "/res/shogi/tile-normalmap.jpg",
+							}
+						}
+					}
+				}
+			},
+		},
+		"sh-bird": {
+			mesh: {
+				jsFile:"/res/shogi/g-tile.js"
+			},
+			materials: {
+				mat0: {
+					channels: {
+						diffuse: {
+							texturesImg: {
+								diffImg : "/res/shogi/seireigi-diffusemaps/p-bird-r.jpg",
+							}
+						},
+						normal: {
+							texturesImg: {
+								normalImg: "/res/shogi/tile-normalmap.jpg",
+							}
+						}
+					}
+				}
+			},
+		},
+		"sh-fox": {
+			mesh: {
+				jsFile:"/res/shogi/g-tile.js"
+			},
+			materials: {
+				mat0: {
+					channels: {
+						diffuse: {
+							texturesImg: {
+								diffImg : "/res/shogi/seireigi-diffusemaps/p-fox-r.jpg",
+							}
+						},
+						normal: {
+							texturesImg: {
+								normalImg: "/res/shogi/tile-normalmap.jpg",
+							}
+						}
+					}
+				}
+			},
+		},
+		"sh-teacher": {
+			mesh: {
+				jsFile:"/res/shogi/g-tile.js"
+			},
+			materials: {
+				mat0: {
+					channels: {
+						diffuse: {
+							texturesImg: {
+								diffImg : "/res/shogi/seireigi-diffusemaps/p-teacher-r.jpg",
+							}
+						},
+						normal: {
+							texturesImg: {
+								normalImg: "/res/shogi/tile-normalmap.jpg",
+							}
+						}
+					}
+				}
+			},
+		},
+		"sh-promoted-rabbit": {
+			mesh: {
+				jsFile:"/res/shogi/g-tile.js"
+			},
+			materials: {
+				mat0: {
+					channels: {
+						diffuse: {
+							texturesImg: {
+								diffImg : "/res/shogi/seireigi-diffusemaps/p-stag-r.jpg",
+							}
+						},
+						normal: {
+							texturesImg: {
+								normalImg: "/res/shogi/tile-normalmap.jpg",
+							}
+						}
+					}
+				}
+			},
+		},
+		"sh-promoted-kirin": {
+			mesh: {
+				jsFile:"/res/shogi/g-tile.js"
+			},
+			materials: {
+				mat0: {
+					channels: {
+						diffuse: {
+							texturesImg: {
+								diffImg : "/res/shogi/diffusemaps/p-kirin-r.jpg",
+							}
+						},
+						normal: {
+							texturesImg: {
+								normalImg: "/res/shogi/tile-normalmap.jpg",
+							}
+						}
+					}
+				}
+			},
+		},
+		"sh-promoted-phoenix": {
+			mesh: {
+				jsFile:"/res/shogi/g-tile.js"
+			},
+			materials: {
+				mat0: {
+					channels: {
+						diffuse: {
+							texturesImg: {
+								diffImg : "/res/shogi/diffusemaps/p-phoenix-r.jpg",
+							}
+						},
+						normal: {
+							texturesImg: {
+								normalImg: "/res/shogi/tile-normalmap.jpg",
+							}
+						}
+					}
+				}
+			},
+		},
 		"sh-king": {
 			mesh: {
 				jsFile:"/res/shogi/k-tile.js"
@@ -604,7 +1099,7 @@
 					channels: {
 						diffuse: {
 							texturesImg: {
-								diffImg : "/res/shogi/seireigi-diffusemaps/king-b.jpg",
+								diffImg : "/res/shogi/diffusemaps/king-b.jpg",
 							}
 						},
 						normal: {
@@ -626,7 +1121,7 @@
 					channels: {
 						diffuse: {
 							texturesImg: {
-								diffImg : "/res/shogi/seireigi-diffusemaps/jade-b.jpg",
+								diffImg : "/res/shogi/diffusemaps/jade-b.jpg",
 							}
 						},
 						normal: {
@@ -646,13 +1141,12 @@
 		return $.extend(true,this.cbShogiPieceStyle(),{
 			"default": {
 				"2d": {
-					file: this.mViewOptions.fullPath + "/res/shogi/chu-seireigi-shogi-sprites-western.png",
-					//clipwidth: 100,
-					//clipheight: 100,
+					file: this.mViewOptions.fullPath + "/res/shogi/chu-seireigi-shogi-picto-sprites.png",
 					clipwidth: 100,
 					clipheight: 100,
-					scale: [0.34285714285714,0.34285714285714,0.34285714285714],
-					                              
+                    width: 600,
+					height: 600,			
+					scale: [0.34285714285714,0.34285714285714,0.34285714285714],                              
 				},
 			}
 		},modifier);

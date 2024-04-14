@@ -1,6 +1,6 @@
 
 (function(){
-	var geometry = Model.Game.cbDropGeometry(12,12,0);
+	var geometry = Model.Game.cbDropGeometry(12,12,4);
 	
 	Model.Game.cbOnStaleMate = -1; // stalemate = last player wins
 	Model.Game.cbMaxRepeats = 4;
@@ -27,10 +27,7 @@
 	Model.Game.cbDefine = function() {
 		
 		var $this = this;
-		var hitrun=this.cbConstants.FLAG_HITRUN;		// for Lion's adjacent enemy, to add 2nd leg
-		var locust=this.cbConstants.FLAG_CHECKER		// for Falcon & Eagle jump, to empty...
-			 | this.cbConstants.FLAG_SPECIAL_CAPTURE;	// ... or occupied
-		var igui=this.cbConstants.FLAG_RIFLE;	
+	
         var adjacent=[[-1,-1],[-1,1],[1,-1],[1,1],[-1,0],[0,1],[0,-1],[1,0]];
 		var definition = {
 			
@@ -45,7 +42,7 @@
 					value: 0.8,
 					abbrev: '',
 					fenAbbrev: 'P',
-					initial: [{s:1,p:50},{s:1,p:51},{s:1,p:52},{s:1,p:53},{s:1,p:54},{s:1,p:55},{s:1,p:56},{s:1,p:57},{s:1,p:58},{s:1,p:59},{s:1,p:60},{s:1,p:61}],
+					initial: [{s:1,p:114},{s:1,p:115},{s:1,p:116},{s:1,p:117},{s:1,p:118},{s:1,p:119},{s:1,p:120},{s:1,p:121},{s:1,p:122},{s:1,p:123},{s:1,p:124},{s:1,p:125}],
 					demoted: 1,
 					hand: 0,
 				},
@@ -57,7 +54,7 @@
 					value: 0.8,
 					abbrev: '',
 					fenAbbrev: 'P',
-					initial: [{s:-1,p:130},{s:-1,p:131},{s:-1,p:132},{s:-1,p:133},{s:-1,p:134},{s:-1,p:135},{s:-1,p:136},{s:-1,p:137},{s:-1,p:138},{s:-1,p:139},{s:-1,p:140},{s:-1,p:141}],
+					initial: [{s:-1,p:194},{s:-1,p:195},{s:-1,p:196},{s:-1,p:197},{s:-1,p:198},{s:-1,p:199},{s:-1,p:200},{s:-1,p:201},{s:-1,p:202},{s:-1,p:203},{s:-1,p:204},{s:-1,p:205}],
 					demoted: 0,
 					hand: 0,
 				},
@@ -68,7 +65,7 @@
 					graph: this.cbDropGraph(geometry, [],[[0,1]],0,1),
 					value: 2,
 					abbrev: 'L',
-					initial: [{s:1,p:2},{s:1,p:13}],
+					initial: [{s:1,p:66},{s:1,p:77}],
 					demoted: 3,
 					hand: 1,
 				},
@@ -79,96 +76,92 @@
 					graph: this.cbDropGraph(geometry, [],[[0,-1]],1,0),
 					value: 2,
 					abbrev: 'L',
-					initial: [{s:-1,p:178},{s:-1,p:189}],
+					initial: [{s:-1,p:242},{s:-1,p:253}],
 					demoted: 2,
 					hand: 1,
 				},
-				
 				4: {
+					name: 'rabbit-w',
+					aspect: 'sh-rabbit',
+					graph: this.cbDropGraph(geometry, [],[[0,1],[1,1],[-1,1]],0,1),
+					value: 1.1,
+					abbrev: 'RU',
+					initial: [{s:1,p:85},{s:1,p:90}],
+					demoted: 5,
+					hand: 3,
+				},
+				
+				5: {
+					name: 'rabbit-b',
+					aspect: 'sh-rabbit',
+					graph: this.cbDropGraph(geometry, [],[[0,-1],[1,-1],[-1,-1]],1,0),
+					value: 1.1,
+					abbrev: 'RU',
+					initial: [{s:-1,p:229},{s:-1,p:234}],
+					demoted: 4,
+					hand: 3,
+				},
+				6: {
+					name: 'ram-w',
+					aspect: 'sh-ram',
+					graph: this.cbDropGraph(geometry, [],[[1,1],[-1,1]],0,1),
+					value: 3.1,
+					hand: 8,
+					abbrev: 'RS',
+					demoted: 7,
+					initial: [{s:1,p:67},{s:1,p:76}],
+					
+				},
+				7: {
+					name: 'ram-b',
+					aspect: 'sh-ram',
+					graph: this.cbDropGraph(geometry, [],[[1,-1],[-1,-1]],1,0),
+					value: 3.1,
+					hand: 8,
+					abbrev: 'RS',
+					demoted: 6,
+					initial: [{s:-1,p:243},{s:-1,p:252}],
+				},
+				8: {
+					name: 'swallow-w',
+					aspect: 'sh-swallow',
+					graph: this.cbDropGraph(geometry, [[-2,2],[0,2],[2,2]],[],0,2),
+					value: 1.8,
+					abbrev: 'FS',
+                    demoted: 9,
+					initial: [{s:1,p:98},{s:1,p:109}],
+					hand: 11,
+				},
+				9: {
+					name: 'swallow-b',
+					aspect: 'sh-swallow',
+					graph: this.cbDropGraph(geometry, [[-2,-2],[0,-2],[2,-2]],[],2,0),
+					value: 1.8,
+					abbrev: 'FS',
+                    demoted: 8,
+					initial: [{s:-1,p:210},{s:-1,p:221}],
+					hand: 11,
+				},
+				10: {
 					name: 'knight-w',
 					aspect: 'sh-knight',
 					graph: this.cbDropGraph(geometry, [[1,2],[-1,2]],[],0,2),
 					value: 1.3,
 					abbrev: 'N',
-					initial: [{s:1,p:19},{s:1,p:28}],
-					demoted: 5,
+					initial: [{s:1,p:83},{s:1,p:92}],
+					demoted: 11,
 					hand: 2,
 				},
 				
-				5: {
+				11: {
 					name: 'knight-b',
 					aspect: 'sh-knight',
 					graph: this.cbDropGraph(geometry, [[1,-2],[-1,-2]],[],2,0),
 					value: 1.3,
 					abbrev: 'N',
-					initial: [{s:-1,p:163},{s:-1,p:172}],
-					demoted: 4,
-					hand: 2,
-				},
-				
-				6: {
-					name: 'silver-w',
-					aspect: 'sh-silver',
-					graph: this.cbDropGraph(geometry, [[0,1],[1,1],[1,-1],[-1,1],[-1,-1]],[]),
-					value: 2.3,
-					abbrev: 'S',
-					initial: [{s:1,p:5},{s:1,p:10}],
-					demoted: 7,
-					hand: 3,
-				},
-				
-				7: {
-					name: 'silver-b',
-					aspect: 'sh-silver',
-					graph: this.cbDropGraph(geometry, [[0,-1],[1,1],[1,-1],[-1,1],[-1,-1]],[]),
-					value: 2.3,
-					abbrev: 'S',
-					initial: [{s:-1,p:181},{s:-1,p:186}],
-					demoted: 6,
-					hand: 3,
-				},
-				
-				8: {
-					name: 'bishop',
-					aspect: 'sh-bishop',
-					graph: this.cbDropGraph(geometry, [],[[1,1],[1,-1],[-1,1],[-1,-1]]),
-					value: 3.9,
-					abbrev: 'B',
-					initial: [{s:1,p:38},{s:-1,p:153}],
-					hand: 5,
-				},
-
-				9: {
-					name: 'rook',
-					aspect: 'sh-rook',
-					graph: this.cbDropGraph(geometry, [], [[0,1],[1,0],[-1,0],[0,-1]]),
-					value: 4.9,
-					abbrev: 'R',
-					initial: [{s:1,p:41},{s:-1,p:150}],
-					castle: true,
-					hand: 6,
-				},
-
-				10: {
-					name: 'gold-w',
-					aspect: 'sh-gold',
-					graph: this.cbDropGraph(geometry, [[0,1],[1,0],[-1,0],[0,-1],[1,1],[-1,1]],[]),
-					value: 2.8,
-					abbrev: 'G',
-					initial: [{s:1,p:6},{s:1,p:9}],
-					demoted: 11,
-					hand: 4,
-				},
-				
-				11: {
-					name: 'gold-b',
-					aspect: 'sh-gold',
-					graph: this.cbDropGraph(geometry, [[0,1],[1,0],[-1,0],[0,-1],[1,-1],[-1,-1]],[]),
-					value: 2.8,
-					abbrev: 'G',
-					initial: [{s:-1,p:182},{s:-1,p:185}],
+					initial: [{s:-1,p:227},{s:-1,p:236}],
 					demoted: 10,
-					hand: 4,
+					hand: 2,
 				},
 				12: {
 					name: 'elephant-w',
@@ -178,7 +171,7 @@
 					abbrev: 'E',
 					demoted: 13,
 					hand: 5,
-					initial: [{s:1,p:8}],
+					initial: [{s:1,p:72}],
 				},
 
 				
@@ -190,7 +183,7 @@
 					abbrev: 'E',
 					demoted: 12,
 					hand: 5,
-					initial: [{s:-1,p:183}],
+					initial: [{s:-1,p:247}],
 				},
 
 				14: {
@@ -201,7 +194,7 @@
 					abbrev: 'C',
 					hand: 6,
 					demoted: 15,
-					initial: [{s:1,p:4},{s:1,p:11}],
+					initial: [{s:1,p:68},{s:1,p:75}],
 				},
 
 				15: {
@@ -212,7 +205,7 @@
 					abbrev: 'C',
 					hand: 6,
 					demoted: 14,
-					initial: [{s:-1,p:180},{s:-1,p:187}],
+					initial: [{s:-1,p:244},{s:-1,p:251}],
 				},
 				16: {
 					name: 'wolf-w',
@@ -222,7 +215,7 @@
 					abbrev: 'W',
 					hand: 7,
 					demoted: 17,
-					initial: [{s:1,p:36},{s:1,p:43}],
+					initial: [{s:1,p:107}],
 				},
 
 				17: {
@@ -233,54 +226,53 @@
 					abbrev: 'W',
 					hand: 7,
 					demoted: 16,
-					initial: [{s:-1,p:148},{s:-1,p:155}],
+					initial: [{s:-1,p:212}],
 				},
 				18: {
-					name: 'ram-w',
-					aspect: 'sh-ram',
-					graph: this.cbDropGraph(geometry, [],[[1,1],[-1,1]],0,1),
-					value: 3.1,
-					hand: 8,
-					abbrev: 'RS',
+					name: 'gold-w',
+					aspect: 'sh-gold',
+					graph: this.cbDropGraph(geometry, [[0,1],[1,0],[-1,0],[0,-1],[1,1],[-1,1]],[]),
+					value: 2.8,
+					abbrev: 'G',
+					initial: [{s:1,p:70},{s:1,p:73}],
 					demoted: 19,
-					initial: [{s:1,p:3},{s:1,p:12}],
-					
+					hand: 4,
 				},
+				
 				19: {
-					name: 'ram-b',
-					aspect: 'sh-ram',
-					graph: this.cbDropGraph(geometry, [],[[1,-1],[-1,-1]],1,0),
-					value: 3.1,
-					hand: 8,
-					abbrev: 'RS',
+					name: 'gold-b',
+					aspect: 'sh-gold',
+					graph: this.cbDropGraph(geometry, [[0,1],[1,0],[-1,0],[0,-1],[1,-1],[-1,-1]],[]),
+					value: 2.8,
+					abbrev: 'G',
+					initial: [{s:-1,p:246},{s:-1,p:249}],
 					demoted: 18,
-					initial: [{s:-1,p:179},{s:-1,p:188}],
+					hand: 4,
 				},
 				20: {
 					name: 'bear-w',
 					aspect: 'sh-bear',
-					graph: this.cbDropGraph(geometry, [[0,-1],[1,0],[-1,0],[1,1],[-1,1],[1,-1],[-1,-1],[2,1],[-2,1]],[]),
+					graph: this.cbDropGraph(geometry, [[0,1],[1,0],[-1,0],[1,1],[-1,1],[1,-1],[-1,-1]],[]),
 					value: 4.4,
 					hand: 9,
 					abbrev: 'SB',
 					demoted: 21,
 					
-					initial: [{s:1,p:21},{s:1,p:26}],
+					initial: [{s:1,p:86},{s:1,p:89}],
 					
 				},
 				21: {
 					name: 'bear-b',
 					aspect: 'sh-bear',
-					graph: this.cbDropGraph(geometry, [[0,1],[1,0],[-1,0],[1,1],[-1,1],[1,-1],[-1,-1],[2,-1],[-2,-1]] ,[]),
+					graph: this.cbDropGraph(geometry, [[0,-1],[1,0],[-1,0],[1,1],[-1,1],[1,-1],[-1,-1]] ,[]),
 					
 					value: 4.4,
 					hand: 9,
 					abbrev: 'SB',
 					demoted: 20,
-					initial: [{s:-1,p:165},{s:-1,p:170}],
+					initial: [{s:-1,p:230},{s:-1,p:233}],
 
 				},
-
 				22: {
 					name: 'leopard-w',
 					aspect: 'sh-leopard',
@@ -289,7 +281,7 @@
 					hand: 10,
 					abbrev: 'GL',
 					demoted: 23,
-					initial: [{s:1,p:35},{s:1,p:44}],
+					initial: [{s:1,p:100}],
 					
 				},
 				23: {
@@ -301,96 +293,92 @@
 					hand: 10,
 					abbrev: 'GL',
 					demoted: 22,
-					initial: [{s:-1,p:147},{s:-1,p:156}],
+					initial: [{s:-1,p:219}],
 
 				},
-
 				24: {
-					name: 'swallow-w',
-					aspect: 'sh-swallow',
-					graph: this.cbDropGraph(geometry, [[-2,2],[0,2],[2,2]],[],0,2),
-					value: 1.8,
-					hand: 11,
-					abbrev: 'FS',
-					demoted: 25,
-					initial: [{s:1,p:34},{s:1,p:45}],
+					name: 'bishop',
+					aspect: 'sh-bishop',
+					graph: this.cbDropGraph(geometry, [],[[1,1],[1,-1],[-1,1],[-1,-1]]),
+					value: 4.3,
+					hand: 14,
+					abbrev: 'B',
+                    demoted: 24,
+					initial: [{s:1,p:102},{s:-1,p:217}],
 					
 				},
 				25: {
-					name: 'swallow-b',
-					aspect: 'sh-swallow',
-					graph: this.cbDropGraph(geometry, [[-2,-2],[0,-2],[2,-2]],[],2,0),
-					
-					value: 1.8,
-					hand: 11,
-					abbrev: 'FS',
-					demoted: 24,
-					initial: [{s:-1,p:146},{s:-1,p:157}],
-
+					name: 'rook',
+					aspect: 'sh-rook',
+					graph: this.cbDropGraph(geometry, [], [[0,1],[1,0],[-1,0],[0,-1]]),
+					value: 4.9,
+                    demoted: 25,
+					abbrev: 'R',
+					initial: [{s:1,p:105},{s:-1,p:214}],
+					hand: 15,
 				},
 				26: {
-					name: 'rabbit-w',
-					aspect: 'sh-rabbit',
-					value: 4.2,
-					graph: this.cbDropGraph(geometry, [],[[1,1],[0,1],[-1,1]],0,1),
-					abbrev: 'RU',
+					name: 'silver-w',
+					aspect: 'sh-silver',
+					value: 2.4,
+					graph: this.cbDropGraph(geometry, [[0,1],[1,1],[1,-1],[-1,1],[-1,-1]],[]),
+					abbrev: 'S',
 					demoted: 27,
 					hand: 12,
-					initial: [{s:1,p:37},{s:1,p:42}],
+					initial: [{s:1,p:69},{s:1,p:74}],
 				},
 				27: {
-					name: 'rabbit-b',
-					aspect: 'sh-rabbit',
-					graph: this.cbDropGraph(geometry, [],[[1,-1],[0,-1],[-1,-1]],1,0),
-					value: 4.2,
-					abbrev: 'RU',
+					name: 'silver-b',
+					aspect: 'sh-silver',
+					graph: this.cbDropGraph(geometry, [[0,-1],[1,1],[1,-1],[-1,1],[-1,-1]],[]),
+					value: 2.4,
+					abbrev: 'S',
 					demoted: 26,
 					hand: 12,
-					initial: [{s:-1,p:149},{s:-1,p:154}],
+					initial: [{s:-1,p:245},{s:-1,p:250}],
 				},
-
 				28: {
-					name: 'owl-w',
-					aspect: 'sh-owl',
-					graph: this.cbDropGraph(geometry, [[0,1],[-1,0],[0,-1],[1,0],[-1,2],[1,2],[2,1],[2,-1],[-2,1],[-2,-1],[-1,-2],[1,-2]],[]),
-					value: 5.6,
+					name: 'phoenix-w',
+					aspect: 'sh-phoenix',
+					graph: this.cbDropGraph(geometry,[[0,1],[0,-1],[1,0],[-1,0],[-2,2],[2,2],[2,-2],[-2,-2]],[]),
+					value: 3.4,
 					hand: 13,
 					abbrev: 'OL',
 					demoted: 29,
-					initial: [{s:1,p:24}],
+					initial: [{s:1,p:88}],
 				},
 
 				29: {
-					name: 'owl-b',
-					aspect: 'sh-owl',
-					graph: this.cbDropGraph(geometry, [[0,1],[-1,0],[0,-1],[1,0],[-1,2],[1,2],[2,1],[2,-1],[-2,1],[-2,-1],[-1,-2],[1,-2]],[]),
-					value: 5.6,
+					name: 'phoenix-b',
+					aspect: 'sh-phoenix',
+					graph: this.cbDropGraph(geometry,[[0,1],[0,-1],[1,0],[-1,0],[-2,2],[2,2],[2,-2],[-2,-2]],[]),
+					value: 3.4,
 					demoted: 28,
 					hand: 13,
 					abbrev: 'OL',
-					initial: [{s:-1,p:167}],	
+					initial: [{s:-1,p:231}],	
 				},
 				30: {
-					name: 'crow-w',
-					aspect: 'sh-crow',
-					graph: this.cbDropGraph(geometry, [[1,1],[-1,-1],[1,-1],[-1,1],[0,2],[2,2],[-2,2],[0,-2],[2,0],[-2,-2],[-2,0],[2,-2]],[]),
+					name: 'kirin-w',
+					aspect: 'sh-kirin',
+					graph: this.cbDropGraph(geometry,[[0,2],[0,-2],[2,0],[-2,0],[-1,1],[1,1],[1,-1],[-1,-1]],[]),
 					value: 5.2,
 					demoted: 31,
-					hand: 14,
+					hand: 16,
 					abbrev: 'CR',
 					
-					initial: [{s:1,p:23}],
+					initial: [{s:1,p:87}],
 					
 				},
 				31: {
-					name: 'crow-b',
-					aspect: 'sh-crow',
-					graph: this.cbDropGraph(geometry, [[1,1],[-1,-1],[1,-1],[-1,1],[0,2],[2,2],[-2,2],[0,-2],[2,0],[-2,-2],[-2,0],[2,-2]],[]),
-					value: 5.2,
+					name: 'kirin-b',
+					aspect: 'sh-kirin',
+					graph: this.cbDropGraph(geometry,[[0,2],[0,-2],[2,0],[-2,0],[-1,1],[1,1],[1,-1],[-1,-1]],[]),
+					value: 3,
 					demoted: 30,
-					hand: 14,
 					abbrev: 'CR',
-					initial: [{s:-1,p:168}],
+                    hand: 16,
+					initial: [{s:-1,p:232}],
 				},
 
 				32: {
@@ -428,74 +416,69 @@
 					abbrev: '+L',
 					demoted: 2,
 				},
-				
 				36: {
+					name: 'p-rabbit-w',
+					aspect: 'sh-promoted-rabbit',
+					
+                    graph: this.cbDropGraph(geometry, [[0,1],[0,-1]],[[1,0],[-1,0],[1,1],[-1,1]]),
+					value: 3,
+					abbrev: '+RU',
+					demoted: 5,
+				},
+				37: {
+					name: 'p-rabbit-b',
+					aspect: 'sh-promoted-rabbit',
+                    graph: this.cbDropGraph(geometry, [[0,1],[0,-1]],[[1,0],[-1,0],[1,-1],[-1,-1]]),
+					value: 3,
+					abbrev: '+RU',
+					demoted: 4,
+				},
+				38: {
+					name: 'p-ram-w',
+					aspect: 'sh-fox',
+					graph: this.cbDropGraph(geometry, [[1,0],[-1,0],[1,2],[-1,2],[1,-2],[-1,-2]],[[0,1],[0,-1]]),
+					value: 5.6,
+					abbrev: '+RS',
+					demoted: 7,
+				},
+				39: {
+					name: 'p-ram-b',
+					aspect: 'sh-fox',
+					graph: this.cbDropGraph(geometry, [[1,0],[-1,0],[1,2],[-1,2],[1,-2],[-1,-2]],[[0,1],[0,-1]]),
+					value: 5.6,
+					abbrev: '+RS',
+					demoted: 6,
+				},
+				40: {
+					name: 'p-swallow-w',
+					aspect: 'sh-bird',
+					graph: this.cbDropGraph(geometry, [[-2,0],[2,0],[-1,2],[1,2],[-2,1],[-1,1],[0,1],[1,1], [2,1],[0,-1],[0,-2],[2,-2],[0,-2],[-2,-2]],[]),
+					value: 5.5,
+					abbrev: '+FS',
+					demoted: 9,
+				},
+				41: {
+					name: 'p-swallow-b',
+					aspect: 'sh-bird',
+					graph: this.cbDropGraph(geometry, [[-2,2],[0,2],[2,2],[2,0],[-2,0],[-1,-2],[-1,-1],[0,1],[0,-1],[1,-1],[2,-1],[1,-2],[-2,-1]],[]),
+					value: 5.5,
+					abbrev: '+FS',
+					demoted: 8,
+				},
+				42: {
 					name: 'p-knight-w',
 					aspect: 'sh-promoted-knight',
 					graph: this.cbDropGraph(geometry, [[-2,2],[2,2],[0,2],[1,-2],[-1,-2],[0,1],[1,1],[1,-1],[-1,1],[-1,-1]],[]),
 					value: 3.7,
 					abbrev: '+N',
-					demoted: 5,
+					demoted: 11,
 				},
-				
-				37: {
+				43: {
 					name: 'p-knight-b',
 					aspect: 'sh-promoted-knight',
 					graph: this.cbDropGraph(geometry, [[-2,-2],[2,-2],[0,-2],[1,2],[-1,2],[0,-1],[1,1],[1,-1],[-1,1],[-1,-1]],[]),
 					value: 3.7,
 					abbrev: '+N',
-					demoted: 4,
-				},
-				
-				38: {
-					name: 'p-silver-w',
-					aspect: 'sh-promoted-silver',
-					graph: this.cbDropGraph(geometry, [[1,1],[1,0],[-1,0],[-1,1]],[[0,1],[0,-1]]),
-					value: 4,
-					abbrev: '+S',
-					demoted: 7,
-				},
-				
-				39: {
-					name: 'p-silver-b',
-					aspect: 'sh-promoted-silver',
-					graph: this.cbDropGraph(geometry, [[-1,-1],[1,0],[-1,0],[1,-1]],[[0,1],[0,-1]]),
-					value: 4,
-					abbrev: '+S',
-					demoted: 6,
-				},
-				
-				40: {
-					name: 'horse',
-					aspect: 'sh-horse',
-					graph: this.cbDropGraph(geometry, [[0,1],[1,0],[-1,0],[0,-1]],[[1,1],[1,-1],[-1,1],[-1,-1]]),
-					value: 5.4,
-					abbrev: '+B',
-					demoted: 8,
-				},
-				
-				41: {
-					name: 'dragon',
-					aspect: 'sh-dragon',
-					graph: this.cbDropGraph(geometry, [[1,1],[1,-1],[-1,1],[-1,-1]], [[0,1],[1,0],[-1,0],[0,-1]]),
-					value: 6.3,
-					abbrev: '+R',
-					demoted: 9,
-				},
-				42: {
-					name: 'p-gold-w',
-					aspect: 'sh-promoted-gold',
-					graph: this.cbDropGraph(geometry, [[0,1],[1,0],[-1,0],[1,-1],[-1,-1],[1,1],[-1,1]],[[1,1],[-1,1]]),
-					value: 4,
-					abbrev: '+G',
-					demoted: 11,
-				},
-				43: {
-					name: 'p-gold-b',
-					aspect: 'sh-promoted-gold',
-					graph: this.cbDropGraph(geometry, [[-1,1],[1,1],[1,0],[-1,0],[0,-1],[1,-1],[-1,-1]],[[1,-1],[-1,-1]]),
-					value: 4,
-					abbrev: '+G',
 					demoted: 10,
 				},
 				44: {
@@ -516,7 +499,7 @@
 				},
 				46: {
 					name: 'p-copper-w',
-					aspect: 'sh-promoted-leopard',
+					aspect: 'sh-promoted-copper',
 					graph: this.cbDropGraph(geometry, [[-1,1],[1,1],[0,-1]],[[-1,0],[1,0]]),
 					value: 4,
 					abbrev: '+C',
@@ -524,7 +507,7 @@
 				},
 				47: {
 					name: 'p-copper-b',
-					aspect: 'sh-promoted-leopard',
+					aspect: 'sh-promoted-copper',
 					graph: this.cbDropGraph(geometry, [[-1,-1],[1,-1],[0,1]],[[-1,0],[1,0]]),
 					value: 4,
 					abbrev: '+C',
@@ -532,7 +515,7 @@
 				},
 				48: {
 					name: 'p-wolf-w',
-					aspect: 'sh-boar',
+					aspect: 'sh-promoted-wolf',
 					graph: this.cbDropGraph(geometry, [],[[1,0],[-1,0],[1,1],[-1,-1],[-1,1],[1,-1]]),
 					value: 7.2,
 					abbrev: '+W',
@@ -540,40 +523,43 @@
 				},
 				49: {
 					name: 'p-wolf-b',
-					aspect: 'sh-boar',
+					aspect: 'sh-promoted-wolf',
 					graph: this.cbDropGraph(geometry, [],[[1,0],[-1,0],[1,1],[-1,-1],[-1,1],[1,-1]]),
 					value: 7.2,
 					abbrev: '+W',
 					demoted: 16,
 				},
 				50: {
-					name: 'p-ram-w',
-					aspect: 'sh-stag',
-					graph: this.cbDropGraph(geometry, [[1,0],[-1,0],[1,2],[-1,2],[1,-2],[-1,-2]],[[0,1],[0,-1]]),
-					value: 5.6,
-					abbrev: '+RS',
+					name: 'p-gold-w',
+					aspect: 'sh-promoted-gold',
+					graph: this.cbDropGraph(geometry, [[0,1],[1,0],[-1,0],[1,-1],[-1,-1],[1,1],[-1,1]],[[1,1],[-1,1]]),
+					value: 4,
+					abbrev: '+G',
 					demoted: 19,
 				},
 				51: {
-					name: 'p-ram-b',
-					aspect: 'sh-stag',
-					graph: this.cbDropGraph(geometry, [[1,0],[-1,0],[1,2],[-1,2],[1,-2],[-1,-2]],[[0,1],[0,-1]]),
-					value: 5.6,
-					abbrev: '+RS',
+					name: 'p-gold-b',
+					aspect: 'sh-promoted-gold',
+					graph: this.cbDropGraph(geometry, [[-1,1],[1,1],[1,0],[-1,0],[0,-1],[1,-1],[-1,-1]],[[1,-1],[-1,-1]]),
+					value: 4,
+					abbrev: '+G',
 					demoted: 18,
-				},		
+				},
+
+		
 				52: {
 					name: 'p-bear-w',
-					aspect: 'sh-dog',
-					graph: this.cbDropGraph(geometry, [[-2,-1],[-1,-1],[0,-1],[1,-1],[2,-1]],[[0,1],[1,1],[-1,1]]),
+					aspect: 'sh-whale',
+					graph: this.cbDropGraph(geometry, [[2,-1],[-2,-1],[-1,-1],[0,-1],[1,-1],[0,-1],[0,1]],[[0,-1],[1,1],[-1,1]]),
+                    
 					value: 6,
 					abbrev: '+SB',
 					demoted: 21,
 				},
 				53: {
 					name: 'p-bear-b',
-					aspect: 'sh-dog',
-					graph: this.cbDropGraph(geometry, [[-2,1],[-1,1],[0,1],[1,1],[2,1]] ,[[0,-1],[-1,-1],[1,-1]]),
+					aspect: 'sh-whale',
+					graph: this.cbDropGraph(geometry, [[1,1],[-1,1],[2,1],[-2,1],[0,1],[0,1],[-1,-1],[1,-1],[0,-1]],[[0,1],[-1,-1],[1,-1]]),
 					value: 6,
 					abbrev: '+SB',
 					demoted: 20,
@@ -596,156 +582,164 @@
 					demoted: 22,
 				},
 				56: {
-					name: 'p-swallow-w',
-					aspect: 'sh-bird',
-					graph: this.cbDropGraph(geometry, [[-1,2],[1,2],[-2,1],[-1,1],[0,1],[1,1], [2,1],[0,-1],[0,-2],[2,-2],[0,-2],[-2,-2]],[]),
-					value: 5.5,
-					abbrev: '+FS',
-					demoted: 25,
-				},
-				57: {
-					name: 'p-swallow-b',
-					aspect: 'sh-bird',
-					graph: this.cbDropGraph(geometry, [[-2,2],[0,2],[2,2],[0,1],[-2,0],[2,0], [-1,-2],[-1,-1],[0,-1],[1,-1],[2,-1],[-2,-1],[-1,-2]],[]),
-					value: 5.5,
-					abbrev: '+FS',
+					name: 'horse',
+					aspect: 'sh-horse',
+					graph: this.cbDropGraph(geometry, [[0,1],[1,0],[-1,0],[0,-1]],[[1,1],[1,-1],[-1,1],[-1,-1]]),
+					value: 5.4,
+					abbrev: '+B',
 					demoted: 24,
 				},
+				57: {
+					name: 'dragon',
+					aspect: 'sh-dragon',
+					graph: this.cbDropGraph(geometry, [[1,1],[1,-1],[-1,1],[-1,-1]], [[0,1],[1,0],[-1,0],[0,-1]]),
+					value: 6.3,
+					abbrev: '+R',
+					demoted: 25,
+				},
 				58: {
-					name: 'p-rabbit-w',
-					aspect: 'sh-fox',
+					name: 'p-silver-w',
+					aspect: 'sh-promoted-silver',
 					value: 4.9,
-					graph: this.cbDropGraph(geometry, [[-1,-1],[0,-1],[0,1],[1,-1]],[[1,1],[0,-1],[-1,1]]),
-					abbrev: '+RU',
+					graph: this.cbDropGraph(geometry, [[1,1],[1,0],[-1,0],[-1,1]],[[0,1],[0,-1]]),
+					abbrev: '+S',
 					demoted: 27,
 					
 				},
 				59: {
-					name: 'p-rabbit-b',
-					aspect: 'sh-fox',
-					graph: this.cbDropGraph(geometry, [[1,1],[-1,1],[0,-1]],[[-1,-1],[0,+1],[1,-1]]),
+					name: 'p-silver-b',
+					aspect: 'sh-promoted-silver',
+					graph: this.cbDropGraph(geometry, [[-1,-1],[1,0],[-1,0],[1,-1]],[[0,1],[0,-1]]),
 					value: 4.9,
-					abbrev: '+RU',
+					abbrev: '+S',
 					demoted: 26,
 					
 				},
 
-
 				60: {
-					name: 'p-eagle-w',
-					aspect: 'sh-eagle',
-					graph: this.cbMergeGraphs(geometry,
-						this.cbShortRangeGraph(geometry,[[1,1],[-1,1],[2,2],[-2,2]]),
-						this.cbShortRangeGraph(geometry,[[1,1],[-1,1]], null, igui),
-						this.cbShortRangeGraph(geometry,[[2,2],[-2,2]], null, locust),
-						this.cbLongRangeGraph(geometry,[[1,0],[-1,0],[0,1],[0,-1],[1,-1],[-1,-1]])
-						),
-					value: 10,
-					demoted: 30,
-					abbrev: '+OL',
-					fenAbbrev: '+D',
+					name: 'p-phoenix-w',
+					aspect: 'sh-promoted-phoenix',
+					graph: this.cbDropGraph(geometry, [], [[0,1],[1,0],[-1,0],[0,-1]]),
+					value: 4.9,
+					abbrev: '+PH',
+					demoted: 29,
 				},
 				61: {
-					name: 'p-eagle-b',
-					aspect: 'sh-eagle',
-					graph: this.cbMergeGraphs(geometry,
-						this.cbShortRangeGraph(geometry,[[1,-1],[-1,-1],[2,-2],[-2,-2]]),
-						this.cbShortRangeGraph(geometry,[[1,-1],[-1,-1]], null, igui),
-						this.cbShortRangeGraph(geometry,[[2,-2],[-2,-2]], null, locust),
-						this.cbLongRangeGraph(geometry,[[1,0],[-1,0],[0,1],[0,-1],[1,1],[-1,1]])
-						),
-					value: 10,
-					demoted: 29,
-					abbrev: '+OL',
-					fenAbbrev: '+D',
+					name: 'p-phoenix-b',
+					aspect: 'sh-promoted-phoenix',
+					graph: this.cbDropGraph(geometry, [], [[0,1],[1,0],[-1,0],[0,-1]]),
+					value: 4.9,
+					abbrev: '+PH',
+					demoted: 28,
 				},
 				62: {
-					name: 'p-falcon-w',
-					aspect: 'sh-falcon',
-					graph: this.cbMergeGraphs(geometry,
-						this.cbShortRangeGraph(geometry,[[0,1],[0,2]]),
-						this.cbShortRangeGraph(geometry,[[0,1]], null, igui),
-						this.cbShortRangeGraph(geometry,[[0,2]], null, locust),
-						this.cbLongRangeGraph(geometry,[[1,0],[-1,0],[0,-1],[1,1],[1,-1],[-1,1],[-1,-1]])
-						),
-					value: 8.75,
-					demoted: 32,
-					abbrev: '+CR',
-					fenAbbrev: '+H',
+					name: 'p-kirin-w',
+					aspect: 'sh-promoted-kirin',
+					value: 3.9,
+					graph: this.cbDropGraph(geometry, [],[[1,1],[1,-1],[-1,1],[-1,-1]]),
+					abbrev: '+KN',
+					demoted: 31,
+					
 				},
 				63: {
-					name: 'p-falcon-b',
-					aspect: 'sh-falcon',
-					graph: this.cbMergeGraphs(geometry,
-						this.cbShortRangeGraph(geometry,[[0,-1],[0,-2]]),
-						this.cbShortRangeGraph(geometry,[[0,-1]], null, igui),
-						this.cbShortRangeGraph(geometry,[[0,-2]], null, locust),
-						this.cbLongRangeGraph(geometry,[[1,0],[-1,0],[0,1],[1,1],[1,-1],[-1,1],[-1,-1]])
-						),
-					value: 8.75,
-					demoted: 31,
-					abbrev: '+CR',
-					fenAbbrev: '+H',
+					name: 'p-kirin-b',
+					aspect: 'sh-promoted-kirin',
+					graph: this.cbDropGraph(geometry, [],[[1,1],[1,-1],[-1,1],[-1,-1]]),
+					value: 3.9,
+					abbrev: '+KN',
+					demoted: 30,
+					
 				},
-				64: {
+
+                64: {
+					name: 'queen-w',
+					aspect: 'sh-queen',
+                    isKing: false,
+					graph: this.cbDropGraph(geometry,[],[[0,1],[1,0],[-1,0],[0,-1],[1,1],[-1,1],[1,-1],[-1,-1]]),
+					value: 11,
+					abbrev: 'FK',
+					initial: [{s:1,p:104}],
+                    demoted: 65,
+                     hand: 17,
+				},
+                65: {
+					name: 'queen-b',
+					aspect: 'sh-queen',
+					graph: this.cbDropGraph(geometry,[],[[0,1],[1,0],[-1,0],[0,-1],[1,1],[-1,1],[1,-1],[-1,-1]]),
+					value: 11,
+					abbrev: 'FK',
+					initial: [{s:-1,p:215}],
+                    demoted: 64,
+                     hand: 17,
+				},
+				66: {
+					name: 'lion-w',
+					aspect: 'sh-lion',
+
+                    graph: this.cbDropGraph(geometry, [[-2,0],[-2,-1],[-2,-2],[-1,-2],[0,-2],[1,-2],[2,-2],[2,-1],[2,0],[2,1],[2,2],[1,2],[0,2],[-1,2],[-2,2],[-2,1]],[[1,1],[1,-1],[-1,1],[-1,-1]]),
+					value: 10,
+					abbrev: 'LN',
+					fenAbbrev: 'N',
+					initial: [{s:1,p:103}],
+                    demoted: 67,
+                    hand: 18,
+				},
+				67: {
+					name: 'lion-b',
+					aspect: 'sh-lion',
+
+                    graph: this.cbDropGraph(geometry, [[-2,0],[-2,-1],[-2,-2],[-1,-2],[0,-2],[1,-2],[2,-2],[2,-1],[2,0],[2,1],[2,2],[1,2],[0,2],[-1,2],[-2,2],[-2,1]],[[1,1],[1,-1],[-1,1],[-1,-1]]),
+					value: 10,
+					abbrev: 'LN',
+					initial: [{s:-1,p:216}],
+                    demoted: 66,
+                    hand: 18,
+				},
+				68: {
 					name: 'king',
 					aspect: 'sh-jade',
 					isKing: true,
 					graph: this.cbDropGraph(geometry, [[0,1],[1,0],[-1,0],[0,-1],[1,1],[-1,1],[1,-1],[-1,-1]],[]),
 					abbrev: 'K',
-					initial: [{s:-1,p:184}],
+
+					initial: [{s:-1,p:248}],
 				},
-				65: {
+				69: {
 					name: 'king',
 					aspect: 'sh-king',
+
 					isKing: true,
 					graph: this.cbDropGraph(geometry, [[0,1],[1,0],[-1,0],[0,-1],[1,1],[-1,1],[1,-1],[-1,-1]],[]),
 					abbrev: 'K',
-					initial: [{s:1,p:7}],
+					initial: [{s:1,p:71}],
 				},
-				66: {
-					name: 'lion',
-					aspect: 'sh-lion',
-                    graph: this.cbShortRangeGraph(geometry,[[1,0],[-1,0],[0,1],[0,-1],[1,-1],[-1,-1],[2,0],[0,2],[-2,0],[0,-2], [2,2],[2,-2],[-2,2],[-2,-2]]),
-					value: 15.6,
-					abbrev: 'LN',
-                    hand: 15,
-					fenAbbrev: 'N',
-					initial: [{s:1,p:39},{s:-1,p:152}]
-				},
-				67: {
-					name: 'queen',
-					aspect: 'sh-queen',
-					graph: this.cbLongRangeGraph(geometry,[[0,1],[1,0],[-1,0],[0,-1],[1,1],[-1,1],[1,-1],[-1,-1]]),
-					value: 11,
-					abbrev: 'FK',
-                    hand: 16,
-					fenAbbrev: 'Q',
-					initial: [{s:1,p:40},{s:-1,p:151}],
-				},
-
 			},
 			
 			promote: function(aGame,piece,move) {
 
+
+
+
 				var start_promo_type = 32;
                 // piece promotable
-				if(piece.t >= start_promo_type && piece.t < 61)
+				if(piece.t >= start_promo_type && piece.t < 68)
 					return [];
 				var f = geometry.C(move.f);
 				if(f < 2 || f > 13) return []; // no promotion on drops
 				var f = geometry.R(move.f);
 				var t = geometry.R(move.t);
 				if(piece.s == 1) {
-					if(t > 7 || f > 7)
-						return	piece.t < 6 && t > 10 - (piece.t > 3)
+					if(t > 11 || f > 11){
+                        return	piece.t < 12 && t > 14 - (piece.t > 7)
 						?	[piece.t+start_promo_type]
 						:	[piece.t, piece.t+start_promo_type];
+                    }
 				} else {
-					if(t < 4 || f < 4)
-						return	piece.t < 6 && t < 1 + (piece.t > 3)
+					if(t < 8 || f < 8){
+						return	piece.t < 12 && t < 5 + (piece.t > 7)
 						?	[piece.t+start_promo_type]
 						:	[piece.t, piece.t+start_promo_type];
+                    }
 				}
 				return [];
 			},
@@ -760,3 +754,5 @@
 	}
 
 })();
+
+

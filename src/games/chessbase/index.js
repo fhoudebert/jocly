@@ -512,7 +512,6 @@ exports.games = (function () {
 	var modelScripts_108 = [
 		"base-model.js",
 		"grid-geo-model.js",
-		"locust-move-model.js",
 		"shogi/chu-shogi-model.js"
 	]
 	var modelScripts_109 = [
@@ -639,7 +638,7 @@ exports.games = (function () {
 		"grid-board-view.js",
 		"shogi/seireigi-shogi-set-view.js",
 		"drop-view.js",
-		"shogi/shogi-view.js"
+		"shogi/seireigi-shogi-view.js"
 	]
 	var config_view_js_105 = [
 		"base-view.js",
@@ -3704,7 +3703,7 @@ exports.games = (function () {
 			},
 			"viewScripts": config_view_js_capablanca
 		},
-		{
+		/*{
 			"name": "carrera-chess",
 			"modelScripts": modelScripts_31,
 			"config": {
@@ -3856,7 +3855,7 @@ exports.games = (function () {
 				}
 			},
 			"viewScripts": config_view_js_30
-		},
+		},*/
 		{
 			"name": "grand-chess",
 			"modelScripts": modelScripts_34,
@@ -7181,7 +7180,15 @@ exports.games = (function () {
 					"module": "chessbase",
 					"defaultOptions": config_view_defaultOptions,
 					"skins": [
+						{
+							"name": "skin2dwestern",
 
+							"title": "2D Pictos",
+							"3d": false,
+							"preload": [
+								"image|/res/shogi/seireigi-shogi-picto-sprites.png"
+							]
+						},
 						{
 							"name": "skin3d",
 							"title": "3D Classic",
@@ -7194,14 +7201,7 @@ exports.games = (function () {
 							"world": config_view_skins_world,
 							"camera": config_view_skins_camera
 						},
-						{
-							"name": "skin2dwestern",
-							"title": "2D Western",
-							"3d": false,
-							"preload": [
-								"image|/res/shogi/seireigi-shogi-sprites-western.png"
-							]
-						},
+
 						config_view_skins_2
 					],
 					"animateSelfMoves": false,
@@ -7213,21 +7213,21 @@ exports.games = (function () {
 			},
 			"viewScripts": config_view_js_seireigi
 		},
-		/*{
+		{
 			"name": "chu-seireigi",
 			"modelScripts": modelScripts_chu_seireigi,
 			"config": {
 				"status": true,
 				"model": {
 
-					"title-en": "Chu Seireigi Shogi",
-					"summary": "Spirit shogi variant",
+					"title-en": "Chu Seireigi",
+					"summary": "Spirit middle shogi variant",
 					"rules": {
-						"en": "res/rules/shogi/chu-seireigi-rules.html"
+						"en": "res/rules/shogi/chu-seireigi-shogi-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
-					"thumbnail": "res/rules/shogi/seireigi-shogi-thumb.png",
+					"thumbnail": "res/rules/shogi/chu-seireigi-thumb.png",
 					"released": 1396536978,
 
 					"credits": {
@@ -7244,8 +7244,8 @@ exports.games = (function () {
 					"title-en": "Chessbase view",
 					"visuals": {
 						"600x600": [
-							"res/visuals/seireigi-shogi-600x600-3d.jpg",
-							"res/visuals/seireigi-shogi-600x600-2d.jpg"
+							"res/visuals/chu-seireigi-shogi-600x600-2d.png",
+                            "res/visuals/chu-seireigi-shogi-600x600-3d.png"
 						]
 					},
 					"xdView": true,
@@ -7258,6 +7258,16 @@ exports.games = (function () {
 					"skins": [
 
 
+						
+						{
+							"name": "skin2dwestern",
+							"title": "2D Pictos",
+							"3d": false,
+
+							"preload": [
+								"image|/res/shogi/chu-seireigi-shogi-picto-sprites.png"
+							]
+						},
 						{
 							"name": "skin3d",
 							"title": "3D Classic",
@@ -7271,17 +7281,9 @@ exports.games = (function () {
 							"world": config_view_skins_world,
 
 							"camera": config_view_skins_camera
-						},
-						{
-							"name": "skin2dwestern",
-							"title": "2D Western",
-							"3d": false,
-
-							"preload": [
-								"image|/res/shogi/seireigi-shogi-sprites-western.png"
-							]
-						},
-						config_view_skins_2
+						}
+/*,
+						config_view_skins_2*/
 					],
 
 					"animateSelfMoves": false,
@@ -7293,7 +7295,7 @@ exports.games = (function () {
 				}
 			},
 			"viewScripts": config_view_js_chu_seireigi
-		},*/
+		},
 		{
 			"name": "mini-shogi",
 			"modelScripts": modelScripts_107,
