@@ -32,11 +32,11 @@
 			
 			pieceTypes: p.pieceTypes,
 			
-			castle: {
-				"15/10": {k:[14],r:[15],n:"O-O-O",extra:-2},
-				"15/19": {k:[16],r:[15],n:"O-O",extra:-2},
-				"85/80": {k:[84],r:[85],n:"O-O-O",extra:-2},
-				"85/89": {k:[86],r:[85],n:"O-O",extra:-2},
+			castle:{ 
+		        "15/10": {k:[14],r:[11,12,13,14,15],n:"O-O-O",extra:-2},
+		        "15/19": {k:[16],r:[18,17,16,15],n:"O-O",extra:-2},
+		        "85/80": {k:[84],r:[81,82,83,84,85],n:"O-O-O",extra:-2},
+		        "85/89": {k:[86],r:[88,87,86,85],n:"O-O",extra:-2},
 			},
 
 			promote: function(aGame,piece,move) {
