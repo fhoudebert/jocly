@@ -24,10 +24,8 @@
 		var pieceSet = this.cbShogiPieceStyle({
 				"default": {
                     "skin2dwestern": this.cbShogiWesternPieceStyle()["default"]["2d"],
-					"3d": {
-                    width: 500,
-					height: 500,			
-					scale: [0.29,0.29,0.29], 
+					"3d": {		
+					scale: [0.34285714285714,0.34285714285714,0.34285714285714],
 					},
 				},
 			});
@@ -42,10 +40,6 @@
 				'texturesImg' : {}, 
 				//'margins' : {x:.47,y:.47},
 				'margins' : {x:.25,y:.25},
-				/*'colorFill' : {
-					".": "rgba(224,50,0,1)",
-					"#": "rgba(220,220,0,1)",
-				},*/
 			}
 		);
 
@@ -58,8 +52,10 @@ var seireigiteraBoard2d = $.extend(true,{},this.cbGridBoardClassic2DMargin,seire
 			coords: {
 				"2d": this.cbGridBoard.coordsFn.call(this,seireigiteraBoard2d),
                 "3d": this.cbGridBoard.coordsFn.call(this,this.cbGridBoardClassic3DMargin),
+               // "3d": this.cbGridBoard.coordsFn.call(this,this.cbGridBoardClassic3DMargin),
 			},
 			boardLayout: [
+                "################",
 	      		"##............##",
 	      		"##............##",
 	      		"##............##",
@@ -71,7 +67,8 @@ var seireigiteraBoard2d = $.extend(true,{},this.cbGridBoardClassic2DMargin,seire
 	      		"##............##",
 	      		"##............##",
 	      		"##............##",
-	      		"##............##"
+	      		"##............##",
+	      		"################"
 			],
 			board: {
 				"2d": {
@@ -83,10 +80,8 @@ var seireigiteraBoard2d = $.extend(true,{},this.cbGridBoardClassic2DMargin,seire
 			},
 			clicker: {
 				"2d": {
-					/*width: 700,
-					height: 700,*/
-					width: 600,
-					height: 600,
+					width: 700,
+					height: 700,
 				},
 				"3d": {
                     width: 600,

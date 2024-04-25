@@ -1,9 +1,10 @@
 
 (function(){
-	var geometry = Model.Game.cbDropGeometry(12,12,4);
-	
+	var geometry = Model.Game.cbDropGeometry(12,12,1);
 	Model.Game.cbOnStaleMate = -1; // stalemate = last player wins
 	Model.Game.cbMaxRepeats = 4;
+    Model.Game.handLayout = { '1':[2,4,6,8,10,12,14,30,46,62,78,94,110,126,142,158,174,190,206,0], '-1':[221,219,217,215,213,211,209,193,177,161,145,129,113,97,81,65,49,33,17,223] };
+
 
 	Model.Game.cbSetPawnLimit(1);
 
@@ -42,7 +43,7 @@
 					value: 0.8,
 					abbrev: '',
 					fenAbbrev: 'P',
-					initial: [{s:1,p:114},{s:1,p:115},{s:1,p:116},{s:1,p:117},{s:1,p:118},{s:1,p:119},{s:1,p:120},{s:1,p:121},{s:1,p:122},{s:1,p:123},{s:1,p:124},{s:1,p:125}],
+					initial: [{s:1,p:66},{s:1,p:67},{s:1,p:68},{s:1,p:69},{s:1,p:70},{s:1,p:71},{s:1,p:72},{s:1,p:73},{s:1,p:74},{s:1,p:75},{s:1,p:76},{s:1,p:77}],
 					demoted: 1,
 					hand: 0,
 				},
@@ -54,7 +55,7 @@
 					value: 0.8,
 					abbrev: '',
 					fenAbbrev: 'P',
-					initial: [{s:-1,p:194},{s:-1,p:195},{s:-1,p:196},{s:-1,p:197},{s:-1,p:198},{s:-1,p:199},{s:-1,p:200},{s:-1,p:201},{s:-1,p:202},{s:-1,p:203},{s:-1,p:204},{s:-1,p:205}],
+					initial: [{s:-1,p:146},{s:-1,p:147},{s:-1,p:148},{s:-1,p:149},{s:-1,p:150},{s:-1,p:151},{s:-1,p:152},{s:-1,p:153},{s:-1,p:154},{s:-1,p:155},{s:-1,p:156},{s:-1,p:157}],
 					demoted: 0,
 					hand: 0,
 				},
@@ -65,7 +66,7 @@
 					graph: this.cbDropGraph(geometry, [],[[0,1]],0,1),
 					value: 2,
 					abbrev: 'L',
-					initial: [{s:1,p:66},{s:1,p:77}],
+					initial: [{s:1,p:18},{s:1,p:29}],
 					demoted: 3,
 					hand: 1,
 				},
@@ -76,7 +77,7 @@
 					graph: this.cbDropGraph(geometry, [],[[0,-1]],1,0),
 					value: 2,
 					abbrev: 'L',
-					initial: [{s:-1,p:242},{s:-1,p:253}],
+					initial: [{s:-1,p:194},{s:-1,p:205}],
 					demoted: 2,
 					hand: 1,
 				},
@@ -86,7 +87,7 @@
 					graph: this.cbDropGraph(geometry, [],[[0,1],[1,1],[-1,1]],0,1),
 					value: 1.1,
 					abbrev: 'RU',
-					initial: [{s:1,p:85},{s:1,p:90}],
+					initial: [{s:1,p:37},{s:1,p:42}],
 					demoted: 5,
 					hand: 3,
 				},
@@ -97,7 +98,7 @@
 					graph: this.cbDropGraph(geometry, [],[[0,-1],[1,-1],[-1,-1]],1,0),
 					value: 1.1,
 					abbrev: 'RU',
-					initial: [{s:-1,p:229},{s:-1,p:234}],
+					initial: [{s:-1,p:181},{s:-1,p:186}],
 					demoted: 4,
 					hand: 3,
 				},
@@ -109,7 +110,7 @@
 					hand: 8,
 					abbrev: 'RS',
 					demoted: 7,
-					initial: [{s:1,p:67},{s:1,p:76}],
+					initial: [{s:1,p:19},{s:1,p:28}],
 					
 				},
 				7: {
@@ -120,7 +121,7 @@
 					hand: 8,
 					abbrev: 'RS',
 					demoted: 6,
-					initial: [{s:-1,p:243},{s:-1,p:252}],
+					initial: [{s:-1,p:195},{s:-1,p:204}],
 				},
 				8: {
 					name: 'swallow-w',
@@ -129,7 +130,7 @@
 					value: 1.8,
 					abbrev: 'FS',
                     demoted: 9,
-					initial: [{s:1,p:98},{s:1,p:109}],
+					initial: [{s:1,p:50},{s:1,p:61}],
 					hand: 11,
 				},
 				9: {
@@ -139,7 +140,7 @@
 					value: 1.8,
 					abbrev: 'FS',
                     demoted: 8,
-					initial: [{s:-1,p:210},{s:-1,p:221}],
+					initial: [{s:-1,p:162},{s:-1,p:173}],
 					hand: 11,
 				},
 				10: {
@@ -148,7 +149,7 @@
 					graph: this.cbDropGraph(geometry, [[1,2],[-1,2]],[],0,2),
 					value: 1.3,
 					abbrev: 'N',
-					initial: [{s:1,p:83},{s:1,p:92}],
+					initial: [{s:1,p:35},{s:1,p:44}],
 					demoted: 11,
 					hand: 2,
 				},
@@ -159,7 +160,7 @@
 					graph: this.cbDropGraph(geometry, [[1,-2],[-1,-2]],[],2,0),
 					value: 1.3,
 					abbrev: 'N',
-					initial: [{s:-1,p:227},{s:-1,p:236}],
+					initial: [{s:-1,p:179},{s:-1,p:188}],
 					demoted: 10,
 					hand: 2,
 				},
@@ -171,7 +172,7 @@
 					abbrev: 'E',
 					demoted: 13,
 					hand: 5,
-					initial: [{s:1,p:72}],
+					initial: [{s:1,p:24}],
 				},
 
 				
@@ -183,7 +184,7 @@
 					abbrev: 'E',
 					demoted: 12,
 					hand: 5,
-					initial: [{s:-1,p:247}],
+					initial: [{s:-1,p:199}],
 				},
 
 				14: {
@@ -194,7 +195,7 @@
 					abbrev: 'C',
 					hand: 6,
 					demoted: 15,
-					initial: [{s:1,p:68},{s:1,p:75}],
+					initial: [{s:1,p:20},{s:1,p:27}],
 				},
 
 				15: {
@@ -205,7 +206,7 @@
 					abbrev: 'C',
 					hand: 6,
 					demoted: 14,
-					initial: [{s:-1,p:244},{s:-1,p:251}],
+					initial: [{s:-1,p:196},{s:-1,p:203}],
 				},
 				16: {
 					name: 'wolf-w',
@@ -215,7 +216,7 @@
 					abbrev: 'W',
 					hand: 7,
 					demoted: 17,
-					initial: [{s:1,p:107}],
+					initial: [{s:1,p:59}],
 				},
 
 				17: {
@@ -226,7 +227,7 @@
 					abbrev: 'W',
 					hand: 7,
 					demoted: 16,
-					initial: [{s:-1,p:212}],
+					initial: [{s:-1,p:164}],
 				},
 				18: {
 					name: 'gold-w',
@@ -234,7 +235,7 @@
 					graph: this.cbDropGraph(geometry, [[0,1],[1,0],[-1,0],[0,-1],[1,1],[-1,1]],[]),
 					value: 2.8,
 					abbrev: 'G',
-					initial: [{s:1,p:70},{s:1,p:73}],
+					initial: [{s:1,p:22},{s:1,p:25}],
 					demoted: 19,
 					hand: 4,
 				},
@@ -245,7 +246,7 @@
 					graph: this.cbDropGraph(geometry, [[0,1],[1,0],[-1,0],[0,-1],[1,-1],[-1,-1]],[]),
 					value: 2.8,
 					abbrev: 'G',
-					initial: [{s:-1,p:246},{s:-1,p:249}],
+					initial: [{s:-1,p:198},{s:-1,p:201}],
 					demoted: 18,
 					hand: 4,
 				},
@@ -258,7 +259,7 @@
 					abbrev: 'SB',
 					demoted: 21,
 					
-					initial: [{s:1,p:86},{s:1,p:89}],
+					initial: [{s:1,p:38},{s:1,p:41}],
 					
 				},
 				21: {
@@ -270,7 +271,7 @@
 					hand: 9,
 					abbrev: 'SB',
 					demoted: 20,
-					initial: [{s:-1,p:230},{s:-1,p:233}],
+					initial: [{s:-1,p:182},{s:-1,p:185}],
 
 				},
 				22: {
@@ -281,7 +282,7 @@
 					hand: 10,
 					abbrev: 'GL',
 					demoted: 23,
-					initial: [{s:1,p:100}],
+					initial: [{s:1,p:52}],
 					
 				},
 				23: {
@@ -293,7 +294,7 @@
 					hand: 10,
 					abbrev: 'GL',
 					demoted: 22,
-					initial: [{s:-1,p:219}],
+					initial: [{s:-1,p:171}],
 
 				},
 				24: {
@@ -304,7 +305,7 @@
 					hand: 14,
 					abbrev: 'B',
                     demoted: 24,
-					initial: [{s:1,p:102},{s:-1,p:217}],
+					initial: [{s:1,p:54},{s:-1,p:169}],
 					
 				},
 				25: {
@@ -314,7 +315,7 @@
 					value: 4.9,
                     demoted: 25,
 					abbrev: 'R',
-					initial: [{s:1,p:105},{s:-1,p:214}],
+					initial: [{s:1,p:57},{s:-1,p:166}],
 					hand: 15,
 				},
 				26: {
@@ -325,7 +326,8 @@
 					abbrev: 'S',
 					demoted: 27,
 					hand: 12,
-					initial: [{s:1,p:69},{s:1,p:74}],
+					//initial: [{s:1,p:69},{s:1,p:74}],
+                    initial: [{s:1,p:21},{s:1,p:26}],
 				},
 				27: {
 					name: 'silver-b',
@@ -335,7 +337,7 @@
 					abbrev: 'S',
 					demoted: 26,
 					hand: 12,
-					initial: [{s:-1,p:245},{s:-1,p:250}],
+					initial: [{s:-1,p:197},{s:-1,p:202}],
 				},
 				28: {
 					name: 'phoenix-w',
@@ -345,7 +347,7 @@
 					hand: 13,
 					abbrev: 'OL',
 					demoted: 29,
-					initial: [{s:1,p:88}],
+					initial: [{s:1,p:40}],
 				},
 
 				29: {
@@ -356,7 +358,7 @@
 					demoted: 28,
 					hand: 13,
 					abbrev: 'OL',
-					initial: [{s:-1,p:231}],	
+					initial: [{s:-1,p:183}],	
 				},
 				30: {
 					name: 'kirin-w',
@@ -367,7 +369,7 @@
 					hand: 16,
 					abbrev: 'CR',
 					
-					initial: [{s:1,p:87}],
+					initial: [{s:1,p:39}],
 					
 				},
 				31: {
@@ -378,7 +380,7 @@
 					demoted: 30,
 					abbrev: 'CR',
                     hand: 16,
-					initial: [{s:-1,p:232}],
+					initial: [{s:-1,p:184}],
 				},
 
 				32: {
@@ -658,9 +660,9 @@
 					graph: this.cbDropGraph(geometry,[],[[0,1],[1,0],[-1,0],[0,-1],[1,1],[-1,1],[1,-1],[-1,-1]]),
 					value: 11,
 					abbrev: 'FK',
-					initial: [{s:1,p:104}],
+					initial: [{s:1,p:56}],
                     demoted: 65,
-                     hand: 17,
+                    hand: 17,
 				},
                 65: {
 					name: 'queen-b',
@@ -668,32 +670,30 @@
 					graph: this.cbDropGraph(geometry,[],[[0,1],[1,0],[-1,0],[0,-1],[1,1],[-1,1],[1,-1],[-1,-1]]),
 					value: 11,
 					abbrev: 'FK',
-					initial: [{s:-1,p:215}],
+					initial: [{s:-1,p:167}],
                     demoted: 64,
-                     hand: 17,
+                    hand: 17,
 				},
 				66: {
 					name: 'lion-w',
 					aspect: 'sh-lion',
-
-                    graph: this.cbDropGraph(geometry, [[-2,0],[-2,-1],[-2,-2],[-1,-2],[0,-2],[1,-2],[2,-2],[2,-1],[2,0],[2,1],[2,2],[1,2],[0,2],[-1,2],[-2,2],[-2,1]],[[1,1],[1,-1],[-1,1],[-1,-1]]),
+					graph: this.cbDropGraph(geometry, [[-2,0],[-2,-1],[-2,-2],[-1,-2],[0,-2],[1,-2],[2,-2],[2,-1],[2,0],[2,1],[2,2],[1,2],[0,2],[-1,2],[-2,2],[-2,1]],[[1,1],[1,-1],[-1,1],[-1,-1]]),
 					value: 10,
 					abbrev: 'LN',
 					fenAbbrev: 'N',
-					initial: [{s:1,p:103}],
-                    demoted: 67,
-                    hand: 18,
+					initial: [{s:1,p:55}],
+					demoted: 67,
+					hand: 18,
 				},
 				67: {
 					name: 'lion-b',
 					aspect: 'sh-lion',
-
-                    graph: this.cbDropGraph(geometry, [[-2,0],[-2,-1],[-2,-2],[-1,-2],[0,-2],[1,-2],[2,-2],[2,-1],[2,0],[2,1],[2,2],[1,2],[0,2],[-1,2],[-2,2],[-2,1]],[[1,1],[1,-1],[-1,1],[-1,-1]]),
+					graph: this.cbDropGraph(geometry, [[-2,0],[-2,-1],[-2,-2],[-1,-2],[0,-2],[1,-2],[2,-2],[2,-1],[2,0],[2,1],[2,2],[1,2],[0,2],[-1,2],[-2,2],[-2,1]],[[1,1],[1,-1],[-1,1],[-1,-1]]),
 					value: 10,
 					abbrev: 'LN',
-					initial: [{s:-1,p:216}],
-                    demoted: 66,
-                    hand: 18,
+					initial: [{s:-1,p:168}],
+					demoted: 66,
+					hand: 18,
 				},
 				68: {
 					name: 'king',
@@ -702,7 +702,7 @@
 					graph: this.cbDropGraph(geometry, [[0,1],[1,0],[-1,0],[0,-1],[1,1],[-1,1],[1,-1],[-1,-1]],[]),
 					abbrev: 'K',
 
-					initial: [{s:-1,p:248}],
+					initial: [{s:-1,p:200}],
 				},
 				69: {
 					name: 'king',
@@ -711,7 +711,7 @@
 					isKing: true,
 					graph: this.cbDropGraph(geometry, [[0,1],[1,0],[-1,0],[0,-1],[1,1],[-1,1],[1,-1],[-1,-1]],[]),
 					abbrev: 'K',
-					initial: [{s:1,p:71}],
+					initial: [{s:1,p:23}],
 				},
 			},
 			
@@ -725,18 +725,21 @@
 				if(piece.t >= start_promo_type && piece.t < 68)
 					return [];
 				var f = geometry.C(move.f);
-				if(f < 2 || f > 13) return []; // no promotion on drops
-				var f = geometry.R(move.f);
-				var t = geometry.R(move.t);
+                var rank=geometry.R(move.f);
+				if(f < 2 || f > 13 || rank > 12 || rank < 1) return []; // no promotion on drops
+				//var f = geometry.R(move.f);
+				var rank_next_move = geometry.R(move.t);
+
 				if(piece.s == 1) {
-					if(t > 11 || f > 11){
-                        return	piece.t < 12 && t > 14 - (piece.t > 7)
+
+					if(rank_next_move > 8 || rank > 8){
+                        return	piece.t < 12 && rank_next_move > 11 - (piece.t > 7)
 						?	[piece.t+start_promo_type]
 						:	[piece.t, piece.t+start_promo_type];
                     }
 				} else {
-					if(t < 8 || f < 8){
-						return	piece.t < 12 && t < 5 + (piece.t > 7)
+					if(rank_next_move < 5 || rank < 5){
+						return	piece.t < 12 && rank_next_move < 2 + (piece.t > 7)
 						?	[piece.t+start_promo_type]
 						:	[piece.t, piece.t+start_promo_type];
                     }

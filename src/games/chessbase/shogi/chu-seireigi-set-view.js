@@ -420,7 +420,7 @@ var CANVAS_SIZE = 512;
 					channels: {
 						diffuse: {
 							texturesImg: {
-								diffImg : "/res/shogi/diffusemaps/p-lance-r.jpg",
+								diffImg : "/res/shogi/seireigi-diffusemaps/p-lance-r.jpg",
 							}
 						},
 						normal: {
@@ -549,7 +549,7 @@ var CANVAS_SIZE = 512;
 					channels: {
 						diffuse: {
 							texturesImg: {
-								diffImg : "/res/shogi/diffusemaps/p-gold-r.jpg",
+								diffImg : "/res/shogi/seireigi-diffusemaps/p-gold-r.jpg",
 							}
 						},
 						normal: {
@@ -1057,7 +1057,7 @@ var CANVAS_SIZE = 512;
 					channels: {
 						diffuse: {
 							texturesImg: {
-								diffImg : "/res/shogi/diffusemaps/p-kirin-r.jpg",
+								diffImg : "/res/shogi/seireigi-diffusemaps/p-kirin-r.jpg",
 							}
 						},
 						normal: {
@@ -1078,7 +1078,7 @@ var CANVAS_SIZE = 512;
 					channels: {
 						diffuse: {
 							texturesImg: {
-								diffImg : "/res/shogi/diffusemaps/p-phoenix-r.jpg",
+								diffImg : "/res/shogi/seireigi-diffusemaps/p-phoenix-r.jpg",
 							}
 						},
 						normal: {
@@ -1144,9 +1144,10 @@ var CANVAS_SIZE = 512;
 					file: this.mViewOptions.fullPath + "/res/shogi/chu-seireigi-shogi-picto-sprites.png",
 					clipwidth: 100,
 					clipheight: 100,
-                    width: 600,
-					height: 600,			
-					scale: [0.34285714285714,0.34285714285714,0.34285714285714],                              
+                    width: 700,
+					height: 700,			
+					//scale: [0.34285714285714,0.34285714285714,0.34285714285714],                              
+					scale: [.5,.5,.5],
 				},
 			}
 		},modifier);

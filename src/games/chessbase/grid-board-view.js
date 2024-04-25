@@ -203,13 +203,13 @@
 		paintCells: function(spec,ctx,images,channel) {
 			var cSize = this.cbCSize(spec);
 			var getCoords=spec.coordsFn(spec);
-			for(var row=NBVHND;row<(NBROWS-(NBVHND));row++) {
+			for(var row=0;row<(NBROWS);row++) {
 				for(var col=0;col<NBCOLS;col++) {
 					var pos = this.mViewAs==1 ?
 						col+row*NBCOLS :
 						NBCOLS*NBROWS-(1+col+row*NBCOLS);
 					var coords=getCoords.call(this,pos);
-					var cellType=this.cbView.boardLayout[NBROWS-NBVHND-row-1][col];
+					var cellType=this.cbView.boardLayout[NBROWS-row-1][col];
 					var xCenter=coords.x;
 					var yCenter=coords.y;
 					var cx=cSize.cx;
@@ -230,7 +230,6 @@
 		paintChannel: function(spec,ctx,images,channel) {
 			var cSize = this.cbCSize(spec);
 			spec.paintBackground.call(this,spec,ctx,images,channel,cSize.width,cSize.height);
-				console.log("spec,ctx,images,channel",spec,ctx,images,channel);	
 			spec.paintCells.call(this,spec,ctx,images,channel)
 			spec.paintLines.call(this,spec,ctx,images,channel);
 			if(this.mNotation)
