@@ -1031,6 +1031,7 @@
 					if(extra<0) extra*=-1,d=1;
 					for(var j=0;j<=last+extra;j++) { // allow optional extension of King move
 						var pos=(j<last ? spec.k[j] : spec.k[last]+step*(j-last));
+
 						if((this.board[pos]>=0 && pos!=rook.p && pos!=king.p) || this.cbGetAttackers(aGame,pos,who).length>0) {
 							break;
 						}
@@ -1041,6 +1042,7 @@
 								c: null,
 								cg: rook.p,
 							}
+
 							if(j>last) move.a=pType.abbrev;
 							moves.push(move);
 						}
