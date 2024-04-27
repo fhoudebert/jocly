@@ -44,7 +44,7 @@
 			},
 			"fr-hoplit": {
 				"2d": {
-					clipx: 0,
+					clipx: 7100,
 				},
 			},
 			"fr-berolina": {

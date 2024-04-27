@@ -175,7 +175,7 @@
 				},
 				
 				11: {
-					name: 'stratiarkhos',
+					name: 'polemarchoi',
 					aspect: 'fr-proper-crowned-rook',
 					graph: this.cbMergeGraphs(geometry,
             						this.cbRookGraph(geometry),
@@ -186,7 +186,7 @@
 				},
 				
 				12: {
-					name: 'polemarchos',
+					name: 'hippagretai',
 					aspect: 'fr-proper-cardinal',
 					graph: this.cbMergeGraphs(geometry,
             						this.cbBishopGraph(geometry),
