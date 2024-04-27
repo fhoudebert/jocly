@@ -5,13 +5,13 @@
 	var CT = Model.Game.cbConstants;
     Model.Game.cb3DHoplitGraphi = function(geometry,side) {
 		var moveGraph = this.cbShortRangeGraph(geometry,[[side,side,0],[-side,side,0],[side*2,side*2,0],[-side*2,side*2,0]],0,CT.FLAG_MOVE);
-		var captGraph = this.cbLongRangeGraph(geometry,[[0,side,0],[0,side,1],[side,0,-1]],null,CT.FLAG_CAPTURE,1);
+		var captGraph = this.cbLongRangeGraph(geometry,[[0,side,0],[side,side,1],[-side,side,1],[side,side,-1],[-side,side,-1]],null,CT.FLAG_CAPTURE,1);
 		return this.cbMergeGraphs(geometry,moveGraph,captGraph);
 	}
 
     Model.Game.cb3DHoplitGraph = function(geometry,side) {
 		var moveGraph = this.cbShortRangeGraph(geometry,[[side,side,0],[-side,side,0]],0,CT.FLAG_MOVE);
-		var captGraph = this.cbLongRangeGraph(geometry,[[0,side,0],[0,side,1],[side,0,-1]],null,CT.FLAG_CAPTURE,1);
+		var captGraph = this.cbLongRangeGraph(geometry,[[0,side,0],[side,side,1],[-side,side,1],[side,side,-1],[-side,side,-1]],null,CT.FLAG_CAPTURE,1);
 		return this.cbMergeGraphs(geometry,moveGraph,captGraph);
 	}
 

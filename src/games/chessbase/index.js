@@ -7433,8 +7433,8 @@ exports.games = (function () {
 					"title-en": "Chessbase view",
 					"visuals": {
 						"600x600": [
-							"res/visuals/chu-seireigi-shogi-600x600-2d.png",
-                            "res/visuals/chu-seireigi-shogi-600x600-3d.png"
+							"res/visuals/chu-seireigi-600x600-2d.png",
+                            "res/visuals/chu-seireigi-600x600-3d.png"
 						]
 					},
 					"xdView": true,
