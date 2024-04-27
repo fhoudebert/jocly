@@ -168,7 +168,7 @@
 				
 				12: {
 					name: 'king',
-					aspect: 'sh-king',
+					aspect: 'sh-jade',
 					isKing: true,
 					graph: this.cbDropGraph(geometry, [[0,1],[1,0],[-1,0],[0,-1],[1,1],[-1,1],[1,-1],[-1,-1]],[]),
 					abbrev: 'K',
@@ -267,7 +267,7 @@
 
 				23: {
 					name: 'king',
-					aspect: 'sh-jade',
+					aspect: 'sh-king',
 					isKing: true,
 					graph: this.cbDropGraph(geometry, [[0,1],[1,0],[-1,0],[0,-1],[1,1],[-1,1],[1,-1],[-1,-1]],[]),
 					abbrev: 'K',
