@@ -153,7 +153,7 @@ var CANVAS_SIZE = 512;
 					clipx: 3200,
 				},				
 			},
-			"sh-lion": {
+			"sh-lionhawk": {
 				"2d": {
 					clipx: 3300,
 				},				
@@ -670,7 +670,7 @@ var CANVAS_SIZE = 512;
 				}
 			},
 		},
-		"sh-lion": {
+		"sh-lionhawk": {
 			mesh: {
 				jsFile:"/res/shogi/j-tile.js"
 			},
@@ -679,7 +679,7 @@ var CANVAS_SIZE = 512;
 					channels: {
 						diffuse: {
 							texturesImg: {
-								diffImg : "/res/shogi/chu-diffusemaps/lion-b.jpg",
+								diffImg : "/res/shogi/tenjiku-diffusemaps/hawk-b.jpg",
 							}
 						},
 						normal: {

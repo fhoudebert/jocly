@@ -7327,7 +7327,7 @@ exports.games = (function () {
 			"viewScripts": config_view_js_105
 		},
 		{
-			"name": "seireigi-shogi",
+			"name": "seireigi",
 			"modelScripts": modelScripts_seireigi,
 			"config": {
 				"status": true,
@@ -7336,20 +7336,20 @@ exports.games = (function () {
 					"title-en": "Seireigi",
 					"summary": "Shogi with more varied promotions",
 					"rules": {
-						"en": "res/rules/shogi/seireigi-shogi-rules.html",
-						"fr": "res/rules/shogi/seireigi-shogi-rules_fr.html"
+						"en": "res/rules/shogi/seireigi-rules.html",
+						"fr": "res/rules/shogi/seireigi-rules_fr.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
-					"thumbnail": "res/rules/shogi/seireigi-shogi-thumb.png",
+					"thumbnail": "res/rules/shogi/seireigi-thumb.png",
 					"released": 1396536978,
 					"credits": {
-						"en": "res/rules/shogi/seireigi-shogi-credits.html"
+						"en": "res/rules/shogi/seireigi-credits.html"
 					},
 					"gameOptions": config_model_gameOptions_2,
 					"js": modelScripts_seireigi,
 					"description": {
-						"en": "res/rules/shogi/seireigi-shogi-description.html"
+						"en": "res/rules/shogi/seireigi-description.html"
 					},
 					"levels": config_model_levels_15
 				},
@@ -7357,8 +7357,8 @@ exports.games = (function () {
 					"title-en": "Chessbase view",
 					"visuals": {
 						"600x600": [
-							"res/visuals/seireigi-shogi-600x600-3d.jpg",
-							"res/visuals/seireigi-shogi-600x600-2d.jpg"
+							"res/visuals/seireigi-600x600-3d.jpg",
+							"res/visuals/seireigi-600x600-2d.jpg"
 						]
 					},
 					"xdView": true,
@@ -7425,7 +7425,7 @@ exports.games = (function () {
 					"gameOptions": config_model_gameOptions_2,
 					"js": modelScripts_chu_seireigi,
 					"description": {
-						"en": "res/rules/shogi/seireigi-shogi-description.html"
+						"en": "res/rules/shogi/chu-seireigi-description.html"
 					},
 					"levels": config_model_levels_15
 				},
