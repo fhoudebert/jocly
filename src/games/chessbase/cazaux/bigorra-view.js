@@ -210,7 +210,7 @@
 		var dx=Math.abs(geo.C(aMove.t)-geo.C(aMove.f));
 		var dy=Math.abs(geo.R(aMove.t)-geo.R(aMove.f));
         // jump to move
-		if(("_N_E_W_K_L_M_T_F_G_J_Z_D_O_T_C_SQ_M_H_".indexOf("_"+aMove.a+"_")>=0) && (aGame.g.distGraph[aMove.f][aMove.t]>1))
+		if(("_N_E_W_K_L_M_T_F_G_J_Z_D_O_T_C_SN_SQ_M_H_".indexOf("_"+aMove.a+"_")>=0) && (aGame.g.distGraph[aMove.f][aMove.t]>1))
 			return Math.max(zFrom,zTo)+2000;
 		else if(("_A_X_".indexOf("_"+aMove.a+"_")>=0) && dx!=dy && dx!=0 && dy!=0)
 			return Math.max(zFrom,zTo)+2000;
