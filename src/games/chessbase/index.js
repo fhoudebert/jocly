@@ -2571,12 +2571,16 @@ exports.games = (function () {
 				"status": true,
 				"model": {
 					"title-en": "Basic Chess",
-					"summary": "Basic Chess",
+					"summary": "Basic Chess without openings book",
 					"rules": config_model_rules,
 					"module": "chessbase",
 					"plazza": "true",
 					"thumbnail": "res/rules/famous/knight-thumbnail.png",
 					"released": 1389887778,
+					"rules": {
+						"en": "res/rules/famous/rules.html",
+						"fr": "res/rules/famous/rules-fr.html"
+					},
 					"credits": config_model_credits,
 					"gameOptions": config_model_gameOptions,
 					"obsolete": true,

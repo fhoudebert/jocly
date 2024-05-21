@@ -196,7 +196,7 @@
 						[-3,3],[0,3],[3,3],[-3,0],[3,0],[-3,-3],
 						[0,-3],[-3,3]])),
                     value : 3.2,
-                    initial: [{s:1,p:48},{s:1,p:50},{s:1,p:52},{s:1,p:54},{s:1,p:56},{s:1,p:58},{s:1,p:60},{s:1,p:62}],
+                    initial: [{s:1,p:48},{s:1,p:50},{s:1,p:52},{s:1,p:54},{s:1,p:57},{s:1,p:59},{s:1,p:61},{s:1,p:63}],
                 },
                 10: {
                     name : 'troll-b',
@@ -208,7 +208,7 @@
 						[-3,3],[0,3],[3,3],[-3,0],[3,0],[-3,-3],
 						[0,-3],[-3,3]])),
                     value : 3.2,
-                    initial: [{s:-1,p:192},{s:-1,p:194},{s:-1,p:196},{s:-1,p:198},{s:-1,p:200},{s:-1,p:202},{s:-1,p:204},{s:-1,p:206}],
+                    initial: [{s:-1,p:192},{s:-1,p:194},{s:-1,p:196},{s:-1,p:198},{s:-1,p:201},{s:-1,p:203},{s:-1,p:205},{s:-1,p:207}],
                 },
                 11: {
                   name : 'princew',
@@ -267,9 +267,9 @@
                   graph : this.cbMergeGraphs(geometry,
                   this.cbInitialPawnGraph(geometry,1),
                   this.cbShortRangeGraph(geometry,[
-						[-1,0],[1,0]])),
+						[-1,0],[1,0]],0, this.cbConstants.FLAG_MOVE)),
                   value : 0.9,
-                  initial: [{s:1,p:49},{s:1,p:51},{s:1,p:53},{s:1,p:55},{s:1,p:57},{s:1,p:59},{s:1,p:61},{s:1,p:63}],
+                  initial: [{s:1,p:49},{s:1,p:51},{s:1,p:53},{s:1,p:55},{s:1,p:56},{s:1,p:58},{s:1,p:60},{s:1,p:62}],
                   epCatch : true,
                   epTarget : true,
                 },
@@ -280,9 +280,9 @@
                   graph : this.cbMergeGraphs(geometry,
                   this.cbInitialPawnGraph(geometry,-1),
                   this.cbShortRangeGraph(geometry,[
-						[-1,0],[1,0]])),
+						[-1,0],[1,0]],0, this.cbConstants.FLAG_MOVE)),
                   value : 0.9,
-                  initial: [{s:-1,p:193},{s:-1,p:195},{s:-1,p:197},{s:-1,p:199},{s:-1,p:201},{s:-1,p:203},{s:-1,p:205},{s:-1,p:207}],
+                  initial: [{s:-1,p:193},{s:-1,p:195},{s:-1,p:197},{s:-1,p:199},{s:-1,p:200},{s:-1,p:202},{s:-1,p:204},{s:-1,p:206}],
                   epCatch : true,
                   epTarget : true,
                   },
