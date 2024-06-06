@@ -212,10 +212,10 @@
         // jump to move
 		if(("_N_E_W_K_L_M_T_F_G_J_Z_D_O_T_C_SQ_M_H_".indexOf("_"+aMove.a+"_")>=0) && (aGame.g.distGraph[aMove.f][aMove.t]>1))
 			return Math.max(zFrom,zTo)+2000;
-		else if(("_A_X_".indexOf("_"+aMove.a+"_")>=0) && dx!=dy && dx!=0 && dy!=0)
+		else if(("_A_SN_X_".indexOf("_"+aMove.a+"_")>=0) && dx!=dy && dx!=0 && dy!=0)
 			return Math.max(zFrom,zTo)+2000;
 // jump to attack
-		else if(("_Z_W__C_V_O_".indexOf("_"+aMove.a+"_")>=0) && aMove.c != null)
+		else if(("_Z_W_C_V_O_".indexOf("_"+aMove.a+"_")>=0) && aMove.c != null)
 			return Math.max(zFrom,zTo)+2000;
 		else
 			return (zFrom+zTo)/2;

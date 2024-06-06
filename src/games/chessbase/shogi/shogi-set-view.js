@@ -501,7 +501,7 @@
 		return $.extend(true,this.cbShogiPieceStyle(),{
 			"default": {
 				"2d": {
-					file: this.mViewOptions.fullPath + "/res/shogi/shogi-sprites-western.png",
+					file: this.mViewOptions.fullPath + "/res/shogi/shogi-picto-sprites.png",
 					/*clipwidth: 100,
 					clipheight: 100,*/
 					                              

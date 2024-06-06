@@ -285,7 +285,7 @@
 		    20: { // Amazon that can jump to 2nd ring, and do hit & run capture to adjacent squares
 			name : 'terror',
 			abbrev : 'T',
-			aspect : 'fr-dragon',
+			aspect : 'fr-terror',
 			graph : this.cbMergeGraphs(geometry,
 			            this.cbAlibabaGraph(geometry),
 			            this.cbShortRangeGraph(geometry,adjacent,null,c.FLAG_HITRUN),

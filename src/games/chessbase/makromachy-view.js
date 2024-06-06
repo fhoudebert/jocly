@@ -64,22 +64,6 @@
 		};
 	}
 
-	/* Make the knight jump when moving */
-	View.Board.cbMoveMidZ = function(aGame,aMove,zFrom,zTo) {
-		var c=aMove.a;
-		if(c=='U'||c=='G') return (zFrom+zTo)/2-(c=='G' ? 0.01 : 0);		// bent slider
-		var x=aMove.t%14-aMove.f%14, y=(aMove.t-aMove.f-x)/14;
-		var dist=x*x+y*y;
-		if(dist>2) { // never jump to adjacent squares
-			var oblique=x*y*y*y-y*x*x*x;
-			if(c=='Z'||c=='J'||						// oblique leaper
-			   oblique&&(c=='N'||c=='A'||c=='M'||c=='W')||			// only the Knight jump
-			   dist<9&&(c=='O'||c=='E'||c=='I'||c=='T')||			// second ring
-			   aMove.c!==null&&(c=='S'||c=='L'||c=='F'||c=='V'||c=='C')||	// hop capture
-			   (c=='K'))							// fast castling
-				return Math.max(zFrom,zTo)+1000+100*Math.sqrt(dist);
-		}
-		return (zFrom+zTo)/2; // slides straight
-	}
-	
+	// we can rely entirely on the default cbMoveMidZ
+
 })();

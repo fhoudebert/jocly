@@ -453,9 +453,19 @@
 					clipx: 7200,
 					},
 			},
-			"fr-tiger": {
+			"fr-goat": {
 				"2d": {
 					clipx: 7300,
+					},
+			},
+			"fr-ram": {
+				"2d": {
+					clipx: 7400,
+					},
+			},
+			"fr-spider": {
+				"2d": {
+					clipx: 7500,
 					},
 			},
 		},modifier);
@@ -2176,6 +2186,48 @@
 				}
 			},
 		},
+		"fr-rhino2": {
+			mesh: {
+				jsFile:"/res/fairy/rhino/rhino2.js"
+			},
+			materials: {
+				mat0: {
+					channels: {
+						diffuse: {
+							texturesImg: {
+								diffImg : "/res/fairy/rhino/rhino2-diffusemap.jpg",
+							}
+						},
+						normal: {
+							texturesImg: {
+								normalImg: "/res/fairy/rhino/rhino2-normalmap.jpg",
+							}
+						}
+					}
+				}
+			},
+		},
+		"fr-samurai": {
+			mesh: {
+				jsFile:"/res/fairy/persons/samurai.js"
+			},
+			materials: {
+				mat0: {
+					channels: {
+						diffuse: {
+							texturesImg: {
+								diffImg : "/res/fairy/persons/samurai-diffusemap.jpg",
+							}
+						},
+						normal: {
+							texturesImg: {
+								normalImg: "/res/fairy/persons/samurai-normalmap.jpg",
+							}
+						}
+					}
+				}
+			},
+		},
 		"fr-scout": {
 			mesh: {
 				jsFile:"/res/fairy/persons/scout.js"
@@ -2191,6 +2243,27 @@
 						normal: {
 							texturesImg: {
 								normalImg: "/res/fairy/persons/scout-normalmap.jpg",
+							}
+						}
+					}
+				}
+			},
+		},
+		"fr-caliph": {
+			mesh: {
+				jsFile:"/res/fairy/persons/caliph.js"
+			},
+			materials: {
+				mat0: {
+					channels: {
+						diffuse: {
+							texturesImg: {
+								diffImg : "/res/fairy/persons/caliph-diffusemap.jpg",
+							}
+						},
+						normal: {
+							texturesImg: {
+								normalImg: "/res/fairy/persons/caliph-normalmap.jpg",
 							}
 						}
 					}
@@ -2239,42 +2312,42 @@
 				}
 			},
 		},
-		"fr-rhino2": {
+		"fr-goat": {
 			mesh: {
-				jsFile:"/res/fairy/rhino/rhino2.js"
+				jsFile:"/res/fairy/farm/goat.js"
 			},
 			materials: {
 				mat0: {
 					channels: {
 						diffuse: {
 							texturesImg: {
-								diffImg : "/res/fairy/rhino/rhino2-diffusemap.jpg",
+								diffImg : "/res/fairy/farm/goat-diffusemap.jpg",
 							}
 						},
 						normal: {
 							texturesImg: {
-								normalImg: "/res/fairy/rhino/rhino2-normalmap.jpg",
+								normalImg: "/res/fairy/farm/goat-normalmap.jpg",
 							}
 						}
 					}
 				}
 			},
 		},
-		"fr-samurai": {
+		"fr-ram": {
 			mesh: {
-				jsFile:"/res/fairy/persons/samurai.js"
+				jsFile:"/res/fairy/farm/ram.js"
 			},
 			materials: {
 				mat0: {
 					channels: {
 						diffuse: {
 							texturesImg: {
-								diffImg : "/res/fairy/persons/samurai-diffusemap.jpg",
+								diffImg : "/res/fairy/farm/ram-diffusemap.jpg",
 							}
 						},
 						normal: {
 							texturesImg: {
-								normalImg: "/res/fairy/persons/samurai-normalmap.jpg",
+								normalImg: "/res/fairy/farm/ram-normalmap.jpg",
 							}
 						}
 					}
@@ -2344,27 +2417,26 @@
 				}
 			},
 		},
-		"fr-tiger": {
+		"fr-spider": {
 			mesh: {
-				jsFile:"/res/fairy/tiger/tiger.js"
+				jsFile:"/res/fairy/critters/spider.js"
 			},
 			materials: {
 				mat0: {
 					channels: {
 						diffuse: {
 							texturesImg: {
-								diffImg : "/res/fairy/tiger/tiger-diffusemap.jpg",
+								diffImg : "/res/fairy/critters/spider-diffusemap.jpg",
 							}
 						},
 						normal: {
 							texturesImg: {
-								normalImg: "/res/fairy/tiger/tiger-normalmap.jpg",
+								normalImg: "/res/fairy/critters/spider-normalmap.jpg",
 							}
 						}
 					}
 				}
 			},
 		},
-
 	});
 })();

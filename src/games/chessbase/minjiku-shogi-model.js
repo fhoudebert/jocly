@@ -36,10 +36,14 @@
 			var pos1=tg1 & 0xffff;
 			var step=pos1-pos+21;
 			if(b.board[pos+via[step]]<0 || b.board[pos+via[step+1]]<0) {
-				var victim=b.board[pos1];
+				var m, victim=b.board[pos1];
 				if(victim<0) { // reject non-capt to brouhaha squares
-					if(pos1>9 && pos1<110) moves.push({f: pos, t: pos1, c: null, a: move.a});
-				} else if(b.pieces[victim].s != b.mWho) moves.push({f: pos, t: pos1, c: victim, a: move.a});
+					if(pos1>9 && pos1<110) m={f: pos, t: pos1, c: null, a: move.a};
+				} else if(b.pieces[victim].s != b.mWho) m={f: pos, t: pos1, c: victim, a: move.a, ep: false};
+				if(m) {
+					if(move.a=='F') m.kill=-1;
+					moves.push(m);
+				}
 			}
 		}
 		var graph=aGame.machine[pos];
@@ -49,15 +53,19 @@
 			var step=pos1-pos+24;
 			var block=pos+via[step];
 			if(b.board[block] >= 0) { // blocked
-				var s=pos+via[step+1]; // first detour square
+				var m, s=pos+via[step+1]; // first detour square
 				if(edge[block]) { // for a move along the edge one detour is invalid
 					if(edge[s]) s=pos+via[step+2];	// on (wrapped) edge, so take other
 					if(b.board[s]>=0) continue;	// the one detour is blocked
 				} else if(b.board[s]>=0 && b.board[pos+via[step+2]]>=0) continue; // both blocked
 				var victim=b.board[pos1];
 				if(victim<0) {
-					if(pos1>9 && pos1<110) moves.push({f: pos, t: pos1, c: null, a: move.a});
-				} else if(b.pieces[victim].s != b.mWho) moves.push({f: pos, t: pos1, c: victim, a: move.a});
+					if(pos1>9 && pos1<110) m={f: pos, t: pos1, c: null, a: move.a};
+				} else if(b.pieces[victim].s != b.mWho) m={f: pos, t: pos1, c: victim, a: move.a, ep: false};
+				if(m) {
+					if(move.a=='F') m.kill=-1;
+					moves.push(m);
+				}
 			}
 		}
 	}
@@ -294,7 +302,7 @@
 		    23: {
 			name : 'ninja',
 			abbrev : '+L',
-			aspect : 'fr-ship',
+			aspect : 'fr-gate',
 			graph : this.cbMergeGraphs(geometry,
 			            this.cbSkiGraph(geometry,[[1,0],[-1,0]],0,-1),
 			            this.cbShortRangeGraph(geometry,[[1,0],[0,-1],[-1,0],[0,1]],area,rifle),
@@ -349,7 +357,7 @@
 			name : 'jumping general',
 			abbrev : 'J',
 			aspect : 'fr-flying-queen',
-			graph : this.cbLongRangeGraph(geometry,adjacent,null,flying),
+			graph : this.cbLongRangeGraph(geometry,adjacent,area,flying),
 			value : 20.00,
 			initial: [{s:1,p:25},{s:-1,p:94}],
 			antiTrade: 2,

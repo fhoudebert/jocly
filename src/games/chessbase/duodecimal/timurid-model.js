@@ -42,41 +42,13 @@
 		);
 	}
 
-	Model.Game.cbEagleGraph = function(geometry){
+	// graphs
+	/** Move graph for the Snake */
+	Model.Game.cbSnakeGraph = function(geometry,confine){
 		var $this=this;
-
-		var flags = $this.cbConstants.FLAG_MOVE | $this.cbConstants.FLAG_CAPTURE;
-		var graph={};
-		for(var pos=0;pos<geometry.boardSize;pos++) {
-			graph[pos]=[];
-			[[-1,-1],[-1,1],[1,-1],[1,1]].forEach(function(delta) { // loop on all 4 diagonals
-				var pos1=geometry.Graph(pos,delta);
-				if(pos1!=null) {
-					for(var dir=0;dir<2;dir++) { // dir=0 for row, dir=1 for column
-						var nbMax = (dir==0) ? lastRow : lastCol;
-						var away=[] // hold the sliding line
-						for(var n=1;n<nbMax;n++) {
-							var delta2=[];
-							delta2[dir]=delta[dir]*n;
-							delta2[1-dir]=0; // delta2 is now only about moving orthogonally, away from the piece
-							var pos2=geometry.Graph(pos1,delta2);
-							if(pos2!=null) {
-								if(n==1) // possible to slide at least 1 cell, make sure the diagonal cell is not occupied, but cannot move to this cell
-									away.push(pos1 | $this.cbConstants.FLAG_STOP);
-								away.push(pos2 | flags);
-							}
-						}
-						if(away.length>0)
-							graph[pos].push($this.cbTypedArray(away));
-					}
-				}
-			});
-		}
-		return $this.cbMergeGraphs(geometry,
-		   $this.cbShortRangeGraph(geometry,[[-1,-1],[-1,1],[1,-1],[1,1]]),
-		   graph
-		);
+        return $this.cbSkiGraph(geometry,[[0,1],[0,-1]],1);
 	}
+
 
 	Model.Game.cbShipGraph = function(geometry){
 		var $this=this;
@@ -123,6 +95,8 @@
 	Model.Game.cbDefine = function() {
 
 		// classic chess pieces
+
+
 
 		var piecesTypes = {
 
@@ -198,7 +172,7 @@
       abbrev : 'Q',
       aspect : 'fr-queen',
       graph : this.cbQueenGraph(geometry,confine),
-      value : 10,
+      value : 10.2,
       initial: [{s:1,p:18},{s:-1,p:126}],
       },
       8: {
@@ -226,7 +200,7 @@
       initial: [{s:1,p:4},{s:1,p:7},{s:-1,p:136},{s:-1,p:139}],
       },
       11: {
-      name : 'eagle',
+      name : 'griffon',
       abbrev : 'H',
       aspect : 'fr-griffon',
       graph : this.cbGriffonGraph(geometry),
@@ -238,7 +212,7 @@
       abbrev : 'J',
       aspect : 'fr-camel',
       graph : this.cbShortRangeGraph(geometry,[[-3,-1],[-3,1],[3,-1],[3,1],[1,3],[1,-3],[-1,3],[-1,-3]]),
-      value : 2.7,
+      value : 2.6,
       initial: [{s:1,p:2},{s:1,p:9},{s:-1,p:134},{s:-1,p:141}],
       },
        13: {
@@ -246,9 +220,79 @@
       abbrev : 'X',
       aspect : 'fr-ship',
       graph : this.cbShipGraph(geometry),
-      value : 4.8,
+      value : 4.9,
       initial: [{s:1,p:15},{s:1,p:20},{s:-1,p:123},{s:-1,p:128}],
       },
+      14: {
+      name : 'lion',
+      abbrev : 'L',
+      aspect : 'fr-lion',
+      graph : this.cbShortRangeGraph(geometry,[
+                  [-1,-1],[-1,1],[1,-1],[1,1],[1,0],[0,1],[-1,0],[0,-1],
+                  [-2,0],[-2,-1],[-2,-2],[-1,-2],[0,-2],
+                  [1,-2],[2,-2],[2,-1],[2,0],[2,1],
+                  [2,2],[1,2],[0,2],[-1,2],[-2,2],[-2,1]
+                  ], confine),
+      value : 6.7,
+      initial: [],
+      },
+      15: {
+      name : 'snake',
+      abbrev : 'S',
+      aspect : 'fr-cobra',
+      graph : this.cbSnakeGraph(geometry),
+      value : 3.5,
+      initial: [],
+      },
+      16: {
+      name : 'rhino',
+      abbrev : 'U',
+      aspect : 'fr-rhino',
+      graph : this.cbRhinoGraph(geometry),
+      value : 7.5,
+      initial: [],
+      },
+      17: {
+      name : 'emir',
+      abbrev : 'C',
+      aspect : 'fr-caliph',
+      graph : this.cbMergeGraphs(geometry,
+                  this.cbShortRangeGraph(geometry,[[-1,-1],[1,1],[1,-1],[-1,1]]),
+                  this.cbKnightGraph(geometry),
+                  this.cbCamelGraph(geometry)),
+      value : 8,
+      initial: [],
+      },
+      18: {
+      name : 'wizard',
+      abbrev : 'W',
+      aspect : 'fr-wizard',
+      graph : this.cbWizardGraph(geometry,confine),
+      value : 4.5,
+      initial: [],
+      },
+      19: {
+		name: 'squirrel',
+        abbrev : 'Y',
+		aspect: 'fr-squirrel',
+		graph: this.cbShortRangeGraph(geometry,[
+			[-2,0],[-2,-1],[-2,-2],[-1,-2],[0,-2],
+			[1,-2],[2,-2],[2,-1],[2,0],[2,1],
+			[2,2],[1,2],[0,2],[-1,2],[-2,2],[-2,1]]),
+		value: 6.3,
+		initial: [],
+		},
+      20: {
+		name : 'amiral',
+		abbrev : 'A',
+		aspect : 'fr-crowned-rook',
+		graph : this.cbMergeGraphs(geometry,
+                              this.cbKingGraph(geometry,confine),
+                              this.cbRookGraph(geometry,confine)),
+        value : 7.4,
+		initial: [],
+		},
+
 		}
 
 		// defining types for readable promo cases
@@ -256,18 +300,17 @@
         var T_ipawnb=1
         var T_princew=2
         var T_princeb=3
-        var T_rook=4
-        var T_bishop=5
-        var T_knight=6
         var T_queen=7
         var T_king=10
-        var T_lion=12
-        var T_elephant=9
-        var T_cannon=10
+        var T_lion=14
         var T_ship=13
         var T_eagle=11
-        var T_camel=12
-
+        var T_snake=15
+        var T_rhino=16
+        var T_emir=17
+        var T_wizard=18
+        var T_squirrel=19
+        var T_amiral=20
 		return {
 			
 			geometry: geometry,
@@ -276,15 +319,36 @@
 
 			promote: function(aGame,piece,move) {
 				// initial pawns go up to last row where it promotes to Queen
-				if( ((piece.t==T_ipawnw ) && geometry.R(move.t)==lastRow) || ((piece.t==T_ipawnb ) && geometry.R(move.t)==firstRow)) 
+				if (((piece.t==T_ipawnw ) && geometry.R(move.t)==lastRow) || ((piece.t==T_ipawnb ) && geometry.R(move.t)==firstRow)) 
 					return [T_queen];
-				if (piece.t==T_princew && geometry.R(move.t)==lastRow)
+				if ((piece.t==T_princew && geometry.R(move.t)==lastRow) || (piece.t==T_princeb  && geometry.R(move.t)==firstRow))
 					return [T_queen];
-
 				if (piece.t==T_ship && ((geometry.R(move.t)==lastRow && piece.s > 0) || (geometry.R(move.t)==firstRow && piece.s < 0)) ) 
 					return [T_eagle];
+                if (piece.t==T_snake && ((geometry.R(move.t)==lastRow && piece.s > 0) || (geometry.R(move.t)==firstRow && piece.s < 0)) ) 
+					return [T_rhino];
+                if (piece.t==T_wizard && ((geometry.R(move.t)==lastRow && piece.s > 0) || (geometry.R(move.t)==firstRow && piece.s < 0)) ) 
+					return [T_emir];
+                if (piece.t==T_squirrel && ((geometry.R(move.t)==lastRow && piece.s > 0) || (geometry.R(move.t)==firstRow && piece.s < 0)) ) 
+					return [T_lion];
+                if (piece.t==T_amiral && ((geometry.R(move.t)==lastRow && piece.s > 0) || (geometry.R(move.t)==firstRow && piece.s < 0)) ) 
+					return [T_queen];
 				return [];
-			},					
+			},
+
+
+
+			prelude: [{
+				panelWidth: 2, // two buttons per row 
+				panelBackground: "/res/rules/duodecimal/timurid-parameter-panel.png",
+				setups: ["XAX","HQH","XYX","HLH","XSX","HUH","XWX","HCH"], 
+				castle: [ undefined, undefined, undefined, undefined, undefined, undefined, undefined],
+				squares: { 1:[15,18,20], '-1':[123,126,128] },
+				//participants: promoChoice, // adapt the auto-generated promotion choice to the selected variant
+				persistent: true, // stick with selection for all subsequent games
+			},0],
+
+
 		};
 	}
 

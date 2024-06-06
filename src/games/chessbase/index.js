@@ -439,11 +439,15 @@ exports.games = (function () {
 	var modelScripts_101 = [
 		"base-model.js",
 		"grid-geo-model.js",
+		"fairy-piece-model.js",
+		"locust-move-model.js",
 		"werewolf-model.js"
 	]
 	var modelScripts_102 = [
 		"base-model.js",
 		"grid-geo-model.js",
+		"fairy-piece-model.js",
+		"locust-move-model.js",
 		"decimal/elven-model.js"
 	]
 	var modelScripts_103 = [
@@ -455,6 +459,19 @@ exports.games = (function () {
 		"base-model.js",
 		"grid-geo-model.js",
 		"decimal/scirocco-model.js"
+	]
+	var modelScripts_seireigi = [
+		"base-model.js",
+		"grid-geo-model.js",
+		"drop-model.js",
+		"shogi/seireigi-shogi-model.js"
+	]
+	var modelScripts_chu_seireigi = [
+		"base-model.js",
+		"grid-geo-model.js",
+		"drop-model.js",
+        "fairy-piece-model.js",
+		"shogi/chu-seireigi-model.js"
 	]
 	var modelScripts_105 = [
 		"base-model.js",
@@ -477,19 +494,21 @@ exports.games = (function () {
 	var modelScripts_108 = [
 		"base-model.js",
 		"grid-geo-model.js",
-		"fairy-move-model.js",
+		"locust-move-model.js",
 		"shogi/chu-shogi-model.js"
 	]
 	var modelScripts_109 = [
 		"base-model.js",
 		"grid-geo-model.js",
-		"fairy-move-model.js",
+		"fairy-piece-model.js",
+		"locust-move-model.js",
 		"makromachy-model.js"
 	]
 	var modelScripts_110 = [
 		"base-model.js",
 		"grid-geo-model.js",
-		"fairy-move-model.js",
+		"fairy-piece-model.js",
+		"locust-move-model.js",
 		"minjiku-shogi-model.js"
 	]
 	var config_model_levels_11 = {
@@ -539,6 +558,12 @@ exports.games = (function () {
 		"maxNodes": 60000,
 		"maxDuration": 45
 	}
+	var modelScripts_kyoto = [
+		"base-model.js",
+		"grid-geo-model.js",
+		"drop-model.js",
+		"shogi/kyoto-shogi-model.js"
+	]
 	var config_model_levels_15 = [
 		config_model_levels_11,
 		config_model_levels_12,
@@ -583,6 +608,20 @@ exports.games = (function () {
 		"fairy-set-view.js",
 		"multi-leg-view.js",
 		"decimal/scirocco-view.js"
+	]
+	var config_view_js_chu_seireigi = [
+		"base-view.js",
+		"grid-board-view.js",
+		"shogi/chu-seireigi-set-view.js",
+		"drop-view.js",
+		"shogi/chu-seireigi-view.js"
+	]
+		var config_view_js_seireigi = [
+		"base-view.js",
+		"grid-board-view.js",
+		"shogi/seireigi-shogi-set-view.js",
+		"drop-view.js",
+		"shogi/seireigi-shogi-view.js"
 	]
 	var config_view_js_105 = [
 		"base-view.js",
@@ -964,10 +1003,12 @@ exports.games = (function () {
 		"fairy-set-view.js",
 		"cazaux/metamachy-view.js"
 	]
-	var modelScripts_30 = [
+	var modelScripts_capablanca = [
+
 		"base-model.js",
 		"grid-geo-model.js",
-		"fairy-move-model.js",
+		"fairy-piece-model.js",
+		"prelude-model.js",
 		"capa10x8/capablanca-model.js"
 	]
 	var config_view_skins_preload_10 = [
@@ -1015,6 +1056,13 @@ exports.games = (function () {
 		"base-view.js",
 		"grid-board-view.js",
 		"fairy-set-view.js",
+		"capa10x8/capablanca-view.js"
+	]
+	var config_view_js_capablanca = [
+		"base-view.js",
+		"grid-board-view.js",
+		"fairy-set-view.js",
+		"prelude-view.js",
 		"capa10x8/capablanca-view.js"
 	]
 	var modelScripts_31 = [
@@ -1073,8 +1121,21 @@ exports.games = (function () {
 	var modelScripts_34 = [
 		"base-model.js",
 		"grid-geo-model.js",
-		"fairy-move-model.js",
+		"fairy-piece-model.js",
 		"decimal/grand-model.js"
+	]
+	var modelScripts_hectochess = [
+		"base-model.js",
+		"grid-geo-model.js",
+		"fairy-piece-model.js",
+		"decimal/hectochess-model.js"
+	]
+	var modelScripts_heavychess = [
+		"base-model.js",
+		"grid-geo-model.js",
+		"fairy-piece-model.js",
+		"decimal/heavy-model.js"
+
 	]
 	var config_view_js_31 = [
 		"base-view.js",
@@ -1283,7 +1344,7 @@ exports.games = (function () {
 	var modelScripts_fantasticXIII = [
  		"base-model.js",
  		"grid-geo-model.js",
- 		"fairy-move-model.js",
+ 		"fairy-piece-model.js",
  		"cazaux/fantasticXIII-model.js"
  	]
  	var config_view_js_fantasticXIII = [
@@ -1295,7 +1356,7 @@ exports.games = (function () {
 	var modelScripts_bigorra = [
  		"base-model.js",
  		"grid-geo-model.js",
- 		"fairy-move-model.js",
+ 		"fairy-piece-model.js",
  		"cazaux/bigorra-model.js"
  	]
  	var config_view_js_bigorra = [
@@ -1318,7 +1379,7 @@ exports.games = (function () {
 	var modelScripts_gigaII = [
 		"base-model.js",
 		"grid-geo-model.js",
-        "fairy-move-model.js",
+        "fairy-piece-model.js",
 		"cazaux/gigachessII-model.js"
 	]
 	var config_view_js_gigaII = [
@@ -1327,70 +1388,30 @@ exports.games = (function () {
 		"fairy-set-view.js",
 		"cazaux/gigachessII-view.js"
 	]
-	var modelScripts_wtimurid = [
- 		"base-model.js",
- 		"grid-geo-model.js",
-        "fairy-move-model.js",
- 		"duodecimal/wild-timurid-model.js"
- 	]
- 	var config_view_js_wtimurid = [
- 		"base-view.js",
- 		"grid-board-view.js",
- 		"fairy-set-view.js",
- 		"duodecimal/timurid-view.js"
- 	]
 	var modelScripts_timurid = [
  		"base-model.js",
  		"grid-geo-model.js",
-        "fairy-move-model.js",
+        "fairy-piece-model.js",
+        "prelude-model.js",
  		"duodecimal/timurid-model.js"
  	]
  	var config_view_js_timurid = [
  		"base-view.js",
  		"grid-board-view.js",
  		"fairy-set-view.js",
+        "prelude-view.js",
  		"duodecimal/timurid-view.js"
  	]
-	var modelScripts_wbabur = [
- 		"base-model.js",
- 		"grid-geo-model.js",
-        "fairy-move-model.js",
- 		"duodecimal/wild-babur-model.js"
- 	]
- 	var config_view_js_wbabur = [
+ 	var config_view_js_duodecimal = [
  		"base-view.js",
  		"grid-board-view.js",
  		"fairy-set-view.js",
- 		"duodecimal/timurid-view.js"
- 	]
-	var modelScripts_babur = [
- 		"base-model.js",
- 		"grid-geo-model.js",
-        "fairy-move-model.js",
- 		"duodecimal/babur-model.js"
- 	]
- 	var config_view_js_babur = [
- 		"base-view.js",
- 		"grid-board-view.js",
- 		"fairy-set-view.js",
- 		"duodecimal/timurid-view.js"
- 	]
-	var modelScripts_wmirza = [
- 		"base-model.js",
- 		"grid-geo-model.js",
-        "fairy-move-model.js",
- 		"duodecimal/wild-mirza-model.js"
- 	]
- 	var config_view_js_wmirza = [
- 		"base-view.js",
- 		"grid-board-view.js",
- 		"fairy-set-view.js",
- 		"duodecimal/timurid-view.js"
+ 		"duodecimal/duodecimal-view.js"
  	]
 	var modelScripts_zanzibars = [
 		"base-model.js",
 		"grid-geo-model.js",
- 		"fairy-move-model.js",
+		"fairy-piece-model.js",
 		"cazaux/zanzibar-s-model.js"
 	]
 	var config_view_js_zanzibars = [
@@ -1398,17 +1419,6 @@ exports.games = (function () {
 		"grid-board-view.js",
 		"fairy-set-view.js",
 		"cazaux/zanzibar-view.js"
-	]
-	var modelScripts_acedrex = [
-		"base-model.js",
-		"grid-geo-model.js",
-		"historical/grant-acedrex-model.js"
-	]
-	var config_view_js_acedrex = [
-		"base-view.js",
-		"grid-board-view.js",
-		"fairy-set-view.js",
-		"historical/grant-acedrex-view.js"
 	]
 	var modelScripts_acedrex = [
 		"base-model.js",
@@ -2367,7 +2377,7 @@ exports.games = (function () {
 						"en": "res/rules/shako/shako-credits.html",
 						"fr": "res/rules/shako/shako-credits-fr.html"
 					},
-					"gameOptions": config_model_gameOptions_2,
+					"gameOptions": config_model_gameOptions,
 					"js": modelScripts_13,
 					"description": {
 						"en": "res/rules/shako/shako-description.html",
@@ -2516,12 +2526,16 @@ exports.games = (function () {
 				"status": true,
 				"model": {
 					"title-en": "Basic Chess",
-					"summary": "Basic Chess",
+					"summary": "Basic Chess without openings book",
 					"rules": config_model_rules,
 					"module": "chessbase",
 					"plazza": "true",
 					"thumbnail": "res/rules/famous/knight-thumbnail.png",
 					"released": 1389887778,
+					"rules": {
+						"en": "res/rules/famous/rules.html",
+						"fr": "res/rules/famous/rules-fr.html"
+					},
 					"credits": config_model_credits,
 					"gameOptions": config_model_gameOptions,
 					"obsolete": true,
@@ -3615,7 +3629,7 @@ exports.games = (function () {
 		},
 		{
 			"name": "capablanca-chess",
-			"modelScripts": modelScripts_30,
+			"modelScripts": modelScripts_capablanca,
 			"config": {
 				"status": true,
 				"model": {
@@ -3633,7 +3647,7 @@ exports.games = (function () {
 					},
 					"gameOptions": config_model_gameOptions,
 					"obsolete": false,
-					"js": modelScripts_30,
+					"js": modelScripts_capablanca,
 					"description": {
 						"en": "res/rules/capablanca/capablanca-description.html"
 					},
@@ -3658,164 +3672,11 @@ exports.games = (function () {
 					"animateSelfMoves": false,
 					"switchable": true,
 					"sounds": config_view_sounds,
-					"js": config_view_js_30,
+					"js": config_view_js_capablanca,
 					"useAutoComplete": true
 				}
 			},
-			"viewScripts": config_view_js_30
-		},
-		{
-			"name": "carrera-chess",
-			"modelScripts": modelScripts_31,
-			"config": {
-				"status": true,
-				"model": {
-					"title-en": "Carerra Chess",
-					"summary": "Chess on 10x8 (1617)",
-					"rules": {
-						"en": "res/rules/carrera/carrera-rules.html"
-					},
-					"module": "chessbase",
-					"plazza": "true",
-					"thumbnail": "res/rules/carrera/carrera-thumb.png",
-					"released": 1404916434,
-					"credits": {
-						"en": "res/rules/carrera/carrera-credits.html"
-					},
-					"gameOptions": config_model_gameOptions,
-					"obsolete": false,
-					"js": modelScripts_31,
-					"description": {
-						"en": "res/rules/carrera/carrera-description.html"
-					},
-					"levels": config_model_levels_5
-				},
-				"view": {
-					"title-en": "Chessbase view",
-					"visuals": {
-						"600x600": [
-							"res/visuals/carrera-600x600-3d.jpg",
-							"res/visuals/carrera-600x600-2d.jpg"
-						]
-					},
-					"xdView": true,
-					"css": config_view_css,
-					"preferredRatio": 1,
-					"useShowMoves": true,
-					"useNotation": true,
-					"module": "chessbase",
-					"defaultOptions": config_view_defaultOptions,
-					"skins": config_view_skins_11,
-					"animateSelfMoves": false,
-					"switchable": true,
-					"sounds": config_view_sounds,
-					"js": config_view_js_30,
-					"useAutoComplete": true
-				}
-			},
-			"viewScripts": config_view_js_30
-		},
-		{
-			"name": "gothic-chess",
-			"modelScripts": modelScripts_32,
-			"config": {
-				"status": true,
-				"model": {
-					"title-en": "Gothic Chess",
-					"summary": "Chess on 10x8 (2000)",
-					"rules": {
-						"en": "res/rules/gothic/gothic-rules.html"
-					},
-					"module": "chessbase",
-					"plazza": "true",
-					"thumbnail": "res/rules/gothic/gothic-thumb.png",
-					"released": 1404982805,
-					"credits": {
-						"en": "res/rules/gothic/gothic-credits.html"
-					},
-					"gameOptions": config_model_gameOptions,
-					"obsolete": false,
-					"js": modelScripts_32,
-					"description": {
-						"en": "res/rules/gothic/gothic-description.html"
-					},
-					"levels": config_model_levels_5
-				},
-				"view": {
-					"title-en": "Chessbase view",
-					"visuals": {
-						"600x600": [
-							"res/visuals/gothic-600x600-3d.jpg",
-							"res/visuals/gothic-600x600-2d.jpg"
-						]
-					},
-					"xdView": true,
-					"css": config_view_css,
-					"preferredRatio": 1,
-					"useShowMoves": true,
-					"useNotation": true,
-					"module": "chessbase",
-					"defaultOptions": config_view_defaultOptions,
-					"skins": config_view_skins_11,
-					"animateSelfMoves": false,
-					"switchable": true,
-					"sounds": config_view_sounds,
-					"js": config_view_js_30,
-					"useAutoComplete": true
-				}
-			},
-			"viewScripts": config_view_js_30
-		},
-		{
-			"name": "janus-chess",
-			"modelScripts": modelScripts_33,
-			"config": {
-				"status": true,
-				"model": {
-					"title-en": "Janus Chess",
-					"summary": "Chess on 10x8 (1978)",
-					"rules": {
-						"en": "res/rules/janus/janus-rules.html"
-					},
-					"module": "chessbase",
-					"plazza": "true",
-					"thumbnail": "res/rules/janus/janus-thumb.png",
-					"released": 1404997707,
-					"credits": {
-						"en": "res/rules/janus/janus-credits.html"
-					},
-					"gameOptions": config_model_gameOptions,
-					"obsolete": false,
-					"js": modelScripts_33,
-					"description": {
-						"en": "res/rules/janus/janus-description.html"
-					},
-					"levels": config_model_levels_5
-				},
-				"view": {
-					"title-en": "Chessbase view",
-					"visuals": {
-						"600x600": [
-							"res/visuals/janus-600x600-3d.jpg",
-							"res/visuals/janus-600x600-2d.jpg"
-						]
-					},
-					"xdView": true,
-					"css": config_view_css,
-					"preferredRatio": 1,
-					"useShowMoves": true,
-					"useNotation": true,
-					"module": "chessbase",
-					"defaultOptions": config_view_defaultOptions,
-					"skins": config_view_skins_13,
-					"animateSelfMoves": false,
-					"switchable": true,
-					"sounds": config_view_sounds,
-					"js": config_view_js_30,
-					"useAutoComplete": true
-				}
-			},
-			"viewScripts": config_view_js_30
+			"viewScripts": config_view_js_capablanca
 		},
 		{
 			"name": "grand-chess",
@@ -3862,6 +3723,113 @@ exports.games = (function () {
 					"animateSelfMoves": false,
 					"switchable": true,
 					"sounds": config_view_sounds,
+					"js": config_view_js_31,
+					"useAutoComplete": true
+				}
+			},
+			"viewScripts": config_view_js_31
+		},
+		{
+			"name": "hectochess",
+			"modelScripts": modelScripts_hectochess,
+			"config": {
+				"status": true,
+				"model": {
+					"title-en": "Hectochess",
+					"summary": "Chess on 10x10 with champions and wizards",
+					"rules": {
+						"en": "res/rules/decimal/hectochess-rules.html",
+                        "fr": "res/rules/decimal/hectochess-rules_fr.html"
+					},
+					"module": "chessbase",
+					"plazza": "true",
+					"thumbnail": "res/rules/decimal/hectochess-thumb.png",
+					"released": 1404985842,
+					"credits": {
+						"en": "res/rules/decimal/hectochess-credits.html"
+					},
+					"gameOptions": config_model_gameOptions,
+					"obsolete": false,
+					"js": modelScripts_hectochess,
+					"description": {
+						"en": "res/rules/decimal/hectochess-description.html"
+					},
+					"levels": config_model_levels_5
+				},
+				"view": {
+					"title-en": "Chessbase view",
+					"visuals": {
+						"600x600": [
+							"res/visuals/hectochess-600x600-3d.jpg",
+							"res/visuals/hectochess-600x600-2d.jpg"
+						]
+					},
+					"xdView": true,
+					"css": config_view_css,
+					"preferredRatio": 1,
+					"useShowMoves": true,
+					"useNotation": true,
+					"module": "chessbase",
+					"defaultOptions": config_view_defaultOptions,
+					"skins": config_view_skins_11,
+					"animateSelfMoves": false,
+					"switchable": true,
+					"sounds": config_view_sounds,
+					"js": config_view_js_31,
+					"useAutoComplete": true
+				}
+			},
+			"viewScripts": config_view_js_31
+		},
+		{
+			"name": "heavychess",
+			"modelScripts": modelScripts_heavychess,
+			"config": {
+				"status": true,
+				"model": {
+
+					"title-en": "Heavy chess",
+					"summary": "Chess on 10x10 with many strong pieces",
+					"rules": {
+						"en": "res/rules/decimal/heavychess-rules.html",
+                        "fr": "res/rules/decimal/heavychess-rules_fr.html"
+					},
+					"module": "chessbase",
+					"plazza": "true",
+					"thumbnail": "res/rules/decimal/heavychess-thumb.png",
+					"released": 1404985842,
+					"credits": {
+						"en": "res/rules/decimal/heavychess-credits.html"
+					},
+					"gameOptions": config_model_gameOptions,
+					"obsolete": false,
+					"js": modelScripts_heavychess,
+					"description": {
+						"en": "res/rules/decimal/heavychess-description.html"
+					},
+					"levels": config_model_levels_5
+				},
+				"view": {
+					"title-en": "Chessbase view",
+					"visuals": {
+						"600x600": [
+							"res/visuals/heavychess-600x600-3d.jpg",
+							"res/visuals/heavychess-600x600-2d.jpg"
+						]
+					},
+					"xdView": true,
+
+					"css": config_view_css,
+					"preferredRatio": 1,
+					"useShowMoves": true,
+					"useNotation": true,
+					"module": "chessbase",
+					"defaultOptions": config_view_defaultOptions,
+					"skins": config_view_skins_11,
+					"animateSelfMoves": false,
+					"switchable": true,
+					"sounds": config_view_sounds,
+
 					"js": config_view_js_31,
 					"useAutoComplete": true
 				}
@@ -5345,11 +5313,11 @@ exports.games = (function () {
 					"title-en": "LeyChessAlpha",
 					"summary": "Chess on 12x12 with fairy pieces",
 					"rules": {
-						"en": "res/rules/metamachy/metamachy-rules.html"
+						"en": "res/rules/duodecimal/leychessalpha-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
-					"thumbnail": "res/rules/metamachy/metamachy-thumb.png",
+					"thumbnail": "res/rules/duodecimal/leychessalpha-thumb.png",
 					"released": 1402412178,
 					"credits": {
 						"en": "res/rules/duodecimal/leychessalpha-credits.html"
@@ -5566,7 +5534,8 @@ exports.games = (function () {
 
 					"summary": "FantasticXIII and Gigachess II on 16x16",
 					"rules": {
-						"en": "res/rules/fantasticXIII/bigorra-rules.html"
+						"en": "res/rules/fantasticXIII/bigorra-rules.html",
+                        			"fr": "res/rules/fantasticXIII/bigorra-rules-fr.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
@@ -5665,7 +5634,7 @@ exports.games = (function () {
 								"smoothedfilegeo|0|/res/fairy/lion/lion.js",
 								"image|/res/fairy/lion/lion-diffusemap.jpg",
 								"image|/res/fairy/lion/lion-normalmap.jpg",
-                                "smoothedfilegeo|0|/res/fairy/bow/bow.js",
+								"smoothedfilegeo|0|/res/fairy/bow/bow.js",
 								"image|/res/fairy/bow/bow-diffusemap.jpg",
 								"image|/res/fairy/bow/bow-normalmap.jpg",
 								"smoothedfilegeo|0|/res/fairy/machine/machine.js",
@@ -5680,10 +5649,10 @@ exports.games = (function () {
 								"smoothedfilegeo|0|/res/fairy/giraffe/giraffe.js",
 								"image|/res/fairy/giraffe/giraffe-diffuse-map.jpg",
 								"image|/res/fairy/giraffe/giraffe-normal-map.jpg",
-                                "smoothedfilegeo|0|/res/fairy/ship/ship.js",
+								"smoothedfilegeo|0|/res/fairy/ship/ship.js",
  								"image|/res/fairy/ship/ship-diffusemap.jpg",
  								"image|/res/fairy/ship/ship-normalmap.jpg",
-                                "smoothedfilegeo|0|/res/fairy/dragon/dragon.js",
+								"smoothedfilegeo|0|/res/fairy/dragon/dragon.js",
  								"image|/res/fairy/dragon/dragon-diffusemap.jpg",
  								"image|/res/fairy/dragon/dragon-normalmap.jpg",
  								"smoothedfilegeo|0|/res/fairy/leopard/leopard.js",
@@ -5911,7 +5880,8 @@ exports.games = (function () {
 					"title-en": "Gigachess II",
 					"summary": "Chess on 14x14 with fairy pieces",
 					"rules": {
-						"en": "res/rules/gigachess/gigachessII-rules.html"
+						"en": "res/rules/gigachess/gigachessII-rules.html",
+                        			"fr": "res/rules/gigachess/gigachessII-rules_fr.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
@@ -6032,105 +6002,6 @@ exports.games = (function () {
 			"viewScripts": config_view_js_gigaII
 		},
 		{
- 			"name": "wild-timurid-chess",
- 			"modelScripts": modelScripts_wtimurid,
- 			"config": {
- 				"status": true,
- 				"model": {
- 					"title-en": "Wild Timurid",
- 					"summary": "Chess on 12x12 with fairy pieces",
- 					"rules": {
- 						"en": "res/rules/duodecimal/wild-timurid-rules.html"
- 					},
- 					"module": "chessbase",
- 					"plazza": "true",
- 					"thumbnail": "res/rules/duodecimal/wild-timurid-thumb.png",
- 					"released": 1497874349,
- 					"credits": {
-
- 						"en": "res/rules/duodecimal/timurid-credits.html"
- 					},
- 					"gameOptions": config_model_gameOptions,
- 					"obsolete": false,
- 					"js": modelScripts_wtimurid,
- 					"description": {
- 						"en": "res/rules/duodecimal/wild-timurid-description.html"
- 					},
- 					"levels": config_model_levels_15
- 				},
- 				"view": {
- 					"title-en": "Wild Timurid view",
- 					"visuals": {
- 						"600x600": [
- 							"res/visuals/wild-timurid-600x600-3d.jpg",
- 							"res/visuals/wild-timurid-600x600-2d.jpg"
- 						]
- 					},
- 					"xdView": true,
- 					"css": config_view_css,
- 					"preferredRatio": 1,
- 					"useShowMoves": true,
- 					"useNotation": true,
- 					"module": "chessbase",
- 					"defaultOptions": config_view_defaultOptions,
- 					"skins": [
- 						{
- 							"name": "skin3d",
- 							"title": "3D Classic",
- 							"3d": true,
- 							"preload": [
- 								"smoothedfilegeo|0|/res/ring-target.js",
- 								"image|/res/images/cancel.png",
- 								"image|/res/images/wikipedia.png",
- 								"smoothedfilegeo|0|/res/fairy/pawn/pawn.js",
- 								"image|/res/fairy/pawn/pawn-diffusemap.jpg",
- 								"image|/res/fairy/pawn/pawn-normalmap.jpg",
- 								"smoothedfilegeo|0|/res/fairy/rook/rook.js",
- 								"image|/res/fairy/rook/rook-diffusemap.jpg",
- 								"image|/res/fairy/rook/rook-normalmap.jpg",
- 								"smoothedfilegeo|0|/res/fairy/bishop/bishop.js",
- 								"image|/res/fairy/bishop/bishop-diffusemap.jpg",
- 								"image|/res/fairy/bishop/bishop-normalmap.jpg",
- 								"smoothedfilegeo|0|/res/fairy/knight/knight.js",
- 								"image|/res/fairy/knight/knight-diffusemap.jpg",
- 								"image|/res/fairy/knight/knight-normalmap.jpg",
- 								"smoothedfilegeo|0|/res/fairy/queen/queen.js",
- 								"image|/res/fairy/queen/queen-diffusemap.jpg",
- 								"image|/res/fairy/queen/queen-normalmap.jpg",
- 								"smoothedfilegeo|0|/res/fairy/king/king.js",
- 								"image|/res/fairy/king/king-diffusemap.jpg",
- 								"image|/res/fairy/king/king-normalmap.jpg",
-								"smoothedfilegeo|0|/res/fairy/prince/prince.js",
-								"image|/res/fairy/prince/prince-diffusemap.jpg",
-								"image|/res/fairy/prince/prince-normalmap.jpg",
- 								"smoothedfilegeo|0|/res/fairy/elephant/elephant.js",
- 								"image|/res/fairy/elephant/elephant-diffusemap.jpg",
- 								"image|/res/fairy/elephant/elephant-normalmap.jpg",
- 								"smoothedfilegeo|0|/res/fairy/cannon2/cannon2.js",
- 								"image|/res/fairy/cannon2/cannon2-diffusemap.jpg",
- 								"image|/res/fairy/cannon2/cannon2-normalmap.jpg",
- 								"smoothedfilegeo|0|/res/fairy/eagle/eagle.js",
- 								"image|/res/fairy/eagle/eagle-diffusemap.jpg",
- 								"image|/res/fairy/eagle/eagle-normalmap.jpg",
- 								"smoothedfilegeo|0|/res/fairy/camel/camel.js",
- 								"image|/res/fairy/camel/camel-diffusemap.jpg",
- 								"image|/res/fairy/camel/camel-normalmap.jpg"							      
- 							],
- 							"world": config_view_skins_world,
- 							"camera": config_view_skins_camera
- 						},
- 						config_view_skins_9
- 					],
- 					"animateSelfMoves": false,
- 					"switchable": true,
- 					"sounds": config_view_sounds,
- 					"js": config_view_js_wtimurid,
- 					"useAutoComplete": true
- 				}
- 			},
- 			"viewScripts": config_view_js_wtimurid
-  		},
-		{
  			"name": "timurid-chess",
  			"modelScripts": modelScripts_timurid,
  			"config": {
@@ -6140,7 +6011,8 @@ exports.games = (function () {
 
  					"summary": "Tamerlan II on 12x12 with fairy pieces",
  					"rules": {
- 						"en": "res/rules/duodecimal/timurid-rules.html"
+ 						"en": "res/rules/duodecimal/timurid-rules.html",
+						"fr": "res/rules/duodecimal/timurid-rules_fr.html"
  					},
  					"module": "chessbase",
  					"plazza": "true",
@@ -6162,213 +6034,7 @@ exports.games = (function () {
  					"title-en": "Timurid view",
  					"visuals": {
  						"600x600": [
- 							"res/visuals/timurid-600x600-3d.jpg",
- 							"res/visuals/timurid-600x600-2d.jpg"
- 						]
- 					},
- 					"xdView": true,
- 					"css": config_view_css,
- 					"preferredRatio": 1,
- 					"useShowMoves": true,
- 					"useNotation": true,
- 					"module": "chessbase",
- 					"defaultOptions": config_view_defaultOptions,
- 					"skins": [
- 						{
- 							"name": "skin3d",
- 							"title": "3D Classic",
- 							"3d": true,
- 							"preload": [
- 								"smoothedfilegeo|0|/res/ring-target.js",
- 								"image|/res/images/cancel.png",
- 								"image|/res/images/wikipedia.png",
- 								"smoothedfilegeo|0|/res/fairy/pawn/pawn.js",
- 								"image|/res/fairy/pawn/pawn-diffusemap.jpg",
- 								"image|/res/fairy/pawn/pawn-normalmap.jpg",
- 								"smoothedfilegeo|0|/res/fairy/rook/rook.js",
- 								"image|/res/fairy/rook/rook-diffusemap.jpg",
- 								"image|/res/fairy/rook/rook-normalmap.jpg",
- 								"smoothedfilegeo|0|/res/fairy/bishop/bishop.js",
- 								"image|/res/fairy/bishop/bishop-diffusemap.jpg",
- 								"image|/res/fairy/bishop/bishop-normalmap.jpg",
- 								"smoothedfilegeo|0|/res/fairy/knight/knight.js",
- 								"image|/res/fairy/knight/knight-diffusemap.jpg",
- 								"image|/res/fairy/knight/knight-normalmap.jpg",
- 								"smoothedfilegeo|0|/res/fairy/queen/queen.js",
- 								"image|/res/fairy/queen/queen-diffusemap.jpg",
- 								"image|/res/fairy/queen/queen-normalmap.jpg",
- 								"smoothedfilegeo|0|/res/fairy/king/king.js",
- 								"image|/res/fairy/king/king-diffusemap.jpg",
- 								"image|/res/fairy/king/king-normalmap.jpg",
-								"smoothedfilegeo|0|/res/fairy/prince/prince.js",
-								"image|/res/fairy/prince/prince-diffusemap.jpg",
-								"image|/res/fairy/prince/prince-normalmap.jpg",
- 								"smoothedfilegeo|0|/res/fairy/elephant/elephant.js",
- 								"image|/res/fairy/elephant/elephant-diffusemap.jpg",
- 								"image|/res/fairy/elephant/elephant-normalmap.jpg",
- 								"smoothedfilegeo|0|/res/fairy/cannon2/cannon2.js",
- 								"image|/res/fairy/cannon2/cannon2-diffusemap.jpg",
- 								"image|/res/fairy/cannon2/cannon2-normalmap.jpg",
- 								"smoothedfilegeo|0|/res/fairy/eagle/eagle.js",
- 								"image|/res/fairy/eagle/eagle-diffusemap.jpg",
- 								"image|/res/fairy/eagle/eagle-normalmap.jpg",
- 								"smoothedfilegeo|0|/res/fairy/camel/camel.js",
- 								"image|/res/fairy/camel/camel-diffusemap.jpg",
- 								"image|/res/fairy/camel/camel-normalmap.jpg"							      
- 							],
- 							"world": config_view_skins_world,
- 							"camera": config_view_skins_camera
- 						},
- 						config_view_skins_9
- 					],
- 					"animateSelfMoves": false,
- 					"switchable": true,
- 					"sounds": config_view_sounds,
- 					"js": config_view_js_timurid,
- 					"useAutoComplete": true
- 				}
- 			},
- 			"viewScripts": config_view_js_timurid
-  		},
-		{
-
- 			"name": "wild-babur-chess",
- 			"modelScripts": modelScripts_wbabur,
- 			"config": {
- 				"status": true,
- 				"model": {
- 					"title-en": "Wild Babur",
-
- 					"summary": "Wild Timurid on 12x12 with Lion",
- 					"rules": {
- 						"en": "res/rules/duodecimal/wild-babur-rules.html"
- 					},
- 					"module": "chessbase",
- 					"plazza": "true",
- 					"thumbnail": "res/rules/duodecimal/wild-babur-thumb.png",
-
- 					"released": 1497874349,
-
- 					"credits": {
- 						"en": "res/rules/duodecimal/timurid-credits.html"
- 					},
- 					"gameOptions": config_model_gameOptions,
- 					"obsolete": false,
- 					"js": modelScripts_wbabur,
- 					"description": {
- 						"en": "res/rules/duodecimal/wild-babur-description.html"
- 					},
- 					"levels": config_model_levels_15
- 				},
- 				"view": {
- 					"title-en": "Wild Timurid view",
- 					"visuals": {
- 						"600x600": [
  							"res/visuals/wild-babur-600x600-3d.jpg",
- 							"res/visuals/wild-babur-600x600-2d.jpg"
- 						]
- 					},
- 					"xdView": true,
- 					"css": config_view_css,
- 					"preferredRatio": 1,
- 					"useShowMoves": true,
- 					"useNotation": true,
- 					"module": "chessbase",
- 					"defaultOptions": config_view_defaultOptions,
- 					"skins": [
- 						{
- 							"name": "skin3d",
- 							"title": "3D Classic",
- 							"3d": true,
- 							"preload": [
- 								"smoothedfilegeo|0|/res/ring-target.js",
- 								"image|/res/images/cancel.png",
- 								"image|/res/images/wikipedia.png",
- 								"smoothedfilegeo|0|/res/fairy/pawn/pawn.js",
- 								"image|/res/fairy/pawn/pawn-diffusemap.jpg",
- 								"image|/res/fairy/pawn/pawn-normalmap.jpg",
- 								"smoothedfilegeo|0|/res/fairy/rook/rook.js",
- 								"image|/res/fairy/rook/rook-diffusemap.jpg",
- 								"image|/res/fairy/rook/rook-normalmap.jpg",
- 								"smoothedfilegeo|0|/res/fairy/bishop/bishop.js",
- 								"image|/res/fairy/bishop/bishop-diffusemap.jpg",
- 								"image|/res/fairy/bishop/bishop-normalmap.jpg",
- 								"smoothedfilegeo|0|/res/fairy/knight/knight.js",
- 								"image|/res/fairy/knight/knight-diffusemap.jpg",
- 								"image|/res/fairy/knight/knight-normalmap.jpg",
- 								"smoothedfilegeo|0|/res/fairy/queen/queen.js",
- 								"image|/res/fairy/queen/queen-diffusemap.jpg",
- 								"image|/res/fairy/queen/queen-normalmap.jpg",
- 								"smoothedfilegeo|0|/res/fairy/king/king.js",
- 								"image|/res/fairy/king/king-diffusemap.jpg",
- 								"image|/res/fairy/king/king-normalmap.jpg",
-								"smoothedfilegeo|0|/res/fairy/prince/prince.js",
-								"image|/res/fairy/prince/prince-diffusemap.jpg",
-								"image|/res/fairy/prince/prince-normalmap.jpg",
- 								"smoothedfilegeo|0|/res/fairy/elephant/elephant.js",
- 								"image|/res/fairy/elephant/elephant-diffusemap.jpg",
- 								"image|/res/fairy/elephant/elephant-normalmap.jpg",
- 								"smoothedfilegeo|0|/res/fairy/cannon2/cannon2.js",
- 								"image|/res/fairy/cannon2/cannon2-diffusemap.jpg",
- 								"image|/res/fairy/cannon2/cannon2-normalmap.jpg",
- 								"smoothedfilegeo|0|/res/fairy/eagle/eagle.js",
- 								"image|/res/fairy/eagle/eagle-diffusemap.jpg",
- 								"image|/res/fairy/eagle/eagle-normalmap.jpg",
- 								"smoothedfilegeo|0|/res/fairy/lion/lion.js",
-								"image|/res/fairy/lion/lion-diffusemap.jpg",
-								"image|/res/fairy/lion/lion-normalmap.jpg",
- 								"smoothedfilegeo|0|/res/fairy/camel/camel.js",
- 								"image|/res/fairy/camel/camel-diffusemap.jpg",
- 								"image|/res/fairy/camel/camel-normalmap.jpg"							      
- 							],
- 							"world": config_view_skins_world,
- 							"camera": config_view_skins_camera
- 						},
- 						config_view_skins_9
- 					],
- 					"animateSelfMoves": false,
- 					"switchable": true,
- 					"sounds": config_view_sounds,
- 					"js": config_view_js_wbabur,
- 					"useAutoComplete": true
- 				}
- 			},
- 			"viewScripts": config_view_js_babur
-  		},
-		{
- 			"name": "wild-mirza-chess",
- 			"modelScripts": modelScripts_wmirza,
- 			"config": {
- 				"status": true,
- 				"model": {
- 					"title-en": "Wild Mirza",
-
- 					"summary": "Wild Timurid on 12x12 with snake",
- 					"rules": {
- 						"en": "res/rules/duodecimal/wild-mirza-rules.html"
- 					},
- 					"module": "chessbase",
- 					"plazza": "true",
- 					"thumbnail": "res/rules/duodecimal/wild-mirza-thumb.png",
-
- 					"released": 1497874349,
-
- 					"credits": {
- 						"en": "res/rules/duodecimal/timurid-credits.html"
- 					},
- 					"gameOptions": config_model_gameOptions,
- 					"obsolete": false,
- 					"js": modelScripts_wmirza,
- 					"description": {
- 						"en": "res/rules/duodecimal/wild-mirza-description.html"
- 					},
- 					"levels": config_model_levels_15
- 				},
- 				"view": {
- 					"title-en": "Wild mirza view",
- 					"visuals": {
- 						"600x600": [
- 							"res/visuals/wild-mirza-600x600-3d.jpg",
  							"res/visuals/wild-mirza-600x600-2d.jpg"
  						]
  					},
@@ -6413,14 +6079,14 @@ exports.games = (function () {
  								"image|/res/fairy/elephant/elephant-diffusemap.jpg",
  								"image|/res/fairy/elephant/elephant-normalmap.jpg",
  								"smoothedfilegeo|0|/res/fairy/cannon2/cannon2.js",
- 								"image|/res/fairy/dragon/dragon-diffuse-map.jpg",
- 								"image|/res/fairy/dragon/dragon-normal-map.jpg",
-                                "smoothedfilegeo|0|/res/fairy/dragon/dragon.js",
  								"image|/res/fairy/cannon2/cannon2-diffusemap.jpg",
  								"image|/res/fairy/cannon2/cannon2-normalmap.jpg",
- 								"smoothedfilegeo|0|/res/fairy/eagle/eagle.js",
- 								"image|/res/fairy/eagle/eagle-diffusemap.jpg",
- 								"image|/res/fairy/eagle/eagle-normalmap.jpg",
+ 								"smoothedfilegeo|0|/res/fairy/griffon/griffon.js",
+ 								"image|/res/fairy/griffon/griffon-diffusemap.jpg",
+ 								"image|/res/fairy/griffon/griffon-normalmap.jpg",
+ 								"smoothedfilegeo|0|/res/fairy/lion/lion.js",
+								"image|/res/fairy/lion/lion-diffusemap.jpg",
+								"image|/res/fairy/lion/lion-normalmap.jpg",
  								"smoothedfilegeo|0|/res/fairy/camel/camel.js",
  								"image|/res/fairy/camel/camel-diffusemap.jpg",
  								"image|/res/fairy/camel/camel-normalmap.jpg"							      
@@ -6433,111 +6099,11 @@ exports.games = (function () {
  					"animateSelfMoves": false,
  					"switchable": true,
  					"sounds": config_view_sounds,
- 					"js": config_view_js_wmirza,
+ 					"js": config_view_js_timurid,
  					"useAutoComplete": true
  				}
  			},
- 			"viewScripts": config_view_js_wmirza
-  		},
-		{
- 			"name": "babur-chess",
- 			"modelScripts": modelScripts_babur,
- 			"config": {
- 				"status": true,
- 				"model": {
- 					"title-en": "Babur",
-
- 					"summary": "Tamerlan II on 12x12 with lion",
- 					"rules": {
- 						"en": "res/rules/duodecimal/wild-babur-rules.html"
- 					},
- 					"module": "chessbase",
- 					"plazza": "true",
- 					"thumbnail": "res/rules/duodecimal/babur-thumb.png",
- 					"released": 1497874349,
-
- 					"credits": {
- 						"en": "res/rules/duodecimal/timurid-credits.html"
- 					},
- 					"gameOptions": config_model_gameOptions,
- 					"obsolete": false,
- 					"js": modelScripts_babur,
- 					"description": {
- 						"en": "res/rules/duodecimal/wild-babur-description.html"
- 					},
- 					"levels": config_model_levels_15
- 				},
- 				"view": {
- 					"title-en": "Wild babur view",
- 					"visuals": {
- 						"600x600": [
- 							"res/visuals/babur-600x600-3d.jpg",
- 							"res/visuals/babur-600x600-2d.jpg"
- 						]
- 					},
- 					"xdView": true,
- 					"css": config_view_css,
- 					"preferredRatio": 1,
- 					"useShowMoves": true,
- 					"useNotation": true,
- 					"module": "chessbase",
- 					"defaultOptions": config_view_defaultOptions,
- 					"skins": [
- 						{
- 							"name": "skin3d",
- 							"title": "3D Classic",
- 							"3d": true,
- 							"preload": [
- 								"smoothedfilegeo|0|/res/ring-target.js",
- 								"image|/res/images/cancel.png",
- 								"image|/res/images/wikipedia.png",
- 								"smoothedfilegeo|0|/res/fairy/pawn/pawn.js",
- 								"image|/res/fairy/pawn/pawn-diffusemap.jpg",
- 								"image|/res/fairy/pawn/pawn-normalmap.jpg",
- 								"smoothedfilegeo|0|/res/fairy/rook/rook.js",
- 								"image|/res/fairy/rook/rook-diffusemap.jpg",
- 								"image|/res/fairy/rook/rook-normalmap.jpg",
- 								"smoothedfilegeo|0|/res/fairy/bishop/bishop.js",
- 								"image|/res/fairy/bishop/bishop-diffusemap.jpg",
- 								"image|/res/fairy/bishop/bishop-normalmap.jpg",
- 								"smoothedfilegeo|0|/res/fairy/knight/knight.js",
- 								"image|/res/fairy/knight/knight-diffusemap.jpg",
- 								"image|/res/fairy/knight/knight-normalmap.jpg",
- 								"smoothedfilegeo|0|/res/fairy/queen/queen.js",
- 								"image|/res/fairy/queen/queen-diffusemap.jpg",
- 								"image|/res/fairy/queen/queen-normalmap.jpg",
- 								"smoothedfilegeo|0|/res/fairy/king/king.js",
- 								"image|/res/fairy/king/king-diffusemap.jpg",
- 								"image|/res/fairy/king/king-normalmap.jpg",
-								"smoothedfilegeo|0|/res/fairy/prince/prince.js",
-								"image|/res/fairy/prince/prince-diffusemap.jpg",
-								"image|/res/fairy/prince/prince-normalmap.jpg",
- 								"smoothedfilegeo|0|/res/fairy/elephant/elephant.js",
- 								"image|/res/fairy/elephant/elephant-diffusemap.jpg",
- 								"image|/res/fairy/elephant/elephant-normalmap.jpg",
- 								"smoothedfilegeo|0|/res/fairy/cannon2/cannon2.js",
- 								"image|/res/fairy/cannon2/cannon2-diffusemap.jpg",
- 								"image|/res/fairy/cannon2/cannon2-normalmap.jpg",
- 								"smoothedfilegeo|0|/res/fairy/eagle/eagle.js",
- 								"image|/res/fairy/eagle/eagle-diffusemap.jpg",
- 								"image|/res/fairy/eagle/eagle-normalmap.jpg",
- 								"smoothedfilegeo|0|/res/fairy/camel/camel.js",
- 								"image|/res/fairy/camel/camel-diffusemap.jpg",
- 								"image|/res/fairy/camel/camel-normalmap.jpg"							      
- 							],
- 							"world": config_view_skins_world,
- 							"camera": config_view_skins_camera
- 						},
- 						config_view_skins_9
- 					],
- 					"animateSelfMoves": false,
- 					"switchable": true,
- 					"sounds": config_view_sounds,
- 					"js": config_view_js_babur,
- 					"useAutoComplete": true
- 				}
- 			},
- 			"viewScripts": config_view_js_babur
+ 			"viewScripts": config_view_js_timurid
   		},
 		{
 			"name": "zanzibar-s-chess",
@@ -6548,7 +6114,8 @@ exports.games = (function () {
 					"title-en": "Zanzibar S",
 					"summary": "Extended Metamachy - 12x12",
 					"rules": {
-						"en": "res/rules/metamachy/zanzibar-s-rules.html"
+						"en": "res/rules/metamachy/zanzibar-s-rules.html",
+						"fr": "res/rules/metamachy/zanzibar-s-rules_fr.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
@@ -6664,19 +6231,19 @@ exports.games = (function () {
 					"title-en": "Team-Mate Chess",
 					"summary": "8x8 variant with many different pieces",
 					"rules": {
-						"en": "team-mate-rules.html"
+						"en": "res/rules/team-mate/team-mate-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
-					"thumbnail": "team-mate-thumb.png",
+					"thumbnail": "res/rules/team-mate/team-mate-thumb.png",
 					"released": 1396536978,
 					"credits": {
-						"en": "team-mate-credits.html"
+						"en": "res/rules/team-mate/team-mate-credits.html"
 					},
-					"gameOptions": config_model_gameOptions_2,
+					"gameOptions": config_model_gameOptions,
 					"js": modelScripts_100,
 					"description": {
-						"en": "team-mate-description.html"
+						"en": "res/rules/team-mate/team-mate-description.html"
 					},
 					"levels": config_model_levels_15
 				},
@@ -6728,19 +6295,20 @@ exports.games = (function () {
 					"title-en": "Werewolf Chess",
 					"summary": "a contageous Werewolf replaces the Queen",
 					"rules": {
-						"en": "werewolf-rules.html"
+						"en": "res/rules/werewolf/werewolf-rules.html",
+						"fr": "res/rules/werewolf/werewolf-rules_fr.html",
 					},
 					"module": "chessbase",
 					"plazza": "true",
-					"thumbnail": "werewolf-thumb.png",
+					"thumbnail": "res/rules/werewolf/werewolf-thumb.png",
 					"released": 1396536978,
 					"credits": {
-						"en": "werewolf-credits.html"
+						"en": "res/rules/werewolf/werewolf-credits.html"
 					},
-					"gameOptions": config_model_gameOptions_2,
+					"gameOptions": config_model_gameOptions,
 					"js": modelScripts_101,
 					"description": {
-						"en": "werewolf-description.html"
+						"en": "res/rules/werewolf/werewolf-description.html"
 					},
 					"levels": config_model_levels_15
 				},
@@ -6792,19 +6360,20 @@ exports.games = (function () {
 					"title-en": "Elven Chess",
 					"summary": "10x10 variant with double-capturing super-piece",
 					"rules": {
-						"en": "res/rules/decimal/elven-rules.html"
+						"en": "res/rules/elven/elven-rules.html",
+						"fr": "res/rules/elven/elven-rules_fr.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
 					"thumbnail": "res/rules/elven/elven-thumb.png",
 					"released": 1396536978,
 					"credits": {
-						"en": "res/rules/decimal/elven-credits.html"
+						"en": "res/rules/elven/elven-credits.html"
 					},
-					"gameOptions": config_model_gameOptions_2,
+					"gameOptions": config_model_gameOptions,
 					"js": modelScripts_102,
 					"description": {
-						"en": "res/rules/decimal/elven-description.html"
+						"en": "res/rules/elven/elven-description.html"
 					},
 					"levels": config_model_levels_15
 				},
@@ -6865,7 +6434,7 @@ exports.games = (function () {
 					"credits": {
 						"en": "spartan-credits.html"
 					},
-					"gameOptions": config_model_gameOptions_2,
+					"gameOptions": config_model_gameOptions,
 					"js": modelScripts_103,
 					"description": {
 						"en": "spartan-description.html"
@@ -6929,7 +6498,7 @@ exports.games = (function () {
 					"credits": {
 						"en": "res/rules/decimal/scirocco-credits.html"
 					},
-					"gameOptions": config_model_gameOptions_2,
+					"gameOptions": config_model_gameOptions,
 					"js": modelScripts_104,
 					"description": {
 						"en": "res/rules/decimal/scirocco-description.html"
@@ -6984,14 +6553,16 @@ exports.games = (function () {
 					"title-en": "Shogi",
 					"summary": "Japanese Chess",
 					"rules": {
-						"en": "res/rules/shogi/shogi-rules.html"
+						"en": "res/rules/shogi/shogi-rules.html",
+						"fr": "res/rules/shogi/shogi-rules_fr.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
 					"thumbnail": "res/rules/shogi/shogi-thumb.png",
 					"released": 1396536978,
 					"credits": {
-						"en": "res/rules/shogi/shogi-credits.html"
+						"en": "res/rules/shogi/shogi-credits.html",
+						"fr": "res/rules/shogi/shogi-rules_fr.html"
 					},
 					"gameOptions": config_model_gameOptions_2,
 					"js": modelScripts_105,
@@ -7030,10 +6601,10 @@ exports.games = (function () {
 						},
 						{
 							"name": "skin2dwestern",
-							"title": "2D Western",
+							"title": "2D Pictos",
 							"3d": false,
 							"preload": [
-								"image|/res/shogi/shogi-sprites-western.png"
+								"image|/res/shogi/shogi-picto-sprites.png"
 							]
 						},
 						config_view_skins_2
@@ -7048,6 +6619,165 @@ exports.games = (function () {
 			"viewScripts": config_view_js_105
 		},
 		{
+			"name": "seireigi",
+			"modelScripts": modelScripts_seireigi,
+			"config": {
+				"status": true,
+				"model": {
+
+					"title-en": "Seireigi",
+					"summary": "Shogi with more varied promotions",
+					"rules": {
+						"en": "res/rules/shogi/seireigi-rules.html",
+						"fr": "res/rules/shogi/seireigi-rules_fr.html"
+					},
+					"module": "chessbase",
+					"plazza": "true",
+					"thumbnail": "res/rules/shogi/seireigi-thumb.png",
+					"released": 1396536978,
+					"credits": {
+						"en": "res/rules/shogi/seireigi-credits.html"
+					},
+					"gameOptions": config_model_gameOptions_2,
+					"js": modelScripts_seireigi,
+					"description": {
+						"en": "res/rules/shogi/seireigi-description.html"
+					},
+					"levels": config_model_levels_15
+				},
+				"view": {
+					"title-en": "Chessbase view",
+					"visuals": {
+						"600x600": [
+							"res/visuals/seireigi-600x600-3d.jpg",
+							"res/visuals/seireigi-600x600-2d.jpg"
+						]
+					},
+					"xdView": true,
+					"css": config_view_css,
+					"preferredRatio": 1,
+					"useShowMoves": true,
+					"useNotation": true,
+					"module": "chessbase",
+					"defaultOptions": config_view_defaultOptions,
+					"skins": [
+						{
+							"name": "skin2dwestern",
+
+							"title": "2D Pictos",
+							"3d": false,
+							"preload": [
+								"image|/res/shogi/seireigi-shogi-picto-sprites.png"
+							]
+						},
+						{
+							"name": "skin3d",
+							"title": "3D Classic",
+							"3d": true,
+							"preload": [
+								"smoothedfilegeo|0|/res/ring-target.js",
+								"image|/res/images/cancel.png",
+								"image|/res/images/wikipedia.png"
+							],
+							"world": config_view_skins_world,
+							"camera": config_view_skins_camera
+						},
+
+						config_view_skins_2
+					],
+					"animateSelfMoves": false,
+					"switchable": true,
+					"sounds": config_view_sounds,
+					"js": config_view_js_seireigi,
+					"useAutoComplete": true
+				}
+			},
+			"viewScripts": config_view_js_seireigi
+		},
+		{
+			"name": "chu-seireigi",
+			"modelScripts": modelScripts_chu_seireigi,
+			"config": {
+				"status": true,
+				"model": {
+
+					"title-en": "Chu Seireigi",
+					"summary": "Spirit middle shogi variant",
+					"rules": {
+						"en": "res/rules/shogi/chu-seireigi-shogi-rules.html"
+					},
+					"module": "chessbase",
+					"plazza": "true",
+					"thumbnail": "res/rules/shogi/chu-seireigi-thumb.png",
+					"released": 1396536978,
+
+					"credits": {
+						"en": "res/rules/shogi/seireigi-shogi-credits.html"
+					},
+					"gameOptions": config_model_gameOptions_2,
+					"js": modelScripts_chu_seireigi,
+					"description": {
+						"en": "res/rules/shogi/chu-seireigi-description.html"
+					},
+					"levels": config_model_levels_15
+				},
+				"view": {
+					"title-en": "Chessbase view",
+					"visuals": {
+						"600x600": [
+							"res/visuals/chu-seireigi-600x600-2d.png",
+                            "res/visuals/chu-seireigi-600x600-3d.png"
+						]
+					},
+					"xdView": true,
+					"css": config_view_css,
+					"preferredRatio": 1,
+					"useShowMoves": true,
+					"useNotation": true,
+					"module": "chessbase",
+					"defaultOptions": config_view_defaultOptions,
+					"skins": [
+
+
+						
+						{
+							"name": "skin2dwestern",
+							"title": "2D Pictos",
+							"3d": false,
+
+							"preload": [
+								"image|/res/shogi/chu-seireigi-shogi-picto-sprites.png"
+							]
+						},
+						{
+							"name": "skin3d",
+							"title": "3D Classic",
+							"3d": true,
+							"preload": [
+
+								"smoothedfilegeo|0|/res/ring-target.js",
+								"image|/res/images/cancel.png",
+								"image|/res/images/wikipedia.png"
+							],
+							"world": config_view_skins_world,
+
+							"camera": config_view_skins_camera
+						}
+/*,
+						config_view_skins_2*/
+					],
+
+					"animateSelfMoves": false,
+					"switchable": true,
+					"sounds": config_view_sounds,
+					"js": config_view_js_chu_seireigi,
+					"useAutoComplete": true
+
+				}
+			},
+			"viewScripts": config_view_js_chu_seireigi
+		},
+		{
 			"name": "mini-shogi",
 			"modelScripts": modelScripts_107,
 			"config": {
@@ -7056,11 +6786,12 @@ exports.games = (function () {
 					"title-en": "Mini-Shogi",
 					"summary": "Shogi on 5x5 with 6 pieces",
 					"rules": {
-						"en": "res/rules/shogi/mini-shogi-rules.html"
+						"en": "res/rules/shogi/mini-shogi-rules.html",
+						"fr": "res/rules/shogi/mini-shogi-rules_fr.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
-					"thumbnail": "res/rules/shogi/shogi-thumb.png",
+					"thumbnail": "res/rules/shogi/mini-shogi-thumb.png",
 					"released": 1396536978,
 					"credits": {
 						"en": "res/rules/shogi/shogi-credits.html"
@@ -7102,10 +6833,83 @@ exports.games = (function () {
 						},
 						{
 							"name": "skin2dwestern",
-							"title": "2D Western",
+							"title": "2D Pictos",
 							"3d": false,
 							"preload": [
-								"image|/res/shogi/shogi-sprites-western.png"
+								"image|/res/shogi/shogi-picto-sprites.png"
+							]
+						},
+						config_view_skins_2
+					],
+					"animateSelfMoves": false,
+					"switchable": true,
+					"sounds": config_view_sounds,
+					"js": config_view_js_107,
+					"useAutoComplete": true
+				}
+			},
+			"viewScripts": config_view_js_107
+		},
+		{
+			"name": "kyoto-shogi",
+			"modelScripts": modelScripts_kyoto,
+			"config": {
+				"status": true,
+				"model": {
+					"title-en": "Kyoto-Shogi",
+					"summary": "Shogi on 5x5 with 5 pieces",
+					"rules": {
+						"en": "res/rules/shogi/kyoto-shogi-rules.html",
+						"fr": "res/rules/shogi/kyoto-shogi-rules_fr.html"
+					},
+					"module": "chessbase",
+					"plazza": "true",
+					"thumbnail": "res/rules/shogi/kyoto-shogi.png",
+					"released": 1396536978,
+					"credits": {
+						"en": "res/rules/shogi/seireigi-shogi-credits.html"
+					},
+					"gameOptions": config_model_gameOptions_2,
+					"js": modelScripts_107,
+					"description": {
+						"en": "res/rules/shogi/kyoto-shogi-description.html"
+					},
+					"levels": config_model_levels_15
+				},
+				"view": {
+					"title-en": "Chessbase view",
+					"visuals": {
+						"600x600": [
+							"res/visuals/kyoto-shogi-600x600-3d.png",
+							"res/visuals/kyoto-shogi-600x600-2d.png"
+						]
+					},
+					"xdView": true,
+					"css": config_view_css,
+					"preferredRatio": 1,
+					"useShowMoves": true,
+					"useNotation": true,
+					"module": "chessbase",
+					"defaultOptions": config_view_defaultOptions,
+					"skins": [
+						{
+							"name": "skin3d",
+							"title": "3D Classic",
+							"3d": true,
+							"preload": [
+								"smoothedfilegeo|0|/res/ring-target.js",
+								"image|/res/images/cancel.png",
+								"image|/res/images/wikipedia.png"
+							],
+							"world": config_view_skins_world,
+							"camera": config_view_skins_camera
+						},
+						{
+							"name": "skin2dwestern",
+							"title": "2D Pictos",
+							"3d": false,
+							"preload": [
+								"image|/res/shogi/shogi-picto-sprites"
 							]
 						},
 						config_view_skins_2
@@ -7148,8 +6952,8 @@ exports.games = (function () {
 					"title-en": "Chessbase view",
 					"visuals": {
 						"600x600": [
-							"res/visuals/tori-600x600-3d.jpg",
-							"res/visuals/tori-600x600-2d.jpg"
+							"res/visuals/tori-600x600-3d.png",
+							"res/visuals/tori-600x600-2d.png"
 						]
 					},
 					"xdView": true,
@@ -7256,7 +7060,8 @@ exports.games = (function () {
 					"title-en": "Makromachy",
 					"summary": "14x14 variant with flying pieces",
 					"rules": {
-						"en": "res/rules/makromachy/makromachy-rules.html"
+						"en": "res/rules/makromachy/makromachy-rules.html",
+						"fr": "res/rules/makromachy/makromachy-rules_fr.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
@@ -7320,20 +7125,21 @@ exports.games = (function () {
 					"title-en": "Minjiku Shogi",
 					"summary": "10x10 variant with flying pieces and Fire Dragon",
 					"rules": {
-						"en": "res/rules/minjiku-shogi/minjiku-shogi-rules.html"
+						"en": "res/rules/minjiku-shogi/minjiku-shogi-rules.html",
+						"fr": "res/rules/minjiku-shogi/minjiku-shogi-rules_fr.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
 					"thumbnail": "res/rules/minjiku-shogi/minjiku-shogi-thumb.png",
 					"released": 1396536978,
 					"credits": {
-						"en": "res/rules/minjiku-shogi/minjiku-credits.html"
+						"en": "res/rules/minjiku-shogi/minjiku-shogi-credits.html"
 					},
 					"gameOptions": config_model_gameOptions_2,
 					"js": modelScripts_110,
 
 					"description": {
-						"en": "res/rules/minjiku-shogi/minjiku-description.html"
+						"en": "res/rules/minjiku-shogi/minjiku-shogi-description.html"
 					},
 					"levels": config_model_levels_15
 				},
@@ -7341,7 +7147,7 @@ exports.games = (function () {
 					"title-en": "Chessbase view",
 					"visuals": {
 						"600x600": [
-							"res/visuals/minjiku-shogi-600x600-3d.jpg",                        
+							"res/visuals/minjiku-shogi-600x600-3d.jpg",
 							"res/visuals/minjiku-shogi-600x600-2d.jpg"
 						]
 					},
@@ -7385,7 +7191,8 @@ exports.games = (function () {
 					"title-en": "Grant acedrex",
 					"summary": "Medieval Castillan chess variant",
 					"rules": {
-						"en": "res/rules/historical/grant-acedrex-rules.html"
+						"en": "res/rules/historical/grant-acedrex-rules.html",
+						"fr": "res/rules/historical/grant-acedrex-rules_fr.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
