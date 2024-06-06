@@ -44,7 +44,7 @@
 				
 				2: {
 					name: 'hoplit',
-					aspect: 'fr-lance',
+					aspect: 'fr-hoplit',
 					graph: HoplitGraph(geometry),
 					value: 1,
 					abbrev: '',
@@ -54,7 +54,7 @@
 
 				3: {
 					name: 'ihoplit',
-					aspect: 'fr-lance',
+					aspect: 'fr-hoplit',
 					graph: HoplitGraph(geometry),
 					value: 1,
 					abbrev: 'H',

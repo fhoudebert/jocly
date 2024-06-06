@@ -203,7 +203,7 @@
 		paintCells: function(spec,ctx,images,channel) {
 			var cSize = this.cbCSize(spec);
 			var getCoords=spec.coordsFn(spec);
-			for(var row=0;row<(NBROWS);row++) {
+			for(var row=0;row<NBROWS;row++) {
 				for(var col=0;col<NBCOLS;col++) {
 					var pos = this.mViewAs==1 ?
 						col+row*NBCOLS :
@@ -214,7 +214,7 @@
 					var yCenter=coords.y;
 					var cx=cSize.cx;
 					var cy=cSize.cy;
-
+					
 					spec.paintCell.call(this,spec,ctx,images,channel,cellType,xCenter,yCenter,cx,cy);
 				}
 			}

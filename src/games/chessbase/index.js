@@ -512,6 +512,7 @@ exports.games = (function () {
 	var modelScripts_108 = [
 		"base-model.js",
 		"grid-geo-model.js",
+		"locust-move-model.js",
 		"shogi/chu-shogi-model.js"
 	]
 	var modelScripts_109 = [
@@ -686,12 +687,6 @@ exports.games = (function () {
 		"base-model.js",
 		"grid-geo-model.js",
 		"famous/shatranj-model.js"
-	]
-	var modelScripts_kyoto = [
-		"base-model.js",
-		"grid-geo-model.js",
-		"drop-model.js",
-		"shogi/kyoto-shogi-model.js"
 	]
 	var config_model_gameOptions_levelOptions_3 = {
 		"checkFactor": 0.2,
@@ -967,7 +962,7 @@ exports.games = (function () {
 	var config_view_js_24 = [
 		"base-view.js",
 		"multiplan-board-view.js",
-        "staunton-set-view.js",
+		"staunton-set-view.js",
 		"3d/3dchess-view.js"
 	]
 	var modelScripts_25 = [
@@ -5906,7 +5901,7 @@ exports.games = (function () {
 					"summary": "FantasticXIII and Gigachess II on 16x16",
 					"rules": {
 						"en": "res/rules/fantasticXIII/bigorra-rules.html",
-                        "fr": "res/rules/fantasticXIII/bigorra-rules-fr.html"
+                        			"fr": "res/rules/fantasticXIII/bigorra-rules-fr.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
@@ -6252,7 +6247,7 @@ exports.games = (function () {
 					"summary": "Chess on 14x14 with fairy pieces",
 					"rules": {
 						"en": "res/rules/gigachess/gigachessII-rules.html",
-                        "fr": "res/rules/gigachess/gigachessII-rules_fr.html"
+                        			"fr": "res/rules/gigachess/gigachessII-rules_fr.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
@@ -6601,7 +6596,7 @@ exports.games = (function () {
 					"summary": "Extended Metamachy - 12x12",
 					"rules": {
 						"en": "res/rules/metamachy/zanzibar-s-rules.html",
-                        "fr": "res/rules/metamachy/zanzibar-s-rules_fr.html"
+						"fr": "res/rules/metamachy/zanzibar-s-rules_fr.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
@@ -6782,7 +6777,7 @@ exports.games = (function () {
 					"summary": "a contageous Werewolf replaces the Queen",
 					"rules": {
 						"en": "res/rules/werewolf/werewolf-rules.html",
-                        "fr": "res/rules/werewolf/werewolf-rules_fr.html",
+						"fr": "res/rules/werewolf/werewolf-rules_fr.html",
 					},
 					"module": "chessbase",
 					"plazza": "true",
@@ -6847,7 +6842,7 @@ exports.games = (function () {
 					"summary": "10x10 variant with double-capturing super-piece",
 					"rules": {
 						"en": "res/rules/elven/elven-rules.html",
-                        "fr": "res/rules/elven/elven-rules_fr.html"
+						"fr": "res/rules/elven/elven-rules_fr.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
@@ -7773,7 +7768,7 @@ exports.games = (function () {
 					"summary": "14x14 variant with flying pieces",
 					"rules": {
 						"en": "res/rules/makromachy/makromachy-rules.html",
-                        "fr": "res/rules/makromachy/makromachy-rules_fr.html"
+						"fr": "res/rules/makromachy/makromachy-rules_fr.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
@@ -7838,7 +7833,7 @@ exports.games = (function () {
 					"summary": "10x10 variant with flying pieces and Fire Dragon",
 					"rules": {
 						"en": "res/rules/minjiku-shogi/minjiku-shogi-rules.html",
-                        "fr": "res/rules/minjiku-shogi/minjiku-shogi-rules_fr.html"
+						"fr": "res/rules/minjiku-shogi/minjiku-shogi-rules_fr.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
@@ -7859,7 +7854,7 @@ exports.games = (function () {
 					"title-en": "Chessbase view",
 					"visuals": {
 						"600x600": [
-							"res/visuals/minjiku-shogi-600x600-3d.jpg",                        
+							"res/visuals/minjiku-shogi-600x600-3d.jpg",
 							"res/visuals/minjiku-shogi-600x600-2d.jpg"
 						]
 					},
@@ -7904,7 +7899,7 @@ exports.games = (function () {
 					"summary": "Medieval Castillan chess variant",
 					"rules": {
 						"en": "res/rules/historical/grant-acedrex-rules.html",
-                        "fr": "res/rules/historical/grant-acedrex-rules_fr.html"
+						"fr": "res/rules/historical/grant-acedrex-rules_fr.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
