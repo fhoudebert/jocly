@@ -2313,7 +2313,7 @@ exports.games = (function () {
 					"title-en": "Makruk",
 					"summary": "Thai Chess",
 					"rules": {
-						"en": "res/rules/makruk/famous/mk-rules.html"
+						"en": "res/rules/makruk/mk-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
@@ -3846,23 +3846,23 @@ exports.games = (function () {
 			"config": {
 				"status": true,
 				"model": {
-					"title-en": "Capablanca Chess",
-					"summary": "Chess on 10x8 (1920)",
+					"title-en": "10x8 Chess variants",
+					"summary": "Capablanca, Janus, Carrera, Gothic …",
 					"rules": {
-						"en": "res/rules/capablanca/capablanca-rules.html"
+						"en": "res/rules/capa10x8/capablanca-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
-					"thumbnail": "res/rules/capablanca/capablanca-thumb.png",
+					"thumbnail": "res/rules/capa10x8/capablanca-thumb.png",
 					"released": 1404893076,
 					"credits": {
-						"en": "res/rules/capablanca/capablanca-credits.html"
+						"en": "res/rules/capa10x8/capablanca-credits.html"
 					},
 					"gameOptions": config_model_gameOptions,
 					"obsolete": false,
 					"js": modelScripts_capablanca,
 					"description": {
-						"en": "res/rules/capablanca/capablanca-description.html"
+						"en": "res/rules/capa10x8/capablanca-description.html"
 					},
 					"levels": config_model_levels_5
 				},
@@ -3891,159 +3891,6 @@ exports.games = (function () {
 			},
 			"viewScripts": config_view_js_capablanca
 		},
-		/*{
-			"name": "carrera-chess",
-			"modelScripts": modelScripts_31,
-			"config": {
-				"status": true,
-				"model": {
-					"title-en": "Carerra Chess",
-					"summary": "Chess on 10x8 (1617)",
-					"rules": {
-						"en": "res/rules/carrera/carrera-rules.html"
-					},
-					"module": "chessbase",
-					"plazza": "true",
-					"thumbnail": "res/rules/carrera/carrera-thumb.png",
-					"released": 1404916434,
-					"credits": {
-						"en": "res/rules/carrera/carrera-credits.html"
-					},
-					"gameOptions": config_model_gameOptions,
-					"obsolete": false,
-					"js": modelScripts_31,
-					"description": {
-						"en": "res/rules/carrera/carrera-description.html"
-					},
-					"levels": config_model_levels_5
-				},
-				"view": {
-					"title-en": "Chessbase view",
-					"visuals": {
-						"600x600": [
-							"res/visuals/carrera-600x600-3d.jpg",
-							"res/visuals/carrera-600x600-2d.jpg"
-						]
-					},
-					"xdView": true,
-					"css": config_view_css,
-					"preferredRatio": 1,
-					"useShowMoves": true,
-					"useNotation": true,
-					"module": "chessbase",
-					"defaultOptions": config_view_defaultOptions,
-					"skins": config_view_skins_11,
-					"animateSelfMoves": false,
-					"switchable": true,
-					"sounds": config_view_sounds,
-					"js": config_view_js_30,
-					"useAutoComplete": true
-				}
-			},
-			"viewScripts": config_view_js_30
-		},
-		{
-			"name": "gothic-chess",
-			"modelScripts": modelScripts_32,
-			"config": {
-				"status": true,
-				"model": {
-					"title-en": "Gothic Chess",
-					"summary": "Chess on 10x8 (2000)",
-					"rules": {
-						"en": "res/rules/gothic/gothic-rules.html"
-					},
-					"module": "chessbase",
-					"plazza": "true",
-					"thumbnail": "res/rules/gothic/gothic-thumb.png",
-					"released": 1404982805,
-					"credits": {
-						"en": "res/rules/gothic/gothic-credits.html"
-					},
-					"gameOptions": config_model_gameOptions,
-					"obsolete": false,
-					"js": modelScripts_32,
-					"description": {
-						"en": "res/rules/gothic/gothic-description.html"
-					},
-					"levels": config_model_levels_5
-				},
-				"view": {
-					"title-en": "Chessbase view",
-					"visuals": {
-						"600x600": [
-							"res/visuals/gothic-600x600-3d.jpg",
-							"res/visuals/gothic-600x600-2d.jpg"
-						]
-					},
-					"xdView": true,
-					"css": config_view_css,
-					"preferredRatio": 1,
-					"useShowMoves": true,
-					"useNotation": true,
-					"module": "chessbase",
-					"defaultOptions": config_view_defaultOptions,
-					"skins": config_view_skins_11,
-					"animateSelfMoves": false,
-					"switchable": true,
-					"sounds": config_view_sounds,
-					"js": config_view_js_30,
-					"useAutoComplete": true
-				}
-			},
-			"viewScripts": config_view_js_30
-		},
-		{
-			"name": "janus-chess",
-			"modelScripts": modelScripts_33,
-			"config": {
-				"status": true,
-				"model": {
-					"title-en": "Janus Chess",
-					"summary": "Chess on 10x8 (1978)",
-					"rules": {
-						"en": "res/rules/janus/janus-rules.html"
-					},
-					"module": "chessbase",
-					"plazza": "true",
-					"thumbnail": "res/rules/janus/janus-thumb.png",
-					"released": 1404997707,
-					"credits": {
-						"en": "res/rules/janus/janus-credits.html"
-					},
-					"gameOptions": config_model_gameOptions,
-					"obsolete": false,
-					"js": modelScripts_33,
-					"description": {
-						"en": "res/rules/janus/janus-description.html"
-					},
-					"levels": config_model_levels_5
-				},
-				"view": {
-					"title-en": "Chessbase view",
-					"visuals": {
-						"600x600": [
-							"res/visuals/janus-600x600-3d.jpg",
-							"res/visuals/janus-600x600-2d.jpg"
-						]
-					},
-					"xdView": true,
-					"css": config_view_css,
-					"preferredRatio": 1,
-					"useShowMoves": true,
-					"useNotation": true,
-					"module": "chessbase",
-					"defaultOptions": config_view_defaultOptions,
-					"skins": config_view_skins_13,
-					"animateSelfMoves": false,
-					"switchable": true,
-					"sounds": config_view_sounds,
-					"js": config_view_js_30,
-					"useAutoComplete": true
-				}
-			},
-			"viewScripts": config_view_js_30
-		},*/
 		{
 			"name": "grand-chess",
 			"modelScripts": modelScripts_34,
@@ -5177,20 +5024,20 @@ exports.games = (function () {
 					"title-en": "Reformed Courierspiel",
 					"summary": "Clément Bégnis, 2011",
 					"rules": {
-						"en": "reformed-courier-rules.html"
+						"en": "res/rules/reformed-courier/reformed-courier-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
-					"thumbnail": "reformed-courier-thumb.png",
+					"thumbnail": "res/rules/reformed-courier/reformed-courier-thumb.png",
 					"released": 1405068613,
 					"credits": {
-						"en": "reformed-courier-credits.html"
+						"en": "res/rules/reformed-courier/reformed-courier-credits.html"
 					},
 					"gameOptions": config_model_gameOptions,
 					"obsolete": false,
 					"js": modelScripts_47,
 					"description": {
-						"en": "reformed-courier-description.html"
+						"en": "res/rules/reformed-courier/reformed-courier-description.html"
 					},
 					"levels": config_model_levels_5
 				},
@@ -7419,7 +7266,7 @@ exports.games = (function () {
 					"released": 1396536978,
 
 					"credits": {
-						"en": "res/rules/shogi/seireigi-shogi-credits.html"
+						"en": "res/rules/shogi/seireigi-credits.html"
 					},
 					"gameOptions": config_model_gameOptions_2,
 					"js": modelScripts_chu_seireigi,
@@ -7574,7 +7421,7 @@ exports.games = (function () {
 					"thumbnail": "res/rules/shogi/kyoto-shogi.png",
 					"released": 1396536978,
 					"credits": {
-						"en": "res/rules/shogi/seireigi-shogi-credits.html"
+						"en": "res/rules/shogi/kyoto-credits.html"
 					},
 					"gameOptions": config_model_gameOptions_2,
 					"js": modelScripts_107,

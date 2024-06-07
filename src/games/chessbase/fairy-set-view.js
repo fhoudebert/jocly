@@ -49,7 +49,7 @@
 			},
 			"fr-berolina": {
 				"2d": {
-					clipx: 7600,
+					clipx: 0,
 				},
 			},
 			"fr-ferz": {
@@ -466,6 +466,26 @@
 			"fr-spider": {
 				"2d": {
 					clipx: 7500,
+					},
+			},
+			"fr-ram": {
+				"2d": {
+					clipx: 7400,
+					},
+			},
+			"fr-spider": {
+				"2d": {
+					clipx: 7500,
+					},
+			},
+			"fr-tiger": {
+				"2d": {
+					clipx: 7600,
+					},
+			},
+			"fr-fortress": {
+				"2d": {
+					clipx: 7700,
 					},
 			},
 		},modifier);
@@ -2438,5 +2458,48 @@
 				}
 			},
 		},
+		"fr-tiger": {
+			mesh: {
+				jsFile:"/res/fairy/tiger/tiger.js"
+			},
+			materials: {
+				mat0: {
+					channels: {
+						diffuse: {
+							texturesImg: {
+								diffImg : "/res/fairy/tiger/tiger-diffusemap.jpg",
+							}
+						},
+						normal: {
+							texturesImg: {
+								normalImg: "/res/fairy/terror/terror-normalmap.jpg",
+							}
+						}
+					}
+				}
+			},
+		},
+		"fr-fortress": {
+			mesh: {
+				jsFile:"/res/fairy/fortress/fortress.js"
+			},
+			materials: {
+				mat0: {
+					channels: {
+						diffuse: {
+							texturesImg: {
+								diffImg : "/res/fairy/fortress/fortress-diffusemap.jpg",
+							}
+						},
+						normal: {
+							texturesImg: {
+								normalImg: "/res/fairy/fortress/fortress-normalmap.jpg",
+							}
+						}
+					}
+				}
+			},
+		},
+
 	});
 })();
