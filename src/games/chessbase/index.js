@@ -6833,7 +6833,7 @@ exports.games = (function () {
 					"released": 1396536978,
 
 					"credits": {
-						"en": "res/rules/shogi/seireigi-shogi-credits.html"
+						"en": "res/rules/shogi/seireigi-credits.html"
 					},
 					"gameOptions": config_model_gameOptions_2,
 					"js": modelScripts_chu_seireigi,
@@ -6988,7 +6988,7 @@ exports.games = (function () {
 					"thumbnail": "res/rules/shogi/kyoto-shogi.png",
 					"released": 1396536978,
 					"credits": {
-						"en": "res/rules/shogi/seireigi-shogi-credits.html"
+						"en": "res/rules/shogi/kyoto-credits.html"
 					},
 					"gameOptions": config_model_gameOptions_2,
 					"js": modelScripts_107,
