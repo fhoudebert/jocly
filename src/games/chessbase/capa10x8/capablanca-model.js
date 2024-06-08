@@ -59,7 +59,7 @@
         
 		p.prelude=[{
 			panelWidth: 2, // two buttons per row
-			panelBackground: "/res/rules/capablanca/capablanca-panel.png",
+			panelBackground: "/res/rules/capa10x8/capablanca-panel.png",
 			//	 Capablanca   Gothic      Bird     Carrera    Embassy    Ladorean  Grotesque  Schoolbook  Univers     Janus
 			setups: ["NABQKBMN","NBQMKABN","NBMQKABN","ANBQKBNM","NBQKMABN","BQNKANMB","BQNKMNAB","QNBAKBNM","BNMQKANB","ANBKQBNA"],
 			castle: [ p.castle,  p.castle,  p.castle, undefined,  mirrored,  mirror2,   mirror_f,  flexible,  flexible,   janus   ],

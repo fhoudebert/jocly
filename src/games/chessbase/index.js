@@ -1065,21 +1065,6 @@ exports.games = (function () {
 		"prelude-view.js",
 		"capa10x8/capablanca-view.js"
 	]
-	var modelScripts_31 = [
-		"base-model.js",
-		"grid-geo-model.js",
-		"capa10x8/carrera-model.js"
-	]
-	var modelScripts_32 = [
-		"base-model.js",
-		"grid-geo-model.js",
-		"capa10x8/gothic-model.js"
-	]
-	var modelScripts_33 = [
-		"base-model.js",
-		"grid-geo-model.js",
-		"capa10x8/janus-model.js"
-	]
 	var config_view_skins_preload_11 = [
 		"smoothedfilegeo|0|/res/ring-target.js",
 		"image|/res/images/cancel.png",
@@ -2279,7 +2264,7 @@ exports.games = (function () {
 					"title-en": "Makruk",
 					"summary": "Thai Chess",
 					"rules": {
-						"en": "res/rules/makruk/famous/mk-rules.html"
+						"en": "res/rules/makruk/mk-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
@@ -3639,23 +3624,23 @@ exports.games = (function () {
 			"config": {
 				"status": true,
 				"model": {
-					"title-en": "Capablanca Chess",
-					"summary": "Chess on 10x8 (1920)",
+					"title-en": "10x8 Chess variants",
+					"summary": "Capablanca, Janus, Carrera, Gothic …",
 					"rules": {
-						"en": "res/rules/capablanca/capablanca-rules.html"
+						"en": "res/rules/capa10x8/capablanca-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
-					"thumbnail": "res/rules/capablanca/capablanca-thumb.png",
+					"thumbnail": "res/rules/capa10x8/capablanca-thumb.png",
 					"released": 1404893076,
 					"credits": {
-						"en": "res/rules/capablanca/capablanca-credits.html"
+						"en": "res/rules/capa10x8/capablanca-credits.html"
 					},
 					"gameOptions": config_model_gameOptions,
 					"obsolete": false,
 					"js": modelScripts_capablanca,
 					"description": {
-						"en": "res/rules/capablanca/capablanca-description.html"
+						"en": "res/rules/capa10x8/capablanca-description.html"
 					},
 					"levels": config_model_levels_5
 				},
@@ -4817,20 +4802,20 @@ exports.games = (function () {
 					"title-en": "Reformed Courierspiel",
 					"summary": "Clément Bégnis, 2011",
 					"rules": {
-						"en": "reformed-courier-rules.html"
+						"en": "res/rules/reformed-courier/reformed-courier-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
-					"thumbnail": "reformed-courier-thumb.png",
+					"thumbnail": "res/rules/reformed-courier/reformed-courier-thumb.png",
 					"released": 1405068613,
 					"credits": {
-						"en": "reformed-courier-credits.html"
+						"en": "res/rules/reformed-courier/reformed-courier-credits.html"
 					},
 					"gameOptions": config_model_gameOptions,
 					"obsolete": false,
 					"js": modelScripts_47,
 					"description": {
-						"en": "reformed-courier-description.html"
+						"en": "res/rules/reformed-courier/reformed-courier-description.html"
 					},
 					"levels": config_model_levels_5
 				},
