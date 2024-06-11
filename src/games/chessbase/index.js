@@ -703,6 +703,11 @@ exports.games = (function () {
 		"grid-geo-model.js",
 		"famous/basic-model.js"
 	]
+	var modelScripts_knightmate = [
+		"base-model.js",
+		"grid-geo-model.js",
+		"standard/knightmate-model.js"
+	]
 	var config_model_rules = {
 		"en": "famous/rules.html"
 	}
@@ -2536,6 +2541,69 @@ exports.games = (function () {
 				"view": {
 					"title-en": "Chessbase view",
 					"js": config_view_js_15,
+					"visuals": {
+						"600x600": [
+							"res/visuals/classic-chess-600x600-3d.jpg",
+							"res/visuals/classic-chess-600x600-2d.jpg"
+						]
+					},
+					"xdView": true,
+					"css": config_view_css,
+					"preferredRatio": 1,
+					"useShowMoves": true,
+					"useNotation": true,
+					"module": "chessbase",
+					"defaultOptions": config_view_defaultOptions,
+					"skins": [
+						{
+							"name": "skin3d",
+							"title": "3D Classic",
+							"3d": true,
+							"preload": config_view_skins_preload_4,
+							"world": config_view_skins_world,
+							"camera": config_view_skins_camera
+						},
+						config_view_skins_4
+					],
+					"animateSelfMoves": false,
+					"switchable": true,
+					"sounds": config_view_sounds,
+					"useAutoComplete": true
+				}
+			},
+			"viewScripts": config_view_js_15
+		},
+		{
+			"name": "knightmate-chess",
+			"modelScripts": modelScripts_knightmate,
+			"config": {
+				"status": true,
+				"model": {
+					"title-en": "KnightMate",
+					"summary": "Bruce Zimov - 1972",
+					"rules": config_model_rules,
+					"module": "chessbase",
+					"plazza": "true",
+					"thumbnail": "res/rules/standard/knightmate.png",
+					"released": 1389887778,
+					"rules": {
+						"en": "res/rules/standard/knightmate.html",
+					},
+					"credits": config_model_credits,
+					"gameOptions": config_model_gameOptions,
+					"obsolete": true,
+					"js": modelScripts_knightmate,
+					"levels": config_model_levels_5
+				},
+				"view": {
+					"title-en": "Chessbase view",
+					"js": config_view_js_15,
+					"visuals": {
+						"600x600": [
+							"res/visuals/knightmate-600x600-3d.png",
+							"res/visuals/knightmate-600x600-2d.png"
+						]
+					},
 					"xdView": true,
 					"css": config_view_css,
 					"preferredRatio": 1,
