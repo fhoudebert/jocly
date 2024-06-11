@@ -930,6 +930,17 @@ exports.games = (function () {
 		"multiplan-geo-model.js",
 		"3d/3dchess-model.js"
 	]
+	var modelScripts_space_spartan = [
+		"base-model.js",
+		"multiplan-geo-model.js",
+		"3d/space-spartan-model.js"
+	]
+	var config_view_js_space_spartan = [
+		"base-view.js",
+		"multiplan-board-view.js",
+		"fairy-set-view.js",
+		"3d/space-spartan-view.js"
+	]
 	var config_view_js_24 = [
 		"base-view.js",
 		"multiplan-board-view.js",
@@ -3269,6 +3280,90 @@ exports.games = (function () {
 				}
 			},
 			"viewScripts": config_view_js_24
+		},
+		{
+			"name": "space-spartan",
+			"modelScripts": modelScripts_space_spartan,
+			"config": {
+				"status": true,
+				"model": {
+					"title-en": "Space Spartan",
+					"summary": "6x8x3 Chess",
+					"rules": {
+						"en": "res/rules/3dchess/space-spartan-rules.html"
+					},
+					"module": "chessbase",
+					"plazza": "true",
+					"thumbnail": "res/rules/3dchess/space-spartan.png",
+					"released": 1402584978,
+					"credits": {
+						"en": "res/rules/3dchess/space-spartan-credits.html"
+					},
+					"gameOptions": config_model_gameOptions,
+					"obsolete": false,
+					"js": modelScripts_space_spartan,
+					"levels": config_model_levels_15
+				},
+				"view": {
+					"title-en": "Chessbase view",
+					"visuals": {
+						"600x600": [
+							"res/visuals/space_spartan-600x600-3d.png",
+							"res/visuals/space_spartan-600x600-2d.png"
+						]
+					},
+					"xdView": true,
+					"css": config_view_css,
+					"preferredRatio": 1,
+					"useShowMoves": true,
+					"useNotation": true,
+					"module": "chessbase",
+					"defaultOptions": config_view_defaultOptions,
+					"skins": [
+						{
+							"name": "skin3d",
+							"title": "3D Classic",
+							"3d": true,
+							"preload": config_view_skins_preload,
+							"world": {
+								"lightIntensity": 0.8,
+								"skyLightIntensity": 0.5,
+								"lightCastShadow": false,
+								"fog": false,
+
+								"color": 4686804,
+								"lightPosition": config_view_skins_world_lightPosition,
+								"skyLightPosition": config_view_skins_world_skyLightPosition,
+								"lightShadowDarkness": 0.55,
+								"ambientLightColor": 8947848
+							},
+							"camera": {
+
+								"fov": 45,
+								"distMax": 200,
+								"radius": 18,
+								"elevationAngle": 30,
+								"elevationMin": -89,
+								"rotationAngle": 150,
+								"target": [
+									0,
+									0,
+									2500
+								],
+								"targetBounds": config_view_skins_camera_targetBounds
+							}
+						},
+						config_view_skins_5
+					],
+					"animateSelfMoves": false,
+					"switchable": true,
+					"sounds": config_view_sounds,
+					"js": config_view_js_space_spartan,
+					"useAutoComplete": true
+
+				}
+			},
+			"viewScripts": config_view_js_space_spartan
 		},
 		{
 			"name": "cylinder-chess",
@@ -6599,14 +6694,14 @@ exports.games = (function () {
 					"title-en": "Spartan Chess",
 					"summary": "An unorthodox Spartan army combats FIDE",
 					"rules": {
-						"en": "spartan-rules.html"
+						"en": "res/rules/spartan/spartan-rules.html"
 					},
 					"module": "chessbase",
 					"plazza": "true",
-					"thumbnail": "spartan-thumb.png",
+					"thumbnail": "res/rules/spartan/spartan-thumb.png",
 					"released": 1396536978,
 					"credits": {
-						"en": "spartan-credits.html"
+						"en": "res/rules/spartan/spartan-credits.html"
 					},
 					"gameOptions": config_model_gameOptions,
 					"js": modelScripts_103,

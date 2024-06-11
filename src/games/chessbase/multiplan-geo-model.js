@@ -128,8 +128,16 @@
 		return this.cbLongRangeGraph(geometry,rsRookDeltas.concat(rsUnicornDeltas,rsBishopDeltas));
 	}
 
+	Model.Game.cbRSCardinalGraph = function(geometry) {
+		return this.cbMergeGraphs(geometry,this.cbRSKnightGraph(geometry),this.cbRSBishopGraph(geometry));
+	}
+
 	Model.Game.cbRSKnightGraph = function(geometry) {
 		return this.cbShortRangeGraph(geometry,rsKnightDeltas);
+	}
+
+	Model.Game.cbRSCrownedRookGraph = function(geometry) {
+        return this.cbMergeGraphs(geometry,this.cb3DKingGraph(geometry),this.cbRSRookGraph(geometry));
 	}
 
 	Model.Game.cbRSRookGraph = function(geometry) {
