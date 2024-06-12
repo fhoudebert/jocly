@@ -58,13 +58,14 @@
 					isKing: false,
 					graph: this.cbKingGraph(geometry),
 					abbrev: 'K',
+                    value: 3.2,
                     initial: [{s:1,p:1},{s:1,p:6},{s:-1,p:57},{s:-1,p:62}],
 				},
 				
 				5: {
 					name: 'bishop',
 					graph: this.cbBishopGraph(geometry),
-					value: 3.1,
+					value: 3.3,
 					abbrev: 'B',
 					initial: [{s:1,p:2},{s:1,p:5},{s:-1,p:58},{s:-1,p:61}],
 				},
