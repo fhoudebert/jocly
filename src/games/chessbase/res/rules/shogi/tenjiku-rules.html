@@ -60,16 +60,26 @@ or Stay in place without capturing anything.</p>
 <p><b>Iron General </b>: promotes to Vertical Soldier.</p>
 <p><img class="piece-graph" src="{GAME}/res/rules/shogi/graphs/ironGeneral.png"/></p>
 
-<p><b>free Eagle</b>: moves as a Queen with the diagonal move of a lion</p>
+<p><b>Free Eagle</b>: moves as a Queen with the diagonal move of a lion</p>
+<p>Jump directly to any square in the second square in any direction</p>
 <p><img class="piece-graph" src="{GAME}/res/rules/shogi/graphs/freeEagle.png"/></p>
+<p>The diagonal move allows to :</p>
+<ul> 
+    <li>Annihilate any opponent standing diagonally next to it, without moving (formally one step, and then a step back) ('Riffle capture'),</li>
+    <li>Annihilate any opponent standing diagonally next to it, moving on to an empty square diagonally next to that ('hit and run'),</li>
+    <li>Annihilate any opponent standing diagonally next to it, and normally capture an opponent standing diagonally next to that ('double capture'),</li>
+    <li>Stay in place without capturing anything if one of the diagonally neighboring squares is empty (effectively passing a turn)</li>
+</ul>
+<p><img class="piece-graph" src="{GAME}/res/rules/shogi/graphs/freeEagle-movediag.png"/></p>
 
 
-<p><b>Great general</b>: moves as a Queen, when capturing, he can jump over an arbitrarily large number of other pieces.</p>
+
+<p><b>Great general</b>: moves as a Queen, when capturing, he can jump over an arbitrarily large number of other pieces except over king/prince.</p>
 <p><img class="piece-graph" src="{GAME}/res/rules/shogi/graphs/greatGeneral.png"/></p>
 
-<p><b>Rook General</b>: moves as a Rook, when capturing, he can jump over an arbitrarily large number of other pieces except over higher-ranked jumpers.</p>
+<p><b>Rook General</b>: moves as a Rook, when capturing, he can jump over an arbitrarily large number of other pieces except over higher-ranked jumpers or king/prince.</p>
 <p><img class="piece-graph" src="{GAME}/res/rules/shogi/graphs/rookGeneral.png"/></p>
 
-<p><b>Bishop General</b>: moves as a Bishop, when capturing, he can jump over an arbitrarily large number of other pieces except over higher-ranked jumpers.</p>
+<p><b>Bishop General</b>: moves as a Bishop, when capturing, he can jump over an arbitrarily large number of other pieces except over higher-ranked jumpers or king/prince.</p>
 <p><img class="piece-graph" src="{GAME}/res/rules/shogi/graphs/bishopGeneral.png"/></p>
 
