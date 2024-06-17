@@ -2591,7 +2591,7 @@ exports.games = (function () {
 				"status": true,
 				"model": {
 					"title-en": "KnightMate",
-					"summary": "Bruce Zimov - 1972",
+					"summary": "Checkmate the royal knight",
 					"rules": config_model_rules,
 					"module": "chessbase",
 					"plazza": "true",
@@ -3204,7 +3204,7 @@ exports.games = (function () {
 				"status": true,
 				"model": {
 					"title-en": "3D Chess",
-					"summary": "6x8x3 Chess",
+					"summary": "Asymmetric 3D Chess (6x8x3)",
 					"rules": {
 						"en": "res/rules/3dchess/3dchess-rules.html"
 					},
