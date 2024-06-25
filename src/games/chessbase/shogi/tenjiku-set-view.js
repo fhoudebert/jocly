@@ -48,7 +48,7 @@
 			"sh-phoenix":		{"2d":{clipx:5400}},
 			"sh-kirin":		{"2d":{clipx:4000}},
 			"sh-lance":		{"2d":{clipx:7100}},
-			"sh-chariot":		{"2d":{clipx:2800}},
+			"sh-reversechariot":		{"2d":{clipx:2800}},
 			"sh-sweeper":		{"2d":{clipx:3400}},
 			"sh-climber":		{"2d":{clipx:7200}},
 			"sh-bishop":		{"2d":{clipx:200}},
@@ -297,7 +297,7 @@
 			},
 		},
 
-		"sh-chariot": {
+		"sh-reversechariot": {
 			mesh: {
 				jsFile:"/res/shogi/n-tile.js"
 			},

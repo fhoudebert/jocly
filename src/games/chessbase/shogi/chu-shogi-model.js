@@ -243,7 +243,7 @@
 
 				23: {
 					name: 'reverse-chariot',
-					aspect: 'sh-chariot',
+					aspect: 'sh-reversechariot',
 					graph: this.cbLongRangeGraph(geometry,[[0,1],[0,-1]]),
 					value: 1.5,
 					abbrev: 'RV',
